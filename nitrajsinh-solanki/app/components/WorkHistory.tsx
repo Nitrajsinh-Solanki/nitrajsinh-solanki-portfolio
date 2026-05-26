@@ -42,7 +42,7 @@ const WORK: WorkEntry[] = [
     role: "Full Stack Engineer Intern",
     company: "VeloxCore Private Limited",
     type: "internship",
-    period: "2025 – Present",
+    period: "1st January,2026 – Present",
     duration: "Ongoing",
     location: "Gujarat, India",
     current: true,
