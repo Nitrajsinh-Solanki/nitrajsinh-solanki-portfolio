@@ -1,26 +1,101 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #070B14;
+  --foreground: #E2DDD5;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--dm-sans-var);
+  --font-mono: var(--dm-mono-var);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ── Entrance Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── Photo ring pulse ── */
+@keyframes ringPulse {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50%       { opacity: 0.08; transform: scale(1.06); }
+}
+@keyframes ringRotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Cursor blink ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.cursor-blink {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: #5EEAD4;
+  margin-left: 3px;
+  vertical-align: middle;
+  border-radius: 1px;
+  animation: blink 0.9s ease-in-out infinite;
+}
+
+/* ── Staggered entrance classes ── */
+.anim-1 { animation: fadeDown 0.5s 0.05s ease both; }
+.anim-2 { animation: fadeUp  0.55s 0.15s ease both; }
+.anim-3 { animation: fadeUp  0.55s 0.28s ease both; }
+.anim-4 { animation: fadeUp  0.55s 0.40s ease both; }
+.anim-5 { animation: fadeUp  0.55s 0.52s ease both; }
+.anim-6 { animation: fadeUp  0.55s 0.64s ease both; }
+.anim-img { animation: scaleIn 0.65s 0.1s ease both; }
+
+/* ── Rotating gradient ring ── */
+.photo-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    #5EEAD4 25%,
+    transparent 50%,
+    #5EEAD4 75%,
+    transparent 100%
+  );
+  animation: ringRotate 4s linear infinite;
+  opacity: 0.35;
+}
+.photo-ring-mask {
+  position: absolute;
+  inset: 3px;
+  border-radius: 9999px;
+  background: #070B14;
+  z-index: 1;
+}
+
+/* ── Dot grid background ── */
+.dot-grid {
+  background-image: radial-gradient(circle, #1A2B42 1px, transparent 1px);
+  background-size: 28px 28px;
 }
