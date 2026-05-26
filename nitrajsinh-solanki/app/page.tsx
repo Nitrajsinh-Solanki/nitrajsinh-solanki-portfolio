@@ -3,6 +3,8 @@ import Navbar    from "./components/Navbar";
 import Hero      from "./components/Hero";
 import About     from "./components/About";
 import TechStack from "./components/TechStack";
+import WorkHistory from "./components/WorkHistory";
+import Services  from "./components/Services";
 import Footer    from "./components/Footer";
 
 export default function Home() {
@@ -13,6 +15,8 @@ export default function Home() {
         <Hero />
         <About />
         <TechStack />
+        <Services />
+        <WorkHistory/>
       </main>
       <Footer />
     </div>
