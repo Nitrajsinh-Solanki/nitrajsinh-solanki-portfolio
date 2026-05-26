@@ -99,3 +99,15 @@ body {
   background-image: radial-gradient(circle, #1A2B42 1px, transparent 1px);
   background-size: 28px 28px;
 }
+
+/* ── ADD THIS BLOCK to the bottom of your existing globals.css ── */
+
+/* Shine sweep (used by CTA button) */
+@keyframes shineSweep {
+  from { transform: translateX(-110%); }
+  to   { transform: translateX(110%); }
+}
+
+/* Ring decorative dot orbit helper is handled inline.
+   All other animations (fadeUp, ringRotate, ringPulse, blink)
+   already exist — no changes needed to those. */

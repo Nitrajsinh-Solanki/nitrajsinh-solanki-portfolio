@@ -3,12 +3,12 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const NAV_LINKS = [
   { label: "About",        href: "#about",       isRoute: false },
   { label: "Tech Stack",   href: "#tech-stack",  isRoute: false },
-  { label: "Projects",     href: "/projects",    isRoute: true  },
+  { label: "Projects",     href: "#projects",    isRoute: false }, // ← scrolls to section
   { label: "Services",     href: "#services",    isRoute: false },
   { label: "Work History", href: "#work-history",isRoute: false },
   { label: "Contact",      href: "#contact",     isRoute: false },
@@ -19,6 +19,7 @@ export default function Navbar() {
   const [menuOpen,  setMenuOpen]  = useState(false);
   const [active,    setActive]    = useState("");
   const pathname = usePathname();
+  const router   = useRouter();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -26,22 +27,52 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // helper — is this link currently active?
-  const isActive = (href: string, isRoute: boolean) => {
-    if (isRoute) return pathname === href;
-    return active === href;
+  // Track active section via IntersectionObserver
+  useEffect(() => {
+    if (pathname !== "/") return;
+    const sections = ["about", "tech-stack", "projects", "services", "work-history", "contact"];
+    const observers: IntersectionObserver[] = [];
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActive(`#${id}`); },
+        { threshold: 0.3 }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, [pathname]);
+
+  // Handle anchor clicks: if on another page, go home first then scroll
+  const handleAnchorClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    if (pathname !== "/") {
+      e.preventDefault();
+      router.push(`/${href}`);
+    } else {
+      setActive(href);
+    }
+    setMenuOpen(false);
   };
 
-  const linkClass = (href: string, isRoute: boolean) =>
+  const isActive = (href: string) => active === href;
+
+  const linkClass = (href: string) =>
     `font-mono text-[11px] tracking-[0.07em] uppercase transition-colors duration-200 ${
-      isActive(href, isRoute)
+      isActive(href)
         ? "text-teal-300"
         : "text-[#6A6560] hover:text-[#C8C3BA]"
     }`;
 
-  const mobileLinkClass = (href: string, isRoute: boolean) =>
+  const mobileLinkClass = (href: string) =>
     `font-mono text-[12px] tracking-widest uppercase py-2.5 border-b border-[#0F1620] transition-colors ${
-      isActive(href, isRoute) ? "text-teal-300" : "text-[#7A7570] hover:text-teal-300"
+      isActive(href) ? "text-teal-300" : "text-[#7A7570] hover:text-teal-300"
     }`;
 
   return (
@@ -65,26 +96,16 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <div className="hidden lg:flex items-center gap-7">
-          {NAV_LINKS.map(({ label, href, isRoute }) =>
-            isRoute ? (
-              <Link
-                key={label}
-                href={href}
-                className={linkClass(href, true)}
-              >
-                {label}
-              </Link>
-            ) : (
-              <a
-                key={label}
-                href={href}
-                onClick={() => setActive(href)}
-                className={linkClass(href, false)}
-              >
-                {label}
-              </a>
-            )
-          )}
+          {NAV_LINKS.map(({ label, href }) => (
+            <a
+              key={label}
+              href={href}
+              onClick={(e) => handleAnchorClick(e, href)}
+              className={linkClass(href)}
+            >
+              {label}
+            </a>
+          ))}
         </div>
 
         {/* Right side */}
@@ -116,27 +137,16 @@ export default function Navbar() {
         }`}
       >
         <div className="flex flex-col gap-1 px-6">
-          {NAV_LINKS.map(({ label, href, isRoute }) =>
-            isRoute ? (
-              <Link
-                key={label}
-                href={href}
-                onClick={() => setMenuOpen(false)}
-                className={mobileLinkClass(href, true)}
-              >
-                {label}
-              </Link>
-            ) : (
-              <a
-                key={label}
-                href={href}
-                onClick={() => { setActive(href); setMenuOpen(false); }}
-                className={mobileLinkClass(href, false)}
-              >
-                {label}
-              </a>
-            )
-          )}
+          {NAV_LINKS.map(({ label, href }) => (
+            <a
+              key={label}
+              href={href}
+              onClick={(e) => handleAnchorClick(e, href)}
+              className={mobileLinkClass(href)}
+            >
+              {label}
+            </a>
+          ))}
           <a
             href="mailto:nrsolanki2005@gmail.com"
             className="mt-3 font-mono text-[11px] text-teal-300 border border-teal-300/60 px-4 py-2.5 rounded text-center tracking-widest"

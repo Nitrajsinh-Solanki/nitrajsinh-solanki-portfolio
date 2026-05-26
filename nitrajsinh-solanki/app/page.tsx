@@ -1,13 +1,13 @@
 // nitrajsinh-solanki/app/page.tsx
-import Navbar    from "./components/Navbar";
-import Hero      from "./components/Hero";
-import About     from "./components/About";
-import TechStack from "./components/TechStack";
-import WorkHistory from "./components/WorkHistory";
-import Services  from "./components/Services";
-import Contact from "./components/Contact";
-import Footer    from "./components/Footer";
-
+import Navbar          from "./components/Navbar";
+import Hero            from "./components/Hero";
+import About           from "./components/About";
+import TechStack       from "./components/TechStack";
+import ProjectsPreview from "./components/ProjectsPreview";
+import Services        from "./components/Services";
+import WorkHistory     from "./components/WorkHistory";
+import Contact         from "./components/Contact";
+import Footer          from "./components/Footer";
 
 export default function Home() {
   return (
@@ -17,9 +17,10 @@ export default function Home() {
         <Hero />
         <About />
         <TechStack />
+        <ProjectsPreview />
         <Services />
-        <WorkHistory/>
-        <Contact/>
+        <WorkHistory />
+        <Contact />
       </main>
       <Footer />
     </div>
