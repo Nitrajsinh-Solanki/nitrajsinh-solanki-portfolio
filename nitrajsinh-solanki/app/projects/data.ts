@@ -369,4 +369,36 @@ export const PROJECTS: Project[] = [
     iconPath: "M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z",
     client: { name: "Aman Sales", location: "Gandhidham, Gujarat, India" },
   },
+  {
+    id: "11",
+    slug: "hourbit",
+    title: "HourBit — All-in-One Productivity Suite",
+    shortTitle: "HourBit",
+    category: "client",
+    badge: "🌐 Live · hourbit-web.vercel.app",
+    badgeColor: "teal",
+    description:
+      "Free all-in-one productivity web app for employees — Work Hours Tracker with live leave prediction, Brain Quiz, Personal Diary, Typing Speed Test, and Expense Tracker. 5 tools in one secure app.",
+    longDescription:
+      "HourBit is a comprehensive productivity suite designed for employees on flexible schedules. The Work Tracker lets users clock in/out, deduct breaks, and get real-time leave time predictions. Brain Quiz features categories, subcategories, XP rewards, and a leaderboard. The Personal Diary supports rich journaling with search, export, and reminder toasts. The Typing Test measures WPM and accuracy over time. The Expense Tracker manages wallet balance, categorized transactions, and spending analytics — all behind a secure OTP-based auth system with full admin panel.",
+    tech: ["Next.js 16", "TypeScript", "MongoDB", "Mongoose", "JWT", "Nodemailer", "Tailwind CSS", "Recharts", "jsPDF", "bcryptjs", "react-hot-toast"],
+    features: [
+      "Work Hours Tracker — clock-in, breaks, smart leave time prediction",
+      "Brain Quiz — categories, levels, XP rewards system, global leaderboard",
+      "Personal Diary — rich journaling, search, date range filter, CSV/PDF export",
+      "Typing Speed Test — WPM & accuracy tracking with historical analysis",
+      "Expense Tracker — wallet, categorized transactions, spending analytics via Recharts",
+      "Full Admin Panel — user management, quiz content, XP rewards, roles",
+      "OTP email verification + JWT session authentication",
+      "PWA-ready with manifest and mobile-optimized layout",
+    ],
+    links: [
+      { label: "Live App", href: "https://hourbit-web.vercel.app/dashboard/today", icon: "live" },
+    ],
+    gradientFrom: "#041A20",
+    gradientTo: "#052820",
+    accentColor: "#2DD4BF",
+    iconPath: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
+    client: { name: "HourBit", location: "Personal / Solo Project" },
+  },
 ];
