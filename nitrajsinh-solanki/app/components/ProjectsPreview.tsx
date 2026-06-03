@@ -169,7 +169,7 @@ export default function ProjectsPreview() {
                 <span className="text-teal-300">shipped.</span>
               </h2>
               <p className="font-mono text-[11.5px] text-[#4A6070] tracking-wide mt-2">
-                10 projects — hackathons, bounties &amp; live client products.{" "}
+                11 projects — hackathons, bounties &amp; live client products.{" "}
                 <span className="text-teal-300/70">$250+ won.</span>
               </p>
             </div>
@@ -180,7 +180,7 @@ export default function ProjectsPreview() {
               style={{ fontFamily: "var(--syne-var)" }}
               className="hidden sm:inline-flex items-center gap-2 shrink-0 border border-[#1F2E42] text-[#9A9585] font-medium text-sm px-5 py-2.5 rounded-lg hover:border-teal-300/60 hover:text-teal-300 hover:-translate-y-[2px] active:translate-y-0 transition-all duration-200"
             >
-              View all 10 projects
+              View all 11 projects
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
@@ -198,9 +198,9 @@ export default function ProjectsPreview() {
             }}
           >
             {[
-              { value: "10",   label: "Projects Built",    color: "#5EEAD4" },
+              { value: "11",   label: "Projects Built",    color: "#5EEAD4" },
               { value: "$250+", label: "Hackathon Prizes",  color: "#F472B6" },
-              { value: "6",    label: "Live in Production", color: "#A78BFA" },
+              { value: "7",    label: "Live in Production", color: "#A78BFA" },
             ].map(({ value, label, color }) => (
               <div
                 key={label}
@@ -427,10 +427,10 @@ function MoreProjectsCTA() {
             className="text-[#E2DDD5] text-[15px] font-semibold mb-1"
             style={{ fontFamily: "var(--syne-var)" }}
           >
-            Showing 3 of 10 projects
+            Showing 3 of 11 projects
           </p>
           <p className="font-mono text-[11px] text-[#3A5060] tracking-wide">
-            7 more — including a Flutter app, Rust server &amp; live client sites.
+            8 more — including HourBit productivity suite, Flutter app, Rust server &amp; live client sites.
           </p>
         </div>
 
@@ -438,7 +438,7 @@ function MoreProjectsCTA() {
         <div className="flex items-center gap-3 shrink-0">
           {/* Ghost pills showing what's coming */}
           <div className="hidden md:flex items-center gap-2">
-            {["Flutter", "Rust", "Live Sites"].map((tag) => (
+            {["HourBit", "Flutter", "Rust"].map((tag) => (
               <span
                 key={tag}
                 className="font-mono text-[9.5px] px-2.5 py-1 rounded-full border tracking-wide"
@@ -451,7 +451,7 @@ function MoreProjectsCTA() {
                 {tag}
               </span>
             ))}
-            <span className="font-mono text-[10px] text-[#2A3A4A]">+4 more</span>
+            <span className="font-mono text-[10px] text-[#2A3A4A]">+5 more</span>
           </div>
 
           <Link
