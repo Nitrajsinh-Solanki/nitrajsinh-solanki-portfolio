@@ -125,7 +125,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative py-20 md:py-28 px-6 md:px-10 overflow-hidden"
+      className="relative py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-10 overflow-hidden"
     >
 <div className="relative z-10 max-w-6xl mx-auto">
 
@@ -293,12 +293,12 @@ function ServiceCard({
         </p>
         <div className="flex flex-col gap-2">
           {service.projects.map((project) => (
-            <div key={project.name} className="flex items-center justify-between gap-2">
+            <div key={project.name} className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 sm:gap-2 min-w-0">
               <span className="text-[12.5px] leading-none" style={{ color: "#555963" }}>
                 {project.name}
               </span>
               <span
-                className="font-mono text-[10px] px-2 py-[3px] rounded whitespace-nowrap"
+                className="self-start max-w-full break-words font-mono text-[10px] px-2 py-[3px] rounded sm:whitespace-nowrap"
                 style={{
                   background: "rgba(79,70,229,0.06)",
                   border: "1px solid rgba(79,70,229,0.12)",
