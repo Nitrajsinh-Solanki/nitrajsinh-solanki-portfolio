@@ -18,11 +18,11 @@ export default function ResumePage() {
     <>
       <JsonLd data={breadcrumb([{ name: "Home", path: "/" }, { name: "Resume", path: "/resume" }])} />
       <PageNav />
-      <main className="flex-1 max-w-3xl mx-auto px-6 md:px-10 pt-28 pb-20">
+      <main className="flex-1 w-full max-w-3xl mx-auto px-4 sm:px-6 md:px-10 pt-28 pb-20">
         <h1 className="text-[#17191D]" style={{ fontFamily: "var(--syne-var)", fontWeight: 800, fontSize: "clamp(30px,5vw,46px)" }}>
           {profile.name}: Resume
         </h1>
-        <p className="font-mono text-[12px] text-indigo-700 mt-2">{profile.headline} · {profile.email}</p>
+        <p className="mt-2 break-words font-mono text-[11px] sm:text-[12px] text-indigo-700">{profile.headline} · <a className="break-all hover:underline" href={"mailto:" + profile.email}>{profile.email}</a></p>
         <a href="/Nitrajsinh_Solanki_Resume.pdf" download aria-label="Download resume (PDF)"
           className="inline-block mt-5 bg-indigo-600 text-white font-bold text-[13px] px-6 py-3 rounded-xl"
           style={{ fontFamily: "var(--syne-var)" }}>Download resume (PDF)</a>
@@ -38,9 +38,9 @@ export default function ResumePage() {
         <h2 className={h2} style={{ fontFamily: "var(--syne-var)", fontWeight: 700 }}>Technical skills</h2>
         <dl className="text-[14.5px] leading-[1.9]">
           {Object.entries(profile.skills).map(([label, values]) => (
-            <div key={label} className="flex gap-2">
-              <dt className="text-[#555963] font-semibold min-w-[170px]">{label}</dt>
-              <dd className="text-[#555963]">{values.join(", ")}</dd>
+            <div key={label} className="flex flex-col sm:flex-row sm:gap-3 gap-1 py-1">
+              <dt className="text-[#555963] font-semibold sm:min-w-[170px] sm:shrink-0">{label}</dt>
+              <dd className="min-w-0 break-words text-[#555963]">{values.join(", ")}</dd>
             </div>
           ))}
         </dl>
