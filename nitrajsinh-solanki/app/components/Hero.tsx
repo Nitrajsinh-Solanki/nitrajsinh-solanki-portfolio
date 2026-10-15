@@ -441,7 +441,7 @@ export default function Hero() {
                   <span className="block w-[1px] h-6" style={{ background: "linear-gradient(to bottom, transparent, #2A3A4A)" }} />
                   <span className="block w-[4px] h-[4px] rounded-full bg-[#2A3A4A]" />
                 </div>
-                <span className="font-mono text-[9px] text-[#2A3A4A] tracking-[0.12em] uppercase">scroll</span>
+                <span className="font-mono text-[9px] text-[#94A3B8] tracking-[0.12em] uppercase">scroll</span>
               </div>
             </div>
           </div>
@@ -460,7 +460,7 @@ export default function Hero() {
                   <span className="w-2 h-2 rounded-full bg-[#FEBC2E]/70" />
                   <span className="w-2 h-2 rounded-full bg-[#27C840]/70" />
                 </div>
-                <p className="font-mono text-[10px] text-[#3A5A70] leading-[1.8]">
+                <p className="font-mono text-[10px] text-[#A5B0C0] leading-[1.8]">
                   <span className="text-teal-300">const</span>{" "}
                   <span className="text-[#60A5FA]">dev</span>{" "}
                   <span className="text-[#E2DDD5]">= {"{"}</span>
