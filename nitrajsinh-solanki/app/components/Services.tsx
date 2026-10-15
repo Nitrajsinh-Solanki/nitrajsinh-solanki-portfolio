@@ -123,7 +123,7 @@ const SERVICES = [
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const el = ref.current;
@@ -145,29 +145,9 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative py-28 px-6 md:px-10 overflow-hidden"
-      style={{
-        background:
-          "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(79,70,229,0.04) 0%, transparent 70%)",
-      }}
+      className="relative py-20 md:py-28 px-6 md:px-10 overflow-hidden"
     >
-      {/* Dot grid overlay */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 dot-grid opacity-40"
-      />
-
-      {/* Ambient glow */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-1/4 right-[-6%] w-[380px] h-[380px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(79,70,229,0.06) 0%, transparent 70%)",
-          filter: "blur(48px)",
-        }}
-      />
-
-      <div className="relative z-10 max-w-6xl mx-auto">
+<div className="relative z-10 max-w-6xl mx-auto">
 
         {/* ── Section header ── */}
         <div

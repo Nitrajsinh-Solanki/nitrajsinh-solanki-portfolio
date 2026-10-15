@@ -173,7 +173,7 @@ const FILTERS: Category[] = [
 
 function useReveal(threshold = 0.06) {
   const ref = useRef<HTMLElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -251,24 +251,6 @@ export default function TechStack() {
       itemType="https://schema.org/ItemList"
       className="relative py-20 md:py-28 px-6 md:px-10 overflow-hidden"
     >
-      {/* ── ambient glows ── */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-[5%] left-[-5%] w-[460px] h-[460px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(79,70,229,0.05) 0%, transparent 70%)",
-          filter: "blur(60px)",
-        }}
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-[8%] right-[-4%] w-[380px] h-[380px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(79,70,229,0.04) 0%, transparent 70%)",
-          filter: "blur(55px)",
-        }}
-      />
-
       <div className="relative z-10 max-w-5xl mx-auto">
 
         {/* ── section label ── */}

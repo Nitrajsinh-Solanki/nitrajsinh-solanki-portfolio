@@ -54,7 +54,7 @@ const SOCIAL_LINKS = [
 
 function useReveal(threshold = 0.06) {
   const ref = useRef<HTMLElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -109,24 +109,6 @@ export default function Contact() {
       ref={ref as React.RefObject<HTMLElement>}
       className="relative py-20 md:py-28 px-6 md:px-10 overflow-hidden"
     >
-      {/* ── ambient glows ── */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-[5%] left-[-6%] w-[500px] h-[500px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(79,70,229,0.06) 0%, transparent 70%)",
-          filter: "blur(65px)",
-        }}
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-[0%] right-[-4%] w-[360px] h-[360px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(79,70,229,0.04) 0%, transparent 70%)",
-          filter: "blur(55px)",
-        }}
-      />
-
       <div className="relative z-10 max-w-5xl mx-auto">
 
         {/* ── section label ── */}

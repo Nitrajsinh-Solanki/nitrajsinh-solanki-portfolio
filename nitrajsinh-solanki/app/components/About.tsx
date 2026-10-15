@@ -46,7 +46,7 @@ const INTERESTS = [
 
 function useReveal(threshold = 0.08) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const el = ref.current;
@@ -82,24 +82,6 @@ export default function About() {
       ref={ref}
       className="relative py-20 md:py-28 px-6 md:px-10 overflow-hidden"
     >
-      {/* ambient glows */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-[8%] right-[-5%] w-[420px] h-[420px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(79,70,229,0.055) 0%, transparent 70%)",
-          filter: "blur(55px)",
-        }}
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-[5%] left-[-6%] w-[340px] h-[340px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(79,70,229,0.04) 0%, transparent 70%)",
-          filter: "blur(48px)",
-        }}
-      />
-
       <div className="relative z-10 max-w-5xl mx-auto">
 
         {/* section label */}

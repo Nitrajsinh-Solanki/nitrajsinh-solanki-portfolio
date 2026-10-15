@@ -91,7 +91,7 @@ const BADGE: Record<BadgeColor, string> = {
 
 function useReveal<T extends HTMLElement = HTMLDivElement>(threshold = 0.1) {
   const ref = useRef<T>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -116,24 +116,6 @@ export default function ProjectsPreview() {
       id="projects"
       className="relative py-20 md:py-28 px-6 md:px-10 overflow-hidden"
     >
-      {/* Ambient glows */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-[8%] left-[-6%] w-[500px] h-[500px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(79,70,229,0.06) 0%, transparent 70%)",
-          filter: "blur(60px)",
-        }}
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-[5%] right-[-4%] w-[400px] h-[400px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(79,70,229,0.05) 0%, transparent 70%)",
-          filter: "blur(60px)",
-        }}
-      />
-
       <div className="relative z-10 max-w-6xl mx-auto">
 
         {/* ── Section header ── */}

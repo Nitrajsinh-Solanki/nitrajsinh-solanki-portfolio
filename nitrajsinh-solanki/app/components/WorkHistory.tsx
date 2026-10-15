@@ -57,7 +57,7 @@ const WORK: WorkEntry[] = [
     ],
     tech: [
       { name: ".NET / ASP.NET Core", color: "#4F46E5", border: "border-indigo-600/25", bg: "bg-indigo-600/5" },
-      { name: "Angular",             color: "#4F46E5", border: "border-red-400/25",    bg: "bg-red-400/5"    },
+      { name: "Angular",             color: "#4F46E5", border: "border-indigo-600/25",    bg: "bg-indigo-600/5"    },
       { name: "TypeScript",          color: "#4F46E5", border: "border-indigo-600/25",   bg: "bg-indigo-600/5"   },
       { name: "REST APIs",           color: "#4F46E5", border: "border-indigo-600/25",bg: "bg-indigo-600/5"},
       { name: "C#",                  color: "#4F46E5", border: "border-indigo-600/25", bg: "bg-indigo-600/5" },
@@ -156,7 +156,7 @@ const TYPE_LABEL: Record<WorkEntry["type"], string> = {
 
 function useReveal(threshold = 0.06) {
   const ref = useRef<HTMLElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -187,24 +187,6 @@ export default function WorkHistory() {
       ref={ref as React.RefObject<HTMLElement>}
       className="relative py-20 md:py-28 px-6 md:px-10 overflow-hidden"
     >
-      {/* ── ambient glows ── */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-[6%] right-[-6%] w-[460px] h-[460px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(79,70,229,0.055) 0%, transparent 70%)",
-          filter: "blur(60px)",
-        }}
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-[8%] left-[-5%] w-[380px] h-[380px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(79,70,229,0.03) 0%, transparent 70%)",
-          filter: "blur(55px)",
-        }}
-      />
-
       <div className="relative z-10 max-w-5xl mx-auto">
 
         {/* ── section label ── */}
