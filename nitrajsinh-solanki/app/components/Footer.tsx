@@ -17,16 +17,16 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#111A28] px-8 md:px-12 py-7 flex flex-col sm:flex-row items-center justify-between gap-4 flex-wrap">
-      <span className="font-mono text-[11px] text-[#94A3B8] tracking-widest">© {new Date().getFullYear()} Nitrajsinh Solanki</span>
+    <footer className="border-t border-[#E3E0D8] px-8 md:px-12 py-7 flex flex-col sm:flex-row items-center justify-between gap-4 flex-wrap">
+      <span className="font-mono text-[11px] text-[#737780] tracking-widest">© {new Date().getFullYear()} Nitrajsinh Solanki</span>
       <div className="flex items-center gap-6 flex-wrap">
         {INTERNAL_LINKS.map(({ label, href }) => (
-          <Link key={href} href={href} className="font-mono text-[11.5px] text-[#A5B0C0] hover:text-teal-300 transition-colors duration-200 tracking-wide">{label}</Link>
+          <Link key={href} href={href} className="font-mono text-[11.5px] text-[#555963] hover:text-indigo-600 transition-colors duration-200 tracking-wide">{label}</Link>
         ))}
         {SOCIAL_LINKS.map(({ label, href }) => (
           <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined}
             rel={href.startsWith("http") ? "me noopener noreferrer" : undefined}
-            className="font-mono text-[11.5px] text-[#A5B0C0] hover:text-teal-300 transition-colors duration-200 tracking-wide">{label}</a>
+            className="font-mono text-[11.5px] text-[#555963] hover:text-indigo-600 transition-colors duration-200 tracking-wide">{label}</a>
         ))}
       </div>
     </footer>

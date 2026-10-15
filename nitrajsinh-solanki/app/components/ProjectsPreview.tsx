@@ -38,7 +38,7 @@ const FEATURED: PreviewProject[] = [
     description:
       "Full-featured library management with 3 user roles, AI-generated book descriptions, borrowing workflows & automated fine tracking.",
     tech: ["Next.js", "MongoDB", "Gemini AI", "NextAuth"],
-    accentColor: "#5EEAD4",
+    accentColor: "#4F46E5",
     gradientFrom: "#0A2540",
     iconPath:
       "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
@@ -69,7 +69,7 @@ const FEATURED: PreviewProject[] = [
     description:
       "On-chain NFT marketplace with auctions, royalties, batch transfers & APT payments via Move smart contracts on Aptos blockchain.",
     tech: ["Aptos Blockchain", "Move", "React", "Petra Wallet"],
-    accentColor: "#A78BFA",
+    accentColor: "#4F46E5",
     gradientFrom: "#120A30",
     iconPath:
       "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z",
@@ -80,11 +80,11 @@ const FEATURED: PreviewProject[] = [
 /* ──────────────── badge colour map ────────────────────────── */
 
 const BADGE: Record<BadgeColor, string> = {
-  teal:   "text-teal-300   border-teal-300/25   bg-teal-300/5",
-  amber:  "text-amber-300  border-amber-300/25  bg-amber-300/5",
-  violet: "text-violet-300 border-violet-300/25 bg-violet-300/5",
-  orange: "text-orange-300 border-orange-300/25 bg-orange-300/5",
-  blue:   "text-blue-300   border-blue-300/25   bg-blue-300/5",
+  teal:   "text-indigo-600   border-indigo-600/25   bg-indigo-600/5",
+  amber:  "text-indigo-700  border-indigo-700/25  bg-indigo-700/5",
+  violet: "text-indigo-700 border-indigo-700/25 bg-indigo-700/5",
+  orange: "text-indigo-700 border-indigo-700/25 bg-indigo-700/5",
+  blue:   "text-indigo-700   border-indigo-700/25   bg-indigo-700/5",
 };
 
 /* ──────────────── intersection hook ───────────────────────── */
@@ -121,7 +121,7 @@ export default function ProjectsPreview() {
         aria-hidden="true"
         className="pointer-events-none absolute top-[8%] left-[-6%] w-[500px] h-[500px] rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(94,234,212,0.06) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(79,70,229,0.06) 0%, transparent 70%)",
           filter: "blur(60px)",
         }}
       />
@@ -129,7 +129,7 @@ export default function ProjectsPreview() {
         aria-hidden="true"
         className="pointer-events-none absolute bottom-[5%] right-[-4%] w-[400px] h-[400px] rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(167,139,250,0.05) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(79,70,229,0.05) 0%, transparent 70%)",
           filter: "blur(60px)",
         }}
       />
@@ -147,12 +147,12 @@ export default function ProjectsPreview() {
         >
           {/* Label row */}
           <div className="flex items-center gap-4 mb-4">
-            <span className="font-mono text-[11px] text-teal-300 tracking-[0.18em] uppercase select-none">
+            <span className="font-mono text-[11px] text-indigo-600 tracking-[0.18em] uppercase select-none">
               // projects
             </span>
             <span
               className="flex-1 h-[1px]"
-              style={{ background: "linear-gradient(to right, #1A2B42, transparent)" }}
+              style={{ background: "linear-gradient(to right, #E3E0D8, transparent)" }}
             />
           </div>
 
@@ -160,7 +160,7 @@ export default function ProjectsPreview() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-6">
             <div>
               <h2
-                className="leading-[1.05] tracking-tight text-[#E2DDD5]"
+                className="leading-[1.05] tracking-tight text-[#17191D]"
                 style={{
                   fontFamily: "var(--syne-var)",
                   fontWeight: 800,
@@ -168,11 +168,11 @@ export default function ProjectsPreview() {
                 }}
               >
                 Things I&apos;ve{" "}
-                <span className="text-teal-300">shipped.</span>
+                <span className="text-indigo-600">shipped.</span>
               </h2>
-              <p className="font-mono text-[11.5px] text-[#94A3B8] tracking-wide mt-2">
+              <p className="font-mono text-[11.5px] text-[#737780] tracking-wide mt-2">
                 {STATS.total} projects — hackathons, bounties &amp; live client products.{" "}
-                <span className="text-teal-300/70">$250+ won.</span>
+                <span className="text-indigo-600/70">$250+ won.</span>
               </p>
             </div>
 
@@ -180,7 +180,7 @@ export default function ProjectsPreview() {
             <Link
               href="/projects"
               style={{ fontFamily: "var(--syne-var)" }}
-              className="hidden sm:inline-flex items-center gap-2 shrink-0 border border-[#1F2E42] text-[#9A9585] font-medium text-sm px-5 py-2.5 rounded-lg hover:border-teal-300/60 hover:text-teal-300 hover:-translate-y-[2px] active:translate-y-0 transition-all duration-200"
+              className="hidden sm:inline-flex items-center gap-2 shrink-0 border border-[#E3E0D8] text-[#737780] font-medium text-sm px-5 py-2.5 rounded-lg hover:border-indigo-600/60 hover:text-indigo-600 hover:-translate-y-[2px] active:translate-y-0 transition-all duration-200"
             >
               View all {STATS.total} projects
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -200,13 +200,13 @@ export default function ProjectsPreview() {
             }}
           >
             {[
-              { value: String(STATS.total), label: "Projects Built", color: "#5EEAD4" },
-              { value: "$250+", label: "Hackathon Prizes",  color: "#F472B6" },
-              { value: String(STATS.live), label: "Live Apps", color: "#A78BFA" },
+              { value: String(STATS.total), label: "Projects Built", color: "#4F46E5" },
+              { value: "$250+", label: "Hackathon Prizes",  color: "#4F46E5" },
+              { value: String(STATS.live), label: "Live Apps", color: "#4F46E5" },
             ].map(({ value, label, color }) => (
               <div
                 key={label}
-                className="rounded-xl border border-[#131C2E] bg-[#0B1623] px-4 py-3 text-center"
+                className="rounded-xl border border-[#E3E0D8] bg-[#FFFFFF] px-4 py-3 text-center"
                 style={{ borderTop: `2px solid ${color}30` }}
               >
                 <div
@@ -215,7 +215,7 @@ export default function ProjectsPreview() {
                 >
                   {value}
                 </div>
-                <div className="font-mono text-[10px] text-[#94A3B8] tracking-wide">
+                <div className="font-mono text-[10px] text-[#737780] tracking-wide">
                   {label}
                 </div>
               </div>
@@ -249,7 +249,7 @@ function FeaturedCard({ project, index }: { project: PreviewProject; index: numb
       href={`/projects/${project.slug}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group relative flex flex-col rounded-2xl overflow-hidden border border-[#131C2E] bg-[#0B1623] transition-all duration-300"
+      className="group relative flex flex-col rounded-2xl overflow-hidden border border-[#E3E0D8] bg-[#FFFFFF] transition-all duration-300"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible
@@ -316,7 +316,7 @@ function FeaturedCard({ project, index }: { project: PreviewProject; index: numb
 
         {/* Title */}
         <h3
-          className="text-[#E2DDD5] text-[15px] leading-snug mb-2.5 transition-colors duration-200"
+          className="text-[#17191D] text-[15px] leading-snug mb-2.5 transition-colors duration-200"
           style={{
             fontFamily: "var(--syne-var)",
             fontWeight: 700,
@@ -327,7 +327,7 @@ function FeaturedCard({ project, index }: { project: PreviewProject; index: numb
         </h3>
 
         {/* Description */}
-        <p className="text-[12.5px] text-[#A5B0C0] leading-[1.75] mb-5 flex-1">
+        <p className="text-[12.5px] text-[#555963] leading-[1.75] mb-5 flex-1">
           {project.description}
         </p>
 
@@ -353,8 +353,8 @@ function FeaturedCard({ project, index }: { project: PreviewProject; index: numb
               className="font-mono text-[10px] px-2 py-[3px] rounded"
               style={{
                 background: "rgba(26,43,66,0.7)",
-                border: "1px solid #1A2B42",
-                color: "#6A9BAF",
+                border: "1px solid #E3E0D8",
+                color: "#4F46E5",
               }}
             >
               {t}
@@ -363,7 +363,7 @@ function FeaturedCard({ project, index }: { project: PreviewProject; index: numb
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between pt-3 border-t border-[#0F1820]">
+        <div className="flex items-center justify-between pt-3 border-t border-[#E3E0D8]">
           {project.live ? (
             <button
               type="button"
@@ -378,14 +378,14 @@ function FeaturedCard({ project, index }: { project: PreviewProject; index: numb
               Live
             </button>
           ) : (
-            <span className="font-mono text-[9.5px] text-[#94A3B8] tracking-wide">
+            <span className="font-mono text-[9.5px] text-[#737780] tracking-wide">
               View details
             </span>
           )}
 
           <span
             className="transition-all duration-200 group-hover:translate-x-1"
-            style={{ color: hovered ? project.accentColor : "#2A3A4A" }}
+            style={{ color: hovered ? project.accentColor : "#D8D5CD" }}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7" />
@@ -405,7 +405,7 @@ function MoreProjectsCTA() {
   return (
     <div
       ref={ref}
-      className="mt-10 rounded-2xl border border-[#131C2E] bg-[#0B1623] overflow-hidden"
+      className="mt-10 rounded-2xl border border-[#E3E0D8] bg-[#FFFFFF] overflow-hidden"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(16px)",
@@ -416,7 +416,7 @@ function MoreProjectsCTA() {
       <div
         className="h-[2px] w-full"
         style={{
-          background: "linear-gradient(to right, transparent, #5EEAD430, #A78BFA30, transparent)",
+          background: "linear-gradient(to right, transparent, #4F46E530, #4F46E530, transparent)",
         }}
         aria-hidden="true"
       />
@@ -426,12 +426,12 @@ function MoreProjectsCTA() {
         {/* Left — text */}
         <div>
           <p
-            className="text-[#E2DDD5] text-[15px] font-semibold mb-1"
+            className="text-[#17191D] text-[15px] font-semibold mb-1"
             style={{ fontFamily: "var(--syne-var)" }}
           >
             Showing 3 of {STATS.total} projects
           </p>
-          <p className="font-mono text-[11px] text-[#94A3B8] tracking-wide">
+          <p className="font-mono text-[11px] text-[#737780] tracking-wide">
             {STATS.total - 3} more — including HourBit productivity suite, Flutter app, Rust server &amp; live client sites.
           </p>
         </div>
@@ -446,20 +446,20 @@ function MoreProjectsCTA() {
                 className="font-mono text-[9.5px] px-2.5 py-1 rounded-full border tracking-wide"
                 style={{
                   background: "rgba(26,43,66,0.5)",
-                  border: "1px solid #1A2B42",
-                  color: "#94A3B8",
+                  border: "1px solid #E3E0D8",
+                  color: "#737780",
                 }}
               >
                 {tag}
               </span>
             ))}
-            <span className="font-mono text-[10px] text-[#94A3B8]">+{STATS.total - 6} more</span>
+            <span className="font-mono text-[10px] text-[#737780]">+{STATS.total - 6} more</span>
           </div>
 
           <Link
             href="/projects"
             style={{ fontFamily: "var(--syne-var)" }}
-            className="inline-flex items-center gap-2 bg-teal-300/10 border border-teal-300/30 text-teal-300 font-semibold text-[13px] px-5 py-2.5 rounded-lg hover:bg-teal-300/20 hover:border-teal-300/60 hover:-translate-y-[1px] active:translate-y-0 transition-all duration-200 tracking-wide"
+            className="inline-flex items-center gap-2 bg-indigo-600/10 border border-indigo-600/30 text-indigo-600 font-semibold text-[13px] px-5 py-2.5 rounded-lg hover:bg-indigo-600/20 hover:border-indigo-600/60 hover:-translate-y-[1px] active:translate-y-0 transition-all duration-200 tracking-wide"
           >
             All Projects
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

@@ -188,3 +188,31 @@ body {
 .dot-grid {
   background-image: none !important;
 }
+
+
+/* ── Warm Editorial Light: focused hero composition ── */
+.hero-code-card {
+  display: none !important;
+}
+
+.hero-portrait-wrap > span,
+.hero-portrait-wrap > div[aria-hidden="true"] {
+  display: none !important;
+}
+
+.hero-portrait-frame {
+  border: 1px solid var(--border) !important;
+  border-radius: 24px !important;
+  background: var(--surface);
+  box-shadow: 0 18px 54px rgba(23, 25, 29, 0.12);
+}
+
+.hero-portrait-frame img {
+  border-radius: inherit;
+}
+
+@media (max-width: 640px) {
+  .hero-portrait-frame {
+    border-radius: 20px !important;
+  }
+}
