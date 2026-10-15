@@ -448,7 +448,7 @@ export default function TechStack() {
                           sk.core && (
                             <span
                               className="w-1 h-1 rounded-full bg-current opacity-70 shrink-0"
-                              aria-label="core skill"
+                              aria-hidden="true"
                             />
                           )
                         )}
