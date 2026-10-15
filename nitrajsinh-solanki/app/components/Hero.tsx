@@ -66,10 +66,6 @@ function StatChip({
 export default function Hero() {
   const displayed = "MERN Stack Developer";
 
-  return () => { if (timerRef.current) clearTimeout(timerRef.current); };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [displayed, deleting, roleIndex]);
-
   return (
     <>
       <ScrollProgress />
