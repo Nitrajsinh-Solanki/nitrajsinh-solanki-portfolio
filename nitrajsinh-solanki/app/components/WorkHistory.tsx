@@ -1,6 +1,8 @@
 // nitrajsinh-solanki/app/components/WorkHistory.tsx
 "use client";
 
+import { STATS } from "../projects/data";
+
 import { useEffect, useRef, useState } from "react";
 
 /* ──────────────────────────── types ──────────────────────────── */
@@ -81,7 +83,7 @@ const WORK: WorkEntry[] = [
     accentColor: "#FCD34D",
     badgeText: "$250+ Won",
     description: [
-      "Competed across 5 global hackathons and bounty challenges on the StackUp platform, consistently placing in the top rankings. Built and shipped 7 full-stack projects end-to-end — often solo — under tight deadlines.",
+      "Competed across 5 global hackathons and bounty challenges on the StackUp platform, consistently placing in the top rankings. Built and shipped " + STATS.hackathon + " full-stack projects end-to-end — often solo — under tight deadlines.",
       "Won prizes including $90 (3rd Place), $70 (4th Place), $60 Bounty, $20 Merit, and $10 Merit — totalling $250+ across blockchain, AI, and full-stack categories.",
       "Explored cutting-edge tech stacks in each challenge: Move language on Aptos Blockchain, Rust systems programming, Google Gemini AI, and multimodal GenAI — shipping production-ready code each time.",
     ],
@@ -98,7 +100,7 @@ const WORK: WorkEntry[] = [
     ],
     achievements: [
       { label: "Total Won",   value: "$250+" },
-      { label: "Projects",    value: "7 Shipped" },
+      { label: "Projects",    value: STATS.hackathon + " Shipped" },
       { label: "Best Finish", value: "3rd Place" },
     ],
   },
@@ -130,7 +132,7 @@ const WORK: WorkEntry[] = [
     ],
     achievements: [
       { label: "Clients",    value: "2 Businesses" },
-      { label: "Products",   value: "3 Delivered" },
+      { label: "Products",   value: STATS.client + " Delivered" },
       { label: "Live",       value: "icesaathi.co.in" },
     ],
   },
@@ -412,7 +414,7 @@ export default function WorkHistory() {
           {[
             { label: "Experience Type",  value: "Intern + Freelance" },
             { label: "Total Earnings",   value: "$250+ Hackathons"   },
-            { label: "Live Products",    value: "3 Shipped"          },
+            { label: "Live Products",    value: STATS.client + " Shipped" },
             { label: "Current Stack",    value: ".NET + Angular"     },
           ].map(({ label, value }) => (
             <div

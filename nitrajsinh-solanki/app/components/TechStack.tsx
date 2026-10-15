@@ -1,6 +1,8 @@
 // nitrajsinh-solanki/app/components/TechStack.tsx
 "use client";
 
+import { STATS } from "../projects/data";
+
 import { useEffect, useRef, useState } from "react";
 
 /* ──────────────────────────── types ──────────────────────────── */
@@ -33,7 +35,7 @@ interface Skill {
 /* ──────────────── icon CDN helpers ───────────────────────────── */
 
 const DI = (name: string, variant = "original") =>
-  `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${name}/${name}-${variant}.svg`;
+  `https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/${name}/${name}-${variant}.svg`;
 
 /** simple-icons with an explicit hex colour (no #) */
 const SI = (slug: string, hex = "ffffff") =>
@@ -203,6 +205,8 @@ function TechLogo({
     <img
       src={src}
       alt={`${alt} logo`}
+      loading="lazy"
+      decoding="async"
       width={14}
       height={14}
       loading="lazy"
@@ -309,7 +313,7 @@ export default function TechStack() {
           {[
             { val: `${totalTechs}+`, label: "Technologies" },
             { val: `${totalCats}`,   label: "Categories"   },
-            { val: "10",             label: "Projects"      },
+            { val: String(STATS.total), label: "Projects" },
             { val: "$250+",          label: "Prize Money"   },
           ].map(({ val, label }) => (
             <div key={label} className="flex items-baseline gap-1.5">

@@ -1,6 +1,8 @@
 // nitrajsinh-solanki/app/components/ProjectsPreview.tsx
 "use client";
 
+import { STATS } from "../projects/data";
+
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -169,7 +171,7 @@ export default function ProjectsPreview() {
                 <span className="text-teal-300">shipped.</span>
               </h2>
               <p className="font-mono text-[11.5px] text-[#4A6070] tracking-wide mt-2">
-                11 projects — hackathons, bounties &amp; live client products.{" "}
+                {STATS.total} projects — hackathons, bounties &amp; live client products.{" "}
                 <span className="text-teal-300/70">$250+ won.</span>
               </p>
             </div>
@@ -180,7 +182,7 @@ export default function ProjectsPreview() {
               style={{ fontFamily: "var(--syne-var)" }}
               className="hidden sm:inline-flex items-center gap-2 shrink-0 border border-[#1F2E42] text-[#9A9585] font-medium text-sm px-5 py-2.5 rounded-lg hover:border-teal-300/60 hover:text-teal-300 hover:-translate-y-[2px] active:translate-y-0 transition-all duration-200"
             >
-              View all 11 projects
+              View all {STATS.total} projects
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
@@ -198,9 +200,9 @@ export default function ProjectsPreview() {
             }}
           >
             {[
-              { value: "11",   label: "Projects Built",    color: "#5EEAD4" },
+              { value: String(STATS.total), label: "Projects Built", color: "#5EEAD4" },
               { value: "$250+", label: "Hackathon Prizes",  color: "#F472B6" },
-              { value: "7",    label: "Live in Production", color: "#A78BFA" },
+              { value: String(STATS.live), label: "Live Apps", color: "#A78BFA" },
             ].map(({ value, label, color }) => (
               <div
                 key={label}
@@ -427,10 +429,10 @@ function MoreProjectsCTA() {
             className="text-[#E2DDD5] text-[15px] font-semibold mb-1"
             style={{ fontFamily: "var(--syne-var)" }}
           >
-            Showing 3 of 11 projects
+            Showing 3 of {STATS.total} projects
           </p>
           <p className="font-mono text-[11px] text-[#3A5060] tracking-wide">
-            8 more — including HourBit productivity suite, Flutter app, Rust server &amp; live client sites.
+            {STATS.total - 3} more — including HourBit productivity suite, Flutter app, Rust server &amp; live client sites.
           </p>
         </div>
 
@@ -451,7 +453,7 @@ function MoreProjectsCTA() {
                 {tag}
               </span>
             ))}
-            <span className="font-mono text-[10px] text-[#2A3A4A]">+5 more</span>
+            <span className="font-mono text-[10px] text-[#2A3A4A]">+{STATS.total - 6} more</span>
           </div>
 
           <Link

@@ -1,6 +1,8 @@
 // nitrajsinh-solanki/app/components/Services.tsx
 "use client";
 
+import { STATS } from "../projects/data";
+
 import { useEffect, useRef, useState } from "react";
 
 const SERVICES = [
@@ -202,7 +204,7 @@ export default function Services() {
               style={{ color: "#524E4A" }}
             >
               Six specialisations backed by{" "}
-              <span style={{ color: "#9A9585" }}>10 shipped projects</span> and
+              <span style={{ color: "#9A9585" }}>{STATS.total} shipped projects</span> and
               over <span style={{ color: "#9A9585" }}>$250 in prize money</span>{" "}
               won on competitive hackathon platforms.
             </p>
