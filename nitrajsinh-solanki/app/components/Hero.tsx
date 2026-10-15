@@ -32,7 +32,9 @@ function ParticleCanvas() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let animId: number;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let animId: number | undefined;
+    let animationStarted = false;
     let canvasWidth = 0;
     let canvasHeight = 0;
     let particlesInitialised = false;
@@ -41,54 +43,25 @@ function ParticleCanvas() {
       r: number; alpha: number; pulse: number;
     }[] = [];
 
-    // ResizeObserver provides dimensions after layout without forcing a
-    // synchronous offsetWidth/offsetHeight layout read.
-    const resizeObserver = new ResizeObserver((entries) => {
-      const size = entries[0]?.contentRect;
-      if (!size) return;
-
-      canvasWidth = size.width;
-      canvasHeight = size.height;
-      if (canvasWidth <= 0 || canvasHeight <= 0) return;
-
-      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
-      const pixelWidth = Math.round(canvasWidth * pixelRatio);
-      const pixelHeight = Math.round(canvasHeight * pixelRatio);
-
-      if (canvas.width !== pixelWidth) canvas.width = pixelWidth;
-      if (canvas.height !== pixelHeight) canvas.height = pixelHeight;
-      ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
-
-      if (!particlesInitialised) {
-        for (let i = 0; i < 55; i++) {
-          particles.push({
-            x: Math.random() * canvasWidth,
-            y: Math.random() * canvasHeight,
-            vx: (Math.random() - 0.5) * 0.3,
-            vy: (Math.random() - 0.5) * 0.3,
-            r: Math.random() * 1.4 + 0.4,
-            alpha: Math.random() * 0.5 + 0.1,
-            pulse: Math.random() * Math.PI * 2,
-          });
-        }
-        particlesInitialised = true;
-      }
-    });
-    resizeObserver.observe(canvas);
-
     const draw = () => {
+      if (!particlesInitialised || canvasWidth <= 0 || canvasHeight <= 0) return;
+
       ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
       particles.forEach((p, i) => {
-        p.pulse += 0.018;
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.x < 0) p.x = canvasWidth;
-        if (p.x > canvasWidth) p.x = 0;
-        if (p.y < 0) p.y = canvasHeight;
-        if (p.y > canvasHeight) p.y = 0;
+        if (!reducedMotion) {
+          p.pulse += 0.018;
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0) p.x = canvasWidth;
+          if (p.x > canvasWidth) p.x = 0;
+          if (p.y < 0) p.y = canvasHeight;
+          if (p.y > canvasHeight) p.y = 0;
+        }
 
-        const a = p.alpha * (0.6 + 0.4 * Math.sin(p.pulse));
+        const a = reducedMotion
+          ? p.alpha
+          : p.alpha * (0.6 + 0.4 * Math.sin(p.pulse));
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(94,234,212,${a})`;
@@ -109,12 +82,55 @@ function ParticleCanvas() {
         }
       });
 
-      animId = requestAnimationFrame(draw);
+      if (!reducedMotion) animId = requestAnimationFrame(draw);
     };
-    draw();
+
+    // ResizeObserver provides dimensions after layout without forcing a
+    // synchronous offsetWidth/offsetHeight layout read.
+    const resizeObserver = new ResizeObserver((entries) => {
+      const size = entries[0]?.contentRect;
+      if (!size) return;
+
+      canvasWidth = size.width;
+      canvasHeight = size.height;
+      if (canvasWidth <= 0 || canvasHeight <= 0) return;
+
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      const pixelWidth = Math.round(canvasWidth * pixelRatio);
+      const pixelHeight = Math.round(canvasHeight * pixelRatio);
+
+      if (canvas.width !== pixelWidth) canvas.width = pixelWidth;
+      if (canvas.height !== pixelHeight) canvas.height = pixelHeight;
+      ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+
+      if (!particlesInitialised) {
+        // Fewer particles reduce the quadratic connection checks per frame.
+        for (let i = 0; i < 32; i++) {
+          particles.push({
+            x: Math.random() * canvasWidth,
+            y: Math.random() * canvasHeight,
+            vx: (Math.random() - 0.5) * 0.3,
+            vy: (Math.random() - 0.5) * 0.3,
+            r: Math.random() * 1.4 + 0.4,
+            alpha: Math.random() * 0.5 + 0.1,
+            pulse: Math.random() * Math.PI * 2,
+          });
+        }
+        particlesInitialised = true;
+      }
+
+      if (reducedMotion) {
+        // Draw a still particle field for visitors who prefer reduced motion.
+        draw();
+      } else if (!animationStarted) {
+        animationStarted = true;
+        animId = requestAnimationFrame(draw);
+      }
+    });
+    resizeObserver.observe(canvas);
 
     return () => {
-      cancelAnimationFrame(animId);
+      if (animId !== undefined) cancelAnimationFrame(animId);
       resizeObserver.disconnect();
     };
   }, []);
