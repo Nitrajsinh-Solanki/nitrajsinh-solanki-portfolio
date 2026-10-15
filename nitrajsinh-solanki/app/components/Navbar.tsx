@@ -91,7 +91,7 @@ export default function Navbar() {
     `font-sans text-[14px] font-medium tracking-normal transition-colors duration-200 ${
       isActive(href, isRoute)
         ? "text-indigo-600"
-        : "text-[#555963] hover:text-[#555963]"
+        : "text-[#555963] hover:text-indigo-600"
     }`;
 
   const mobileLinkClass = (href: string, isRoute: boolean) =>

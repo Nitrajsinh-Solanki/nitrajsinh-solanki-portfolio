@@ -207,7 +207,7 @@ export default function About() {
                       }`}
                     >
                       {current && (
-                        <span className="w-[6px] h-[6px] rounded-full bg-indigo-600 animate-pulse" />
+                        <span className="w-[6px] h-[6px] rounded-full bg-indigo-600" />
                       )}
                     </span>
                   </div>

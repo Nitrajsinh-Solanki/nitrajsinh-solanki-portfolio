@@ -244,7 +244,7 @@ export default function WorkHistory() {
                   }`}
                 >
                   {entry.current && (
-                    <span className="w-[7px] h-[7px] rounded-full bg-indigo-600 animate-pulse" />
+                    <span className="w-[7px] h-[7px] rounded-full bg-indigo-600" />
                   )}
                 </span>
               </div>
@@ -291,7 +291,7 @@ export default function WorkHistory() {
                       )}
                       {entry.current && (
                         <span className="font-mono text-[9px] text-indigo-600 border border-indigo-600/30 bg-indigo-600/5 px-2 py-0.5 rounded-full flex items-center gap-1">
-                          <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 animate-pulse inline-block" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 inline-block" />
                           Now
                         </span>
                       )}

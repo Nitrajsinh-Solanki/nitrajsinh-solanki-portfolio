@@ -276,10 +276,7 @@ export default function Contact() {
 
               {/* availability badge */}
               <div className="mt-4 flex items-center gap-2">
-                <span className="relative flex h-2 w-2 shrink-0">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-600 opacity-50" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-600" />
-                </span>
+                <span className="inline-flex h-2 w-2 shrink-0 rounded-full bg-indigo-600" aria-hidden="true" />
                 <span className="font-mono text-[10px] text-[#686D76] tracking-wide">
                   Open to opportunities
                 </span>
