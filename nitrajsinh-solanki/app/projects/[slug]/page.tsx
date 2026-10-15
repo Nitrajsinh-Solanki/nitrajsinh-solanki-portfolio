@@ -173,14 +173,6 @@ export default async function ProjectDetailPage({
                 background: `linear-gradient(135deg, ${project.gradientFrom} 0%, ${project.gradientTo} 100%)`,
               }}
             >
-              {/* Dot grid */}
-              <div
-                className="absolute inset-0 opacity-25"
-                style={{
-                  backgroundImage: "none",
-                  backgroundSize: "24px 24px",
-                }}
-              />
               {/* Glow */}
               <div
                 className="absolute inset-0"
@@ -201,9 +193,9 @@ export default async function ProjectDetailPage({
                     borderColor: `${project.accentColor}18`,
                   }}
                 >
-                  <span className="w-3 h-3 rounded-full bg-[#FF5F56] opacity-80" />
-                  <span className="w-3 h-3 rounded-full bg-[#FEBC2E] opacity-80" />
-                  <span className="w-3 h-3 rounded-full bg-[#27C840] opacity-80" />
+                  <span className="w-3 h-3 rounded-full bg-[#C8C3BA] opacity-80" />
+                  <span className="w-3 h-3 rounded-full bg-[#C8C3BA] opacity-80" />
+                  <span className="w-3 h-3 rounded-full bg-[#C8C3BA] opacity-80" />
                   <div
                     className="ml-3 flex-1 h-5 rounded-md flex items-center px-2"
                     style={{ background: `${project.accentColor}10` }}

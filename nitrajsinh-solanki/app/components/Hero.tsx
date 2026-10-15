@@ -112,7 +112,7 @@ export default function Hero() {
               style={{ background: "linear-gradient(to right, #4F46E5, transparent)" }}
             />
 
-            {/* Typing roles */}
+            {/* Role label */}
             <div className="mb-5 h-7 flex items-center">
               <span
                 className="font-mono text-[13px] tracking-wide"
@@ -214,12 +214,6 @@ export default function Hero() {
                   className="object-cover"
                   style={{ objectPosition: "center 12%" }}
                   priority
-                />
-                {/* Overlay gradient at bottom */}
-                <div
-                  className="absolute inset-x-0 bottom-0 h-1/3"
-                  style={{ background: "linear-gradient(to top, rgba(248,247,243,0.4), transparent)" }}
-                  aria-hidden="true"
                 />
               </div>
             </div>

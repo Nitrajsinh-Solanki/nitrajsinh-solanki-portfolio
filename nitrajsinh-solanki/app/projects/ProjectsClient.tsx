@@ -83,14 +83,6 @@ function ProjectCard({ project }: { project: Project }) {
           background: `linear-gradient(135deg, ${project.gradientFrom} 0%, ${project.gradientTo} 100%)`,
         }}
       >
-        {/* Dot grid */}
-        <div
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage: "none",
-            backgroundSize: "20px 20px",
-          }}
-        />
         {/* Glow */}
         <div
           className="absolute inset-0"
@@ -100,9 +92,9 @@ function ProjectCard({ project }: { project: Project }) {
         />
         {/* Browser chrome */}
         <div className="absolute top-3 left-4 flex items-center gap-[5px] z-10">
-          <span className="w-2 h-2 rounded-full bg-[#FF5F56] opacity-70" />
-          <span className="w-2 h-2 rounded-full bg-[#FEBC2E] opacity-70" />
-          <span className="w-2 h-2 rounded-full bg-[#27C840] opacity-70" />
+          <span className="w-2 h-2 rounded-full bg-[#C8C3BA] opacity-70" />
+          <span className="w-2 h-2 rounded-full bg-[#C8C3BA] opacity-70" />
+          <span className="w-2 h-2 rounded-full bg-[#C8C3BA] opacity-70" />
         </div>
 
         {/* Accent top border */}
@@ -313,16 +305,6 @@ export default function ProjectsClient() {
                 filter: "blur(50px)",
               }}
             />
-            {/* Dot grid overlay */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 opacity-40"
-              style={{
-                backgroundImage: "none",
-                backgroundSize: "28px 28px",
-              }}
-            />
-
             <div className="relative z-10 max-w-6xl mx-auto">
 
               {/* ── Top label ── */}
