@@ -41,11 +41,11 @@ export async function generateMetadata({
 //  BADGE COLOR MAP
 // ─────────────────────────────────────────────
 const BADGE_STYLES: Record<string, string> = {
-  teal:   "bg-teal-400/10 text-teal-300 border border-teal-400/20",
-  amber:  "bg-amber-400/10 text-amber-300 border border-amber-400/20",
-  violet: "bg-violet-400/10 text-violet-300 border border-violet-400/20",
-  orange: "bg-orange-400/10 text-orange-300 border border-orange-400/20",
-  blue:   "bg-blue-400/10 text-blue-300 border border-blue-400/20",
+  teal: "bg-indigo-50 text-indigo-700 border border-indigo-200",
+  amber: "bg-indigo-50 text-indigo-700 border border-indigo-200",
+  violet: "bg-indigo-50 text-indigo-700 border border-indigo-200",
+  orange: "bg-indigo-50 text-indigo-700 border border-indigo-200",
+  blue: "bg-indigo-50 text-indigo-700 border border-indigo-200",
 };
 
 // ─────────────────────────────────────────────
@@ -130,22 +130,22 @@ export default async function ProjectDetailPage({
         { name: project.title, path },
       ])} />
 
-      <div className="flex flex-col min-h-screen bg-[#070B14]">
+      <div className="flex flex-col min-h-screen bg-[#F8F7F3]">
 
         {/* ── Navbar ── */}
-        <nav className="fixed top-0 inset-x-0 z-50 bg-[#070B14]/92 backdrop-blur-xl border-b border-[#131C2E]">
+        <nav className="fixed top-0 inset-x-0 z-50 bg-[#F8F7F3]/92 backdrop-blur-xl border-b border-[#E3E0D8]">
           <div className="max-w-6xl mx-auto h-16 flex items-center justify-between px-6 md:px-10">
             <Link
               href="/"
               style={{ fontFamily: "var(--syne-var)" }}
-              className="font-extrabold text-xl tracking-tight text-[#E2DDD5] select-none"
+              className="font-extrabold text-xl tracking-tight text-[#17191D] select-none"
             >
-              NS<span className="text-teal-300">.</span>
+              NS<span className="text-indigo-600">.</span>
             </Link>
             <div className="flex items-center gap-4">
               <Link
                 href="/projects"
-                className="inline-flex items-center gap-2 font-mono text-[11px] text-[#A5B0C0] hover:text-teal-300 tracking-[0.07em] uppercase transition-colors"
+                className="inline-flex items-center gap-2 font-mono text-[11px] text-[#555963] hover:text-indigo-600 tracking-[0.07em] uppercase transition-colors"
               >
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -154,7 +154,7 @@ export default async function ProjectDetailPage({
               </Link>
               <a
                 href="mailto:nrsolanki2005@gmail.com"
-                className="hidden sm:inline-block font-mono text-[11px] text-teal-300 border border-teal-300/60 px-4 py-2 rounded hover:bg-teal-300 hover:text-[#070B14] transition-all duration-200 tracking-widest"
+                className="hidden sm:inline-block font-mono text-[11px] text-indigo-600 border border-indigo-600/60 px-4 py-2 rounded hover:bg-indigo-600 hover:text-white transition-all duration-200 tracking-widest"
               >
                 Hire Me
               </a>
@@ -177,7 +177,7 @@ export default async function ProjectDetailPage({
               <div
                 className="absolute inset-0 opacity-25"
                 style={{
-                  backgroundImage: "radial-gradient(circle, #1A2B42 1px, transparent 1px)",
+                  backgroundImage: "none",
                   backgroundSize: "24px 24px",
                 }}
               />
@@ -243,7 +243,7 @@ export default async function ProjectDetailPage({
             </div>
 
             {/* Project number badge */}
-            <div className="absolute top-4 left-6 font-mono text-[10px] text-[#94A3B8] tracking-widest">
+            <div className="absolute top-4 left-6 font-mono text-[10px] text-[#737780] tracking-widest">
               {String(project.id).padStart(2, "0")} / {String(PROJECTS.length).padStart(2, "0")}
             </div>
           </section>
@@ -252,7 +252,7 @@ export default async function ProjectDetailPage({
             <div className="max-w-5xl mx-auto px-6 md:px-10 pt-8">
               <Image src={project.image} alt={project.title + " screenshot"} width={1200} height={630}
                 sizes="(max-width: 1024px) 100vw, 66vw"
-                className="rounded-xl border border-[#131C2E] w-full h-auto" priority />
+                className="rounded-xl border border-[#E3E0D8] w-full h-auto" priority />
             </div>
           )}
 
@@ -271,7 +271,7 @@ export default async function ProjectDetailPage({
                     {project.badge}
                   </span>
                   <h1
-                    className="text-[#E2DDD5] leading-tight mb-4"
+                    className="text-[#17191D] leading-tight mb-4"
                     style={{
                       fontFamily: "var(--syne-var)",
                       fontWeight: 800,
@@ -280,15 +280,15 @@ export default async function ProjectDetailPage({
                   >
                     {project.title}
                   </h1>
-                  <p className="text-[15px] text-[#A5B0C0] leading-[1.8]">
+                  <p className="text-[15px] text-[#555963] leading-[1.8]">
                     {project.longDescription}
                   </p>
 
                   {/* Team note */}
                   {project.teamNote && (
-                    <div className="mt-5 flex items-start gap-3 bg-[#080D18] border border-[#131C2E] rounded-lg px-4 py-3">
-                      <span className="text-teal-300 mt-0.5 shrink-0" aria-hidden="true">👥</span>
-                      <p className="font-mono text-[11px] text-[#A5B0C0] leading-[1.7]">
+                    <div className="mt-5 flex items-start gap-3 bg-[#FFFFFF] border border-[#E3E0D8] rounded-lg px-4 py-3">
+                      <span className="text-indigo-600 mt-0.5 shrink-0" aria-hidden="true">👥</span>
+                      <p className="font-mono text-[11px] text-[#555963] leading-[1.7]">
                         {project.teamNote}
                       </p>
                     </div>
@@ -299,7 +299,7 @@ export default async function ProjectDetailPage({
                 <section aria-labelledby="case-study-heading">
                   <h2
                     id="case-study-heading"
-                    className="text-[13px] font-bold text-[#E2DDD5] tracking-[0.08em] uppercase mb-5"
+                    className="text-[13px] font-bold text-[#17191D] tracking-[0.08em] uppercase mb-5"
                     style={{ fontFamily: "var(--syne-var)" }}
                   >
                     Engineering Case Study
@@ -313,12 +313,12 @@ export default async function ProjectDetailPage({
                     ]).map(({ label, value }) => (
                       <div
                         key={label}
-                        className="rounded-xl border border-[#131C2E] bg-[#080D18] p-4"
+                        className="rounded-xl border border-[#E3E0D8] bg-[#FFFFFF] p-4"
                       >
-                        <dt className="font-mono text-[10px] text-teal-300 uppercase tracking-[0.12em] mb-2">
+                        <dt className="font-mono text-[10px] text-indigo-600 uppercase tracking-[0.12em] mb-2">
                           {label}
                         </dt>
-                        <dd className="text-[13px] text-[#A5B0C0] leading-[1.75]">
+                        <dd className="text-[13px] text-[#555963] leading-[1.75]">
                           {value}
                         </dd>
                       </div>
@@ -329,7 +329,7 @@ export default async function ProjectDetailPage({
                 {/* Features */}
                 <div>
                   <h2
-                    className="text-[13px] font-bold text-[#E2DDD5] tracking-[0.08em] uppercase mb-5"
+                    className="text-[13px] font-bold text-[#17191D] tracking-[0.08em] uppercase mb-5"
                     style={{ fontFamily: "var(--syne-var)" }}
                   >
                     Key Features
@@ -342,7 +342,7 @@ export default async function ProjectDetailPage({
                           style={{ background: project.accentColor }}
                           aria-hidden="true"
                         />
-                        <span className="text-[14px] text-[#A5B0C0] leading-[1.7]">{feature}</span>
+                        <span className="text-[14px] text-[#555963] leading-[1.7]">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -351,7 +351,7 @@ export default async function ProjectDetailPage({
                 {/* Tech Stack */}
                 <div>
                   <h2
-                    className="text-[13px] font-bold text-[#E2DDD5] tracking-[0.08em] uppercase mb-5"
+                    className="text-[13px] font-bold text-[#17191D] tracking-[0.08em] uppercase mb-5"
                     style={{ fontFamily: "var(--syne-var)" }}
                   >
                     Tech Stack
@@ -378,9 +378,9 @@ export default async function ProjectDetailPage({
               <div className="flex flex-col gap-6">
 
                 {/* Links */}
-                <div className="bg-[#080D18] border border-[#131C2E] rounded-xl p-5">
+                <div className="bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl p-5">
                   <h2
-                    className="text-[11px] font-bold text-[#E2DDD5] tracking-[0.1em] uppercase mb-4"
+                    className="text-[11px] font-bold text-[#17191D] tracking-[0.1em] uppercase mb-4"
                     style={{ fontFamily: "var(--syne-var)" }}
                   >
                     Links
@@ -392,9 +392,9 @@ export default async function ProjectDetailPage({
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-[13px] text-[#A5B0C0] hover:text-teal-300 transition-colors group py-1"
+                        className="flex items-center gap-3 text-[13px] text-[#555963] hover:text-indigo-600 transition-colors group py-1"
                       >
-                        <span className="text-[#94A3B8] group-hover:text-teal-300 transition-colors">
+                        <span className="text-[#737780] group-hover:text-indigo-600 transition-colors">
                           {link.icon === "github"   && <GithubIcon />}
                           {link.icon === "live"     && <ExternalIcon />}
                           {link.icon === "demo"     && <PlayIcon />}
@@ -408,29 +408,29 @@ export default async function ProjectDetailPage({
 
                 {/* Award info */}
                 {project.award && (
-                  <div className="bg-[#080D18] border border-[#131C2E] rounded-xl p-5">
+                  <div className="bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl p-5">
                     <h2
-                      className="text-[11px] font-bold text-[#E2DDD5] tracking-[0.1em] uppercase mb-4"
+                      className="text-[11px] font-bold text-[#17191D] tracking-[0.1em] uppercase mb-4"
                       style={{ fontFamily: "var(--syne-var)" }}
                     >
                       Award
                     </h2>
                     <div className="flex flex-col gap-3">
                       <div>
-                        <span className="font-mono text-[10px] text-[#94A3B8] uppercase tracking-wide">Prize</span>
-                        <p className="text-[13px] text-teal-300 font-bold mt-0.5" style={{ fontFamily: "var(--syne-var)" }}>
+                        <span className="font-mono text-[10px] text-[#737780] uppercase tracking-wide">Prize</span>
+                        <p className="text-[13px] text-indigo-600 font-bold mt-0.5" style={{ fontFamily: "var(--syne-var)" }}>
                           {project.award.prize}
                         </p>
                       </div>
                       {project.award.place && (
                         <div>
-                          <span className="font-mono text-[10px] text-[#94A3B8] uppercase tracking-wide">Placement</span>
-                          <p className="text-[13px] text-[#C8C3BA] mt-0.5">{project.award.place}</p>
+                          <span className="font-mono text-[10px] text-[#737780] uppercase tracking-wide">Placement</span>
+                          <p className="text-[13px] text-[#555963] mt-0.5">{project.award.place}</p>
                         </div>
                       )}
                       <div>
-                        <span className="font-mono text-[10px] text-[#94A3B8] uppercase tracking-wide">Event</span>
-                        <p className="text-[13px] text-[#C8C3BA] mt-0.5">{project.award.event}</p>
+                        <span className="font-mono text-[10px] text-[#737780] uppercase tracking-wide">Event</span>
+                        <p className="text-[13px] text-[#555963] mt-0.5">{project.award.event}</p>
                       </div>
                     </div>
                   </div>
@@ -438,30 +438,30 @@ export default async function ProjectDetailPage({
 
                 {/* Client info */}
                 {project.client && (
-                  <div className="bg-[#080D18] border border-[#131C2E] rounded-xl p-5">
+                  <div className="bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl p-5">
                     <h2
-                      className="text-[11px] font-bold text-[#E2DDD5] tracking-[0.1em] uppercase mb-4"
+                      className="text-[11px] font-bold text-[#17191D] tracking-[0.1em] uppercase mb-4"
                       style={{ fontFamily: "var(--syne-var)" }}
                     >
                       Client
                     </h2>
                     <div className="flex flex-col gap-3">
                       <div>
-                        <span className="font-mono text-[10px] text-[#94A3B8] uppercase tracking-wide">Business</span>
-                        <p className="text-[13px] text-[#C8C3BA] mt-0.5">{project.client.name}</p>
+                        <span className="font-mono text-[10px] text-[#737780] uppercase tracking-wide">Business</span>
+                        <p className="text-[13px] text-[#555963] mt-0.5">{project.client.name}</p>
                       </div>
                       <div>
-                        <span className="font-mono text-[10px] text-[#94A3B8] uppercase tracking-wide">Location</span>
-                        <p className="text-[13px] text-[#C8C3BA] mt-0.5">{project.client.location}</p>
+                        <span className="font-mono text-[10px] text-[#737780] uppercase tracking-wide">Location</span>
+                        <p className="text-[13px] text-[#555963] mt-0.5">{project.client.location}</p>
                       </div>
                     </div>
                   </div>
                 )}
 
                 {/* Category tag */}
-                <div className="bg-[#080D18] border border-[#131C2E] rounded-xl p-5">
+                <div className="bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl p-5">
                   <h2
-                    className="text-[11px] font-bold text-[#E2DDD5] tracking-[0.1em] uppercase mb-3"
+                    className="text-[11px] font-bold text-[#17191D] tracking-[0.1em] uppercase mb-3"
                     style={{ fontFamily: "var(--syne-var)" }}
                   >
                     Type
@@ -476,18 +476,18 @@ export default async function ProjectDetailPage({
             </div>
 
             {/* ── Prev / Next navigation ── */}
-            <div className="mt-16 pt-8 border-t border-[#0F1620] grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="mt-16 pt-8 border-t border-[#E3E0D8] grid grid-cols-1 sm:grid-cols-2 gap-4">
               {prevProject ? (
                 <Link
                   href={`/projects/${prevProject.slug}`}
-                  className="group flex items-center gap-4 bg-[#080D18] border border-[#131C2E] rounded-xl p-5 hover:border-[#1F3050] transition-all duration-200"
+                  className="group flex items-center gap-4 bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl p-5 hover:border-[#4F46E5] transition-all duration-200"
                 >
-                  <svg className="w-4 h-4 text-[#94A3B8] group-hover:text-teal-300 transition-colors shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                  <svg className="w-4 h-4 text-[#737780] group-hover:text-indigo-600 transition-colors shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                   </svg>
                   <div className="flex flex-col min-w-0">
-                    <span className="font-mono text-[9px] text-[#94A3B8] uppercase tracking-widest mb-0.5">Previous</span>
-                    <span className="text-[13px] text-[#9A9585] group-hover:text-[#E2DDD5] transition-colors truncate" style={{ fontFamily: "var(--syne-var)" }}>
+                    <span className="font-mono text-[9px] text-[#737780] uppercase tracking-widest mb-0.5">Previous</span>
+                    <span className="text-[13px] text-[#737780] group-hover:text-[#17191D] transition-colors truncate" style={{ fontFamily: "var(--syne-var)" }}>
                       {prevProject.shortTitle}
                     </span>
                   </div>
@@ -497,15 +497,15 @@ export default async function ProjectDetailPage({
               {nextProject ? (
                 <Link
                   href={`/projects/${nextProject.slug}`}
-                  className="group flex items-center justify-end gap-4 bg-[#080D18] border border-[#131C2E] rounded-xl p-5 hover:border-[#1F3050] transition-all duration-200 text-right"
+                  className="group flex items-center justify-end gap-4 bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl p-5 hover:border-[#4F46E5] transition-all duration-200 text-right"
                 >
                   <div className="flex flex-col min-w-0">
-                    <span className="font-mono text-[9px] text-[#94A3B8] uppercase tracking-widest mb-0.5">Next</span>
-                    <span className="text-[13px] text-[#9A9585] group-hover:text-[#E2DDD5] transition-colors truncate" style={{ fontFamily: "var(--syne-var)" }}>
+                    <span className="font-mono text-[9px] text-[#737780] uppercase tracking-widest mb-0.5">Next</span>
+                    <span className="text-[13px] text-[#737780] group-hover:text-[#17191D] transition-colors truncate" style={{ fontFamily: "var(--syne-var)" }}>
                       {nextProject.shortTitle}
                     </span>
                   </div>
-                  <svg className="w-4 h-4 text-[#94A3B8] group-hover:text-teal-300 transition-colors shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                  <svg className="w-4 h-4 text-[#737780] group-hover:text-indigo-600 transition-colors shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
@@ -515,8 +515,8 @@ export default async function ProjectDetailPage({
         </main>
 
         {/* ── Footer ── */}
-        <footer className="border-t border-[#111A28] px-8 md:px-12 py-7 flex flex-col sm:flex-row items-center justify-between gap-4 flex-wrap">
-          <span className="font-mono text-[11px] text-[#94A3B8] tracking-widest">
+        <footer className="border-t border-[#E3E0D8] px-8 md:px-12 py-7 flex flex-col sm:flex-row items-center justify-between gap-4 flex-wrap">
+          <span className="font-mono text-[11px] text-[#737780] tracking-widest">
             © {new Date().getFullYear()} Nitrajsinh Solanki
           </span>
           <div className="flex items-center gap-6 flex-wrap">
@@ -532,7 +532,7 @@ export default async function ProjectDetailPage({
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="font-mono text-[11.5px] text-[#A5B0C0] hover:text-teal-300 transition-colors duration-200 tracking-wide"
+                className="font-mono text-[11.5px] text-[#555963] hover:text-indigo-600 transition-colors duration-200 tracking-wide"
               >
                 {label}
               </a>
