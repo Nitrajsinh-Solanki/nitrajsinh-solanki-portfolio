@@ -243,7 +243,7 @@ export default async function ProjectDetailPage({
             </div>
 
             {/* Project number badge */}
-            <div className="absolute top-4 left-6 font-mono text-[10px] text-[#2A3A4A] tracking-widest">
+            <div className="absolute top-4 left-6 font-mono text-[10px] text-[#94A3B8] tracking-widest">
               {String(project.id).padStart(2, "0")} / {String(PROJECTS.length).padStart(2, "0")}
             </div>
           </section>
@@ -288,7 +288,7 @@ export default async function ProjectDetailPage({
                   {project.teamNote && (
                     <div className="mt-5 flex items-start gap-3 bg-[#080D18] border border-[#131C2E] rounded-lg px-4 py-3">
                       <span className="text-teal-300 mt-0.5 shrink-0" aria-hidden="true">👥</span>
-                      <p className="font-mono text-[11px] text-[#5A5A60] leading-[1.7]">
+                      <p className="font-mono text-[11px] text-[#A5B0C0] leading-[1.7]">
                         {project.teamNote}
                       </p>
                     </div>
