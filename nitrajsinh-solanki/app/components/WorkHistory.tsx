@@ -323,7 +323,7 @@ export default function WorkHistory() {
                     >
                       {TYPE_LABEL[entry.type]}
                     </span>
-                    <span className="font-mono text-[9.5px] text-[#4A5060] border border-[#131C2E] bg-[#080D18] px-2.5 py-1 rounded-full">
+                    <span className="font-mono text-[9.5px] text-[#A5B0C0] border border-[#131C2E] bg-[#080D18] px-2.5 py-1 rounded-full">
                       {entry.period}
                     </span>
                   </div>
@@ -370,7 +370,7 @@ export default function WorkHistory() {
                   >
                     {entry.achievements.map((a) => (
                       <div key={a.label} className="flex flex-col gap-0.5">
-                        <span className="font-mono text-[9px] text-[#3A4050] uppercase tracking-wider">
+                        <span className="font-mono text-[9px] text-[#94A3B8] uppercase tracking-wider">
                           {a.label}
                         </span>
                         <span
@@ -421,7 +421,7 @@ export default function WorkHistory() {
               key={label}
               className="bg-[#0B1623] border border-[#131C2E] rounded-xl px-4 py-3.5 hover:border-teal-300/20 transition-colors duration-300"
             >
-              <p className="font-mono text-[9px] text-[#3A4050] uppercase tracking-wider mb-1">{label}</p>
+              <p className="font-mono text-[9px] text-[#94A3B8] uppercase tracking-wider mb-1">{label}</p>
               <p
                 className="font-mono text-[11.5px] text-teal-300 font-medium leading-snug"
                 style={{ fontFamily: "var(--syne-var)" }}
