@@ -475,10 +475,4 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-export const STATS = {
-  total: PROJECTS.length,
-  hackathon: PROJECTS.filter((project) => project.category === "hackathon").length,
-  client: PROJECTS.filter((project) => project.category === "client").length,
-  personal: PROJECTS.filter((project) => project.category === "personal").length,
-  live: PROJECTS.filter((project) => project.links.some((link) => link.icon === "live")).length,
-};
+export { STATS } from "./stats";
