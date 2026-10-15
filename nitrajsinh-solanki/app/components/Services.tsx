@@ -294,7 +294,7 @@ function ServiceCard({
         <div className="flex flex-col gap-2">
           {service.projects.map((project) => (
             <div key={project.name} className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 sm:gap-2 min-w-0">
-              <span className="text-[12.5px] leading-none" style={{ color: "#555963" }}>
+              <span className="min-w-0 break-words text-[12.5px] leading-snug" style={{ color: "#555963" }}>
                 {project.name}
               </span>
               <span
