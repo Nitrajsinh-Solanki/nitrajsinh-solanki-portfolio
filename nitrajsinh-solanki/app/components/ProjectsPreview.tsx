@@ -268,7 +268,7 @@ function FeaturedCard({ project }: { project: PreviewProject }) {
         </h3>
 
         {/* Description */}
-        <p className="text-[14px] text-[#555963] leading-[1.7] mb-5 flex-1">
+        <p className="min-w-0 break-words text-[14px] text-[#555963] leading-[1.7] mb-5 flex-1">
           {project.description}
         </p>
 
