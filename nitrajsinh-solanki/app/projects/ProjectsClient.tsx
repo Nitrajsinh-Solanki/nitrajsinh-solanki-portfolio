@@ -261,7 +261,7 @@ export default function ProjectsClient() {
 
         {/* ── Navbar ── */}
         <nav className="fixed top-0 inset-x-0 z-50 bg-[#F8F7F3]/92 backdrop-blur-xl border-b border-[#E3E0D8]">
-          <div className="max-w-6xl mx-auto h-16 flex items-center justify-between px-6 md:px-10">
+          <div className="max-w-6xl mx-auto h-16 flex items-center justify-between gap-3 px-4 sm:px-6 md:px-10">
             <Link
               href="/"
               style={{ fontFamily: "var(--syne-var)" }}
@@ -293,7 +293,7 @@ export default function ProjectsClient() {
 
           {/* ── Page Header ── */}
           <section
-            className="relative px-6 md:px-10 pt-14 pb-10 overflow-hidden"
+            className="relative px-4 sm:px-6 md:px-10 pt-12 sm:pt-14 pb-10 overflow-hidden"
             aria-labelledby="projects-heading"
           >
             <div className="relative z-10 max-w-6xl mx-auto">
@@ -339,7 +339,7 @@ export default function ProjectsClient() {
                 </div>
 
                 {/* ── Stats panel ── */}
-                <div className="flex items-stretch gap-3 shrink-0">
+                <div className="grid w-full grid-cols-2 gap-3 sm:grid-cols-4 lg:flex lg:w-auto lg:shrink-0">
                   {[
                     { value: `${PROJECTS.length}`, label: "Total",     color: "#4F46E5" },
                     { value: `${hackathonCount}`,  label: "Hackathon", color: "#4F46E5" },
@@ -348,7 +348,7 @@ export default function ProjectsClient() {
                   ].map(({ value, label, color }) => (
                     <div
                       key={label}
-                      className="flex flex-col items-center justify-center px-4 py-3 rounded-xl border border-[#E3E0D8] bg-[#FFFFFF] min-w-[60px]"
+                      className="flex min-w-0 flex-col items-center justify-center px-2 sm:px-4 py-3 rounded-xl border border-[#E3E0D8] bg-[#FFFFFF] lg:min-w-[60px]"
                       style={{ borderTop: `2px solid ${color}25` }}
                     >
                       <span
@@ -407,13 +407,13 @@ export default function ProjectsClient() {
           </section>
 
           {/* ── Divider ── */}
-          <div className="max-w-6xl mx-auto px-6 md:px-10">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-10">
             <div className="h-px bg-gradient-to-r from-transparent via-[#E3E0D8] to-transparent" />
           </div>
 
           {/* ── Projects Grid ── */}
           <section
-            className="px-6 md:px-10 pt-8 pb-20 max-w-6xl mx-auto"
+            className="px-4 sm:px-6 md:px-10 pt-8 pb-20 max-w-6xl mx-auto"
             aria-label="Projects list"
           >
             <div
