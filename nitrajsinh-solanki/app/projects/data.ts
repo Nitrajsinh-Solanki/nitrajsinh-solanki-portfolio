@@ -1,7 +1,7 @@
 // app/projects/data.ts
 
 export type BadgeColor = "teal" | "amber" | "violet" | "orange" | "blue";
-export type ProjectCategory = "hackathon" | "client";
+export type ProjectCategory = "hackathon" | "client" | "personal";
 
 export interface ProjectLink {
   label: string;
@@ -26,6 +26,7 @@ export interface Project {
   gradientTo: string;
   accentColor: string;
   iconPath: string;
+  image?: string;
   award?: {
     prize: string;
     place?: string;
@@ -374,8 +375,8 @@ export const PROJECTS: Project[] = [
     slug: "hourbit",
     title: "HourBit — All-in-One Productivity Suite",
     shortTitle: "HourBit",
-    category: "client",
-    badge: "🌐 Live · hourbit-web.vercel.app",
+    category: "personal",
+    badge: "🌐 Live · Personal Project",
     badgeColor: "teal",
     description:
       "Free all-in-one productivity web app for employees — Work Hours Tracker with live leave prediction, Brain Quiz, Personal Diary, Typing Speed Test, and Expense Tracker. 5 tools in one secure app.",
@@ -399,6 +400,13 @@ export const PROJECTS: Project[] = [
     gradientTo: "#052820",
     accentColor: "#2DD4BF",
     iconPath: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
-    client: { name: "HourBit", location: "Personal / Solo Project" },
   },
 ];
+
+export const STATS = {
+  total: PROJECTS.length,
+  hackathon: PROJECTS.filter((project) => project.category === "hackathon").length,
+  client: PROJECTS.filter((project) => project.category === "client").length,
+  personal: PROJECTS.filter((project) => project.category === "personal").length,
+  live: PROJECTS.filter((project) => project.links.some((link) => link.icon === "live")).length,
+};
