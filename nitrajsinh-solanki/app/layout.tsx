@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Syne, DM_Mono, DM_Sans } from "next/font/google";
 import "./globals.css";
+import { SITE_URL, SITE_NAME, LOCALE_BCP47, LOCALE_OG, SOCIAL, abs } from "@/lib/site";
 
 const syne = Syne({
   variable: "--syne-var",
@@ -19,10 +20,61 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  themeColor: "#070B14",
+  colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
-  title: "Nitrajsinh Solanki — Full-Stack Developer",
-  description:
-    "Software Engineer Intern at VeloxCore. MERN Stack & Full-Stack Developer based in Gujarat, India.",
+  metadataBase: new URL(SITE_URL),
+  applicationName: SITE_NAME,
+  title: {
+    default: SITE_NAME + " | Full-Stack Developer in Gujarat, India",
+    template: "%s | " + SITE_NAME,
+  },
+  description: "Nitrajsinh Solanki — full-stack developer in Gujarat, India. Next.js, React, .NET, Angular, Flutter. Hackathon prize winner with live client projects.",
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  category: "technology",
+  formatDetection: { email: false, address: false, telephone: false },
+  openGraph: {
+    type: "profile",
+    firstName: "Nitrajsinh",
+    lastName: "Solanki",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: LOCALE_OG,
+    title: SITE_NAME + " | Full-Stack Developer in Gujarat, India",
+    description: "Full-stack developer in Gujarat, India: Next.js, React, .NET, Angular, Flutter.",
+    images: [{ url: abs("/opengraph-image"), width: 1200, height: 630, alt: SITE_NAME + ", full-stack developer" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: SOCIAL.xHandle,
+    title: SITE_NAME + " | Full-Stack Developer",
+    description: "Full-stack developer in Gujarat, India.",
+    images: [abs("/opengraph-image")],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
+    other: process.env.BING_SITE_VERIFICATION
+      ? { "msvalidate.01": process.env.BING_SITE_VERIFICATION }
+      : undefined,
+  },
 };
 
 export default function RootLayout({
@@ -32,7 +84,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
+      lang={LOCALE_BCP47}
       className={`${syne.variable} ${dmMono.variable} ${dmSans.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-[#070B14] text-[#E2DDD5] antialiased">

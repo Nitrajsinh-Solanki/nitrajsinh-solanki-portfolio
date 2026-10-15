@@ -3,18 +3,23 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { PROJECTS as SOURCE } from "./data";
+import JsonLd from "../components/JsonLd";
+import { abs, SOCIAL } from "@/lib/site";
+import { breadcrumb } from "@/lib/schema";
+import { profile } from "@/lib/profile";
 
 // ──────────────────────────────────────────────
 //  TYPES
 // ──────────────────────────────────────────────
-export type ProjectCategory = "all" | "hackathon" | "client";
+export type ProjectCategory = "all" | "hackathon" | "client" | "personal";
 
 export interface Project {
   id: string;
   slug: string;
   title: string;
   shortTitle: string;
-  category: "hackathon" | "client";
+  category: "hackathon" | "client" | "personal";
   badge: string;
   badgeColor: "teal" | "amber" | "violet" | "orange" | "blue";
   description: string;
@@ -31,213 +36,24 @@ export interface Project {
 // ──────────────────────────────────────────────
 //  PROJECT DATA
 // ──────────────────────────────────────────────
-const PROJECTS: Project[] = [
-  {
-    id: "1",
-    slug: "library-inventory-system",
-    title: "Library & Book Store Inventory System",
-    shortTitle: "Library Inventory System",
-    category: "hackathon",
-    badge: "🏆 $90 · 3rd Place",
-    badgeColor: "teal",
-    description:
-      "Full-featured library management system with three user roles — Admin, Librarian, User. Handles book lifecycle, borrowing, fines, AI-powered descriptions, and email notifications.",
-    tech: ["Next.js", "MongoDB", "Supabase", "Gemini AI", "NextAuth", "TypeScript"],
-    github: "https://github.com/Nitrajsinh-Solanki/library-inventory-system",
-    demo: "https://youtu.be/_1GYteabksM?feature=shared",
-    gradientFrom: "#0A2540",
-    gradientTo: "#0F3D2E",
-    accentColor: "#5EEAD4",
-    iconPath:
-      "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
-  },
-  {
-    id: "2",
-    slug: "biomap",
-    title: "BioMap — Scientific Explorer Platform",
-    shortTitle: "BioMap",
-    category: "hackathon",
-    badge: "🏆 $70 · 4th Place",
-    badgeColor: "teal",
-    description:
-      "Scientific web app unifying biodiversity maps, chemistry data, NASA space media, environmental monitoring, and educational resources — powered by 6 major public APIs.",
-    tech: ["Next.js 14", "TypeScript", "MongoDB", "Leaflet", "GBIF API", "NASA API"],
-    github: "https://github.com/Nitrajsinh-Solanki/biomap",
-    live: "https://biomap-nitrajsinh-solankis-projects.vercel.app",
-    demo: "https://youtu.be/df_NNqL2DzA?feature=shared",
-    gradientFrom: "#051A10",
-    gradientTo: "#0A1A30",
-    accentColor: "#34D399",
-    iconPath:
-      "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
-  },
-  {
-    id: "3",
-    slug: "nft-marketplace-aptos",
-    title: "NFT Marketplace on Aptos Blockchain",
-    shortTitle: "Aptos NFT Marketplace",
-    category: "hackathon",
-    badge: "💰 $60 Bounty",
-    badgeColor: "violet",
-    description:
-      "Feature-rich NFT marketplace powered by Aptos Move smart contracts. Supports auctions, royalties, offers, batch transfers, APT token payments, and a creator tipping system.",
-    tech: ["Aptos Blockchain", "Move", "React", "Petra Wallet", "Web3"],
-    github: "https://github.com/Nitrajsinh-Solanki/aptos4-bounty-nft",
-    demo: "https://youtu.be/ktyZZIuZpNY?feature=shared",
-    gradientFrom: "#120A30",
-    gradientTo: "#1A0A20",
-    accentColor: "#A78BFA",
-    iconPath:
-      "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z",
-  },
-  {
-    id: "4",
-    slug: "moodify",
-    title: "Moodify — AI Music Streaming App",
-    shortTitle: "Moodify",
-    category: "hackathon",
-    badge: "🎖 $20 Merit Prize",
-    badgeColor: "amber",
-    description:
-      "AI-powered music platform that recommends and streams music based on location, weather, and behaviour. Streams from Jamendo, Deezer, and Audius via Gemini AI recommendations.",
-    tech: ["Next.js 15", "Gemini AI", "Cloudinary", "MongoDB", "OpenWeather", "Jamendo API"],
-    github: "https://github.com/nitrajsinh-solanki/hackathon_may_stackup",
-    demo: "https://youtu.be/MAW5gd2lZxM?feature=shared",
-    gradientFrom: "#1A0A20",
-    gradientTo: "#200A0A",
-    accentColor: "#F472B6",
-    iconPath:
-      "M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3",
-  },
-  {
-    id: "5",
-    slug: "math-genius-ai",
-    title: "Math Genius AI — Learning Platform",
-    shortTitle: "Math Genius AI",
-    category: "hackathon",
-    badge: "🎖 $10 Merit Prize",
-    badgeColor: "blue",
-    description:
-      "AI-powered math education platform with adaptive quizzes, handwriting recognition, conversational AI tutor, performance tracking, and PDF report generation.",
-    tech: ["Next.js", "Gemini AI", "MongoDB", "Canvas API", "jsPDF", "TypeScript"],
-    github: "https://github.com/Nitrajsinh-Solanki/hackathon-feb",
-    demo: "https://youtu.be/_UfK5yp_wGk?feature=shared",
-    gradientFrom: "#0A1530",
-    gradientTo: "#051020",
-    accentColor: "#60A5FA",
-    iconPath:
-      "M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z",
-  },
-  {
-    id: "6",
-    slug: "meeting-insights-generator",
-    title: "Meeting Insights Generator",
-    shortTitle: "Meeting Insights",
-    category: "hackathon",
-    badge: "🤖 Hackathon Submission",
-    badgeColor: "amber",
-    description:
-      "Multimodal AI app that transcribes meeting audio, summarizes with AI, retrieves visual highlights from Pexels, and converts summaries back to speech — full end-to-end pipeline.",
-    tech: ["React", "Node.js", "AssemblyAI", "HuggingFace", "Deepgram", "Cloudinary"],
-    github: "https://github.com/Nitrajsinh-Solanki/Meeting-Genius",
-    demo: "https://youtu.be/x_GMz0qJ9Zg",
-    gradientFrom: "#1A1000",
-    gradientTo: "#100A20",
-    accentColor: "#FBBF24",
-    iconPath:
-      "M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z",
-  },
-  {
-    id: "7",
-    slug: "rust-file-server",
-    title: "Rust Simple File Server",
-    shortTitle: "Rust File Server",
-    category: "hackathon",
-    badge: "⚡ Bounty Claimed",
-    badgeColor: "orange",
-    description:
-      "A basic HTTP file server built from scratch in Rust with no web framework dependency. Custom HTTP request/response parser over raw TCP streams. First to complete all objectives.",
-    tech: ["Rust", "Cargo", "TCP/HTTP", "Systems Programming"],
-    github: "https://github.com/Nitrajsinh-Solanki/simple-file-server",
-    gradientFrom: "#1A0A00",
-    gradientTo: "#100800",
-    accentColor: "#FB923C",
-    iconPath:
-      "M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01",
-  },
-  {
-    id: "8",
-    slug: "floris-restaurant",
-    title: "Floris Restaurant & Banquet Website",
-    shortTitle: "Floris Restaurant",
-    category: "client",
-    badge: "🌐 Live Client",
-    badgeColor: "orange",
-    description:
-      "Production website for a premium dining & banquet venue in Patan. Dark fire-branded SPA with animated navbar, menu section, gallery, and booking CTA.",
-    tech: ["React 19", "Vite", "Tailwind CSS", "Lucide React", "Vercel"],
-    github: "https://github.com/Nitrajsinh-Solanki/floris-restaurant",
-    live: "https://floris-restaurant.vercel.app",
-    gradientFrom: "#1A0500",
-    gradientTo: "#100800",
-    accentColor: "#F97316",
-    iconPath:
-      "M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z",
-  },
-  {
-    id: "9",
-    slug: "ice-saathi",
-    title: "Aman Sales — Ice Saathi Platform",
-    shortTitle: "Ice Saathi",
-    category: "client",
-    badge: "🌐 Live · icesaathi.co.in",
-    badgeColor: "blue",
-    description:
-      "End-to-end business management platform for a wholesale ice distributor. Manages customers, subscriptions, billing, deliveries, and serves as the complete backend for the companion Flutter app.",
-    tech: ["Next.js", "TypeScript", "MongoDB", "Firebase FCM", "Tailwind CSS"],
-    github: "https://github.com/Nitrajsinh-Solanki",
-    live: "https://www.icesaathi.co.in",
-    gradientFrom: "#040F20",
-    gradientTo: "#051530",
-    accentColor: "#38BDF8",
-    iconPath: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4",
-  },
-  {
-    id: "10",
-    slug: "ice-saathi-delivery-app",
-    title: "Aman Sales Delivery Partner App",
-    shortTitle: "Delivery Partner App",
-    category: "client",
-    badge: "📱 Production Flutter",
-    badgeColor: "blue",
-    description:
-      "Flutter mobile app for Aman Sales delivery partners. Features OTP login, live GPS tracking, order management, sticky notes, and FCM push notifications for new order assignments.",
-    tech: ["Flutter", "Dart", "Firebase FCM", "Provider", "Dio", "Background GPS"],
-    github: "https://github.com/Nitrajsinh-Solanki",
-    gradientFrom: "#041828",
-    gradientTo: "#030E1E",
-    accentColor: "#22D3EE",
-    iconPath: "M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z",
-  },
-  // ── NEW: HourBit ──────────────────────────────────────────────────────────
-  {
-    id: "11",
-    slug: "hourbit",
-    title: "HourBit — All-in-One Productivity Suite",
-    shortTitle: "HourBit",
-    category: "client",
-    badge: "🌐 Live · hourbit-web.vercel.app",
-    badgeColor: "teal",
-    description:
-      "Free all-in-one productivity web app for employees — Work Hours Tracker with live leave prediction, Brain Quiz, Personal Diary, Typing Speed Test, and Expense Tracker. 5 tools in one secure app.",
-    tech: ["Next.js 16", "TypeScript", "MongoDB", "Recharts", "JWT", "Tailwind CSS"],
-    live: "https://hourbit-web.vercel.app/dashboard/today",
-    gradientFrom: "#041A20",
-    gradientTo: "#052820",
-    accentColor: "#2DD4BF",
-    iconPath: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
-  },
-];
+const PROJECTS: Project[] = SOURCE.map((project) => ({
+  id: project.id,
+  slug: project.slug,
+  title: project.title,
+  shortTitle: project.shortTitle,
+  category: project.category,
+  badge: project.badge,
+  badgeColor: project.badgeColor,
+  description: project.description,
+  tech: project.tech,
+  github: project.links.find((link) => link.icon === "github")?.href,
+  live: project.links.find((link) => link.icon === "live")?.href,
+  demo: project.links.find((link) => link.icon === "demo")?.href,
+  gradientFrom: project.gradientFrom,
+  gradientTo: project.gradientTo,
+  accentColor: project.accentColor,
+  iconPath: project.iconPath,
+}));
 
 // ──────────────────────────────────────────────
 //  BADGE STYLES
@@ -426,28 +242,28 @@ export default function ProjectsClient() {
 
   const hackathonCount = PROJECTS.filter((p) => p.category === "hackathon").length;
   const clientCount    = PROJECTS.filter((p) => p.category === "client").length;
+  const personalCount  = PROJECTS.filter((p) => p.category === "personal").length;
 
   return (
     <>
       {/* JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            name: "Projects by Nitrajsinh Solanki",
-            description: "Portfolio of full-stack, blockchain, AI, and client projects",
-            numberOfItems: PROJECTS.length,
-            itemListElement: PROJECTS.map((p, i) => ({
-              "@type": "ListItem",
-              position: i + 1,
-              name: p.title,
-              url: `https://nitrajsinh-solanki.vercel.app/projects/${p.slug}`,
-            })),
-          }),
-        }}
-      />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "Projects by Nitrajsinh Solanki",
+        url: abs("/projects"),
+        mainEntity: {
+          "@type": "ItemList",
+          numberOfItems: PROJECTS.length,
+          itemListElement: PROJECTS.map((project, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: project.title,
+            url: abs("/projects/" + project.slug),
+          })),
+        },
+      }} />
+      <JsonLd data={breadcrumb([{ name: "Home", path: "/" }, { name: "Projects", path: "/projects" }])} />
 
       <div className="flex flex-col min-h-screen bg-[#070B14]">
 
@@ -590,6 +406,7 @@ export default function ProjectsClient() {
                     { key: "all",       label: "All Projects",       count: PROJECTS.length },
                     { key: "hackathon", label: "Hackathon & Bounty", count: hackathonCount },
                     { key: "client",    label: "Client Work",        count: clientCount },
+                    { key: "personal",  label: "Personal",            count: personalCount },
                   ] as const
                 ).map(({ key, label, count }) => (
                   <button
@@ -686,9 +503,11 @@ export default function ProjectsClient() {
           </span>
           <div className="flex items-center gap-5 flex-wrap">
             {[
-              { label: "GitHub",                  href: "https://github.com/Nitrajsinh-Solanki" },
-              { label: "Twitter",                 href: "https://twitter.com/Nitrajsinh2005" },
-              { label: "nrsolanki2005@gmail.com", href: "mailto:nrsolanki2005@gmail.com" },
+              { label: "GitHub", href: SOCIAL.github },
+              { label: "LinkedIn", href: SOCIAL.linkedin },
+              { label: "X", href: SOCIAL.x },
+              { label: "Medium", href: SOCIAL.medium },
+              { label: profile.email, href: "mailto:" + profile.email },
             ].map(({ label, href }) => (
               <a
                 key={label}

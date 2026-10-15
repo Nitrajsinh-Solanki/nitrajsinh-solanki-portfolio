@@ -2,11 +2,16 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import JsonLd from "../../components/JsonLd";
+import { pageMetadata } from "@/lib/seo";
+import { abs, SITE_URL, SITE_NAME, SOCIAL } from "@/lib/site";
+import { PERSON_ID, breadcrumb } from "@/lib/schema";
 import { notFound } from "next/navigation";
 import { PROJECTS } from "../data";
 
 // ─────────────────────────────────────────────
-//  STATIC PARAMS — pre-render all 10 pages
+//  STATIC PARAMS — pre-render all project pages
 // ─────────────────────────────────────────────
 export function generateStaticParams() {
   return PROJECTS.map((p) => ({ slug: p.slug }));
@@ -21,36 +26,15 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const project = PROJECTS.find((p) => p.slug === slug);
-  if (!project) return { title: "Project Not Found" };
-
-  return {
-    title: `${project.title} — Nitrajsinh Solanki`,
+  const project = PROJECTS.find((item) => item.slug === slug);
+  if (!project) return { title: "Project Not Found", robots: { index: false } };
+  const path = "/projects/" + project.slug;
+  return pageMetadata({
+    title: project.title,
     description: project.description,
-    keywords: [
-      project.title,
-      "Nitrajsinh Solanki",
-      ...project.tech,
-      "portfolio project",
-      "full-stack developer India",
-    ],
-    openGraph: {
-      title: `${project.title} — Nitrajsinh Solanki`,
-      description: project.description,
-      url: `https://nitrajsinh-solanki.vercel.app/projects/${project.slug}`,
-      siteName: "Nitrajsinh Solanki Portfolio",
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${project.title} — Nitrajsinh Solanki`,
-      description: project.description,
-      creator: "@Nitrajsinh2005",
-    },
-    alternates: {
-      canonical: `https://nitrajsinh-solanki.vercel.app/projects/${project.slug}`,
-    },
-  };
+    path,
+    image: path + "/opengraph-image",
+  });
 }
 
 // ─────────────────────────────────────────────
@@ -105,29 +89,46 @@ export default async function ProjectDetailPage({
   const projectIndex = PROJECTS.findIndex((p) => p.slug === slug);
   const prevProject  = projectIndex > 0 ? PROJECTS[projectIndex - 1] : null;
   const nextProject  = projectIndex < PROJECTS.length - 1 ? PROJECTS[projectIndex + 1] : null;
+  const path = "/projects/" + project.slug;
+  const live = project.links.find((link) => link.icon === "live")?.href;
+  const repoUrl = project.links.find((link) => link.icon === "github")?.href;
+  const author = { "@type": "Person", "@id": PERSON_ID, name: SITE_NAME, url: SITE_URL };
 
   return (
     <>
       {/* JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@graph": [
+          {
             "@type": "SoftwareApplication",
+            "@id": abs(path + "#app"),
             name: project.title,
             description: project.description,
-            author: {
-              "@type": "Person",
-              name: "Nitrajsinh Solanki",
-              url: "https://nitrajsinh-solanki.vercel.app",
-            },
+            url: live ?? abs(path),
+            mainEntityOfPage: abs(path),
+            image: project.image ? abs(project.image) : undefined,
             applicationCategory: project.category === "client" ? "BusinessApplication" : "WebApplication",
-            url: project.links.find((l) => l.icon === "live")?.href,
-            codeRepository: project.links.find((l) => l.icon === "github")?.href,
-          }),
-        }}
-      />
+            author,
+            keywords: project.tech.join(", "),
+            award: project.award
+              ? project.award.prize + (project.award.place ? " " + project.award.place : "") + ", " + project.award.event
+              : undefined,
+          },
+          repoUrl ? {
+            "@type": "SoftwareSourceCode",
+            name: project.title + " (source code)",
+            codeRepository: repoUrl,
+            programmingLanguage: project.tech.slice(0, 3),
+            author,
+          } : undefined,
+        ].filter(Boolean),
+      }} />
+      <JsonLd data={breadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Projects", path: "/projects" },
+        { name: project.title, path },
+      ])} />
 
       <div className="flex flex-col min-h-screen bg-[#070B14]">
 
@@ -237,12 +238,6 @@ export default async function ProjectDetailPage({
                       <path d={project.iconPath} />
                     </svg>
                   </div>
-                  <span
-                    className="font-mono text-[10px] tracking-[0.15em] uppercase opacity-40"
-                    style={{ color: project.accentColor }}
-                  >
-                    Screenshot coming soon
-                  </span>
                 </div>
               </div>
             </div>
@@ -253,7 +248,15 @@ export default async function ProjectDetailPage({
             </div>
           </section>
 
-          {/* ── CONTENT ── */}
+          {project.image && (
+            <div className="max-w-5xl mx-auto px-6 md:px-10 pt-8">
+              <Image src={project.image} alt={project.title + " screenshot"} width={1200} height={630}
+                sizes="(max-width: 1024px) 100vw, 66vw"
+                className="rounded-xl border border-[#131C2E] w-full h-auto" priority />
+            </div>
+          )}
+
+          {/* ── CONTENT ── */
           <div className="max-w-5xl mx-auto px-6 md:px-10 py-12">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
 
@@ -487,8 +490,10 @@ export default async function ProjectDetailPage({
           </span>
           <div className="flex items-center gap-6 flex-wrap">
             {[
-              { label: "GitHub",  href: "https://github.com/Nitrajsinh-Solanki" },
-              { label: "Twitter", href: "https://twitter.com/Nitrajsinh2005" },
+              { label: "GitHub", href: SOCIAL.github },
+              { label: "LinkedIn", href: SOCIAL.linkedin },
+              { label: "X", href: SOCIAL.x },
+              { label: "Medium", href: SOCIAL.medium },
               { label: "nrsolanki2005@gmail.com", href: "mailto:nrsolanki2005@gmail.com" },
             ].map(({ label, href }) => (
               <a
