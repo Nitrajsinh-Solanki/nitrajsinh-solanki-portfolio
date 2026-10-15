@@ -295,6 +295,37 @@ export default async function ProjectDetailPage({
                   )}
                 </div>
 
+                {/* Structured case study */}
+                <section aria-labelledby="case-study-heading">
+                  <h2
+                    id="case-study-heading"
+                    className="text-[13px] font-bold text-[#E2DDD5] tracking-[0.08em] uppercase mb-5"
+                    style={{ fontFamily: "var(--syne-var)" }}
+                  >
+                    Engineering Case Study
+                  </h2>
+                  <dl className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {([
+                      { label: "Challenge", value: project.caseStudy.challenge },
+                      { label: "Approach", value: project.caseStudy.approach },
+                      { label: "Contribution", value: project.caseStudy.contribution },
+                      { label: "Outcome", value: project.caseStudy.outcome },
+                    ]).map(({ label, value }) => (
+                      <div
+                        key={label}
+                        className="rounded-xl border border-[#131C2E] bg-[#080D18] p-4"
+                      >
+                        <dt className="font-mono text-[10px] text-teal-300 uppercase tracking-[0.12em] mb-2">
+                          {label}
+                        </dt>
+                        <dd className="text-[13px] text-[#A5B0C0] leading-[1.75]">
+                          {value}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </section>
+
                 {/* Features */}
                 <div>
                   <h2
