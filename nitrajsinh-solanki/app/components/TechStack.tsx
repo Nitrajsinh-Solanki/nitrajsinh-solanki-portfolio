@@ -299,7 +299,7 @@ export default function TechStack() {
 
         {/* ── sub-tagline ── */}
         <p
-          className="font-mono text-[11.5px] text-[#4A6070] tracking-wide mb-3"
+          className="font-mono text-[11.5px] text-[#94A3B8] tracking-wide mb-3"
           style={fade(0.18)}
           itemProp="description"
         >
@@ -321,7 +321,7 @@ export default function TechStack() {
               >
                 {val}
               </span>
-              <span className="font-mono text-[10px] text-[#3A5060] tracking-wide">
+              <span className="font-mono text-[10px] text-[#94A3B8] tracking-wide">
                 {label}
               </span>
             </div>
@@ -351,7 +351,7 @@ export default function TechStack() {
                     "transition-all duration-200 whitespace-nowrap",
                     active === f
                       ? "bg-teal-300 text-[#070B14] border-teal-300 font-semibold"
-                      : "text-[#5A6A70] border-[#1A2B42] hover:border-teal-300/40 hover:text-teal-300/80",
+                      : "text-[#A5B0C0] border-[#1A2B42] hover:border-teal-300/40 hover:text-teal-300/80",
                   ].join(" ")}
                 >
                   {f}
@@ -402,7 +402,7 @@ export default function TechStack() {
                   >
                     {cat}
                   </h3>
-                  <span className="font-mono text-[9.5px] text-[#2D3A40] ml-auto">
+                  <span className="font-mono text-[9.5px] text-[#94A3B8] ml-auto">
                     {skills.length} tech{skills.length > 1 ? "s" : ""}
                   </span>
                 </header>
@@ -456,11 +456,11 @@ export default function TechStack() {
                         {sk.name}
 
                         {sk.note ? (
-                          <span className="text-[9px] opacity-50 border-l border-current/20 pl-1.5 ml-0.5">
+                          <span className="text-[9px] opacity-75 border-l border-current/20 pl-1.5 ml-0.5">
                             {sk.note}
                           </span>
                         ) : sk.projects > 0 ? (
-                          <span className="text-[9px] opacity-45 border-l border-current/20 pl-1.5 ml-0.5">
+                          <span className="text-[9px] opacity-75 border-l border-current/20 pl-1.5 ml-0.5">
                             ×{sk.projects}
                           </span>
                         ) : null}
@@ -487,7 +487,7 @@ export default function TechStack() {
             >
               <span className="w-2 h-2 rounded-sm bg-teal-400/60" />
             </span>
-            <span className="font-mono text-[9.5px] text-[#3A4A50] tracking-wide">
+            <span className="font-mono text-[9.5px] text-[#94A3B8] tracking-wide">
               Badge icon = official tech logo
             </span>
           </div>
@@ -496,17 +496,17 @@ export default function TechStack() {
               className="w-1.5 h-1.5 rounded-full bg-teal-300/60"
               aria-hidden="true"
             />
-            <span className="font-mono text-[9.5px] text-[#3A4A50] tracking-wide">
+            <span className="font-mono text-[9.5px] text-[#94A3B8] tracking-wide">
               Dot = core / production skill
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="font-mono text-[9.5px] text-[#3A4A50] tracking-wide">
+            <span className="font-mono text-[9.5px] text-[#94A3B8] tracking-wide">
               ×N = used in N real projects
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="font-mono text-[9.5px] text-[#3A4A50] tracking-wide">
+            <span className="font-mono text-[9.5px] text-[#94A3B8] tracking-wide">
               Internship / Academic = non-hackathon context
             </span>
           </div>

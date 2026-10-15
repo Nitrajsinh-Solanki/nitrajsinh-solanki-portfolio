@@ -156,7 +156,7 @@ export default function Contact() {
 
         {/* ── sub-tagline ── */}
         <p
-          className="font-mono text-[11.5px] text-[#4A6070] tracking-wide mb-12"
+          className="font-mono text-[11.5px] text-[#94A3B8] tracking-wide mb-12"
           style={fade(0.2)}
         >
           Open for internships, freelance projects, and hackathon collabs — drop a line.
@@ -170,7 +170,7 @@ export default function Contact() {
             <div className="bg-[#0B1623] border border-[#131C2E] rounded-2xl p-6 md:p-8 hover:border-teal-300/15 transition-colors duration-300">
 
               <p
-                className="font-mono text-[9.5px] text-[#3D3730] tracking-[0.18em] uppercase mb-6"
+                className="font-mono text-[9.5px] text-[#94A3B8] tracking-[0.18em] uppercase mb-6"
               >
                 Send a message
               </p>
@@ -191,7 +191,7 @@ export default function Contact() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="e.g. Alex Johnson"
-                    className="w-full bg-[#080D18] border border-[#131C2E] rounded-xl px-4 py-3 font-mono text-[13px] text-[#C8C3BA] placeholder-[#2D3540] outline-none focus:border-teal-300/40 focus:bg-[#090E1A] transition-all duration-200 caret-teal-300"
+                    className="w-full bg-[#080D18] border border-[#131C2E] rounded-xl px-4 py-3 font-mono text-[13px] text-[#C8C3BA] placeholder-[#94A3B8] outline-none focus:border-teal-300/40 focus:bg-[#090E1A] transition-all duration-200 caret-teal-300"
                   />
                 </div>
 
@@ -209,7 +209,7 @@ export default function Contact() {
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
                     placeholder="e.g. Freelance project inquiry"
-                    className="w-full bg-[#080D18] border border-[#131C2E] rounded-xl px-4 py-3 font-mono text-[13px] text-[#C8C3BA] placeholder-[#2D3540] outline-none focus:border-teal-300/40 focus:bg-[#090E1A] transition-all duration-200 caret-teal-300"
+                    className="w-full bg-[#080D18] border border-[#131C2E] rounded-xl px-4 py-3 font-mono text-[13px] text-[#C8C3BA] placeholder-[#94A3B8] outline-none focus:border-teal-300/40 focus:bg-[#090E1A] transition-all duration-200 caret-teal-300"
                   />
                 </div>
 
@@ -227,13 +227,13 @@ export default function Contact() {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Tell me what you're building, what you need, or just say hi..."
-                    className="w-full bg-[#080D18] border border-[#131C2E] rounded-xl px-4 py-3 font-mono text-[13px] text-[#C8C3BA] placeholder-[#2D3540] outline-none focus:border-teal-300/40 focus:bg-[#090E1A] transition-all duration-200 caret-teal-300 resize-none leading-relaxed"
+                    className="w-full bg-[#080D18] border border-[#131C2E] rounded-xl px-4 py-3 font-mono text-[13px] text-[#C8C3BA] placeholder-[#94A3B8] outline-none focus:border-teal-300/40 focus:bg-[#090E1A] transition-all duration-200 caret-teal-300 resize-none leading-relaxed"
                   />
                 </div>
 
                 {/* CTA */}
                 <div className="flex items-center justify-between gap-4 pt-1">
-                  <p className="font-mono text-[10px] text-[#2D3540] tracking-wide leading-relaxed max-w-[200px]">
+                  <p className="font-mono text-[10px] text-[#94A3B8] tracking-wide leading-relaxed max-w-[200px]">
                     Opens your mail client with the message pre-filled.
                   </p>
                   <button
@@ -271,7 +271,7 @@ export default function Contact() {
 
             {/* Direct email card */}
             <div className="bg-[#0B1623] border border-[#131C2E] rounded-2xl p-5 hover:border-teal-300/20 transition-colors duration-300">
-              <p className="font-mono text-[9.5px] text-[#3D3730] tracking-[0.18em] uppercase mb-4">
+              <p className="font-mono text-[9.5px] text-[#94A3B8] tracking-[0.18em] uppercase mb-4">
                 Direct Email
               </p>
               <a
@@ -298,7 +298,7 @@ export default function Contact() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-300 opacity-50" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-300" />
                 </span>
-                <span className="font-mono text-[10px] text-[#4A6070] tracking-wide">
+                <span className="font-mono text-[10px] text-[#94A3B8] tracking-wide">
                   Open to opportunities
                 </span>
               </div>
@@ -306,7 +306,7 @@ export default function Contact() {
 
             {/* Social links card */}
             <div className="bg-[#0B1623] border border-[#131C2E] rounded-2xl p-5 hover:border-teal-300/20 transition-colors duration-300">
-              <p className="font-mono text-[9.5px] text-[#3D3730] tracking-[0.18em] uppercase mb-4">
+              <p className="font-mono text-[9.5px] text-[#94A3B8] tracking-[0.18em] uppercase mb-4">
                 Find me on
               </p>
               <div className="flex flex-col gap-2">
@@ -324,7 +324,7 @@ export default function Contact() {
                     >
                       {icon}
                     </span>
-                    <span className="font-mono text-[11.5px] text-[#5A5450] group-hover:text-[#C8C3BA] transition-colors duration-200 tracking-wide">
+                    <span className="font-mono text-[11.5px] text-[#A5B0C0] group-hover:text-[#C8C3BA] transition-colors duration-200 tracking-wide">
                       {label}
                     </span>
                     <svg
@@ -336,7 +336,7 @@ export default function Contact() {
                       strokeWidth={2}
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="ml-auto text-[#2D3540] group-hover:text-[#4A5060] transition-colors duration-200"
+                      className="ml-auto text-[#94A3B8] group-hover:text-[#4A5060] transition-colors duration-200"
                       aria-hidden="true"
                     >
                       <path d="M7 17L17 7M17 7H7M17 7v10" />
@@ -348,7 +348,7 @@ export default function Contact() {
 
             {/* Quick response note */}
             <div className="bg-[#080D18] border border-[#0F1620] rounded-2xl px-5 py-4">
-              <p className="font-mono text-[10px] text-[#2D3540] leading-[1.8] tracking-wide">
+              <p className="font-mono text-[10px] text-[#94A3B8] leading-[1.8] tracking-wide">
                 <span className="text-teal-300/50">$</span>{" "}
                 I typically respond within{" "}
                 <span className="text-[#4A5060]">24 hours.</span>{" "}

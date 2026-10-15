@@ -145,7 +145,7 @@ export default async function ProjectDetailPage({
             <div className="flex items-center gap-4">
               <Link
                 href="/projects"
-                className="inline-flex items-center gap-2 font-mono text-[11px] text-[#6A6560] hover:text-teal-300 tracking-[0.07em] uppercase transition-colors"
+                className="inline-flex items-center gap-2 font-mono text-[11px] text-[#A5B0C0] hover:text-teal-300 tracking-[0.07em] uppercase transition-colors"
               >
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -280,7 +280,7 @@ export default async function ProjectDetailPage({
                   >
                     {project.title}
                   </h1>
-                  <p className="text-[15px] text-[#7A7570] leading-[1.8]">
+                  <p className="text-[15px] text-[#A5B0C0] leading-[1.8]">
                     {project.longDescription}
                   </p>
 
@@ -311,7 +311,7 @@ export default async function ProjectDetailPage({
                           style={{ background: project.accentColor }}
                           aria-hidden="true"
                         />
-                        <span className="text-[14px] text-[#6A6560] leading-[1.7]">{feature}</span>
+                        <span className="text-[14px] text-[#A5B0C0] leading-[1.7]">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -361,9 +361,9 @@ export default async function ProjectDetailPage({
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-[13px] text-[#6A6560] hover:text-teal-300 transition-colors group py-1"
+                        className="flex items-center gap-3 text-[13px] text-[#A5B0C0] hover:text-teal-300 transition-colors group py-1"
                       >
-                        <span className="text-[#3A3A40] group-hover:text-teal-300 transition-colors">
+                        <span className="text-[#94A3B8] group-hover:text-teal-300 transition-colors">
                           {link.icon === "github"   && <GithubIcon />}
                           {link.icon === "live"     && <ExternalIcon />}
                           {link.icon === "demo"     && <PlayIcon />}
@@ -386,19 +386,19 @@ export default async function ProjectDetailPage({
                     </h2>
                     <div className="flex flex-col gap-3">
                       <div>
-                        <span className="font-mono text-[10px] text-[#4A4540] uppercase tracking-wide">Prize</span>
+                        <span className="font-mono text-[10px] text-[#94A3B8] uppercase tracking-wide">Prize</span>
                         <p className="text-[13px] text-teal-300 font-bold mt-0.5" style={{ fontFamily: "var(--syne-var)" }}>
                           {project.award.prize}
                         </p>
                       </div>
                       {project.award.place && (
                         <div>
-                          <span className="font-mono text-[10px] text-[#4A4540] uppercase tracking-wide">Placement</span>
+                          <span className="font-mono text-[10px] text-[#94A3B8] uppercase tracking-wide">Placement</span>
                           <p className="text-[13px] text-[#C8C3BA] mt-0.5">{project.award.place}</p>
                         </div>
                       )}
                       <div>
-                        <span className="font-mono text-[10px] text-[#4A4540] uppercase tracking-wide">Event</span>
+                        <span className="font-mono text-[10px] text-[#94A3B8] uppercase tracking-wide">Event</span>
                         <p className="text-[13px] text-[#C8C3BA] mt-0.5">{project.award.event}</p>
                       </div>
                     </div>
@@ -416,11 +416,11 @@ export default async function ProjectDetailPage({
                     </h2>
                     <div className="flex flex-col gap-3">
                       <div>
-                        <span className="font-mono text-[10px] text-[#4A4540] uppercase tracking-wide">Business</span>
+                        <span className="font-mono text-[10px] text-[#94A3B8] uppercase tracking-wide">Business</span>
                         <p className="text-[13px] text-[#C8C3BA] mt-0.5">{project.client.name}</p>
                       </div>
                       <div>
-                        <span className="font-mono text-[10px] text-[#4A4540] uppercase tracking-wide">Location</span>
+                        <span className="font-mono text-[10px] text-[#94A3B8] uppercase tracking-wide">Location</span>
                         <p className="text-[13px] text-[#C8C3BA] mt-0.5">{project.client.location}</p>
                       </div>
                     </div>
@@ -451,11 +451,11 @@ export default async function ProjectDetailPage({
                   href={`/projects/${prevProject.slug}`}
                   className="group flex items-center gap-4 bg-[#080D18] border border-[#131C2E] rounded-xl p-5 hover:border-[#1F3050] transition-all duration-200"
                 >
-                  <svg className="w-4 h-4 text-[#3A3A40] group-hover:text-teal-300 transition-colors shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                  <svg className="w-4 h-4 text-[#94A3B8] group-hover:text-teal-300 transition-colors shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                   </svg>
                   <div className="flex flex-col min-w-0">
-                    <span className="font-mono text-[9px] text-[#3A3A40] uppercase tracking-widest mb-0.5">Previous</span>
+                    <span className="font-mono text-[9px] text-[#94A3B8] uppercase tracking-widest mb-0.5">Previous</span>
                     <span className="text-[13px] text-[#9A9585] group-hover:text-[#E2DDD5] transition-colors truncate" style={{ fontFamily: "var(--syne-var)" }}>
                       {prevProject.shortTitle}
                     </span>
@@ -469,12 +469,12 @@ export default async function ProjectDetailPage({
                   className="group flex items-center justify-end gap-4 bg-[#080D18] border border-[#131C2E] rounded-xl p-5 hover:border-[#1F3050] transition-all duration-200 text-right"
                 >
                   <div className="flex flex-col min-w-0">
-                    <span className="font-mono text-[9px] text-[#3A3A40] uppercase tracking-widest mb-0.5">Next</span>
+                    <span className="font-mono text-[9px] text-[#94A3B8] uppercase tracking-widest mb-0.5">Next</span>
                     <span className="text-[13px] text-[#9A9585] group-hover:text-[#E2DDD5] transition-colors truncate" style={{ fontFamily: "var(--syne-var)" }}>
                       {nextProject.shortTitle}
                     </span>
                   </div>
-                  <svg className="w-4 h-4 text-[#3A3A40] group-hover:text-teal-300 transition-colors shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                  <svg className="w-4 h-4 text-[#94A3B8] group-hover:text-teal-300 transition-colors shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
@@ -485,7 +485,7 @@ export default async function ProjectDetailPage({
 
         {/* ── Footer ── */}
         <footer className="border-t border-[#111A28] px-8 md:px-12 py-7 flex flex-col sm:flex-row items-center justify-between gap-4 flex-wrap">
-          <span className="font-mono text-[11px] text-[#3A3530] tracking-widest">
+          <span className="font-mono text-[11px] text-[#94A3B8] tracking-widest">
             © {new Date().getFullYear()} Nitrajsinh Solanki
           </span>
           <div className="flex items-center gap-6 flex-wrap">
@@ -501,7 +501,7 @@ export default async function ProjectDetailPage({
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="font-mono text-[11.5px] text-[#5A5450] hover:text-teal-300 transition-colors duration-200 tracking-wide"
+                className="font-mono text-[11.5px] text-[#A5B0C0] hover:text-teal-300 transition-colors duration-200 tracking-wide"
               >
                 {label}
               </a>

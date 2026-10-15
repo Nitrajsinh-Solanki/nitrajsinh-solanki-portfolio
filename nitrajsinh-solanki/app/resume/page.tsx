@@ -31,8 +31,8 @@ export default function ResumePage() {
         {profile.experience.map((item) => (
           <section key={item.title} className="mb-6">
             <h3 className="text-[#E2DDD5] text-[16px] font-semibold">{item.title}, {item.org}</h3>
-            <p className="font-mono text-[11px] text-[#4A6070] mb-2">{item.period} · {item.place}</p>
-            <ul className="list-disc pl-5 text-[14.5px] text-[#7A7570] leading-[1.8]">{item.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
+            <p className="font-mono text-[11px] text-[#94A3B8] mb-2">{item.period} · {item.place}</p>
+            <ul className="list-disc pl-5 text-[14.5px] text-[#A5B0C0] leading-[1.8]">{item.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
           </section>
         ))}
         <h2 className={h2} style={{ fontFamily: "var(--syne-var)", fontWeight: 700 }}>Technical skills</h2>
@@ -40,14 +40,14 @@ export default function ResumePage() {
           {Object.entries(profile.skills).map(([label, values]) => (
             <div key={label} className="flex gap-2">
               <dt className="text-[#C8C3BA] font-semibold min-w-[170px]">{label}</dt>
-              <dd className="text-[#7A7570]">{values.join(", ")}</dd>
+              <dd className="text-[#A5B0C0]">{values.join(", ")}</dd>
             </div>
           ))}
         </dl>
         <h2 className={h2} style={{ fontFamily: "var(--syne-var)", fontWeight: 700 }}>Education</h2>
-        <ul className="text-[14.5px] text-[#7A7570] leading-[1.9]">{profile.education.map((item) => <li key={item.level}>{item.level}, {item.school} ({item.board}), {item.period}, {item.score}</li>)}</ul>
+        <ul className="text-[14.5px] text-[#A5B0C0] leading-[1.9]">{profile.education.map((item) => <li key={item.level}>{item.level}, {item.school} ({item.board}), {item.period}, {item.score}</li>)}</ul>
         <h2 className={h2} style={{ fontFamily: "var(--syne-var)", fontWeight: 700 }}>Awards</h2>
-        <ul className="list-disc pl-5 text-[14.5px] text-[#7A7570] leading-[1.9]">{profile.awards.map((item) => <li key={item.text}>{item.text}</li>)}</ul>
+        <ul className="list-disc pl-5 text-[14.5px] text-[#A5B0C0] leading-[1.9]">{profile.awards.map((item) => <li key={item.text}>{item.text}</li>)}</ul>
       </main>
       <PageFooter />
     </>

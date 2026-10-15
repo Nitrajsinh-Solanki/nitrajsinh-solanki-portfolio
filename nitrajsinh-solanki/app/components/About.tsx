@@ -129,7 +129,7 @@ export default function About() {
 
         {/* sub-tagline */}
         <p
-          className="font-mono text-[11.5px] text-[#4A6070] tracking-wide mb-10"
+          className="font-mono text-[11.5px] text-[#94A3B8] tracking-wide mb-10"
           style={fade(0.2)}
         >
           Computer Engineering (GTU) · Full Stack Intern @ VeloxCore · Builder of things that actually work.
@@ -158,14 +158,14 @@ export default function About() {
                 >
                   Currently @ VeloxCore Private Limited
                 </p>
-                <p className="font-mono text-[10.5px] text-[#4A6070] tracking-wide mt-0.5">
+                <p className="font-mono text-[10.5px] text-[#94A3B8] tracking-wide mt-0.5">
                   Full Stack Developer Intern · .NET + Angular
                 </p>
               </div>
             </div>
 
             {/* bio */}
-            <div className="space-y-4 text-[14.5px] text-[#6A6560] leading-[1.82] mb-8">
+            <div className="space-y-4 text-[14.5px] text-[#A5B0C0] leading-[1.82] mb-8">
               <p>
                 I&apos;m a full-stack developer who moves comfortably across the entire stack.
                 At <span className="text-[#9A9585]">VeloxCore</span>, I work with{" "}
@@ -187,7 +187,7 @@ export default function About() {
 
             {/* interests */}
             <div>
-              <p className="font-mono text-[10px] text-[#3D3730] tracking-[0.15em] uppercase mb-3">
+              <p className="font-mono text-[10px] text-[#94A3B8] tracking-[0.15em] uppercase mb-3">
                 Outside the editor
               </p>
               <div className="flex flex-wrap gap-2">
@@ -205,7 +205,7 @@ export default function About() {
 
           {/* ── RIGHT: Education ── */}
           <div style={fade(0.38)}>
-            <p className="font-mono text-[10px] text-[#3D3730] tracking-[0.15em] uppercase mb-5">
+            <p className="font-mono text-[10px] text-[#94A3B8] tracking-[0.15em] uppercase mb-5">
               Education
             </p>
 
@@ -248,7 +248,7 @@ export default function About() {
                       </p>
 
                     </div>
-                    <p className="text-[#3A4A50] text-[11.5px] leading-snug mb-2">
+                    <p className="text-[#94A3B8] text-[11.5px] leading-snug mb-2">
                       {institute}
                     </p>
                     <div className="flex items-center justify-between gap-2">

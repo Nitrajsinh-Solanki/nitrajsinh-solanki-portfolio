@@ -60,7 +60,7 @@ function ResumeActions() {
       <a
         href={RESUME_URL}
         download="Nitrajsinh_Solanki_Resume.pdf"
-        className="flex items-center justify-center px-2.5 py-[7px] text-[#6A6560] hover:text-teal-300 hover:bg-teal-300/10 transition-all duration-200"
+        className="flex items-center justify-center px-2.5 py-[7px] text-[#A5B0C0] hover:text-teal-300 hover:bg-teal-300/10 transition-all duration-200"
         aria-label="Download resume (PDF)"
         title="Download Resume"
       >
@@ -91,12 +91,12 @@ export default function Navbar() {
     `font-mono text-[11px] tracking-[0.07em] uppercase transition-colors duration-200 ${
       isActive(href, isRoute)
         ? "text-teal-300"
-        : "text-[#6A6560] hover:text-[#C8C3BA]"
+        : "text-[#A5B0C0] hover:text-[#C8C3BA]"
     }`;
 
   const mobileLinkClass = (href: string, isRoute: boolean) =>
     `font-mono text-[12px] tracking-widest uppercase py-2.5 border-b border-[#0F1620] transition-colors ${
-      isActive(href, isRoute) ? "text-teal-300" : "text-[#7A7570] hover:text-teal-300"
+      isActive(href, isRoute) ? "text-teal-300" : "text-[#A5B0C0] hover:text-teal-300"
     }`;
 
   return (
@@ -146,7 +146,7 @@ export default function Navbar() {
           {/* Hire Me */}
           <a
             href="mailto:nrsolanki2005@gmail.com"
-            className="hidden lg:inline-block font-mono text-[11px] text-[#6A6560] hover:text-[#C8C3BA] border border-[#1A2B42] px-4 py-[7px] rounded-lg transition-all duration-200 tracking-widest"
+            className="hidden lg:inline-block font-mono text-[11px] text-[#A5B0C0] hover:text-[#C8C3BA] border border-[#1A2B42] px-4 py-[7px] rounded-lg transition-all duration-200 tracking-widest"
           >
             Hire Me
           </a>
@@ -209,7 +209,7 @@ export default function Navbar() {
               href={RESUME_URL}
               download="Nitrajsinh_Solanki_Resume.pdf"
               onClick={() => setMenuOpen(false)}
-              className="flex items-center justify-center w-10 h-10 border border-[#1A2B42] rounded-lg text-[#6A6560] hover:text-teal-300 hover:border-teal-300/40 transition-all duration-200"
+              className="flex items-center justify-center w-10 h-10 border border-[#1A2B42] rounded-lg text-[#A5B0C0] hover:text-teal-300 hover:border-teal-300/40 transition-all duration-200"
               aria-label="Download resume (PDF)"
             >
               <DownloadIcon />
@@ -218,7 +218,7 @@ export default function Navbar() {
 
           <a
             href="mailto:nrsolanki2005@gmail.com"
-            className="mt-2 font-mono text-[11px] text-[#6A6560] border border-[#1A2B42] px-4 py-2.5 rounded-lg text-center tracking-widest"
+            className="mt-2 font-mono text-[11px] text-[#A5B0C0] border border-[#1A2B42] px-4 py-2.5 rounded-lg text-center tracking-widest"
           >
             Hire Me
           </a>
