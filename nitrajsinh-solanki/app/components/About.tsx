@@ -194,7 +194,7 @@ export default function About() {
                 {INTERESTS.map((tag) => (
                   <span
                     key={tag}
-                    className="font-mono text-[10.5px] text-[#4A5A60] border border-[#131C2E] bg-[#0B1623] px-3 py-1.5 rounded-md hover:border-teal-300/30 hover:text-teal-300/70 transition-colors duration-200"
+                    className="font-mono text-[10.5px] text-[#A5B0C0] border border-[#131C2E] bg-[#0B1623] px-3 py-1.5 rounded-md hover:border-teal-300/30 hover:text-teal-300/70 transition-colors duration-200"
                   >
                     {tag}
                   </span>
@@ -252,7 +252,7 @@ export default function About() {
                       {institute}
                     </p>
                     <div className="flex items-center justify-between gap-2">
-                      <span className="font-mono text-[9.5px] text-[#2D4050] tracking-wide">
+                      <span className="font-mono text-[9.5px] text-[#94A3B8] tracking-wide">
                         {board} · {period}
                       </span>
                       <span className="font-mono text-[10px] text-teal-300/65">
