@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  experimental: { inlineCss: true },
   poweredByHeader: false,
   images: { formats: ["image/avif", "image/webp"] },
   async headers() {
