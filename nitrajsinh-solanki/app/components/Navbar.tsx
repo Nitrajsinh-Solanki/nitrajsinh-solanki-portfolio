@@ -5,8 +5,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const RESUME_URL =
-  "https://ojavcjzxtygrfbgznsgx.supabase.co/storage/v1/object/sign/demo/Nitrajsinh_Solanki_Resume.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81MjkxMjg1MC0zYzc5LTQyYzQtYjk5NC1lNDMwNjM1MjE3NDMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkZW1vL05pdHJhanNpbmhfU29sYW5raV9SZXN1bWUucGRmIiwiaWF0IjoxNzc5ODMwNjI1LCJleHAiOjI0MTA1NTA2MjV9.eU-JIihTY7e_sYyviEndz_6VSWVuCtHVewGccqbAQYs";
+const RESUME_URL = "/Nitrajsinh_Solanki_Resume%20%285%29.pdf";
 
 const NAV_LINKS = [
   { label: "About",        href: "#about",        isRoute: false },
