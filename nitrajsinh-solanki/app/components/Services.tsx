@@ -201,7 +201,7 @@ export default function Services() {
             </h2>
             <p
               className="text-[15px] leading-[1.8] max-w-[380px] mb-1"
-              style={{ color: "#524E4A" }}
+              style={{ color: "#A5B0C0" }}
             >
               Six specialisations backed by{" "}
               <span style={{ color: "#9A9585" }}>{STATS.total} shipped projects</span> and
@@ -288,7 +288,7 @@ function ServiceCard({
         {/* Number badge */}
         <span
           className="font-mono text-[11px] tracking-[0.12em]"
-          style={{ color: "#2A3A4A" }}
+          style={{ color: "#94A3B8" }}
         >
           {service.number}
         </span>
@@ -310,7 +310,7 @@ function ServiceCard({
       {/* Description */}
       <p
         className="text-[13.5px] leading-[1.75] mb-5"
-        style={{ color: "#524E4A" }}
+        style={{ color: "#A5B0C0" }}
       >
         {service.description}
       </p>
@@ -342,14 +342,14 @@ function ServiceCard({
       <div>
         <p
           className="font-mono text-[10px] tracking-[0.14em] uppercase mb-3"
-          style={{ color: "#2A3A4A" }}
+          style={{ color: "#94A3B8" }}
         >
           Delivered In
         </p>
         <div className="flex flex-col gap-2">
           {service.projects.map((project) => (
             <div key={project.name} className="flex items-center justify-between gap-2">
-              <span className="text-[12.5px] leading-none" style={{ color: "#7A7570" }}>
+              <span className="text-[12.5px] leading-none" style={{ color: "#A5B0C0" }}>
                 {project.name}
               </span>
               <span
