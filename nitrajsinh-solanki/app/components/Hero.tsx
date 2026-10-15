@@ -349,7 +349,7 @@ export default function Hero() {
 
             {/* Name */}
             <h1
-              className="anim-2 leading-[0.98] tracking-tight mb-3"
+              className="leading-[0.98] tracking-tight mb-3"
               style={{
                 fontFamily: "var(--syne-var)",
                 fontWeight: 800,
