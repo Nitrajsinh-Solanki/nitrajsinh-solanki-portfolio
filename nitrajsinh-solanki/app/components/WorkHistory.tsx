@@ -185,7 +185,7 @@ export default function WorkHistory() {
     <section
       id="work-history"
       ref={ref as React.RefObject<HTMLElement>}
-      className="relative py-20 md:py-28 px-6 md:px-10 overflow-hidden"
+      className="relative py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-10 overflow-hidden"
     >
       <div className="relative z-10 max-w-5xl mx-auto">
 
@@ -299,7 +299,7 @@ export default function WorkHistory() {
                   </div>
 
                   {/* Meta pills */}
-                  <div className="flex flex-row sm:flex-col items-start sm:items-end gap-2 shrink-0">
+                  <div className="flex flex-wrap sm:flex-nowrap sm:flex-col items-start sm:items-end gap-2 min-w-0">
                     <span
                       className={`font-mono text-[9.5px] px-2.5 py-1 rounded-full border ${TYPE_BADGE[entry.type]}`}
                     >
@@ -312,7 +312,7 @@ export default function WorkHistory() {
                 </div>
 
                 {/* ── Location + duration row ── */}
-                <div className="flex items-center gap-4 mb-5">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-5">
                   <span className="font-mono text-[10px] text-[#686D76] tracking-wide flex items-center gap-1.5">
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -348,7 +348,7 @@ export default function WorkHistory() {
 
                   {/* Achievements sidebar */}
                   <div
-                    className="flex flex-row lg:flex-col gap-3 lg:gap-4 bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl p-4 self-start"
+                    className="flex flex-wrap lg:flex-col gap-3 lg:gap-4 bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl p-4 self-start min-w-0 max-w-full"
                   >
                     {entry.achievements.map((a) => (
                       <div key={a.label} className="flex flex-col gap-0.5">
@@ -356,7 +356,7 @@ export default function WorkHistory() {
                           {a.label}
                         </span>
                         <span
-                          className="font-mono text-[11px] font-medium"
+                          className="max-w-full break-words font-mono text-[11px] font-medium"
                           style={{ color: entry.accentColor }}
                         >
                           {a.value}
