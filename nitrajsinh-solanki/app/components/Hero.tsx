@@ -1,6 +1,8 @@
 // nitrajsinh-solanki/app/components/Hero.tsx
 "use client";
 
+import { STATS } from "../projects/data";
+
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 
@@ -359,9 +361,10 @@ export default function Hero() {
 
             {/* Bio */}
             <p className="anim-4 text-[14.5px] text-[#524E4A] leading-[1.85] max-w-[430px] mb-8">
-              Final year at GEC Patan, interning at VeloxCore. I build full-stack
-              products that work — clean APIs, sharp frontends, and the kind of
-              code you&apos;re not ashamed to revisit six months later.
+              Full-stack developer in Gujarat, India. B.E. Computer Engineering at GEC
+              Patan, interning at VeloxCore. I build full-stack products that work:
+              clean APIs, sharp frontends, and the kind of code you&apos;re not ashamed
+              to revisit six months later.
             </p>
 
             {/* CTAs */}
@@ -409,9 +412,9 @@ export default function Hero() {
 
             {/* ── Stats row ── */}
             <div className="anim-6 flex items-center gap-3 flex-wrap">
-              <StatChip value="10"    label="Projects"   color="#5EEAD4" delay={700} />
+              <StatChip value={String(STATS.total)} label="Projects" color="#5EEAD4" delay={700} />
               <StatChip value="$250+" label="Prizes Won" color="#F472B6" delay={820} />
-              <StatChip value="3"     label="Live Apps"  color="#A78BFA" delay={940} />
+              <StatChip value={String(STATS.live)} label="Live Apps" color="#A78BFA" delay={940} />
 
               {/* Scroll cue */}
               <div className="hidden lg:flex items-center gap-2 ml-auto">
@@ -523,8 +526,9 @@ export default function Hero() {
               >
                 <Image
                   src="/profile.jpg"
-                  alt="Nitrajsinh Solanki"
+                  alt="Nitrajsinh Solanki, full-stack developer from Gujarat, India"
                   fill
+                  sizes="(max-width: 1024px) 240px, 300px"
                   className="object-cover"
                   style={{ objectPosition: "center 12%" }}
                   priority

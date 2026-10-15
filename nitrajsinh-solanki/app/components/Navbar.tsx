@@ -5,12 +5,13 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const RESUME_URL = "/Nitrajsinh_Solanki_Resume%20%285%29.pdf";
+const RESUME_URL = "/Nitrajsinh_Solanki_Resume.pdf";
 
 const NAV_LINKS = [
   { label: "About",        href: "#about",        isRoute: false },
   { label: "Tech Stack",   href: "#tech-stack",   isRoute: false },
   { label: "Projects",     href: "/projects",     isRoute: true  },
+  { label: "Resume",       href: "/resume",       isRoute: true  },
   { label: "Services",     href: "#services",     isRoute: false },
   { label: "Work History", href: "#work-history", isRoute: false },
   { label: "Contact",      href: "#contact",      isRoute: false },
@@ -46,6 +47,7 @@ function ResumeActions() {
         href={RESUME_URL}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="View resume (PDF)"
         className="font-mono text-[11px] text-teal-300 px-3 py-[7px] tracking-widest hover:bg-teal-300 hover:text-[#070B14] transition-all duration-200"
       >
         Resume
@@ -59,7 +61,7 @@ function ResumeActions() {
         href={RESUME_URL}
         download="Nitrajsinh_Solanki_Resume.pdf"
         className="flex items-center justify-center px-2.5 py-[7px] text-[#6A6560] hover:text-teal-300 hover:bg-teal-300/10 transition-all duration-200"
-        aria-label="Download Resume"
+        aria-label="Download resume (PDF)"
         title="Download Resume"
       >
         <DownloadIcon />
@@ -197,6 +199,7 @@ export default function Navbar() {
               href={RESUME_URL}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="View resume (PDF)"
               onClick={() => setMenuOpen(false)}
               className="flex-1 text-center font-mono text-[11px] text-teal-300 border border-teal-300/60 px-4 py-2.5 rounded-lg tracking-widest hover:bg-teal-300 hover:text-[#070B14] transition-all duration-200"
             >
@@ -207,7 +210,7 @@ export default function Navbar() {
               download="Nitrajsinh_Solanki_Resume.pdf"
               onClick={() => setMenuOpen(false)}
               className="flex items-center justify-center w-10 h-10 border border-[#1A2B42] rounded-lg text-[#6A6560] hover:text-teal-300 hover:border-teal-300/40 transition-all duration-200"
-              aria-label="Download Resume"
+              aria-label="Download resume (PDF)"
             >
               <DownloadIcon />
             </a>

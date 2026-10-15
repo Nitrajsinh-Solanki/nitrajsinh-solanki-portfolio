@@ -1,6 +1,8 @@
 // nitrajsinh-solanki/app/components/About.tsx
 "use client";
 
+import Link from "next/link";
+
 import { useEffect, useRef, useState } from "react";
 
 /* ──────────────────────────── data ──────────────────────────── */
@@ -130,10 +132,14 @@ export default function About() {
           className="font-mono text-[11.5px] text-[#4A6070] tracking-wide mb-10"
           style={fade(0.2)}
         >
-          Final-year engineer · Full Stack Intern @ VeloxCore · Builder of things that actually work.
+          Computer Engineering (GTU) · Full Stack Intern @ VeloxCore · Builder of things that actually work.
         </p>
 
-        {/* ── TWO-COL GRID ── */}
+        <Link href="/about" className="inline-block font-mono text-[12px] text-teal-300 hover:underline mb-6">
+          Read the full bio →
+        </Link>
+
+        {/* ── TWO-COL GRID ── */>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-10 lg:gap-12">
 
           {/* ── LEFT ── */}
@@ -240,11 +246,7 @@ export default function About() {
                       >
                         {degree}
                       </p>
-                      {current && (
-                        <span className="shrink-0 font-mono text-[9px] text-teal-300 border border-teal-300/30 bg-teal-300/5 px-2 py-0.5 rounded-full">
-                          Now
-                        </span>
-                      )}
+
                     </div>
                     <p className="text-[#3A4A50] text-[11.5px] leading-snug mb-2">
                       {institute}
