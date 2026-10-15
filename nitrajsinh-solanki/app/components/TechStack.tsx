@@ -209,8 +209,6 @@ function TechLogo({
       decoding="async"
       width={14}
       height={14}
-      loading="lazy"
-      decoding="async"
       onError={() => setFailed(true)}
       style={{
         width: 14,
