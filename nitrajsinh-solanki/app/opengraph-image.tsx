@@ -13,7 +13,7 @@ export default function Image() {
         <div style={{ display: "flex", fontSize: 40, color: "#4F46E5", marginTop: 16 }}>
           Full-Stack Developer · {LOCATION_LABEL}
         </div>
-        <div style={{ display: "flex", fontSize: 28, color: "#737780", marginTop: 28 }}>
+        <div style={{ display: "flex", fontSize: 28, color: "#686D76", marginTop: 28 }}>
           Next.js · React · .NET · Angular · Flutter
         </div>
       </div>

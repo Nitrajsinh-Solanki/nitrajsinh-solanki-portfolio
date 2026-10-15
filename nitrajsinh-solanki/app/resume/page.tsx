@@ -31,7 +31,7 @@ export default function ResumePage() {
         {profile.experience.map((item) => (
           <section key={item.title} className="mb-6">
             <h3 className="text-[#17191D] text-[16px] font-semibold">{item.title}, {item.org}</h3>
-            <p className="font-mono text-[11px] text-[#737780] mb-2">{item.period} · {item.place}</p>
+            <p className="font-mono text-[11px] text-[#686D76] mb-2">{item.period} · {item.place}</p>
             <ul className="list-disc pl-5 text-[14.5px] text-[#555963] leading-[1.8]">{item.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
           </section>
         ))}

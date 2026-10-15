@@ -26,7 +26,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
         <div style={{ display: "flex", fontSize: 68, fontWeight: 800, lineHeight: 1.1 }}>
           {project?.title ?? "Project"}
         </div>
-        <div style={{ display: "flex", fontSize: 28, color: "#737780" }}>
+        <div style={{ display: "flex", fontSize: 28, color: "#686D76" }}>
           {(project?.tech ?? []).slice(0, 6).join("  ·  ")}
         </div>
       </div>

@@ -138,7 +138,7 @@ export default function Contact() {
 
         {/* ── sub-tagline ── */}
         <p
-          className="font-mono text-[11.5px] text-[#737780] tracking-wide mb-12"
+          className="font-mono text-[11.5px] text-[#686D76] tracking-wide mb-12"
           style={fade(0.2)}
         >
           Open for internships, freelance projects, and hackathon collabs — drop a line.
@@ -152,7 +152,7 @@ export default function Contact() {
             <div className="bg-[#FFFFFF] border border-[#E3E0D8] rounded-2xl p-6 md:p-8 hover:border-indigo-600/15 transition-colors duration-300">
 
               <p
-                className="font-mono text-[9.5px] text-[#737780] tracking-[0.18em] uppercase mb-6"
+                className="font-mono text-[9.5px] text-[#686D76] tracking-[0.18em] uppercase mb-6"
               >
                 Send a message
               </p>
@@ -173,7 +173,7 @@ export default function Contact() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="e.g. Alex Johnson"
-                    className="w-full bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl px-4 py-3 font-mono text-[13px] text-[#555963] placeholder-[#737780] outline-none focus:border-indigo-600/40 focus:bg-[#F0EEE8] transition-all duration-200 caret-indigo-600"
+                    className="w-full bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl px-4 py-3 font-mono text-[13px] text-[#555963] placeholder-[#686D76] outline-none focus:border-indigo-600/40 focus:bg-[#F0EEE8] transition-all duration-200 caret-indigo-600"
                   />
                 </div>
 
@@ -191,7 +191,7 @@ export default function Contact() {
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
                     placeholder="e.g. Freelance project inquiry"
-                    className="w-full bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl px-4 py-3 font-mono text-[13px] text-[#555963] placeholder-[#737780] outline-none focus:border-indigo-600/40 focus:bg-[#F0EEE8] transition-all duration-200 caret-indigo-600"
+                    className="w-full bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl px-4 py-3 font-mono text-[13px] text-[#555963] placeholder-[#686D76] outline-none focus:border-indigo-600/40 focus:bg-[#F0EEE8] transition-all duration-200 caret-indigo-600"
                   />
                 </div>
 
@@ -209,13 +209,13 @@ export default function Contact() {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Tell me what you're building, what you need, or just say hi..."
-                    className="w-full bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl px-4 py-3 font-mono text-[13px] text-[#555963] placeholder-[#737780] outline-none focus:border-indigo-600/40 focus:bg-[#F0EEE8] transition-all duration-200 caret-indigo-600 resize-none leading-relaxed"
+                    className="w-full bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl px-4 py-3 font-mono text-[13px] text-[#555963] placeholder-[#686D76] outline-none focus:border-indigo-600/40 focus:bg-[#F0EEE8] transition-all duration-200 caret-indigo-600 resize-none leading-relaxed"
                   />
                 </div>
 
                 {/* CTA */}
                 <div className="flex items-center justify-between gap-4 pt-1">
-                  <p className="font-mono text-[10px] text-[#737780] tracking-wide leading-relaxed max-w-[200px]">
+                  <p className="font-mono text-[10px] text-[#686D76] tracking-wide leading-relaxed max-w-[200px]">
                     Opens your mail client with the message pre-filled.
                   </p>
                   <button
@@ -224,7 +224,7 @@ export default function Contact() {
                     className={`group flex items-center gap-2.5 font-mono text-[11px] tracking-widest px-5 py-3 rounded-xl border transition-all duration-200 ${
                       isReady
                         ? "text-white bg-indigo-600 border-indigo-600 hover:bg-indigo-700 hover:border-indigo-700 cursor-pointer"
-                        : "text-[#737780] bg-[#FFFFFF] border-[#E3E0D8] cursor-not-allowed"
+                        : "text-[#686D76] bg-[#FFFFFF] border-[#E3E0D8] cursor-not-allowed"
                     }`}
                   >
                     Open in Mail
@@ -253,7 +253,7 @@ export default function Contact() {
 
             {/* Direct email card */}
             <div className="bg-[#FFFFFF] border border-[#E3E0D8] rounded-2xl p-5 hover:border-indigo-600/20 transition-colors duration-300">
-              <p className="font-mono text-[9.5px] text-[#737780] tracking-[0.18em] uppercase mb-4">
+              <p className="font-mono text-[9.5px] text-[#686D76] tracking-[0.18em] uppercase mb-4">
                 Direct Email
               </p>
               <a
@@ -280,7 +280,7 @@ export default function Contact() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-600 opacity-50" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-600" />
                 </span>
-                <span className="font-mono text-[10px] text-[#737780] tracking-wide">
+                <span className="font-mono text-[10px] text-[#686D76] tracking-wide">
                   Open to opportunities
                 </span>
               </div>
@@ -288,7 +288,7 @@ export default function Contact() {
 
             {/* Social links card */}
             <div className="bg-[#FFFFFF] border border-[#E3E0D8] rounded-2xl p-5 hover:border-indigo-600/20 transition-colors duration-300">
-              <p className="font-mono text-[9.5px] text-[#737780] tracking-[0.18em] uppercase mb-4">
+              <p className="font-mono text-[9.5px] text-[#686D76] tracking-[0.18em] uppercase mb-4">
                 Find me on
               </p>
               <div className="flex flex-col gap-2">
@@ -318,7 +318,7 @@ export default function Contact() {
                       strokeWidth={2}
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="ml-auto text-[#737780] group-hover:text-[#555963] transition-colors duration-200"
+                      className="ml-auto text-[#686D76] group-hover:text-[#555963] transition-colors duration-200"
                       aria-hidden="true"
                     >
                       <path d="M7 17L17 7M17 7H7M17 7v10" />
@@ -330,7 +330,7 @@ export default function Contact() {
 
             {/* Quick response note */}
             <div className="bg-[#FFFFFF] border border-[#E3E0D8] rounded-2xl px-5 py-4">
-              <p className="font-mono text-[10px] text-[#737780] leading-[1.8] tracking-wide">
+              <p className="font-mono text-[10px] text-[#686D76] leading-[1.8] tracking-wide">
                 <span className="text-indigo-700">$</span>{" "}
                 I typically respond within{" "}
                 <span className="text-[#555963]">24 hours.</span>{" "}

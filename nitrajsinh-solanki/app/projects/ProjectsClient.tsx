@@ -172,7 +172,7 @@ function ProjectCard({ project }: { project: Project }) {
             </span>
           ))}
           {project.tech.length > 4 && (
-            <span className="font-mono text-[10px] text-[#737780] px-2 py-[3px]">
+            <span className="font-mono text-[10px] text-[#686D76] px-2 py-[3px]">
               +{project.tech.length - 4}
             </span>
           )}
@@ -369,7 +369,7 @@ export default function ProjectsClient() {
                       >
                         {value}
                       </span>
-                      <span className="font-mono text-[9px] text-[#737780] tracking-widest uppercase">
+                      <span className="font-mono text-[9px] text-[#686D76] tracking-widest uppercase">
                         {label}
                       </span>
                     </div>
@@ -445,7 +445,7 @@ export default function ProjectsClient() {
               />
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6 px-8 py-6">
                 <div>
-                  <p className="font-mono text-[10px] text-[#737780] tracking-widest uppercase mb-1">
+                  <p className="font-mono text-[10px] text-[#686D76] tracking-widest uppercase mb-1">
                     That&apos;s not everything
                   </p>
                   <h2
@@ -480,7 +480,7 @@ export default function ProjectsClient() {
 
         {/* ── Footer ── */}
         <footer className="border-t border-[#E3E0D8] px-6 md:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 flex-wrap">
-          <span className="font-mono text-[11px] text-[#737780] tracking-widest">
+          <span className="font-mono text-[11px] text-[#686D76] tracking-widest">
             © {new Date().getFullYear()} Nitrajsinh Solanki
           </span>
           <div className="flex items-center gap-5 flex-wrap">
@@ -496,7 +496,7 @@ export default function ProjectsClient() {
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="font-mono text-[11px] text-[#737780] hover:text-indigo-600 transition-colors duration-200 tracking-wide"
+                className="font-mono text-[11px] text-[#686D76] hover:text-indigo-600 transition-colors duration-200 tracking-wide"
               >
                 {label}
               </a>

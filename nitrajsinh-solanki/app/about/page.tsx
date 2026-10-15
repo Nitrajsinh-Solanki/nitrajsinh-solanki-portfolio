@@ -60,10 +60,10 @@ export default function AboutPage() {
 
         <h2 className={h2} style={{ fontFamily: "var(--syne-var)", fontWeight: 700 }}>Quick facts</h2>
         <dl className="grid grid-cols-[130px_1fr] gap-y-2 text-[14px] mb-10">
-          <dt className="text-[#737780] font-mono text-[11px] uppercase">Location</dt><dd className="text-[#555963]">{LOCATION_LABEL}</dd>
-          <dt className="text-[#737780] font-mono text-[11px] uppercase">Role</dt><dd className="text-[#555963]">{profile.role.title}, {profile.role.org}</dd>
-          <dt className="text-[#737780] font-mono text-[11px] uppercase">Main stack</dt><dd className="text-[#555963]">Next.js, React, TypeScript, Node.js, ASP.NET Core, Angular, Flutter, MongoDB</dd>
-          <dt className="text-[#737780] font-mono text-[11px] uppercase">Contact</dt><dd className="text-[#555963]"><a className="text-indigo-600 hover:underline" href={"mailto:" + profile.email}>{profile.email}</a></dd>
+          <dt className="text-[#686D76] font-mono text-[11px] uppercase">Location</dt><dd className="text-[#555963]">{LOCATION_LABEL}</dd>
+          <dt className="text-[#686D76] font-mono text-[11px] uppercase">Role</dt><dd className="text-[#555963]">{profile.role.title}, {profile.role.org}</dd>
+          <dt className="text-[#686D76] font-mono text-[11px] uppercase">Main stack</dt><dd className="text-[#555963]">Next.js, React, TypeScript, Node.js, ASP.NET Core, Angular, Flutter, MongoDB</dd>
+          <dt className="text-[#686D76] font-mono text-[11px] uppercase">Contact</dt><dd className="text-[#555963]"><a className="text-indigo-600 hover:underline" href={"mailto:" + profile.email}>{profile.email}</a></dd>
         </dl>
 
         <h2 className={h2} style={{ fontFamily: "var(--syne-var)", fontWeight: 700 }}>Awards</h2>
