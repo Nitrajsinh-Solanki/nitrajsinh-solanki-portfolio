@@ -33,41 +33,60 @@ function ParticleCanvas() {
     if (!ctx) return;
 
     let animId: number;
+    let canvasWidth = 0;
+    let canvasHeight = 0;
+    let particlesInitialised = false;
     const particles: {
       x: number; y: number; vx: number; vy: number;
       r: number; alpha: number; pulse: number;
     }[] = [];
 
-    const resize = () => {
-      canvas.width  = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    };
-    resize();
-    window.addEventListener("resize", resize);
+    // ResizeObserver provides dimensions after layout without forcing a
+    // synchronous offsetWidth/offsetHeight layout read.
+    const resizeObserver = new ResizeObserver((entries) => {
+      const size = entries[0]?.contentRect;
+      if (!size) return;
 
-    for (let i = 0; i < 55; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        r: Math.random() * 1.4 + 0.4,
-        alpha: Math.random() * 0.5 + 0.1,
-        pulse: Math.random() * Math.PI * 2,
-      });
-    }
+      canvasWidth = size.width;
+      canvasHeight = size.height;
+      if (canvasWidth <= 0 || canvasHeight <= 0) return;
+
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      const pixelWidth = Math.round(canvasWidth * pixelRatio);
+      const pixelHeight = Math.round(canvasHeight * pixelRatio);
+
+      if (canvas.width !== pixelWidth) canvas.width = pixelWidth;
+      if (canvas.height !== pixelHeight) canvas.height = pixelHeight;
+      ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+
+      if (!particlesInitialised) {
+        for (let i = 0; i < 55; i++) {
+          particles.push({
+            x: Math.random() * canvasWidth,
+            y: Math.random() * canvasHeight,
+            vx: (Math.random() - 0.5) * 0.3,
+            vy: (Math.random() - 0.5) * 0.3,
+            r: Math.random() * 1.4 + 0.4,
+            alpha: Math.random() * 0.5 + 0.1,
+            pulse: Math.random() * Math.PI * 2,
+          });
+        }
+        particlesInitialised = true;
+      }
+    });
+    resizeObserver.observe(canvas);
 
     const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
       particles.forEach((p, i) => {
         p.pulse += 0.018;
         p.x += p.vx;
         p.y += p.vy;
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
+        if (p.x < 0) p.x = canvasWidth;
+        if (p.x > canvasWidth) p.x = 0;
+        if (p.y < 0) p.y = canvasHeight;
+        if (p.y > canvasHeight) p.y = 0;
 
         const a = p.alpha * (0.6 + 0.4 * Math.sin(p.pulse));
         ctx.beginPath();
@@ -96,7 +115,7 @@ function ParticleCanvas() {
 
     return () => {
       cancelAnimationFrame(animId);
-      window.removeEventListener("resize", resize);
+      resizeObserver.disconnect();
     };
   }, []);
 
@@ -199,7 +218,7 @@ function CyclingCardRole() {
 
 /* ─────────────────────── main component ─────────────────────── */
 export default function Hero() {
-  const [displayed,  setDisplayed]  = useState("");
+  const [displayed,  setDisplayed]  = useState<string>(ROLES[0]);
   const [deleting,   setDeleting]   = useState(false);
   const [roleIndex,  setRoleIndex]  = useState(0);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -349,7 +368,7 @@ export default function Hero() {
             />
 
             {/* Typing roles */}
-            <div className="anim-3 mb-5 h-7 flex items-center">
+            <div className="mb-5 h-7 flex items-center">
               <span
                 className="font-mono text-[13px] tracking-wide"
                 style={{ color: "#6A9BAF" }}
