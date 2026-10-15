@@ -85,23 +85,11 @@ export default function Hero() {
                 fontSize: "clamp(40px, 6vw, 76px)",
               }}
             >
-              <span
-                style={{
-                  background: "linear-gradient(135deg, #17191D 0%, #555963 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
+              <span style={{ color: "#17191D" }}>
                 Nitrajsinh
               </span>
               <br />
-              <span
-                style={{
-                  background: "linear-gradient(135deg, #4F46E5 0%, #4F46E5 60%, #4F46E5 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
+              <span style={{ color: "#4F46E5" }}>
                 Solanki
               </span>
             </h1>
@@ -119,7 +107,7 @@ export default function Hero() {
                 style={{ color: "#4F46E5" }}
               >
                 {displayed}
-                </span>
+              </span>
             </div>
 
             {/* Bio */}
