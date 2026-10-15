@@ -44,7 +44,7 @@ function StatChip({
       >
         {value}
       </span>
-      <span className="font-mono text-[11px] text-[#737780] tracking-wide uppercase">{label}</span>
+      <span className="font-mono text-[11px] text-[#686D76] tracking-wide uppercase">{label}</span>
     </div>
   );
 }
@@ -138,7 +138,7 @@ export default function Hero() {
               <a
                 href="mailto:nrsolanki2005@gmail.com"
                 style={{ fontFamily: "var(--syne-var)" }}
-                className="inline-flex items-center gap-2 border border-[#E3E0D8] text-[#737780] font-medium text-[13px] px-7 py-3.5 rounded-xl hover:border-indigo-600/50 hover:text-indigo-600 hover:-translate-y-[2px] active:translate-y-0 transition-all duration-200"
+                className="inline-flex items-center gap-2 border border-[#E3E0D8] text-[#686D76] font-medium text-[13px] px-7 py-3.5 rounded-xl hover:border-indigo-600/50 hover:text-indigo-600 hover:-translate-y-[2px] active:translate-y-0 transition-all duration-200"
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -173,7 +173,7 @@ export default function Hero() {
                   <span className="block w-[1px] h-6" style={{ background: "linear-gradient(to bottom, transparent, #D8D5CD)" }} />
                   <span className="block w-[4px] h-[4px] rounded-full bg-[#D8D5CD]" />
                 </div>
-                <span className="font-mono text-[9px] text-[#737780] tracking-[0.12em] uppercase">scroll</span>
+                <span className="font-mono text-[9px] text-[#686D76] tracking-[0.12em] uppercase">scroll</span>
               </div>
             </div>
           </div>

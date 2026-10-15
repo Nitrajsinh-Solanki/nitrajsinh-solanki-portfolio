@@ -111,7 +111,7 @@ export default function About() {
 
         {/* sub-tagline */}
         <p
-          className="font-mono text-[11.5px] text-[#737780] tracking-wide mb-10"
+          className="font-mono text-[11.5px] text-[#686D76] tracking-wide mb-10"
           style={fade(0.2)}
         >
           Computer Engineering (GTU) · Full Stack Intern @ VeloxCore · Builder of things that actually work.
@@ -140,7 +140,7 @@ export default function About() {
                 >
                   Currently @ VeloxCore Private Limited
                 </p>
-                <p className="font-mono text-[10.5px] text-[#737780] tracking-wide mt-0.5">
+                <p className="font-mono text-[10.5px] text-[#686D76] tracking-wide mt-0.5">
                   Full Stack Developer Intern · .NET + Angular
                 </p>
               </div>
@@ -150,7 +150,7 @@ export default function About() {
             <div className="space-y-4 text-[16px] text-[#555963] leading-[1.75] mb-8">
               <p>
                 I&apos;m a full-stack developer who moves comfortably across the entire stack.
-                At <span className="text-[#737780]">VeloxCore</span>, I work with{" "}
+                At <span className="text-[#686D76]">VeloxCore</span>, I work with{" "}
                 <span className="text-indigo-700">.NET</span> and{" "}
                 <span className="text-indigo-700">Angular</span> — architecting REST APIs and
                 building component-driven frontends that handle real enterprise workloads. I own
@@ -159,8 +159,8 @@ export default function About() {
               </p>
               <p>
                 My broader stack spans{" "}
-                <span className="text-[#737780]">React, Next.js, Node.js, TypeScript,</span> and{" "}
-                <span className="text-[#737780]">Flutter</span>. I pick the right tool for the
+                <span className="text-[#686D76]">React, Next.js, Node.js, TypeScript,</span> and{" "}
+                <span className="text-[#686D76]">Flutter</span>. I pick the right tool for the
                 job, not the trendy one. I care about code that&apos;s readable six months later,
                 systems that don&apos;t fall over under pressure, and software that genuinely
                 solves something worth solving.
@@ -169,7 +169,7 @@ export default function About() {
 
             {/* interests */}
             <div>
-              <p className="font-mono text-[10px] text-[#737780] tracking-[0.15em] uppercase mb-3">
+              <p className="font-mono text-[10px] text-[#686D76] tracking-[0.15em] uppercase mb-3">
                 Outside the editor
               </p>
               <div className="flex flex-wrap gap-2">
@@ -187,7 +187,7 @@ export default function About() {
 
           {/* ── RIGHT: Education ── */}
           <div style={fade(0.38)}>
-            <p className="font-mono text-[10px] text-[#737780] tracking-[0.15em] uppercase mb-5">
+            <p className="font-mono text-[10px] text-[#686D76] tracking-[0.15em] uppercase mb-5">
               Education
             </p>
 
@@ -230,11 +230,11 @@ export default function About() {
                       </p>
 
                     </div>
-                    <p className="text-[#737780] text-[11.5px] leading-snug mb-2">
+                    <p className="text-[#686D76] text-[11.5px] leading-snug mb-2">
                       {institute}
                     </p>
                     <div className="flex items-center justify-between gap-2">
-                      <span className="font-mono text-[9.5px] text-[#737780] tracking-wide">
+                      <span className="font-mono text-[9.5px] text-[#686D76] tracking-wide">
                         {board} · {period}
                       </span>
                       <span className="font-mono text-[10px] text-indigo-700">

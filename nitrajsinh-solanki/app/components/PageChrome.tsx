@@ -32,7 +32,7 @@ export function PageFooter() {
   ];
   return (
     <footer className="border-t border-[#E3E0D8] px-8 md:px-12 py-7 flex flex-col sm:flex-row items-center justify-between gap-4 flex-wrap">
-      <span className="font-mono text-[11px] text-[#737780] tracking-widest">© {new Date().getFullYear()} {SITE_NAME}</span>
+      <span className="font-mono text-[11px] text-[#686D76] tracking-widest">© {new Date().getFullYear()} {SITE_NAME}</span>
       <div className="flex items-center gap-6 flex-wrap">
         {links.map(({ label, href }) => (
           <a key={label} href={href}

@@ -281,7 +281,7 @@ export default function TechStack() {
 
         {/* ── sub-tagline ── */}
         <p
-          className="font-mono text-[11.5px] text-[#737780] tracking-wide mb-3"
+          className="font-mono text-[11.5px] text-[#686D76] tracking-wide mb-3"
           style={fade(0.18)}
           itemProp="description"
         >
@@ -303,7 +303,7 @@ export default function TechStack() {
               >
                 {val}
               </span>
-              <span className="font-mono text-[10px] text-[#737780] tracking-wide">
+              <span className="font-mono text-[10px] text-[#686D76] tracking-wide">
                 {label}
               </span>
             </div>
@@ -384,7 +384,7 @@ export default function TechStack() {
                   >
                     {cat}
                   </h3>
-                  <span className="font-mono text-[9.5px] text-[#737780] ml-auto">
+                  <span className="font-mono text-[9.5px] text-[#686D76] ml-auto">
                     {skills.length} tech{skills.length > 1 ? "s" : ""}
                   </span>
                 </header>
@@ -469,7 +469,7 @@ export default function TechStack() {
             >
               <span className="w-2 h-2 rounded-sm bg-indigo-600/60" />
             </span>
-            <span className="font-mono text-[9.5px] text-[#737780] tracking-wide">
+            <span className="font-mono text-[9.5px] text-[#686D76] tracking-wide">
               Badge icon = official tech logo
             </span>
           </div>
@@ -478,17 +478,17 @@ export default function TechStack() {
               className="w-1.5 h-1.5 rounded-full bg-indigo-600/60"
               aria-hidden="true"
             />
-            <span className="font-mono text-[9.5px] text-[#737780] tracking-wide">
+            <span className="font-mono text-[9.5px] text-[#686D76] tracking-wide">
               Dot = core / production skill
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="font-mono text-[9.5px] text-[#737780] tracking-wide">
+            <span className="font-mono text-[9.5px] text-[#686D76] tracking-wide">
               ×N = used in N real projects
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="font-mono text-[9.5px] text-[#737780] tracking-wide">
+            <span className="font-mono text-[9.5px] text-[#686D76] tracking-wide">
               Internship / Academic = non-hackathon context
             </span>
           </div>

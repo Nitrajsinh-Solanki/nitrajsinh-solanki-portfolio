@@ -184,8 +184,8 @@ export default function Services() {
               style={{ color: "#555963" }}
             >
               Six specialisations backed by{" "}
-              <span style={{ color: "#737780" }}>{STATS.total} shipped projects</span> and
-              over <span style={{ color: "#737780" }}>$250 in prize money</span>{" "}
+              <span style={{ color: "#686D76" }}>{STATS.total} shipped projects</span> and
+              over <span style={{ color: "#686D76" }}>$250 in prize money</span>{" "}
               won on competitive hackathon platforms.
             </p>
           </div>
@@ -267,7 +267,7 @@ function ServiceCard({
         {/* Number badge */}
         <span
           className="font-mono text-[11px] tracking-[0.12em]"
-          style={{ color: "#737780" }}
+          style={{ color: "#686D76" }}
         >
           {service.number}
         </span>
@@ -321,7 +321,7 @@ function ServiceCard({
       <div>
         <p
           className="font-mono text-[10px] tracking-[0.14em] uppercase mb-3"
-          style={{ color: "#737780" }}
+          style={{ color: "#686D76" }}
         >
           Delivered In
         </p>
@@ -399,7 +399,7 @@ function CtaBanner() {
           target="_blank"
           rel="noopener noreferrer"
           style={{ fontFamily: "var(--syne-var)" }}
-          className="border border-[#E3E0D8] text-[#737780] font-medium text-sm px-7 py-3.5 rounded-lg hover:border-indigo-600/60 hover:text-indigo-600 hover:-translate-y-[2px] active:translate-y-0 transition-all duration-200 text-center"
+          className="border border-[#E3E0D8] text-[#686D76] font-medium text-sm px-7 py-3.5 rounded-lg hover:border-indigo-600/60 hover:text-indigo-600 hover:-translate-y-[2px] active:translate-y-0 transition-all duration-200 text-center"
         >
           GitHub
         </a>

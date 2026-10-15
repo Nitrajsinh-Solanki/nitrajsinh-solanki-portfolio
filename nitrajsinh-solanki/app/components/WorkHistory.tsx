@@ -216,7 +216,7 @@ export default function WorkHistory() {
 
         {/* ── sub-tagline ── */}
         <p
-          className="font-mono text-[11.5px] text-[#737780] tracking-wide mb-12"
+          className="font-mono text-[11.5px] text-[#686D76] tracking-wide mb-12"
           style={fade(0.2)}
         >
           Internship · Freelance clients · Hackathon wins — real products, real deadlines.
@@ -313,14 +313,14 @@ export default function WorkHistory() {
 
                 {/* ── Location + duration row ── */}
                 <div className="flex items-center gap-4 mb-5">
-                  <span className="font-mono text-[10px] text-[#737780] tracking-wide flex items-center gap-1.5">
+                  <span className="font-mono text-[10px] text-[#686D76] tracking-wide flex items-center gap-1.5">
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                       <circle cx="12" cy="10" r="3" />
                     </svg>
                     {entry.location}
                   </span>
-                  <span className="font-mono text-[10px] text-[#737780] tracking-wide flex items-center gap-1.5">
+                  <span className="font-mono text-[10px] text-[#686D76] tracking-wide flex items-center gap-1.5">
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <circle cx="12" cy="12" r="10" />
                       <polyline points="12 6 12 12 16 14" />
@@ -352,7 +352,7 @@ export default function WorkHistory() {
                   >
                     {entry.achievements.map((a) => (
                       <div key={a.label} className="flex flex-col gap-0.5">
-                        <span className="font-mono text-[9px] text-[#737780] uppercase tracking-wider">
+                        <span className="font-mono text-[9px] text-[#686D76] uppercase tracking-wider">
                           {a.label}
                         </span>
                         <span
@@ -368,7 +368,7 @@ export default function WorkHistory() {
 
                 {/* ── Tech Stack pills ── */}
                 <div className="mt-5 pt-5 border-t border-[#E3E0D8]">
-                  <p className="font-mono text-[9px] text-[#737780] tracking-[0.15em] uppercase mb-3">
+                  <p className="font-mono text-[9px] text-[#686D76] tracking-[0.15em] uppercase mb-3">
                     Stack Used
                   </p>
                   <div className="flex flex-wrap gap-1.5">
@@ -403,7 +403,7 @@ export default function WorkHistory() {
               key={label}
               className="bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl px-4 py-3.5 hover:border-indigo-600/20 transition-colors duration-300"
             >
-              <p className="font-mono text-[9px] text-[#737780] uppercase tracking-wider mb-1">{label}</p>
+              <p className="font-mono text-[9px] text-[#686D76] uppercase tracking-wider mb-1">{label}</p>
               <p
                 className="font-mono text-[11.5px] text-indigo-600 font-medium leading-snug"
                 style={{ fontFamily: "var(--syne-var)" }}

@@ -157,9 +157,9 @@ export default function Navbar() {
             className="lg:hidden flex flex-col gap-[5px] p-2"
             aria-label="Toggle menu"
           >
-            <span className={`block w-5 h-[1.5px] bg-[#737780] transition-all duration-200 ${menuOpen ? "rotate-45 translate-y-[6.5px]" : ""}`} />
-            <span className={`block w-5 h-[1.5px] bg-[#737780] transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`} />
-            <span className={`block w-5 h-[1.5px] bg-[#737780] transition-all duration-200 ${menuOpen ? "-rotate-45 -translate-y-[6.5px]" : ""}`} />
+            <span className={`block w-5 h-[1.5px] bg-[#686D76] transition-all duration-200 ${menuOpen ? "rotate-45 translate-y-[6.5px]" : ""}`} />
+            <span className={`block w-5 h-[1.5px] bg-[#686D76] transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-5 h-[1.5px] bg-[#686D76] transition-all duration-200 ${menuOpen ? "-rotate-45 -translate-y-[6.5px]" : ""}`} />
           </button>
         </div>
       </div>

@@ -152,7 +152,7 @@ export default function ProjectsPreview() {
                 Things I&apos;ve{" "}
                 <span className="text-indigo-600">shipped.</span>
               </h2>
-              <p className="font-mono text-[11.5px] text-[#737780] tracking-wide mt-2">
+              <p className="font-mono text-[11.5px] text-[#686D76] tracking-wide mt-2">
                 {STATS.total} projects — hackathons, bounties &amp; live client products.{" "}
                 <span className="text-indigo-700">$250+ won.</span>
               </p>
@@ -162,7 +162,7 @@ export default function ProjectsPreview() {
             <Link
               href="/projects"
               style={{ fontFamily: "var(--syne-var)" }}
-              className="hidden sm:inline-flex items-center gap-2 shrink-0 border border-[#E3E0D8] text-[#737780] font-medium text-sm px-5 py-2.5 rounded-lg hover:border-indigo-600/60 hover:text-indigo-600 hover:-translate-y-[2px] active:translate-y-0 transition-all duration-200"
+              className="hidden sm:inline-flex items-center gap-2 shrink-0 border border-[#E3E0D8] text-[#686D76] font-medium text-sm px-5 py-2.5 rounded-lg hover:border-indigo-600/60 hover:text-indigo-600 hover:-translate-y-[2px] active:translate-y-0 transition-all duration-200"
             >
               View all {STATS.total} projects
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -197,7 +197,7 @@ export default function ProjectsPreview() {
                 >
                   {value}
                 </div>
-                <div className="font-mono text-[10px] text-[#737780] tracking-wide">
+                <div className="font-mono text-[10px] text-[#686D76] tracking-wide">
                   {label}
                 </div>
               </div>
@@ -360,14 +360,14 @@ function FeaturedCard({ project, index }: { project: PreviewProject; index: numb
               Live
             </button>
           ) : (
-            <span className="font-mono text-[9.5px] text-[#737780] tracking-wide">
+            <span className="font-mono text-[9.5px] text-[#686D76] tracking-wide">
               View details
             </span>
           )}
 
           <span
             className="transition-all duration-200 group-hover:translate-x-1"
-            style={{ color: hovered ? project.accentColor : "#737780" }}
+            style={{ color: hovered ? project.accentColor : "#686D76" }}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7" />
@@ -413,7 +413,7 @@ function MoreProjectsCTA() {
           >
             Showing 3 of {STATS.total} projects
           </p>
-          <p className="font-mono text-[11px] text-[#737780] tracking-wide">
+          <p className="font-mono text-[11px] text-[#686D76] tracking-wide">
             {STATS.total - 3} more — including HourBit productivity suite, Flutter app, Rust server &amp; live client sites.
           </p>
         </div>
@@ -429,13 +429,13 @@ function MoreProjectsCTA() {
                 style={{
                   background: "rgba(79,70,229,0.06)",
                   border: "1px solid #E3E0D8",
-                  color: "#737780",
+                  color: "#686D76",
                 }}
               >
                 {tag}
               </span>
             ))}
-            <span className="font-mono text-[10px] text-[#737780]">+{STATS.total - 6} more</span>
+            <span className="font-mono text-[10px] text-[#686D76]">+{STATS.total - 6} more</span>
           </div>
 
           <Link
