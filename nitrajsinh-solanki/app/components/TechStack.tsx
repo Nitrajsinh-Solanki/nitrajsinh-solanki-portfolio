@@ -55,7 +55,7 @@ const SKILLS: Skill[] = [
 
   // ── Frontend ───────────────────────────────────────────────────
   { name: "React.js",          cat: "Frontend", projects: 6, core: true, icon: DI("react")               },
-  { name: "Next.js",           cat: "Frontend", projects: 5, core: true, icon: SI("nextdotjs","E2DDD5")   },
+  { name: "Next.js",           cat: "Frontend", projects: 5, core: true, icon: SI("nextdotjs","17191D")   },
   { name: "Angular",           cat: "Frontend", projects: 0, core: true, note: "Internship", icon: DI("angularjs") },
   { name: "Tailwind CSS",      cat: "Frontend", projects: 6, core: true, icon: SI("tailwindcss","38BDF8") },
   { name: "Vite",              cat: "Frontend", projects: 2,             icon: DI("vitejs")               },
@@ -67,8 +67,8 @@ const SKILLS: Skill[] = [
 
   // ── Backend ────────────────────────────────────────────────────
   { name: "Node.js",             cat: "Backend", projects: 5, core: true, icon: DI("nodejs")               },
-  { name: "Express.js",          cat: "Backend", projects: 3, core: true, icon: SI("express","ffffff")      },
-  { name: "Next.js API Routes",  cat: "Backend", projects: 5, core: true, icon: SI("nextdotjs","E2DDD5")   },
+  { name: "Express.js",          cat: "Backend", projects: 3, core: true, icon: SI("express","17191D")      },
+  { name: "Next.js API Routes",  cat: "Backend", projects: 5, core: true, icon: SI("nextdotjs","17191D")   },
   { name: ".NET / ASP.NET Core", cat: "Backend", projects: 0, core: true, note: "Internship", icon: DI("dotnetcore") },
   { name: "REST API Design",     cat: "Backend", projects: 7, core: true                                   },
   { name: "TcpListener (Rust)",  cat: "Backend", projects: 1,             icon: SI("rust","F74C00")         },
@@ -80,15 +80,15 @@ const SKILLS: Skill[] = [
   { name: "MySQL",        cat: "Database", projects: 0, note: "Academic", icon: DI("mysql")              },
 
   // ── Auth & Security ────────────────────────────────────────────
-  { name: "JWT",                cat: "Auth & Security", projects: 7, core: true, icon: SI("jsonwebtokens","ffffff") },
+  { name: "JWT",                cat: "Auth & Security", projects: 7, core: true, icon: SI("jsonwebtokens","17191D") },
   { name: "OTP Email Auth",     cat: "Auth & Security", projects: 5, core: true                                    },
-  { name: "NextAuth",           cat: "Auth & Security", projects: 1,             icon: SI("authjs","ffffff")        },
+  { name: "NextAuth",           cat: "Auth & Security", projects: 1,             icon: SI("authjs","17191D")        },
   { name: "Session Management", cat: "Auth & Security", projects: 3                                               },
   { name: "Cookies / RBAC",     cat: "Auth & Security", projects: 2                                               },
 
   // ── AI & APIs ──────────────────────────────────────────────────
   { name: "Google Gemini AI",        cat: "AI & APIs", projects: 3, core: true, icon: SI("googlegemini","8E75B2")   },
-  { name: "AssemblyAI",              cat: "AI & APIs", projects: 1,             icon: SI("assemblyai","ffffff")      },
+  { name: "AssemblyAI",              cat: "AI & APIs", projects: 1,             icon: SI("assemblyai","17191D")      },
   { name: "HuggingFace Bart CNN",    cat: "AI & APIs", projects: 1,             icon: SI("huggingface","FFD21E")     },
   { name: "Deepgram API",            cat: "AI & APIs", projects: 1,             icon: SI("deepgram","13EF93")        },
   { name: "GBIF API",                cat: "AI & APIs", projects: 1                                                  },
@@ -99,7 +99,7 @@ const SKILLS: Skill[] = [
   { name: "Pexels API",              cat: "AI & APIs", projects: 1,             icon: SI("pexels","05A081")          },
   { name: "FCM Push Notifications",  cat: "AI & APIs", projects: 2,             icon: DI("firebase")                },
   { name: "Jamendo / Deezer / Audius", cat: "AI & APIs", projects: 1                                               },
-  { name: "Wikipedia API",           cat: "AI & APIs", projects: 1,             icon: SI("wikipedia","aaaaaa")       },
+  { name: "Wikipedia API",           cat: "AI & APIs", projects: 1,             icon: SI("wikipedia","555963")       },
 
   // ── Mobile ─────────────────────────────────────────────────────
   { name: "Flutter",             cat: "Mobile", projects: 2, core: true, icon: DI("flutter")               },
@@ -117,7 +117,7 @@ const SKILLS: Skill[] = [
   { name: "@aptos-labs/wallet-adapter-react",    cat: "Blockchain", projects: 1 },
 
   // ── Infra & Cloud ──────────────────────────────────────────────
-  { name: "Vercel",             cat: "Infra & Cloud", projects: 2, core: true, icon: SI("vercel","E2DDD5")       },
+  { name: "Vercel",             cat: "Infra & Cloud", projects: 2, core: true, icon: SI("vercel","17191D")       },
   { name: "Firebase",           cat: "Infra & Cloud", projects: 2,             icon: DI("firebase")              },
   { name: "Cloudinary",         cat: "Infra & Cloud", projects: 2,             icon: SI("cloudinary","3448C5")   },
   { name: "Supabase Storage",   cat: "Infra & Cloud", projects: 1,             icon: DI("supabase")              },
@@ -127,7 +127,7 @@ const SKILLS: Skill[] = [
   { name: "Git & GitHub",  cat: "Tools", projects: 10, core: true, icon: DI("git")                          },
   { name: "VS Code",       cat: "Tools", projects: 10, core: true, icon: DI("vscode")                       },
   { name: "npm",           cat: "Tools", projects:  9, core: true, icon: DI("npm","original-wordmark"),
-    iconFilter: "brightness(0) invert(1)"                                                                    },
+    iconFilter: "none"                                                                    },
   { name: "Postman",       cat: "Tools", projects:  7, core: true, icon: DI("postman")                      },
   { name: "Playwright",    cat: "Tools", projects:  1,             icon: DI("playwright")                   },
   { name: "Cargo (Rust)",  cat: "Tools", projects:  1,             icon: SI("rust","F74C00")                 },
@@ -139,15 +139,15 @@ const CAT_META: Record<
   Exclude<Category, "All">,
   { color: string; border: string; bg: string; dot: string; accent: string }
 > = {
-  "Languages":       { color: "text-indigo-700",  border: "border-indigo-600/25",  bg: "bg-indigo-600/5",  dot: "bg-indigo-600",  accent: "#FB923C" },
+  "Languages":       { color: "text-indigo-700",  border: "border-indigo-600/25",  bg: "bg-indigo-600/5",  dot: "bg-indigo-600",  accent: "#4F46E5" },
   "Frontend":        { color: "text-indigo-700",    border: "border-indigo-600/25",    bg: "bg-indigo-600/5",    dot: "bg-indigo-600",    accent: "#4F46E5" },
-  "Backend":         { color: "text-indigo-700", border: "border-indigo-600/25", bg: "bg-indigo-600/5", dot: "bg-indigo-600", accent: "#34D399" },
-  "Database":        { color: "text-indigo-700",   border: "border-indigo-600/25",   bg: "bg-indigo-600/5",   dot: "bg-indigo-600",   accent: "#FCD34D" },
-  "Auth & Security": { color: "text-indigo-700",    border: "border-indigo-600/25",    bg: "bg-indigo-600/5",    dot: "bg-indigo-600",    accent: "#F9A8D4" },
+  "Backend":         { color: "text-indigo-700", border: "border-indigo-600/25", bg: "bg-indigo-600/5", dot: "bg-indigo-600", accent: "#4F46E5" },
+  "Database":        { color: "text-indigo-700",   border: "border-indigo-600/25",   bg: "bg-indigo-600/5",   dot: "bg-indigo-600",   accent: "#4F46E5" },
+  "Auth & Security": { color: "text-indigo-700",    border: "border-indigo-600/25",    bg: "bg-indigo-600/5",    dot: "bg-indigo-600",    accent: "#4F46E5" },
   "AI & APIs":       { color: "text-indigo-700",  border: "border-indigo-600/25",  bg: "bg-indigo-600/5",  dot: "bg-indigo-600",  accent: "#4F46E5" },
   "Mobile":          { color: "text-indigo-700",    border: "border-indigo-600/25",    bg: "bg-indigo-600/5",    dot: "bg-indigo-600",    accent: "#4F46E5" },
-  "Blockchain":      { color: "text-indigo-700",  border: "border-indigo-600/25",  bg: "bg-indigo-600/5",  dot: "bg-indigo-600",  accent: "#A5B4FC" },
-  "Infra & Cloud":   { color: "text-slate-300",   border: "border-slate-400/25",   bg: "bg-slate-400/5",   dot: "bg-slate-400",   accent: "#CBD5E1" },
+  "Blockchain":      { color: "text-indigo-700",  border: "border-indigo-600/25",  bg: "bg-indigo-600/5",  dot: "bg-indigo-600",  accent: "#4F46E5" },
+  "Infra & Cloud":   { color: "text-slate-300",   border: "border-slate-400/25",   bg: "bg-slate-400/5",   dot: "bg-slate-400",   accent: "#4F46E5" },
   "Tools":           { color: "text-indigo-600",    border: "border-indigo-600/25",    bg: "bg-indigo-600/5",    dot: "bg-indigo-600",    accent: "#4F46E5" },
 };
 
