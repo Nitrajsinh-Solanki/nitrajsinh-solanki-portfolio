@@ -33,7 +33,7 @@ export default function AboutPage() {
       <JsonLd data={profilePageGraph("/about")} />
       <JsonLd data={breadcrumb([{ name: "Home", path: "/" }, { name: "About", path: "/about" }])} />
       <PageNav />
-      <main className="flex-1 max-w-3xl mx-auto px-6 md:px-10 pt-28 pb-20">
+      <main className="flex-1 w-full max-w-3xl mx-auto px-4 sm:px-6 md:px-10 pt-28 pb-20">
         <h1 className="text-[#17191D] leading-tight mb-6" style={{ fontFamily: "var(--syne-var)", fontWeight: 800, fontSize: "clamp(30px,5vw,46px)" }}>
           About {profile.name}
         </h1>
@@ -59,11 +59,11 @@ export default function AboutPage() {
         </p>
 
         <h2 className={h2} style={{ fontFamily: "var(--syne-var)", fontWeight: 700 }}>Quick facts</h2>
-        <dl className="grid grid-cols-[130px_1fr] gap-y-2 text-[14px] mb-10">
-          <dt className="text-[#686D76] font-mono text-[11px] uppercase">Location</dt><dd className="text-[#555963]">{LOCATION_LABEL}</dd>
-          <dt className="text-[#686D76] font-mono text-[11px] uppercase">Role</dt><dd className="text-[#555963]">{profile.role.title}, {profile.role.org}</dd>
-          <dt className="text-[#686D76] font-mono text-[11px] uppercase">Main stack</dt><dd className="text-[#555963]">Next.js, React, TypeScript, Node.js, ASP.NET Core, Angular, Flutter, MongoDB</dd>
-          <dt className="text-[#686D76] font-mono text-[11px] uppercase">Contact</dt><dd className="text-[#555963]"><a className="text-indigo-600 hover:underline" href={"mailto:" + profile.email}>{profile.email}</a></dd>
+        <dl className="grid grid-cols-[minmax(0,6.5rem)_minmax(0,1fr)] sm:grid-cols-[130px_minmax(0,1fr)] gap-x-3 gap-y-3 text-[14px] mb-10">
+          <dt className="text-[#686D76] font-mono text-[10px] sm:text-[11px] uppercase">Location</dt><dd className="min-w-0 break-words text-[#555963]">{LOCATION_LABEL}</dd>
+          <dt className="text-[#686D76] font-mono text-[10px] sm:text-[11px] uppercase">Role</dt><dd className="min-w-0 break-words text-[#555963]">{profile.role.title}, {profile.role.org}</dd>
+          <dt className="text-[#686D76] font-mono text-[10px] sm:text-[11px] uppercase">Main stack</dt><dd className="min-w-0 break-words text-[#555963]">Next.js, React, TypeScript, Node.js, ASP.NET Core, Angular, Flutter, MongoDB</dd>
+          <dt className="text-[#686D76] font-mono text-[10px] sm:text-[11px] uppercase">Contact</dt><dd className="min-w-0 break-all text-[#555963]"><a className="text-indigo-600 hover:underline" href={"mailto:" + profile.email}>{profile.email}</a></dd>
         </dl>
 
         <h2 className={h2} style={{ fontFamily: "var(--syne-var)", fontWeight: 700 }}>Awards</h2>
