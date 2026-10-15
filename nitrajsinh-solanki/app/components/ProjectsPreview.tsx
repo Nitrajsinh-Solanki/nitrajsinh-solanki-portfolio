@@ -170,7 +170,7 @@ export default function ProjectsPreview() {
                 Things I&apos;ve{" "}
                 <span className="text-teal-300">shipped.</span>
               </h2>
-              <p className="font-mono text-[11.5px] text-[#4A6070] tracking-wide mt-2">
+              <p className="font-mono text-[11.5px] text-[#94A3B8] tracking-wide mt-2">
                 {STATS.total} projects — hackathons, bounties &amp; live client products.{" "}
                 <span className="text-teal-300/70">$250+ won.</span>
               </p>
@@ -215,7 +215,7 @@ export default function ProjectsPreview() {
                 >
                   {value}
                 </div>
-                <div className="font-mono text-[10px] text-[#3A5060] tracking-wide">
+                <div className="font-mono text-[10px] text-[#94A3B8] tracking-wide">
                   {label}
                 </div>
               </div>
@@ -327,7 +327,7 @@ function FeaturedCard({ project, index }: { project: PreviewProject; index: numb
         </h3>
 
         {/* Description */}
-        <p className="text-[12.5px] text-[#524E4A] leading-[1.75] mb-5 flex-1">
+        <p className="text-[12.5px] text-[#A5B0C0] leading-[1.75] mb-5 flex-1">
           {project.description}
         </p>
 
@@ -431,7 +431,7 @@ function MoreProjectsCTA() {
           >
             Showing 3 of {STATS.total} projects
           </p>
-          <p className="font-mono text-[11px] text-[#3A5060] tracking-wide">
+          <p className="font-mono text-[11px] text-[#94A3B8] tracking-wide">
             {STATS.total - 3} more — including HourBit productivity suite, Flutter app, Rust server &amp; live client sites.
           </p>
         </div>
@@ -447,7 +447,7 @@ function MoreProjectsCTA() {
                 style={{
                   background: "rgba(26,43,66,0.5)",
                   border: "1px solid #1A2B42",
-                  color: "#4A6070",
+                  color: "#94A3B8",
                 }}
               >
                 {tag}
