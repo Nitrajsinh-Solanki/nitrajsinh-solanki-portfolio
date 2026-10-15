@@ -318,7 +318,7 @@ export default function ProjectsClient() {
               aria-hidden="true"
               className="pointer-events-none absolute inset-0 opacity-40"
               style={{
-                backgroundImage: "radial-gradient(circle, #E3E0D8 1px, transparent 1px)",
+                backgroundImage: "none",
                 backgroundSize: "28px 28px",
               }}
             />

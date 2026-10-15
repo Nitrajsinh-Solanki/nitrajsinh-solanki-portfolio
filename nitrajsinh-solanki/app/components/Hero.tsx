@@ -86,7 +86,7 @@ export default function Hero() {
           aria-hidden="true"
           className="absolute inset-0 pointer-events-none opacity-50"
           style={{
-            backgroundImage: "radial-gradient(circle, #F0EEE8 1px, transparent 1px)",
+            backgroundImage: "none",
             backgroundSize: "30px 30px",
           }}
         />
