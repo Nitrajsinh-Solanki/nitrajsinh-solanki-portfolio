@@ -17,7 +17,7 @@ export const metadata = pageMetadata({
 });
 
 const h2 = "text-[#E2DDD5] text-[22px] mb-4";
-const p = "text-[15px] text-[#7A7570] leading-[1.85] mb-4";
+const p = "text-[15px] text-[#A5B0C0] leading-[1.85] mb-4";
 
 export default function AboutPage() {
   const edu = profile.education[0];
@@ -60,19 +60,19 @@ export default function AboutPage() {
 
         <h2 className={h2} style={{ fontFamily: "var(--syne-var)", fontWeight: 700 }}>Quick facts</h2>
         <dl className="grid grid-cols-[130px_1fr] gap-y-2 text-[14px] mb-10">
-          <dt className="text-[#4A6070] font-mono text-[11px] uppercase">Location</dt><dd className="text-[#C8C3BA]">{LOCATION_LABEL}</dd>
-          <dt className="text-[#4A6070] font-mono text-[11px] uppercase">Role</dt><dd className="text-[#C8C3BA]">{profile.role.title}, {profile.role.org}</dd>
-          <dt className="text-[#4A6070] font-mono text-[11px] uppercase">Main stack</dt><dd className="text-[#C8C3BA]">Next.js, React, TypeScript, Node.js, ASP.NET Core, Angular, Flutter, MongoDB</dd>
-          <dt className="text-[#4A6070] font-mono text-[11px] uppercase">Contact</dt><dd className="text-[#C8C3BA]"><a className="text-teal-300 hover:underline" href={"mailto:" + profile.email}>{profile.email}</a></dd>
+          <dt className="text-[#94A3B8] font-mono text-[11px] uppercase">Location</dt><dd className="text-[#C8C3BA]">{LOCATION_LABEL}</dd>
+          <dt className="text-[#94A3B8] font-mono text-[11px] uppercase">Role</dt><dd className="text-[#C8C3BA]">{profile.role.title}, {profile.role.org}</dd>
+          <dt className="text-[#94A3B8] font-mono text-[11px] uppercase">Main stack</dt><dd className="text-[#C8C3BA]">Next.js, React, TypeScript, Node.js, ASP.NET Core, Angular, Flutter, MongoDB</dd>
+          <dt className="text-[#94A3B8] font-mono text-[11px] uppercase">Contact</dt><dd className="text-[#C8C3BA]"><a className="text-teal-300 hover:underline" href={"mailto:" + profile.email}>{profile.email}</a></dd>
         </dl>
 
         <h2 className={h2} style={{ fontFamily: "var(--syne-var)", fontWeight: 700 }}>Awards</h2>
-        <ul className="list-disc pl-5 text-[15px] text-[#7A7570] leading-[1.9] mb-10">
+        <ul className="list-disc pl-5 text-[15px] text-[#A5B0C0] leading-[1.9] mb-10">
           {profile.awards.map((item) => <li key={item.text}>{item.text}</li>)}
         </ul>
 
         <h2 className={h2} style={{ fontFamily: "var(--syne-var)", fontWeight: 700 }}>Education</h2>
-        <ul className="text-[15px] text-[#7A7570] leading-[1.9] mb-10">
+        <ul className="text-[15px] text-[#A5B0C0] leading-[1.9] mb-10">
           {profile.education.map((item) => <li key={item.level}>{item.level}, {item.school} ({item.board}), {item.period}, {item.score}</li>)}
         </ul>
 
