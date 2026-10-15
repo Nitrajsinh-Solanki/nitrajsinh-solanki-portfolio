@@ -336,7 +336,7 @@ export default function ProjectsClient() {
                     <span
                       className="block"
                       style={{
-                        background: "linear-gradient(135deg, #17191D 0%, #8A857F 100%)",
+                        background: "linear-gradient(135deg, #17191D 0%, #555963 100%)",
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
                       }}
@@ -356,7 +356,7 @@ export default function ProjectsClient() {
                     { value: `${PROJECTS.length}`, label: "Total",     color: "#4F46E5" },
                     { value: `${hackathonCount}`,  label: "Hackathon", color: "#4F46E5" },
                     { value: `${clientCount}`,     label: "Client",    color: "#4F46E5" },
-                    { value: "$250+",              label: "Prizes",    color: "#FBBF24" },
+                    { value: "$250+",              label: "Prizes",    color: "#4F46E5" },
                   ].map(({ value, label, color }) => (
                     <div
                       key={label}

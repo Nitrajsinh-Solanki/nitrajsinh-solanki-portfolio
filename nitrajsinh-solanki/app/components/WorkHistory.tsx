@@ -80,7 +80,7 @@ const WORK: WorkEntry[] = [
     duration: "Multiple Rounds",
     location: "Remote (Global)",
     current: false,
-    accentColor: "#FCD34D",
+    accentColor: "#4F46E5",
     badgeText: "$250+ Won",
     description: [
       "Competed across 5 global hackathons and bounty challenges on the StackUp platform, consistently placing in the top rankings. Built and shipped " + STATS.hackathon + " full-stack projects end-to-end — often solo — under tight deadlines.",
@@ -200,7 +200,7 @@ export default function WorkHistory() {
         aria-hidden="true"
         className="pointer-events-none absolute bottom-[8%] left-[-5%] w-[380px] h-[380px] rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(250,204,21,0.03) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(79,70,229,0.03) 0%, transparent 70%)",
           filter: "blur(55px)",
         }}
       />

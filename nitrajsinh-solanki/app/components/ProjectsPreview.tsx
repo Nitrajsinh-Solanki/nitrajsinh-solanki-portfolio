@@ -39,7 +39,7 @@ const FEATURED: PreviewProject[] = [
       "Full-featured library management with 3 user roles, AI-generated book descriptions, borrowing workflows & automated fine tracking.",
     tech: ["Next.js", "MongoDB", "Gemini AI", "NextAuth"],
     accentColor: "#4F46E5",
-    gradientFrom: "#0A2540",
+    gradientFrom: "#F0EEE8",
     iconPath:
       "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
     highlight: "3 user roles · AI-powered",
@@ -53,8 +53,8 @@ const FEATURED: PreviewProject[] = [
     description:
       "Scientific platform unifying biodiversity maps, NASA media, chemistry data & educational resources via 6 external APIs.",
     tech: ["Next.js 14", "Leaflet", "GBIF API", "MongoDB"],
-    accentColor: "#34D399",
-    gradientFrom: "#051A10",
+    accentColor: "#4F46E5",
+    gradientFrom: "#F0EEE8",
     iconPath:
       "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
     live: "https://biomap-nitrajsinh-solankis-projects.vercel.app",
@@ -70,7 +70,7 @@ const FEATURED: PreviewProject[] = [
       "On-chain NFT marketplace with auctions, royalties, batch transfers & APT payments via Move smart contracts on Aptos blockchain.",
     tech: ["Aptos Blockchain", "Move", "React", "Petra Wallet"],
     accentColor: "#4F46E5",
-    gradientFrom: "#120A30",
+    gradientFrom: "#F0EEE8",
     iconPath:
       "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z",
     highlight: "Move smart contracts",
@@ -80,7 +80,7 @@ const FEATURED: PreviewProject[] = [
 /* ──────────────── badge colour map ────────────────────────── */
 
 const BADGE: Record<BadgeColor, string> = {
-  teal:   "text-indigo-600   border-indigo-600/25   bg-indigo-600/5",
+  teal:   "text-indigo-700 border-indigo-700/25 bg-indigo-700/5",
   amber:  "text-indigo-700  border-indigo-700/25  bg-indigo-700/5",
   violet: "text-indigo-700 border-indigo-700/25 bg-indigo-700/5",
   orange: "text-indigo-700 border-indigo-700/25 bg-indigo-700/5",

@@ -264,7 +264,7 @@ export default function TechStack() {
         aria-hidden="true"
         className="pointer-events-none absolute bottom-[8%] right-[-4%] w-[380px] h-[380px] rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(139,92,246,0.04) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(79,70,229,0.04) 0%, transparent 70%)",
           filter: "blur(55px)",
         }}
       />
