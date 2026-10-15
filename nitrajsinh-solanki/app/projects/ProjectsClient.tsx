@@ -174,13 +174,13 @@ function ProjectCard({ project }: { project: Project }) {
           {project.tech.slice(0, 4).map((t) => (
             <span
               key={t}
-              className="font-mono text-[10px] text-[#4A5568] border border-[#131C2E] bg-[#0A1020] px-2 py-[3px] rounded"
+              className="font-mono text-[10px] text-[#A5B0C0] border border-[#131C2E] bg-[#0A1020] px-2 py-[3px] rounded"
             >
               {t}
             </span>
           ))}
           {project.tech.length > 4 && (
-            <span className="font-mono text-[10px] text-[#3A4555] px-2 py-[3px]">
+            <span className="font-mono text-[10px] text-[#94A3B8] px-2 py-[3px]">
               +{project.tech.length - 4}
             </span>
           )}
@@ -387,7 +387,7 @@ export default function ProjectsClient() {
                       >
                         {value}
                       </span>
-                      <span className="font-mono text-[9px] text-[#3A4A5A] tracking-widest uppercase">
+                      <span className="font-mono text-[9px] text-[#94A3B8] tracking-widest uppercase">
                         {label}
                       </span>
                     </div>
@@ -425,7 +425,7 @@ export default function ProjectsClient() {
                       className={`font-mono text-[9px] px-1.5 py-[2px] rounded-full leading-none ${
                         filter === key
                           ? "bg-[#070B14]/25 text-[#070B14]"
-                          : "bg-[#0F1A28] text-[#4A5560]"
+                          : "bg-[#0F1A28] text-[#A5B0C0]"
                       }`}
                     >
                       {count}
@@ -463,7 +463,7 @@ export default function ProjectsClient() {
               />
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6 px-8 py-6">
                 <div>
-                  <p className="font-mono text-[10px] text-[#3A4A5A] tracking-widest uppercase mb-1">
+                  <p className="font-mono text-[10px] text-[#94A3B8] tracking-widest uppercase mb-1">
                     That&apos;s not everything
                   </p>
                   <h2
@@ -498,7 +498,7 @@ export default function ProjectsClient() {
 
         {/* ── Footer ── */}
         <footer className="border-t border-[#0F1520] px-6 md:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 flex-wrap">
-          <span className="font-mono text-[11px] text-[#2A2A28] tracking-widest">
+          <span className="font-mono text-[11px] text-[#94A3B8] tracking-widest">
             © {new Date().getFullYear()} Nitrajsinh Solanki
           </span>
           <div className="flex items-center gap-5 flex-wrap">
