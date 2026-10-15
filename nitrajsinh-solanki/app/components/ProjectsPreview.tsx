@@ -378,7 +378,7 @@ function FeaturedCard({ project, index }: { project: PreviewProject; index: numb
               Live
             </button>
           ) : (
-            <span className="font-mono text-[9.5px] text-[#2A3A4A] tracking-wide">
+            <span className="font-mono text-[9.5px] text-[#94A3B8] tracking-wide">
               View details
             </span>
           )}
@@ -453,7 +453,7 @@ function MoreProjectsCTA() {
                 {tag}
               </span>
             ))}
-            <span className="font-mono text-[10px] text-[#2A3A4A]">+{STATS.total - 6} more</span>
+            <span className="font-mono text-[10px] text-[#94A3B8]">+{STATS.total - 6} more</span>
           </div>
 
           <Link
