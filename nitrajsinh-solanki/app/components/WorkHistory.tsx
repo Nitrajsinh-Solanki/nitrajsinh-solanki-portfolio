@@ -353,7 +353,7 @@ export default function WorkHistory() {
                   {/* Description */}
                   <div className="space-y-3">
                     {entry.description.map((para, i) => (
-                      <p key={i} className="text-[13.5px] text-[#555963] leading-[1.8] flex gap-3">
+                      <p key={i} className="text-[14.5px] text-[#555963] leading-[1.75] flex gap-3">
                         <span
                           className="mt-[9px] w-1.5 h-1.5 rounded-full shrink-0"
                           style={{ background: entry.accentColor, opacity: 0.6 }}

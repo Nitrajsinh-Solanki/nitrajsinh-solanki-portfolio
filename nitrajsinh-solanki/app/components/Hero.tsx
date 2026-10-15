@@ -32,32 +32,19 @@ function ScrollProgress() {
 
 /* ─────────────────────── stat chip ─────────────────────────── */
 function StatChip({
-  value, label, color, delay,
+  value, label, color,
 }: {
-  value: string; label: string; color: string; delay: number;
+  value: string; label: string; color: string;
 }) {
-  const [vis, setVis] = useState(false);
-  useEffect(() => {
-    const t = setTimeout(() => setVis(true), delay);
-    return () => clearTimeout(t);
-  }, [delay]);
-
   return (
-    <div
-      style={{
-        opacity: vis ? 1 : 0,
-        transform: vis ? "translateY(0)" : "translateY(12px)",
-        transition: "opacity 0.5s ease, transform 0.5s ease",
-      }}
-      className="flex flex-col items-center px-5 py-3 rounded-2xl border border-[#E3E0D8] bg-[#FFFFFF]/60 backdrop-blur-sm"
-    >
+    <div className="flex flex-col items-center px-5 py-3 rounded-2xl border border-[#E3E0D8] bg-white">
       <span
         className="text-[22px] font-extrabold leading-none mb-0.5"
         style={{ fontFamily: "var(--syne-var)", color }}
       >
         {value}
       </span>
-      <span className="font-mono text-[9px] text-[#737780] tracking-widest uppercase">{label}</span>
+      <span className="font-mono text-[11px] text-[#737780] tracking-wide uppercase">{label}</span>
     </div>
   );
 }
@@ -75,73 +62,15 @@ export default function Hero() {
         className="relative min-h-screen flex items-center px-6 md:px-10 pt-16 overflow-hidden"
         style={{ background: "#F8F7F3" }}
       >
-        {/* ── Canvas particle field ── */}
-
-        {/* ── Dot grid ── */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 pointer-events-none opacity-50"
-          style={{
-            backgroundImage: "none",
-            backgroundSize: "30px 30px",
-          }}
-        />
-
-        {/* ── Large background text watermark ── */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute bottom-[-2%] left-[-1%] select-none"
-          style={{
-            fontFamily: "var(--syne-var)",
-            fontWeight: 900,
-            fontSize: "clamp(90px, 16vw, 200px)",
-            color: "transparent",
-            WebkitTextStroke: "1px rgba(79,70,229,0.04)",
-            letterSpacing: "-0.05em",
-            lineHeight: 1,
-            whiteSpace: "nowrap",
-          }}
-        >
-          NS.
-        </div>
-
-        {/* ── Glowing orbs ── */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute top-[12%] left-[-6%] w-[500px] h-[500px] rounded-full"
-          style={{
-            background: "radial-gradient(circle, rgba(79,70,229,0.07) 0%, transparent 68%)",
-            filter: "blur(50px)",
-          }}
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute bottom-[8%] right-[-4%] w-[420px] h-[420px] rounded-full"
-          style={{
-            background: "radial-gradient(circle, rgba(79,70,229,0.07) 0%, transparent 68%)",
-            filter: "blur(50px)",
-          }}
-        />
-
-        {/* ── Vertical accent line (desktop) ── */}
-        <div
-          aria-hidden="true"
-          className="hidden lg:block pointer-events-none absolute left-[50%] top-[15%] bottom-[15%] w-[1px]"
-          style={{ background: "linear-gradient(to bottom, transparent, #E3E0D8 30%, #E3E0D8 70%, transparent)" }}
-        />
-
         {/* ─────────────── Main grid ─────────────── */}
         <div className="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center py-24 lg:py-0">
 
           {/* ══════ LEFT: Text ══════ */}
-          <div className="flex flex-col order-2 lg:order-1">
+          <div className="flex flex-col order-1">
 
             {/* Status badge */}
             <div className="anim-1 inline-flex items-center gap-2.5 self-start bg-[#FFFFFF] border border-[#E3E0D8] px-4 py-[7px] rounded-full mb-7">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-indigo-600 opacity-60" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-600" />
-              </span>
+              <span className="inline-flex rounded-full h-2 w-2 bg-indigo-600" aria-hidden="true" />
               <span className="font-mono text-[10.5px] text-indigo-600/90 tracking-[0.07em]">
                 Intern @ VeloxCore Private Limited
               </span>
@@ -153,7 +82,7 @@ export default function Hero() {
               style={{
                 fontFamily: "var(--syne-var)",
                 fontWeight: 800,
-                fontSize: "clamp(50px, 7.8vw, 90px)",
+                fontSize: "clamp(40px, 6vw, 76px)",
               }}
             >
               <span
@@ -189,13 +118,12 @@ export default function Hero() {
                 className="font-mono text-[13px] tracking-wide"
                 style={{ color: "#4F46E5" }}
               >
-                &gt;_{" "}{displayed}
-                <span className="cursor-blink" />
-              </span>
+                {displayed}
+                </span>
             </div>
 
             {/* Bio */}
-            <p className="anim-4 text-[14.5px] text-[#555963] leading-[1.85] max-w-[430px] mb-8">
+            <p className="anim-4 text-[16px] text-[#555963] leading-[1.75] max-w-[460px] mb-8">
               Full-stack developer in Gujarat, India. B.E. Computer Engineering at GEC
               Patan, interning at VeloxCore. I build full-stack products that work:
               clean APIs, sharp frontends, and the kind of code you&apos;re not ashamed
@@ -247,9 +175,9 @@ export default function Hero() {
 
             {/* ── Stats row ── */}
             <div className="anim-6 flex items-center gap-3 flex-wrap">
-              <StatChip value={String(STATS.total)} label="Projects" color="#4F46E5" delay={700} />
-              <StatChip value="$250+" label="Prizes Won" color="#4F46E5" delay={820} />
-              <StatChip value={String(STATS.live)} label="Live Apps" color="#4F46E5" delay={940} />
+              <StatChip value={String(STATS.total)} label="Projects" color="#4F46E5" />
+              <StatChip value="$250+" label="Prizes Won" color="#4F46E5" />
+              <StatChip value={String(STATS.live)} label="Live Apps" color="#4F46E5" />
 
               {/* Scroll cue */}
               <div className="hidden lg:flex items-center gap-2 ml-auto">
@@ -263,9 +191,9 @@ export default function Hero() {
           </div>
 
           {/* ══════ RIGHT: Photo + floating code card ══════ */}
-          <div className="anim-img flex justify-center lg:justify-end order-1 lg:order-2 relative">
+          <div className="anim-img flex justify-center lg:justify-end order-2 relative">
 
-            {/* ── Photo ring system (clean — no overlapping badges) ── */}
+            {/* Portrait */}
             <div className="relative flex items-center justify-center hero-portrait-wrap">
 
               {/* Photo */}
@@ -274,7 +202,7 @@ export default function Hero() {
                 style={{
                   width: "clamp(240px, 28vw, 300px)",
                   height: "clamp(240px, 28vw, 300px)",
-                  borderRadius: "9999px",
+                  borderRadius: "24px",
                   zIndex: 2,
                 }}
               >
@@ -297,13 +225,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-
-        {/* ── Bottom gradient fade ── */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 bottom-0 h-20 pointer-events-none"
-          style={{ background: "linear-gradient(to top, #F8F7F3, transparent)" }}
-        />
 
       </section>
     </>

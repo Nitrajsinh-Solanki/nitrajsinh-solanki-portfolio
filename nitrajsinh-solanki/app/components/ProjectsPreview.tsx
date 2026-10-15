@@ -327,7 +327,7 @@ function FeaturedCard({ project, index }: { project: PreviewProject; index: numb
         </h3>
 
         {/* Description */}
-        <p className="text-[12.5px] text-[#555963] leading-[1.75] mb-5 flex-1">
+        <p className="text-[14px] text-[#555963] leading-[1.7] mb-5 flex-1">
           {project.description}
         </p>
 

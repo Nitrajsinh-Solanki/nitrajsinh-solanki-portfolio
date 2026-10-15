@@ -163,7 +163,7 @@ function ProjectCard({ project }: { project: Project }) {
 
         {/* Description */}
         <p
-          className="text-[12.5px] text-[#555963] leading-[1.75] flex-1 mb-4"
+          className="text-[14px] text-[#555963] leading-[1.7] flex-1 mb-4"
           itemProp="description"
         >
           {project.description}
@@ -362,7 +362,7 @@ export default function ProjectsClient() {
                       Projects
                     </span>
                   </h1>
-                  <p className="text-[13.5px] text-[#555963] leading-[1.8] max-w-[460px]">
+                  <p className="text-[14.5px] text-[#555963] leading-[1.75] max-w-[460px]">
                     Hackathon winners, blockchain apps, AI tools, and live client platforms.
                     Every project is shipped with clean code and a sharp purpose.
                   </p>

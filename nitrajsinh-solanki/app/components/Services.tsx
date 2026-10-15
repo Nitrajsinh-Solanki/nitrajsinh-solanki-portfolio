@@ -309,7 +309,7 @@ function ServiceCard({
 
       {/* Description */}
       <p
-        className="text-[13.5px] leading-[1.75] mb-5"
+        className="text-[15px] leading-[1.7] mb-5"
         style={{ color: "#555963" }}
       >
         {service.description}

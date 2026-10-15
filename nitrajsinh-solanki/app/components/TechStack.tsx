@@ -147,7 +147,7 @@ const CAT_META: Record<
   "AI & APIs":       { color: "text-indigo-700",  border: "border-indigo-600/25",  bg: "bg-indigo-600/5",  dot: "bg-indigo-600",  accent: "#4F46E5" },
   "Mobile":          { color: "text-indigo-700",    border: "border-indigo-600/25",    bg: "bg-indigo-600/5",    dot: "bg-indigo-600",    accent: "#4F46E5" },
   "Blockchain":      { color: "text-indigo-700",  border: "border-indigo-600/25",  bg: "bg-indigo-600/5",  dot: "bg-indigo-600",  accent: "#4F46E5" },
-  "Infra & Cloud":   { color: "text-slate-300",   border: "border-slate-400/25",   bg: "bg-slate-400/5",   dot: "bg-slate-400",   accent: "#4F46E5" },
+  "Infra & Cloud":   { color: "text-slate-700",   border: "border-indigo-600/25",   bg: "bg-indigo-600/5",   dot: "bg-indigo-600",   accent: "#4F46E5" },
   "Tools":           { color: "text-indigo-600",    border: "border-indigo-600/25",    bg: "bg-indigo-600/5",    dot: "bg-indigo-600",    accent: "#4F46E5" },
 };
 
