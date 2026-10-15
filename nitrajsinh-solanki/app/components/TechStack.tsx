@@ -1,7 +1,7 @@
 // nitrajsinh-solanki/app/components/TechStack.tsx
 "use client";
 
-import { STATS } from "../projects/data";
+import { STATS } from "../projects/stats";
 
 import { useEffect, useRef, useState } from "react";
 
