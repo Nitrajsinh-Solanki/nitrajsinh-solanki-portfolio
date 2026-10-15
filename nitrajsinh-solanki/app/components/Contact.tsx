@@ -181,7 +181,7 @@ export default function Contact() {
                 <div className="flex flex-col gap-1.5">
                   <label
                     htmlFor="contact-name"
-                    className="font-mono text-[10px] text-[#4A5060] tracking-[0.12em] uppercase"
+                    className="font-mono text-[10px] text-[#A5B0C0] tracking-[0.12em] uppercase"
                   >
                     Your Name
                   </label>
@@ -199,7 +199,7 @@ export default function Contact() {
                 <div className="flex flex-col gap-1.5">
                   <label
                     htmlFor="contact-subject"
-                    className="font-mono text-[10px] text-[#4A5060] tracking-[0.12em] uppercase"
+                    className="font-mono text-[10px] text-[#A5B0C0] tracking-[0.12em] uppercase"
                   >
                     Subject
                   </label>
@@ -217,7 +217,7 @@ export default function Contact() {
                 <div className="flex flex-col gap-1.5">
                   <label
                     htmlFor="contact-message"
-                    className="font-mono text-[10px] text-[#4A5060] tracking-[0.12em] uppercase"
+                    className="font-mono text-[10px] text-[#A5B0C0] tracking-[0.12em] uppercase"
                   >
                     Message <span className="text-teal-300/50">*</span>
                   </label>
@@ -242,7 +242,7 @@ export default function Contact() {
                     className={`group flex items-center gap-2.5 font-mono text-[11px] tracking-widest px-5 py-3 rounded-xl border transition-all duration-200 ${
                       isReady
                         ? "text-[#070B14] bg-teal-300 border-teal-300 hover:bg-teal-200 hover:border-teal-200 cursor-pointer"
-                        : "text-[#3A4050] bg-[#080D18] border-[#131C2E] cursor-not-allowed"
+                        : "text-[#94A3B8] bg-[#080D18] border-[#131C2E] cursor-not-allowed"
                     }`}
                   >
                     Open in Mail
@@ -336,7 +336,7 @@ export default function Contact() {
                       strokeWidth={2}
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="ml-auto text-[#94A3B8] group-hover:text-[#4A5060] transition-colors duration-200"
+                      className="ml-auto text-[#94A3B8] group-hover:text-[#A5B0C0] transition-colors duration-200"
                       aria-hidden="true"
                     >
                       <path d="M7 17L17 7M17 7H7M17 7v10" />
@@ -351,7 +351,7 @@ export default function Contact() {
               <p className="font-mono text-[10px] text-[#94A3B8] leading-[1.8] tracking-wide">
                 <span className="text-teal-300/50">$</span>{" "}
                 I typically respond within{" "}
-                <span className="text-[#4A5060]">24 hours.</span>{" "}
+                <span className="text-[#A5B0C0]">24 hours.</span>{" "}
                 Best for internship inquiries, freelance scoping, or hackathon team-ups.
               </p>
             </div>
