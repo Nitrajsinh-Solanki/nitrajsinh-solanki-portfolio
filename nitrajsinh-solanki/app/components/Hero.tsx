@@ -1,7 +1,7 @@
 // nitrajsinh-solanki/app/components/Hero.tsx
 "use client";
 
-import { STATS } from "../projects/data";
+import { STATS } from "../projects/stats";
 
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
