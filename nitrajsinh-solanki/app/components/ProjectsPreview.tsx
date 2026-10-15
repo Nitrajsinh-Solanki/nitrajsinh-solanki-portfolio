@@ -93,7 +93,7 @@ export default function ProjectsPreview() {
   return (
     <section
       id="projects"
-      className="relative py-20 md:py-28 px-6 md:px-10 overflow-hidden"
+      className="relative py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-10 overflow-hidden"
     >
       <div className="relative z-10 max-w-6xl mx-auto">
 
@@ -144,7 +144,7 @@ export default function ProjectsPreview() {
           </div>
 
           {/* Stats strip */}
-          <div className="grid grid-cols-3 gap-3 mb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-12">
             {[
               { value: String(STATS.total), label: "Projects Built", color: "#4F46E5" },
               { value: "$250+", label: "Hackathon Prizes",  color: "#4F46E5" },
@@ -268,7 +268,7 @@ function FeaturedCard({ project }: { project: PreviewProject }) {
         </h3>
 
         {/* Description */}
-        <p className="text-[14px] text-[#555963] leading-[1.7] mb-5 flex-1">
+        <p className="min-w-0 break-words text-[14px] text-[#555963] leading-[1.7] mb-5 flex-1">
           {project.description}
         </p>
 

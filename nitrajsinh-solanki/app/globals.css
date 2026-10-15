@@ -28,6 +28,72 @@ body {
   color: var(--foreground);
 }
 
+/* Prevent intrinsic content and long labels from widening the viewport. */
+html {
+  width: 100%;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  overflow-x: clip;
+}
+
+main,
+section,
+article,
+nav,
+footer,
+header,
+aside,
+figure {
+  min-width: 0;
+}
+
+img,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
+input,
+textarea,
+select,
+button {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+dd,
+dt {
+  overflow-wrap: anywhere;
+}
+
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Small-screen spacing and media defaults. */
+@media (max-width: 639px) {
+  .hero-portrait-wrap {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-portrait-frame {
+    width: min(280px, calc(100vw - 2rem)) !important;
+    height: auto !important;
+    aspect-ratio: 1;
+  }
+}
+
 /* Respect the visitor's motion preferences. */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {

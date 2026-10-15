@@ -249,7 +249,7 @@ export default function TechStack() {
       aria-label="Nitrajsinh Solanki tech stack — all technologies used across 10 real projects including hackathons, client work and internship"
       itemScope
       itemType="https://schema.org/ItemList"
-      className="relative py-20 md:py-28 px-6 md:px-10 overflow-hidden"
+      className="relative py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-10 overflow-hidden"
     >
       <div className="relative z-10 max-w-5xl mx-auto">
 
@@ -411,7 +411,7 @@ export default function TechStack() {
                         itemProp="name"
                         className={[
                           "inline-flex items-center gap-1.5",
-                          "font-mono text-[11px] px-2.5 py-1 rounded-md border",
+                          "max-w-full whitespace-normal break-words font-mono text-[11px] px-2.5 py-1 rounded-md border",
                           "transition-all duration-150 cursor-default select-none",
                           "hover:brightness-125 hover:scale-[1.03]",
                           meta.border,

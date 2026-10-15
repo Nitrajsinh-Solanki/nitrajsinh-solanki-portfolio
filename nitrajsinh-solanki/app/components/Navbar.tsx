@@ -107,7 +107,7 @@ export default function Navbar() {
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto h-16 flex items-center justify-between px-6 md:px-10">
+      <div className="max-w-6xl mx-auto h-16 flex items-center justify-between gap-3 px-4 sm:px-6 md:px-10">
 
         {/* Logo */}
         <Link
@@ -156,6 +156,8 @@ export default function Navbar() {
             onClick={() => setMenuOpen((v) => !v)}
             className="lg:hidden flex flex-col gap-[5px] p-2"
             aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            aria-controls="primary-mobile-menu"
           >
             <span className={`block w-5 h-[1.5px] bg-[#686D76] transition-all duration-200 ${menuOpen ? "rotate-45 translate-y-[6.5px]" : ""}`} />
             <span className={`block w-5 h-[1.5px] bg-[#686D76] transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`} />
@@ -166,11 +168,12 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
+        id="primary-mobile-menu"
         className={`lg:hidden overflow-hidden transition-all duration-300 bg-[#F8F7F3] border-b border-[#E3E0D8] ${
-          menuOpen ? "max-h-[28rem] py-4" : "max-h-0"
+          menuOpen ? "max-h-[32rem] py-4" : "max-h-0"
         }`}
       >
-        <div className="flex flex-col gap-1 px-6">
+        <div className="flex flex-col gap-1 px-4 sm:px-6">
           {NAV_LINKS.map(({ label, href, isRoute }) =>
             isRoute ? (
               <Link

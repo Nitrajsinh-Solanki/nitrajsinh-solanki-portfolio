@@ -37,7 +37,7 @@ function StatChip({
   value: string; label: string; color: string;
 }) {
   return (
-    <div className="flex flex-col items-center px-5 py-3 rounded-2xl border border-[#E3E0D8] bg-white">
+    <div className="flex flex-col items-center px-3 sm:px-5 py-3 rounded-2xl border border-[#E3E0D8] bg-white">
       <span
         className="text-[22px] font-extrabold leading-none mb-0.5"
         style={{ fontFamily: "var(--syne-var)", color }}
@@ -59,7 +59,7 @@ export default function Hero() {
 
       <section
         id="hero"
-        className="relative min-h-screen flex items-center px-6 md:px-10 pt-16 overflow-hidden"
+        className="relative min-h-screen flex items-center px-4 sm:px-6 md:px-10 pt-16 overflow-hidden"
         style={{ background: "#F8F7F3" }}
       >
         {/* ─────────────── Main grid ─────────────── */}
@@ -71,7 +71,7 @@ export default function Hero() {
             {/* Status badge */}
             <div className="anim-1 inline-flex items-center gap-2.5 self-start bg-[#FFFFFF] border border-[#E3E0D8] px-4 py-[7px] rounded-full mb-7">
               <span className="inline-flex rounded-full h-2 w-2 bg-indigo-600" aria-hidden="true" />
-              <span className="font-mono text-[10.5px] text-indigo-700 tracking-[0.07em]">
+              <span className="font-mono text-[10px] sm:text-[10.5px] text-indigo-700 tracking-normal sm:tracking-[0.07em]">
                 Intern @ VeloxCore Private Limited
               </span>
             </div>
@@ -119,7 +119,7 @@ export default function Hero() {
             </p>
 
             {/* CTAs */}
-            <div className="anim-5 flex flex-wrap gap-3 mb-10">
+            <div className="anim-5 flex flex-wrap gap-2.5 sm:gap-3 mb-10">
               <a
                 href="#projects"
                 style={{ fontFamily: "var(--syne-var)" }}
