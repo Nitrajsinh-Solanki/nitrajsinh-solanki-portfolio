@@ -107,7 +107,7 @@ export default function Contact() {
     <section
       id="contact"
       ref={ref as React.RefObject<HTMLElement>}
-      className="relative py-20 md:py-28 px-6 md:px-10 overflow-hidden"
+      className="relative py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-10 overflow-hidden"
     >
       <div className="relative z-10 max-w-5xl mx-auto">
 
@@ -149,7 +149,7 @@ export default function Contact() {
 
           {/* ── LEFT: Contact form ── */}
           <div style={fade(0.28)}>
-            <div className="bg-[#FFFFFF] border border-[#E3E0D8] rounded-2xl p-6 md:p-8 hover:border-indigo-600/15 transition-colors duration-300">
+            <div className="bg-[#FFFFFF] border border-[#E3E0D8] rounded-2xl p-4 sm:p-6 md:p-8 hover:border-indigo-600/15 transition-colors duration-300">
 
               <p
                 className="font-mono text-[9.5px] text-[#686D76] tracking-[0.18em] uppercase mb-6"
@@ -214,14 +214,14 @@ export default function Contact() {
                 </div>
 
                 {/* CTA */}
-                <div className="flex items-center justify-between gap-4 pt-1">
-                  <p className="font-mono text-[10px] text-[#686D76] tracking-wide leading-relaxed max-w-[200px]">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-1">
+                  <p className="w-full sm:max-w-[200px] font-mono text-[10px] text-[#686D76] tracking-wide leading-relaxed">
                     Opens your mail client with the message pre-filled.
                   </p>
                   <button
                     onClick={handleOpenMail}
                     disabled={!isReady}
-                    className={`group flex items-center gap-2.5 font-mono text-[11px] tracking-widest px-5 py-3 rounded-xl border transition-all duration-200 ${
+                    className={`group flex items-center justify-center gap-2.5 font-mono text-[11px] tracking-widest px-5 py-3 rounded-xl border transition-all duration-200 ${
                       isReady
                         ? "text-white bg-indigo-600 border-indigo-600 hover:bg-indigo-700 hover:border-indigo-700 cursor-pointer"
                         : "text-[#686D76] bg-[#FFFFFF] border-[#E3E0D8] cursor-not-allowed"
