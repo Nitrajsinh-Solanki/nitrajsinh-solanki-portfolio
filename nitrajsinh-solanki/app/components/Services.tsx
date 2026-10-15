@@ -3,7 +3,7 @@
 
 import { STATS } from "../projects/stats";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 const SERVICES = [
   {
@@ -121,27 +121,7 @@ const SERVICES = [
   },
 ] as const;
 
-function useInView(threshold = 0.15) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(true);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
-      { threshold }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [threshold]);
-
-  return { ref, visible };
-}
-
 export default function Services() {
-  const header = useInView(0.1);
-
   return (
     <section
       id="services"
@@ -150,15 +130,7 @@ export default function Services() {
 <div className="relative z-10 max-w-6xl mx-auto">
 
         {/* ── Section header ── */}
-        <div
-          ref={header.ref}
-          className="mb-16"
-          style={{
-            opacity: header.visible ? 1 : 0,
-            transform: header.visible ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.55s ease, transform 0.55s ease",
-          }}
-        >
+        <div className="mb-16">
           <p
             className="font-mono text-[11px] tracking-[0.18em] uppercase text-indigo-700 mb-4"
           >
@@ -202,8 +174,8 @@ export default function Services() {
 
         {/* ── Service cards grid ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-          {SERVICES.map((service, i) => (
-            <ServiceCard key={service.id} service={service} index={i} />
+          {SERVICES.map((service) => (
+            <ServiceCard key={service.id} service={service} />
           ))}
         </div>
 
@@ -216,23 +188,17 @@ export default function Services() {
 
 function ServiceCard({
   service,
-  index,
 }: {
   service: (typeof SERVICES)[number];
-  index: number;
 }) {
-  const { ref, visible } = useInView(0.1);
   const [hovered, setHovered] = useState(false);
 
   return (
     <div
-      ref={ref}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(28px)",
-        transition: `opacity 0.55s ${index * 0.08}s ease, transform 0.55s ${index * 0.08}s ease, background 0.25s, border-color 0.25s, box-shadow 0.25s`,
+        transition: "background 0.25s, border-color 0.25s, box-shadow 0.25s",
         background: hovered ? "#EEF2FF" : "#FFFFFF",
         border: `1px solid ${hovered ? "rgba(79,70,229,0.22)" : "#E3E0D8"}`,
         borderRadius: "14px",
@@ -350,16 +316,10 @@ function ServiceCard({
 }
 
 function CtaBanner() {
-  const { ref, visible } = useInView(0.1);
-
   return (
     <div
-      ref={ref}
       className="mt-14 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6"
       style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(20px)",
-        transition: "opacity 0.55s 0.2s ease, transform 0.55s 0.2s ease",
         background: "linear-gradient(135deg, #FFFFFF 0%, #EEF2FF 100%)",
         border: "1px solid #E3E0D8",
       }}
