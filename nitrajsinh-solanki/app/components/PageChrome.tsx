@@ -68,14 +68,14 @@ export function PageFooter() {
     { label: profile.email, href: "mailto:" + profile.email },
   ];
   return (
-    <footer className="border-t border-[#E3E0D8] px-8 md:px-12 py-7 flex flex-col sm:flex-row items-center justify-between gap-4 flex-wrap">
+    <footer className="border-t border-[#E3E0D8] px-4 sm:px-8 md:px-12 py-7 flex flex-col sm:flex-row items-center justify-between gap-4 flex-wrap">
       <span className="font-mono text-[11px] text-[#686D76] tracking-widest">© {new Date().getFullYear()} {SITE_NAME}</span>
-      <div className="flex items-center gap-6 flex-wrap">
+      <div className="flex items-center justify-center gap-x-4 sm:gap-x-6 gap-y-3 flex-wrap">
         {links.map(({ label, href }) => (
           <a key={label} href={href}
             rel={href.startsWith("http") ? "me noopener noreferrer" : undefined}
             target={href.startsWith("http") ? "_blank" : undefined}
-            className="font-sans text-[13px] text-[#555963] hover:text-indigo-600 transition-colors">{label}</a>
+            className="max-w-full break-words font-sans text-[13px] text-[#555963] hover:text-indigo-600 transition-colors">{label}</a>
         ))}
       </div>
     </footer>
