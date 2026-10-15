@@ -22,7 +22,7 @@ export default function ResumePage() {
         <h1 className="text-[#17191D]" style={{ fontFamily: "var(--syne-var)", fontWeight: 800, fontSize: "clamp(30px,5vw,46px)" }}>
           {profile.name}: Resume
         </h1>
-        <p className="font-mono text-[12px] text-indigo-600/80 mt-2">{profile.headline} · {profile.email}</p>
+        <p className="font-mono text-[12px] text-indigo-700 mt-2">{profile.headline} · {profile.email}</p>
         <a href="/Nitrajsinh_Solanki_Resume.pdf" download aria-label="Download resume (PDF)"
           className="inline-block mt-5 bg-indigo-600 text-white font-bold text-[13px] px-6 py-3 rounded-xl"
           style={{ fontFamily: "var(--syne-var)" }}>Download resume (PDF)</a>

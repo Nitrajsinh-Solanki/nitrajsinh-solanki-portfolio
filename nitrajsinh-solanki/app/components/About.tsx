@@ -165,12 +165,12 @@ export default function About() {
             </div>
 
             {/* bio */}
-            <div className="space-y-4 text-[14.5px] text-[#555963] leading-[1.82] mb-8">
+            <div className="space-y-4 text-[16px] text-[#555963] leading-[1.75] mb-8">
               <p>
                 I&apos;m a full-stack developer who moves comfortably across the entire stack.
                 At <span className="text-[#737780]">VeloxCore</span>, I work with{" "}
-                <span className="text-indigo-600/80">.NET</span> and{" "}
-                <span className="text-indigo-600/80">Angular</span> — architecting REST APIs and
+                <span className="text-indigo-700">.NET</span> and{" "}
+                <span className="text-indigo-700">Angular</span> — architecting REST APIs and
                 building component-driven frontends that handle real enterprise workloads. I own
                 the full delivery: schema design, business logic, UI components, and everything
                 wired together cleanly in between.
@@ -194,7 +194,7 @@ export default function About() {
                 {INTERESTS.map((tag) => (
                   <span
                     key={tag}
-                    className="font-mono text-[10.5px] text-[#555963] border border-[#E3E0D8] bg-[#FFFFFF] px-3 py-1.5 rounded-md hover:border-indigo-600/30 hover:text-indigo-600/70 transition-colors duration-200"
+                    className="font-mono text-[10.5px] text-[#555963] border border-[#E3E0D8] bg-[#FFFFFF] px-3 py-1.5 rounded-md hover:border-indigo-600/30 hover:text-indigo-700 transition-colors duration-200"
                   >
                     {tag}
                   </span>
@@ -255,7 +255,7 @@ export default function About() {
                       <span className="font-mono text-[9.5px] text-[#737780] tracking-wide">
                         {board} · {period}
                       </span>
-                      <span className="font-mono text-[10px] text-indigo-600/65">
+                      <span className="font-mono text-[10px] text-indigo-700">
                         {score}
                       </span>
                     </div>

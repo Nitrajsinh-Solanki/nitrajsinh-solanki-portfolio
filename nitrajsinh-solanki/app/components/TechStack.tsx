@@ -351,7 +351,7 @@ export default function TechStack() {
                     "transition-all duration-200 whitespace-nowrap",
                     active === f
                       ? "bg-indigo-600 text-white border-indigo-600 font-semibold"
-                      : "text-[#555963] border-[#E3E0D8] hover:border-indigo-600/40 hover:text-indigo-600/80",
+                      : "text-[#555963] border-[#E3E0D8] hover:border-indigo-600/40 hover:text-indigo-700",
                   ].join(" ")}
                 >
                   {f}

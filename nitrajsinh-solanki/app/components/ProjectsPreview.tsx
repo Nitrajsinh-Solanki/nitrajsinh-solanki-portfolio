@@ -172,7 +172,7 @@ export default function ProjectsPreview() {
               </h2>
               <p className="font-mono text-[11.5px] text-[#737780] tracking-wide mt-2">
                 {STATS.total} projects — hackathons, bounties &amp; live client products.{" "}
-                <span className="text-indigo-600/70">$250+ won.</span>
+                <span className="text-indigo-700">$250+ won.</span>
               </p>
             </div>
 
@@ -335,7 +335,7 @@ function FeaturedCard({ project, index }: { project: PreviewProject; index: numb
         {project.highlight && (
           <div
             className="flex items-center gap-1.5 mb-4 font-mono text-[10px] tracking-wide"
-            style={{ color: `${project.accentColor}90` }}
+            style={{ color: project.accentColor }}
           >
             <span
               className="w-1.5 h-1.5 rounded-full shrink-0"
@@ -352,7 +352,7 @@ function FeaturedCard({ project, index }: { project: PreviewProject; index: numb
               key={t}
               className="font-mono text-[10px] px-2 py-[3px] rounded"
               style={{
-                background: "rgba(26,43,66,0.7)",
+                background: "rgba(79,70,229,0.06)",
                 border: "1px solid #E3E0D8",
                 color: "#4F46E5",
               }}
@@ -369,7 +369,7 @@ function FeaturedCard({ project, index }: { project: PreviewProject; index: numb
               type="button"
               onClick={(e) => { e.preventDefault(); window.open(project.live, "_blank", "noopener,noreferrer"); }}
               className="font-mono text-[9.5px] tracking-wide flex items-center gap-1.5 hover:opacity-100 transition-opacity cursor-pointer"
-              style={{ color: project.accentColor, opacity: 0.75 }}
+              style={{ color: project.accentColor }}
             >
               <span
                 className="w-1.5 h-1.5 rounded-full animate-pulse"
@@ -385,7 +385,7 @@ function FeaturedCard({ project, index }: { project: PreviewProject; index: numb
 
           <span
             className="transition-all duration-200 group-hover:translate-x-1"
-            style={{ color: hovered ? project.accentColor : "#D8D5CD" }}
+            style={{ color: hovered ? project.accentColor : "#737780" }}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7" />
@@ -445,7 +445,7 @@ function MoreProjectsCTA() {
                 key={tag}
                 className="font-mono text-[9.5px] px-2.5 py-1 rounded-full border tracking-wide"
                 style={{
-                  background: "rgba(26,43,66,0.5)",
+                  background: "rgba(79,70,229,0.06)",
                   border: "1px solid #E3E0D8",
                   color: "#737780",
                 }}

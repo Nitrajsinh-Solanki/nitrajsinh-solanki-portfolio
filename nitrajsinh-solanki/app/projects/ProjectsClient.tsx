@@ -314,7 +314,7 @@ export default function ProjectsClient() {
                     <span className="absolute inline-flex h-full w-full rounded-full bg-indigo-600 opacity-60" />
                     <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-indigo-600" />
                   </span>
-                  <span className="font-mono text-[10px] text-indigo-600/80 tracking-[0.1em]">
+                  <span className="font-mono text-[10px] text-indigo-700 tracking-[0.1em]">
                     {PROJECTS.length} Projects · $250+ in Prizes
                   </span>
                 </div>

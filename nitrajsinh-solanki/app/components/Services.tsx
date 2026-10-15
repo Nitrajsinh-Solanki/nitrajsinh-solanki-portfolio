@@ -180,7 +180,7 @@ export default function Services() {
           }}
         >
           <p
-            className="font-mono text-[11px] tracking-[0.18em] uppercase text-indigo-600/80 mb-4"
+            className="font-mono text-[11px] tracking-[0.18em] uppercase text-indigo-700 mb-4"
           >
             What I Build
           </p>
@@ -252,8 +252,8 @@ function ServiceCard({
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(28px)",
-        transition: `opacity 0.55s ${index * 0.08}s ease, transform 0.55s ${index * 0.08}s ease`,
-        background: hovered ? "#0D1A2A" : "#FFFFFF",
+        transition: `opacity 0.55s ${index * 0.08}s ease, transform 0.55s ${index * 0.08}s ease, background 0.25s, border-color 0.25s, box-shadow 0.25s`,
+        background: hovered ? "#EEF2FF" : "#FFFFFF",
         border: `1px solid ${hovered ? "rgba(79,70,229,0.22)" : "#E3E0D8"}`,
         borderRadius: "14px",
         padding: "28px",
@@ -261,7 +261,6 @@ function ServiceCard({
         boxShadow: hovered
           ? "0 0 40px rgba(79,70,229,0.05), inset 0 0 0 1px rgba(79,70,229,0.08)"
           : "none",
-        transition2: "background 0.25s, border-color 0.25s, box-shadow 0.25s",
       } as React.CSSProperties}
     >
       {/* Header row */}
@@ -322,7 +321,7 @@ function ServiceCard({
             key={tech}
             className="font-mono text-[10.5px] tracking-wide px-2.5 py-[4px] rounded-md"
             style={{
-              background: "rgba(26,43,66,0.8)",
+              background: "rgba(79,70,229,0.06)",
               border: "1px solid #E3E0D8",
               color: "#4F46E5",
             }}
@@ -358,7 +357,6 @@ function ServiceCard({
                   background: "rgba(79,70,229,0.06)",
                   border: "1px solid rgba(79,70,229,0.12)",
                   color: "#4F46E5",
-                  opacity: 0.85,
                 }}
               >
                 {project.award}
@@ -382,14 +380,14 @@ function CtaBanner() {
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(20px)",
         transition: "opacity 0.55s 0.2s ease, transform 0.55s 0.2s ease",
-        background: "linear-gradient(135deg, #FFFFFF 0%, #0D1E30 100%)",
+        background: "linear-gradient(135deg, #FFFFFF 0%, #EEF2FF 100%)",
         border: "1px solid #E3E0D8",
       }}
     >
       <div>
         <p
           className="font-mono text-[10.5px] tracking-[0.16em] uppercase mb-2"
-          style={{ color: "rgba(79,70,229,0.6)" }}
+          style={{ color: "#4338CA" }}
         >
           Open to Work
         </p>

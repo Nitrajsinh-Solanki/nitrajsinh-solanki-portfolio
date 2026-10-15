@@ -71,7 +71,7 @@ export default function Hero() {
             {/* Status badge */}
             <div className="anim-1 inline-flex items-center gap-2.5 self-start bg-[#FFFFFF] border border-[#E3E0D8] px-4 py-[7px] rounded-full mb-7">
               <span className="inline-flex rounded-full h-2 w-2 bg-indigo-600" aria-hidden="true" />
-              <span className="font-mono text-[10.5px] text-indigo-600/90 tracking-[0.07em]">
+              <span className="font-mono text-[10.5px] text-indigo-700 tracking-[0.07em]">
                 Intern @ VeloxCore Private Limited
               </span>
             </div>
