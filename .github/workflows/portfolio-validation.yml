@@ -1,0 +1,45 @@
+name: Portfolio validation
+
+on:
+  push:
+    branches:
+      - "theme/warm-editorial-light"
+    paths:
+      - "nitrajsinh-solanki/**"
+      - ".github/workflows/portfolio-validation.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "nitrajsinh-solanki/**"
+      - ".github/workflows/portfolio-validation.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Lint and production build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: nitrajsinh-solanki
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: nitrajsinh-solanki/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run lint
+        run: npm run lint
+
+      - name: Build production app
+        run: npm run build
