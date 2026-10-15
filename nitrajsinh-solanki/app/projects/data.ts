@@ -19,6 +19,12 @@ export interface Project {
   badgeColor: BadgeColor;
   description: string;
   longDescription: string;
+  caseStudy: {
+    challenge: string;
+    approach: string;
+    contribution: string;
+    outcome: string;
+  };
   tech: string[];
   features: string[];
   links: ProjectLink[];
@@ -52,6 +58,12 @@ export const PROJECTS: Project[] = [
       "Full-featured library management system with three user roles — Admin, Librarian, User. Handles book lifecycle, borrowing, fines, AI-powered descriptions, and email notifications.",
     longDescription:
       "Built for the StackUp Hackathon, this system covers the complete lifecycle of a library — from adding books and managing users to borrowing, tracking overdue returns, and calculating fines automatically. Admins can promote users to Librarian role, configure fare settings, and monitor all transactions from a central dashboard. Book cover images are stored on Supabase Storage, and Google Gemini AI auto-generates book descriptions on demand.",
+    caseStudy: {
+      challenge: "A library needs one place to manage its catalogue, members, borrowing, overdue returns and fines, while restricting sensitive actions to the right roles.",
+      approach: "Combine a Next.js and TypeScript interface with MongoDB/Mongoose data models, NextAuth and JWT sessions, email OTP verification, Supabase Storage for book covers, and Gemini for optional AI-written descriptions.",
+      contribution: "Implemented Admin, Librarian and User workflows; protected dashboard routes; book borrowing and return logic; automatic fine calculations; configurable borrowing rules; email verification; cover uploads; and AI-assisted descriptions.",
+      outcome: "Delivered a demonstrable end-to-end library workflow and earned 3rd place ($90) in the StackUp Hackathon. Separate demos show the Admin, Librarian and User experiences.",
+    },
     tech: ["Next.js", "TypeScript", "MongoDB", "Mongoose", "Supabase Storage", "Google Gemini AI", "NextAuth", "JWT", "Nodemailer", "Tailwind CSS"],
     features: [
       "Three role system — Admin, Librarian, User with route-level protection",
@@ -87,6 +99,12 @@ export const PROJECTS: Project[] = [
       "Scientific web app unifying biodiversity maps, chemistry data, NASA space media, environmental monitoring, and educational resources — powered by 6 major public APIs.",
     longDescription:
       "BioMap brings together six distinct scientific domains into one cohesive platform. Users can explore global species distributions on an interactive Leaflet map, search chemical compounds via PubChem, browse NASA's image and video archive, monitor environmental data by location, look up species taxonomy via iNaturalist, and access curated Wikipedia articles. Authentication uses OTP-based email verification with JWT sessions protecting all dashboard routes.",
+    caseStudy: {
+      challenge: "Biodiversity records, chemical references, environmental context, space media and educational material live in separate public data sources, making cross-domain exploration cumbersome.",
+      approach: "Build one Next.js and TypeScript platform that connects GBIF, PubChem, NASA Images, OpenStreetMap Nominatim, iNaturalist and Wikipedia, with MongoDB-backed accounts and OTP/JWT-protected dashboard routes.",
+      contribution: "Integrated the interactive species map, compound lookup, NASA media gallery, location-based environmental view, species taxonomy and conservation details, and educational article browsing into a shared interface.",
+      outcome: "Delivered a multi-domain scientific explorer and placed 4th ($70) in the StackUp May 2025 Challenge.",
+    },
     tech: ["Next.js 14", "TypeScript", "MongoDB", "Tailwind CSS", "Leaflet", "OpenStreetMap", "GBIF API", "PubChem API", "NASA Images API", "iNaturalist API", "Wikipedia API", "JWT"],
     features: [
       "Interactive biodiversity map with GBIF species occurrence data",
@@ -121,6 +139,12 @@ export const PROJECTS: Project[] = [
       "Feature-rich NFT marketplace powered by Aptos Move smart contracts. Supports auctions, royalties, offers, batch transfers, APT token payments, and a creator tipping system.",
     longDescription:
       "Built on the Aptos blockchain using the Move programming language, this marketplace enables users to mint, list, bid on, and trade NFTs with full on-chain logic. The smart contract handles auctions with time-based expiry, royalty enforcement on every secondary sale (5% default, 15% max), batch NFT transfers, an offer/counter-offer system, and a creator tipping mechanism — all paid in APT tokens. The React frontend connects via Petra Wallet.",
+    caseStudy: {
+      challenge: "A basic NFT listing page is not enough for a marketplace that needs transparent on-chain sales, timed auctions, creator rewards and flexible buyer-seller negotiation.",
+      approach: "Use Aptos Move smart contracts for transaction rules and a React frontend connected through the Petra wallet and Aptos wallet adapter.",
+      contribution: "Implemented marketplace flows for minting and listings, timed auctions, secondary-sale royalties, batch transfers, offers and counteroffers, APT payments, and creator tipping.",
+      outcome: "Deployed the marketplace contract to Aptos Testnet and claimed a $60 bounty in the StackUp Aptos challenge.",
+    },
     tech: ["Aptos Blockchain", "Move Language", "Aptos CLI", "React", "react-router-dom", "@aptos-labs/wallet-adapter-react", "Petra Wallet", "Web3"],
     features: [
       "On-chain auction system with custom start price and duration",
@@ -155,6 +179,12 @@ export const PROJECTS: Project[] = [
       "AI-powered music platform that recommends and streams music based on location, weather, and behaviour. Streams from Jamendo, Deezer, and Audius via Gemini AI recommendations.",
     longDescription:
       "Moodify is a context-aware music platform built with a two-person team. The Gemini AI engine ingests your current weather (OpenWeather API), location, time of day, and listening history to generate hyper-personalised track recommendations. Users can stream from three independent sources — Jamendo, Deezer, and Audius — through a single unified interface, upload their own tracks to Cloudinary, and chat with an AI music assistant in a conversational interface.",
+    caseStudy: {
+      challenge: "Music discovery can feel generic when it ignores a listener’s context, and tracks from different streaming catalogues are fragmented across services.",
+      approach: "Use Gemini AI with weather, location, time of day and listening history to guide recommendations, while bringing Jamendo, Deezer and Audius into one Next.js interface.",
+      contribution: "In a two-person team, focused on AI integration, API orchestration, authentication and application architecture; the project also includes an AI music chat, unified player, playlists and user uploads.",
+      outcome: "Delivered a context-aware, multi-source music experience and received a $20 merit prize in the StackUp Hackathon.",
+    },
     tech: ["Next.js 15", "React 19", "MongoDB", "Google Gemini AI", "Cloudinary", "Jamendo API", "Deezer API", "Audius API", "OpenWeather API", "TheAudioDB", "JWT", "Tailwind CSS"],
     features: [
       "Weather + location based AI music recommendations via Gemini",
@@ -189,6 +219,12 @@ export const PROJECTS: Project[] = [
       "AI-powered math education platform with adaptive quizzes, handwriting recognition, conversational AI tutor, performance tracking, and PDF report generation.",
     longDescription:
       "Math Genius AI targets students learning Algebra, Geometry, Trigonometry, Calculus, Statistics, and more. Gemini AI dynamically generates topic-specific questions at the right difficulty level, adapting as the student improves. A Canvas API drawing board captures handwritten equations and sends them to Gemini for recognition and step-by-step solving. The conversational AI tutor answers math questions in plain language with full working shown.",
+    caseStudy: {
+      challenge: "Students need practice that adapts to their progress, help understanding handwritten equations, and feedback they can review after a session.",
+      approach: "Combine Gemini-generated quizzes and tutoring with a Canvas drawing board, MongoDB progress data, JWT authentication and PDF reporting.",
+      contribution: "Built adaptive topic quizzes, handwriting-to-solution flows, a conversational tutor with step-by-step explanations, performance tracking, and downloadable quiz reports.",
+      outcome: "Delivered an interactive maths-learning platform covering topics from Algebra to Calculus and received a $10 merit prize in the StackUp Hackathon.",
+    },
     tech: ["Next.js", "TypeScript", "Google Gemini AI", "MongoDB", "Canvas API", "jsPDF", "Express.js", "Node.js", "JWT", "Nodemailer", "Tailwind CSS"],
     features: [
       "Gemini AI generates adaptive topic-specific quiz questions",
@@ -222,6 +258,12 @@ export const PROJECTS: Project[] = [
       "Multimodal AI app that transcribes meeting audio, summarizes with AI, retrieves visual highlights from Pexels, and converts summaries back to speech — full end-to-end pipeline.",
     longDescription:
       "Built for the 'From Words to Worlds — Multimodal GenAI' hackathon, this app handles the complete meeting intelligence pipeline. Upload a recording and AssemblyAI transcribes it to full text. The Facebook Bart Large CNN model on Hugging Face then summarizes the transcript. Key points from the summary drive Pexels image searches for visual highlights. Finally Deepgram converts the summary to an audio file, and everything is stored persistently on Cloudinary.",
+    caseStudy: {
+      challenge: "Reviewing a long meeting recording manually takes time, and a plain transcript does not provide a concise, listenable summary with supporting visuals.",
+      approach: "Connect AssemblyAI transcription, Hugging Face’s BART summarization model, Pexels image search, Deepgram text-to-speech and Cloudinary storage in one React/Vite and Node/Express application.",
+      contribution: "Integrated the audio upload-to-output pipeline: transcription, text summarization, visual highlights matched to key points, spoken summaries and persistent storage.",
+      outcome: "Delivered a multimodal workflow that turns meeting audio into text, a concise summary, related imagery and audio playback for the hackathon submission.",
+    },
     tech: ["React", "Vite", "Node.js", "Express.js", "MongoDB", "AssemblyAI", "HuggingFace Bart CNN", "Pexels API", "Deepgram API", "Cloudinary", "JWT"],
     features: [
       "Audio upload → full text transcription via AssemblyAI",
@@ -254,6 +296,12 @@ export const PROJECTS: Project[] = [
       "A basic HTTP file server built entirely from scratch in Rust — no web framework. Custom HTTP request/response parser over raw TCP streams. First to complete all objectives.",
     longDescription:
       "This project was built for the StackUp Rust Bounty Challenge — the first submission to complete all objectives. The server binds a TcpListener to port 7878 and handles each connection with a custom HTTP parser that reads raw bytes, extracts the method and path, locates the file on disk, detects its MIME type via mime_guess, and writes a full HTTP response back over the stream — all without any web framework dependency.",
+    caseStudy: {
+      challenge: "A small file server should serve files over HTTP without relying on a web framework, making the underlying TCP and HTTP handling explicit.",
+      approach: "Build directly on Rust’s TcpListener, raw byte streams, custom request/response handling, MIME detection and filesystem traversal utilities.",
+      contribution: "Implemented request parsing, method and path handling, file lookup, MIME-type headers, status responses, directory traversal and URL encoding/decoding.",
+      outcome: "Completed the StackUp Rust Bounty Challenge objectives first, without using a web framework.",
+    },
     tech: ["Rust", "Cargo", "walkdir", "infer", "url-escape", "mime_guess", "TCP/HTTP", "Systems Programming"],
     features: [
       "Raw TCP listener — no web framework whatsoever",
@@ -285,6 +333,12 @@ export const PROJECTS: Project[] = [
       "Production website for a premium dining & banquet venue in Patan. Dark fire-branded SPA with animated navbar, menu section, gallery, and booking CTA.",
     longDescription:
       "Floris Restaurant & Banquet is a premium dining and events venue in Patan, Gujarat. The website is a single-page React application built with a fully custom fire brand design system — deep black backgrounds with orange/amber fire gradients, glowing shadows, and smooth scroll navigation. Every section from hero to contact is designed to convert visitors into bookings, with a prominent 'Book a Table' CTA and IntersectionObserver-driven active nav highlighting.",
+    caseStudy: {
+      challenge: "A restaurant and banquet venue needs a branded online presence that helps visitors explore its offering and find the booking/contact path on mobile or desktop.",
+      approach: "Build a React 19 and Vite single-page site with a custom black-and-fire visual identity, Tailwind styling and section-based navigation.",
+      contribution: "Created the hero and venue sections, menu and gallery presentation, animated mobile navigation, scroll-aware active links and a clear Book a Table call to action.",
+      outcome: "Delivered a live client website for Floris Restaurant & Banquet, with the production site hosted on Vercel.",
+    },
     tech: ["React 19", "Vite", "Tailwind CSS", "Lucide React", "Vercel", "JavaScript (JSX)"],
     features: [
       "Custom fire brand design system — orange/amber gradients, glow shadows",
@@ -317,6 +371,12 @@ export const PROJECTS: Project[] = [
       "End-to-end business management platform for a wholesale ice distributor. Manages customers, subscriptions, billing, deliveries, and serves as the complete backend for the companion Flutter app.",
     longDescription:
       "Ice Saathi is a full business operating system built for Aman Sales, a wholesale ice distributor in Gandhidham associated with Shreeji Ice Creams. The platform handles the entire business workflow — customer onboarding, subscription management, billing, add-on tracking, delivery assignments, and payment recording. It also exposes a complete REST API consumed by the Aman Sales Delivery Partner Flutter app, including live GPS location tracking and FCM push notifications to delivery partners.",
+    caseStudy: {
+      challenge: "A wholesale ice distributor needs customer, subscription, billing and delivery operations connected to the mobile workflow used by delivery partners.",
+      approach: "Build a Next.js and TypeScript operations platform backed by MongoDB, role-aware authentication and REST API routes, with Firebase Cloud Messaging for notifications.",
+      contribution: "Implemented customer and subscription management, payment and add-on records, delivery assignments, admin-side live location visibility, delivery-partner OTP access and the API used by the companion app.",
+      outcome: "Delivered the Ice Saathi business platform for Aman Sales and published it at icesaathi.co.in.",
+    },
     tech: ["Next.js", "TypeScript", "MongoDB", "Tailwind CSS", "Firebase FCM", "REST API", "JWT", "Next.js API Routes"],
     features: [
       "Customer management — onboarding, subscriptions, billing",
@@ -350,6 +410,12 @@ export const PROJECTS: Project[] = [
       "Flutter mobile app for Aman Sales delivery partners. Features OTP login, live GPS tracking, order management, sticky notes, and FCM push notifications for new order assignments.",
     longDescription:
       "The companion mobile app for the Ice Saathi platform, built in Flutter for Android. Delivery partners log in via OTP, view their assigned ice delivery orders, mark deliveries complete, look up customer details via a Go-To search, and create sticky notes linked to customers. The app runs a background location service that continuously sends GPS coordinates to the Ice Saathi backend so the admin can track all delivery partners live on a map. Firebase Cloud Messaging handles real-time push notifications for new order assignments.",
+    caseStudy: {
+      challenge: "Delivery partners need a simple mobile workflow for assigned orders while dispatchers need timely location updates and reliable order notifications.",
+      approach: "Build an Android app with Flutter and Dart; use Dio for API calls, Provider for state, background location reporting, SharedPreferences for session persistence and Firebase Cloud Messaging.",
+      contribution: "Implemented OTP login, pending and completed order views, customer search, customer-linked notes, profile updates and password-change verification, alongside background GPS reporting and push notifications.",
+      outcome: "Delivered the mobile companion to Ice Saathi, connecting field delivery actions and location updates to the business platform.",
+    },
     tech: ["Flutter", "Dart", "Firebase FCM", "Provider", "Dio", "Background Location", "SharedPreferences", "Android"],
     features: [
       "OTP-based login with pending approval state for new partners",
@@ -382,6 +448,12 @@ export const PROJECTS: Project[] = [
       "Free all-in-one productivity web app for employees — Work Hours Tracker with live leave prediction, Brain Quiz, Personal Diary, Typing Speed Test, and Expense Tracker. 5 tools in one secure app.",
     longDescription:
       "HourBit is a comprehensive productivity suite designed for employees on flexible schedules. The Work Tracker lets users clock in/out, deduct breaks, and get real-time leave time predictions. Brain Quiz features categories, subcategories, XP rewards, and a leaderboard. The Personal Diary supports rich journaling with search, export, and reminder toasts. The Typing Test measures WPM and accuracy over time. The Expense Tracker manages wallet balance, categorized transactions, and spending analytics — all behind a secure OTP-based auth system with full admin panel.",
+    caseStudy: {
+      challenge: "Employees often rely on separate tools for time tracking, personal notes, learning breaks, typing practice and expense awareness.",
+      approach: "Bring five workflows into one Next.js 16 and TypeScript app using MongoDB/Mongoose, JWT/OTP authentication and Recharts for analytics.",
+      contribution: "Built work-hour and break tracking with leave-time prediction, a quiz with XP and leaderboard, a searchable diary with exports, typing-speed history, expense tracking and an admin panel.",
+      outcome: "Delivered a single productivity suite with a mobile-optimised, PWA-ready experience and a live app deployment.",
+    },
     tech: ["Next.js 16", "TypeScript", "MongoDB", "Mongoose", "JWT", "Nodemailer", "Tailwind CSS", "Recharts", "jsPDF", "bcryptjs", "react-hot-toast"],
     features: [
       "Work Hours Tracker — clock-in, breaks, smart leave time prediction",
