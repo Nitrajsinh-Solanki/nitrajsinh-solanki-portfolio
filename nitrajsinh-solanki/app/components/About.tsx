@@ -139,7 +139,7 @@ export default function About() {
           Read the full bio →
         </Link>
 
-        {/* ── TWO-COL GRID ── */>
+        {/* ── TWO-COL GRID ── */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-10 lg:gap-12">
 
           {/* ── LEFT ── */}
