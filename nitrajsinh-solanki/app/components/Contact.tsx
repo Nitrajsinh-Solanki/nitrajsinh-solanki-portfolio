@@ -219,7 +219,7 @@ export default function Contact() {
                     htmlFor="contact-message"
                     className="font-mono text-[10px] text-[#A5B0C0] tracking-[0.12em] uppercase"
                   >
-                    Message <span className="text-teal-300/50">*</span>
+                    Message <span className="text-teal-300/80">*</span>
                   </label>
                   <textarea
                     id="contact-message"
@@ -349,7 +349,7 @@ export default function Contact() {
             {/* Quick response note */}
             <div className="bg-[#080D18] border border-[#0F1620] rounded-2xl px-5 py-4">
               <p className="font-mono text-[10px] text-[#94A3B8] leading-[1.8] tracking-wide">
-                <span className="text-teal-300/50">$</span>{" "}
+                <span className="text-teal-300/80">$</span>{" "}
                 I typically respond within{" "}
                 <span className="text-[#A5B0C0]">24 hours.</span>{" "}
                 Best for internship inquiries, freelance scoping, or hackathon team-ups.
