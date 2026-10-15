@@ -48,7 +48,7 @@ const WORK: WorkEntry[] = [
     duration: "Ongoing",
     location: "Gujarat, India",
     current: true,
-    accentColor: "#5EEAD4",
+    accentColor: "#4F46E5",
     badgeText: "Active",
     description: [
       "Building and maintaining enterprise-grade web applications using .NET (ASP.NET Core) on the backend and Angular on the frontend — owning the full delivery cycle from schema design and REST API architecture to component-driven UI.",
@@ -56,13 +56,13 @@ const WORK: WorkEntry[] = [
       "Collaborating closely with the engineering team on code reviews, technical architecture decisions, and best practices — shipping features that are readable six months later.",
     ],
     tech: [
-      { name: ".NET / ASP.NET Core", color: "#A78BFA", border: "border-violet-400/25", bg: "bg-violet-400/5" },
-      { name: "Angular",             color: "#F87171", border: "border-red-400/25",    bg: "bg-red-400/5"    },
-      { name: "TypeScript",          color: "#60A5FA", border: "border-blue-400/25",   bg: "bg-blue-400/5"   },
-      { name: "REST APIs",           color: "#34D399", border: "border-emerald-400/25",bg: "bg-emerald-400/5"},
-      { name: "C#",                  color: "#A78BFA", border: "border-violet-400/25", bg: "bg-violet-400/5" },
-      { name: "SQL Server",          color: "#FCD34D", border: "border-amber-400/25",  bg: "bg-amber-400/5"  },
-      { name: "Git & GitHub",        color: "#5EEAD4", border: "border-teal-400/25",   bg: "bg-teal-400/5"   },
+      { name: ".NET / ASP.NET Core", color: "#4F46E5", border: "border-indigo-600/25", bg: "bg-indigo-600/5" },
+      { name: "Angular",             color: "#4F46E5", border: "border-indigo-600/25",    bg: "bg-indigo-600/5"    },
+      { name: "TypeScript",          color: "#4F46E5", border: "border-indigo-600/25",   bg: "bg-indigo-600/5"   },
+      { name: "REST APIs",           color: "#4F46E5", border: "border-indigo-600/25",bg: "bg-indigo-600/5"},
+      { name: "C#",                  color: "#4F46E5", border: "border-indigo-600/25", bg: "bg-indigo-600/5" },
+      { name: "SQL Server",          color: "#4F46E5", border: "border-indigo-600/25",  bg: "bg-indigo-600/5"  },
+      { name: "Git & GitHub",        color: "#4F46E5", border: "border-indigo-600/25",   bg: "bg-indigo-600/5"   },
     ],
     achievements: [
       { label: "Stack",    value: ".NET + Angular" },
@@ -80,7 +80,7 @@ const WORK: WorkEntry[] = [
     duration: "Multiple Rounds",
     location: "Remote (Global)",
     current: false,
-    accentColor: "#FCD34D",
+    accentColor: "#4F46E5",
     badgeText: "$250+ Won",
     description: [
       "Competed across 5 global hackathons and bounty challenges on the StackUp platform, consistently placing in the top rankings. Built and shipped " + STATS.hackathon + " full-stack projects end-to-end — often solo — under tight deadlines.",
@@ -88,15 +88,15 @@ const WORK: WorkEntry[] = [
       "Explored cutting-edge tech stacks in each challenge: Move language on Aptos Blockchain, Rust systems programming, Google Gemini AI, and multimodal GenAI — shipping production-ready code each time.",
     ],
     tech: [
-      { name: "Next.js",          color: "#E2DDD5", border: "border-[#E2DDD5]/20",     bg: "bg-[#E2DDD5]/5"  },
-      { name: "React.js",         color: "#60A5FA", border: "border-blue-400/25",      bg: "bg-blue-400/5"   },
-      { name: "Node.js",          color: "#34D399", border: "border-emerald-400/25",   bg: "bg-emerald-400/5"},
-      { name: "MongoDB",          color: "#FCD34D", border: "border-amber-400/25",     bg: "bg-amber-400/5"  },
-      { name: "TypeScript",       color: "#60A5FA", border: "border-blue-400/25",      bg: "bg-blue-400/5"   },
-      { name: "Google Gemini AI", color: "#C4B5FD", border: "border-violet-400/25",    bg: "bg-violet-400/5" },
-      { name: "Rust",             color: "#FB923C", border: "border-orange-400/25",    bg: "bg-orange-400/5" },
-      { name: "Move (Aptos)",     color: "#A5B4FC", border: "border-indigo-400/25",    bg: "bg-indigo-400/5" },
-      { name: "Aptos Blockchain", color: "#A5B4FC", border: "border-indigo-400/25",    bg: "bg-indigo-400/5" },
+      { name: "Next.js",          color: "#4F46E5", border: "border-[#E3E0D8]/20",     bg: "bg-[#EEF2FF]/5"  },
+      { name: "React.js",         color: "#4F46E5", border: "border-indigo-600/25",      bg: "bg-indigo-600/5"   },
+      { name: "Node.js",          color: "#4F46E5", border: "border-indigo-600/25",   bg: "bg-indigo-600/5"},
+      { name: "MongoDB",          color: "#4F46E5", border: "border-indigo-600/25",     bg: "bg-indigo-600/5"  },
+      { name: "TypeScript",       color: "#4F46E5", border: "border-indigo-600/25",      bg: "bg-indigo-600/5"   },
+      { name: "Google Gemini AI", color: "#4F46E5", border: "border-indigo-600/25",    bg: "bg-indigo-600/5" },
+      { name: "Rust",             color: "#4F46E5", border: "border-indigo-600/25",    bg: "bg-indigo-600/5" },
+      { name: "Move (Aptos)",     color: "#4F46E5", border: "border-indigo-600/25",    bg: "bg-indigo-600/5" },
+      { name: "Aptos Blockchain", color: "#4F46E5", border: "border-indigo-600/25",    bg: "bg-indigo-600/5" },
     ],
     achievements: [
       { label: "Total Won",   value: "$250+" },
@@ -113,7 +113,7 @@ const WORK: WorkEntry[] = [
     duration: "2 Clients",
     location: "Gujarat, India",
     current: false,
-    accentColor: "#67E8F9",
+    accentColor: "#4F46E5",
     badgeText: "2 Live Products",
     description: [
       "Delivered two full production systems for real businesses in Gujarat — a restaurant & banquet website for Floris (Patan) and a complete wholesale ice-inventory + delivery management platform for Aman Sales (Gandhidham).",
@@ -121,14 +121,14 @@ const WORK: WorkEntry[] = [
       "Floris Restaurant: public-facing marketing site built with React 19 + Vite, optimised for speed and SEO — live and handling real customer traffic.",
     ],
     tech: [
-      { name: "Next.js",     color: "#E2DDD5", border: "border-[#E2DDD5]/20",     bg: "bg-[#E2DDD5]/5"  },
-      { name: "TypeScript",  color: "#60A5FA", border: "border-blue-400/25",      bg: "bg-blue-400/5"   },
-      { name: "MongoDB",     color: "#FCD34D", border: "border-amber-400/25",     bg: "bg-amber-400/5"  },
-      { name: "Flutter",     color: "#67E8F9", border: "border-cyan-400/25",      bg: "bg-cyan-400/5"   },
-      { name: "Firebase FCM",color: "#FB923C", border: "border-orange-400/25",    bg: "bg-orange-400/5" },
-      { name: "React 19",    color: "#60A5FA", border: "border-blue-400/25",      bg: "bg-blue-400/5"   },
-      { name: "JWT + OTP",   color: "#F9A8D4", border: "border-pink-400/25",      bg: "bg-pink-400/5"   },
-      { name: "Tailwind CSS",color: "#38BDF8", border: "border-sky-400/25",       bg: "bg-sky-400/5"    },
+      { name: "Next.js",     color: "#4F46E5", border: "border-[#E3E0D8]/20",     bg: "bg-[#EEF2FF]/5"  },
+      { name: "TypeScript",  color: "#4F46E5", border: "border-indigo-600/25",      bg: "bg-indigo-600/5"   },
+      { name: "MongoDB",     color: "#4F46E5", border: "border-indigo-600/25",     bg: "bg-indigo-600/5"  },
+      { name: "Flutter",     color: "#4F46E5", border: "border-indigo-600/25",      bg: "bg-indigo-600/5"   },
+      { name: "Firebase FCM",color: "#4F46E5", border: "border-indigo-600/25",    bg: "bg-indigo-600/5" },
+      { name: "React 19",    color: "#4F46E5", border: "border-indigo-600/25",      bg: "bg-indigo-600/5"   },
+      { name: "JWT + OTP",   color: "#4F46E5", border: "border-indigo-600/25",      bg: "bg-indigo-600/5"   },
+      { name: "Tailwind CSS",color: "#4F46E5", border: "border-indigo-600/25",       bg: "bg-indigo-600/5"    },
     ],
     achievements: [
       { label: "Clients",    value: "2 Businesses" },
@@ -141,9 +141,9 @@ const WORK: WorkEntry[] = [
 /* ─────────────────────── type badge styles ──────────────────── */
 
 const TYPE_BADGE: Record<WorkEntry["type"], string> = {
-  internship: "text-teal-300 border-teal-300/30 bg-teal-300/5",
-  freelance:  "text-cyan-300 border-cyan-300/30 bg-cyan-300/5",
-  hackathon:  "text-amber-300 border-amber-300/30 bg-amber-300/5",
+  internship: "text-indigo-600 border-indigo-600/30 bg-indigo-600/5",
+  freelance:  "text-indigo-700 border-indigo-700/30 bg-indigo-700/5",
+  hackathon:  "text-indigo-700 border-indigo-700/30 bg-indigo-700/5",
 };
 
 const TYPE_LABEL: Record<WorkEntry["type"], string> = {
@@ -156,7 +156,7 @@ const TYPE_LABEL: Record<WorkEntry["type"], string> = {
 
 function useReveal(threshold = 0.06) {
   const ref = useRef<HTMLElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -187,40 +187,22 @@ export default function WorkHistory() {
       ref={ref as React.RefObject<HTMLElement>}
       className="relative py-20 md:py-28 px-6 md:px-10 overflow-hidden"
     >
-      {/* ── ambient glows ── */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-[6%] right-[-6%] w-[460px] h-[460px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(94,234,212,0.055) 0%, transparent 70%)",
-          filter: "blur(60px)",
-        }}
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-[8%] left-[-5%] w-[380px] h-[380px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(250,204,21,0.03) 0%, transparent 70%)",
-          filter: "blur(55px)",
-        }}
-      />
-
       <div className="relative z-10 max-w-5xl mx-auto">
 
         {/* ── section label ── */}
         <div className="flex items-center gap-4 mb-4" style={fade(0.04)}>
-          <span className="font-mono text-[11px] text-teal-300 tracking-[0.18em] uppercase select-none">
-            // work history
+          <span className="font-sans text-[11px] font-semibold text-indigo-700 tracking-[0.14em] uppercase select-none">
+            Experience
           </span>
           <span
             className="flex-1 h-[1px]"
-            style={{ background: "linear-gradient(to right, #1A2B42, transparent)" }}
+            style={{ background: "linear-gradient(to right, #E3E0D8, transparent)" }}
           />
         </div>
 
         {/* ── heading ── */}
         <h2
-          className="leading-[1.05] tracking-tight text-[#E2DDD5] mb-3"
+          className="leading-[1.05] tracking-tight text-[#17191D] mb-3"
           style={{
             fontFamily: "var(--syne-var)",
             fontWeight: 800,
@@ -229,12 +211,12 @@ export default function WorkHistory() {
           }}
         >
           Where I&apos;ve{" "}
-          <span className="text-teal-300">shipped things.</span>
+          <span className="text-indigo-600">shipped things.</span>
         </h2>
 
         {/* ── sub-tagline ── */}
         <p
-          className="font-mono text-[11.5px] text-[#94A3B8] tracking-wide mb-12"
+          className="font-mono text-[11.5px] text-[#686D76] tracking-wide mb-12"
           style={fade(0.2)}
         >
           Internship · Freelance clients · Hackathon wins — real products, real deadlines.
@@ -246,7 +228,7 @@ export default function WorkHistory() {
           {/* Vertical spine */}
           <div
             className="absolute left-[11px] top-4 bottom-4 w-[1px] hidden md:block"
-            style={{ background: "linear-gradient(to bottom, #1A2B42 70%, transparent)" }}
+            style={{ background: "linear-gradient(to bottom, #E3E0D8 70%, transparent)" }}
           />
 
           {WORK.map((entry, idx) => (
@@ -257,21 +239,21 @@ export default function WorkHistory() {
                 <span
                   className={`relative z-10 flex w-[22px] h-[22px] rounded-full border-2 items-center justify-center ${
                     entry.current
-                      ? "border-teal-300 bg-[#070B14]"
-                      : "border-[#1A2B42] bg-[#0B1623]"
+                      ? "border-indigo-600 bg-[#F8F7F3]"
+                      : "border-[#E3E0D8] bg-[#FFFFFF]"
                   }`}
                 >
                   {entry.current && (
-                    <span className="w-[7px] h-[7px] rounded-full bg-teal-300 animate-pulse" />
+                    <span className="w-[7px] h-[7px] rounded-full bg-indigo-600" />
                   )}
                 </span>
               </div>
 
               {/* ── Card ── */}
               <div
-                className="flex-1 bg-[#0B1623] border rounded-2xl p-5 md:p-6 hover:border-teal-300/20 transition-all duration-300 group"
+                className="flex-1 bg-[#FFFFFF] border rounded-2xl p-5 md:p-6 hover:border-indigo-600/20 transition-all duration-300 group"
                 style={{
-                  borderColor: entry.current ? `${entry.accentColor}25` : "#131C2E",
+                  borderColor: entry.current ? `${entry.accentColor}25` : "#E3E0D8",
                   transitionDelay: `${idx * 60}ms`,
                 }}
               >
@@ -281,7 +263,7 @@ export default function WorkHistory() {
 
                     {/* Role */}
                     <h3
-                      className="text-[#E2DDD5] text-[15px] font-bold leading-snug"
+                      className="text-[#17191D] text-[15px] font-bold leading-snug"
                       style={{ fontFamily: "var(--syne-var)" }}
                     >
                       {entry.role}
@@ -294,7 +276,7 @@ export default function WorkHistory() {
                           href={entry.companyUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-mono text-[11px] tracking-wide hover:text-teal-300 transition-colors"
+                          className="font-mono text-[11px] tracking-wide hover:text-indigo-600 transition-colors"
                           style={{ color: entry.accentColor }}
                         >
                           {entry.company} ↗
@@ -308,8 +290,8 @@ export default function WorkHistory() {
                         </span>
                       )}
                       {entry.current && (
-                        <span className="font-mono text-[9px] text-teal-300 border border-teal-300/30 bg-teal-300/5 px-2 py-0.5 rounded-full flex items-center gap-1">
-                          <span className="w-1.5 h-1.5 rounded-full bg-teal-300 animate-pulse inline-block" />
+                        <span className="font-mono text-[9px] text-indigo-600 border border-indigo-600/30 bg-indigo-600/5 px-2 py-0.5 rounded-full flex items-center gap-1">
+                          <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 inline-block" />
                           Now
                         </span>
                       )}
@@ -323,7 +305,7 @@ export default function WorkHistory() {
                     >
                       {TYPE_LABEL[entry.type]}
                     </span>
-                    <span className="font-mono text-[9.5px] text-[#A5B0C0] border border-[#131C2E] bg-[#080D18] px-2.5 py-1 rounded-full">
+                    <span className="font-mono text-[9.5px] text-[#555963] border border-[#E3E0D8] bg-[#FFFFFF] px-2.5 py-1 rounded-full">
                       {entry.period}
                     </span>
                   </div>
@@ -331,14 +313,14 @@ export default function WorkHistory() {
 
                 {/* ── Location + duration row ── */}
                 <div className="flex items-center gap-4 mb-5">
-                  <span className="font-mono text-[10px] text-[#94A3B8] tracking-wide flex items-center gap-1.5">
+                  <span className="font-mono text-[10px] text-[#686D76] tracking-wide flex items-center gap-1.5">
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                       <circle cx="12" cy="10" r="3" />
                     </svg>
                     {entry.location}
                   </span>
-                  <span className="font-mono text-[10px] text-[#94A3B8] tracking-wide flex items-center gap-1.5">
+                  <span className="font-mono text-[10px] text-[#686D76] tracking-wide flex items-center gap-1.5">
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <circle cx="12" cy="12" r="10" />
                       <polyline points="12 6 12 12 16 14" />
@@ -353,7 +335,7 @@ export default function WorkHistory() {
                   {/* Description */}
                   <div className="space-y-3">
                     {entry.description.map((para, i) => (
-                      <p key={i} className="text-[13.5px] text-[#A5B0C0] leading-[1.8] flex gap-3">
+                      <p key={i} className="text-[14.5px] text-[#555963] leading-[1.75] flex gap-3">
                         <span
                           className="mt-[9px] w-1.5 h-1.5 rounded-full shrink-0"
                           style={{ background: entry.accentColor, opacity: 0.6 }}
@@ -366,11 +348,11 @@ export default function WorkHistory() {
 
                   {/* Achievements sidebar */}
                   <div
-                    className="flex flex-row lg:flex-col gap-3 lg:gap-4 bg-[#080D18] border border-[#131C2E] rounded-xl p-4 self-start"
+                    className="flex flex-row lg:flex-col gap-3 lg:gap-4 bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl p-4 self-start"
                   >
                     {entry.achievements.map((a) => (
                       <div key={a.label} className="flex flex-col gap-0.5">
-                        <span className="font-mono text-[9px] text-[#94A3B8] uppercase tracking-wider">
+                        <span className="font-mono text-[9px] text-[#686D76] uppercase tracking-wider">
                           {a.label}
                         </span>
                         <span
@@ -385,8 +367,8 @@ export default function WorkHistory() {
                 </div>
 
                 {/* ── Tech Stack pills ── */}
-                <div className="mt-5 pt-5 border-t border-[#0F1620]">
-                  <p className="font-mono text-[9px] text-[#94A3B8] tracking-[0.15em] uppercase mb-3">
+                <div className="mt-5 pt-5 border-t border-[#E3E0D8]">
+                  <p className="font-mono text-[9px] text-[#686D76] tracking-[0.15em] uppercase mb-3">
                     Stack Used
                   </p>
                   <div className="flex flex-wrap gap-1.5">
@@ -419,11 +401,11 @@ export default function WorkHistory() {
           ].map(({ label, value }) => (
             <div
               key={label}
-              className="bg-[#0B1623] border border-[#131C2E] rounded-xl px-4 py-3.5 hover:border-teal-300/20 transition-colors duration-300"
+              className="bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl px-4 py-3.5 hover:border-indigo-600/20 transition-colors duration-300"
             >
-              <p className="font-mono text-[9px] text-[#94A3B8] uppercase tracking-wider mb-1">{label}</p>
+              <p className="font-mono text-[9px] text-[#686D76] uppercase tracking-wider mb-1">{label}</p>
               <p
-                className="font-mono text-[11.5px] text-teal-300 font-medium leading-snug"
+                className="font-mono text-[11.5px] text-indigo-600 font-medium leading-snug"
                 style={{ fontFamily: "var(--syne-var)" }}
               >
                 {value}

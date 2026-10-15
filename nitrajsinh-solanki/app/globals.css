@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #070B14;
-  --foreground: #E2DDD5;
+  color-scheme: light;
+  --background: #F8F7F3;
+  --foreground: #17191D;
+  --surface: #FFFFFF;
+  --surface-alt: #F0EEE8;
+  --text-secondary: #555963;
+  --text-muted: #686D76;
+  --border: #E3E0D8;
+  --accent: #4F46E5;
+  --accent-hover: #4338CA;
+  --accent-soft: #EEF2FF;
+  --dark-surface: #17191D;
+  --dark-surface-text: #F8F7F3;
 }
 
 @theme inline {
@@ -16,101 +27,6 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
-
-/* ── Entrance Animations ── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(22px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-14px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-@keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.92); }
-  to   { opacity: 1; transform: scale(1); }
-}
-
-/* ── Photo ring pulse ── */
-@keyframes ringPulse {
-  0%, 100% { opacity: 0.25; transform: scale(1); }
-  50%       { opacity: 0.08; transform: scale(1.06); }
-}
-@keyframes ringRotate {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-/* ── Cursor blink ── */
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
-}
-.cursor-blink {
-  display: inline-block;
-  width: 2px;
-  height: 1.1em;
-  background: #5EEAD4;
-  margin-left: 3px;
-  vertical-align: middle;
-  border-radius: 1px;
-  animation: blink 0.9s ease-in-out infinite;
-}
-
-/* ── Staggered entrance classes ── */
-.anim-1 { animation: fadeDown 0.5s 0.05s ease both; }
-.anim-2 { animation: fadeUp  0.55s 0.15s ease both; }
-.anim-3 { animation: fadeUp  0.55s 0.28s ease both; }
-.anim-4 { animation: fadeUp  0.55s 0.40s ease both; }
-.anim-5 { animation: fadeUp  0.55s 0.52s ease both; }
-.anim-6 { animation: fadeUp  0.55s 0.64s ease both; }
-.anim-img { animation: scaleIn 0.65s 0.1s ease both; }
-
-/* ── Rotating gradient ring ── */
-.photo-ring {
-  position: absolute;
-  inset: -4px;
-  border-radius: 9999px;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0%,
-    #5EEAD4 25%,
-    transparent 50%,
-    #5EEAD4 75%,
-    transparent 100%
-  );
-  animation: ringRotate 4s linear infinite;
-  opacity: 0.35;
-}
-.photo-ring-mask {
-  position: absolute;
-  inset: 3px;
-  border-radius: 9999px;
-  background: #070B14;
-  z-index: 1;
-}
-
-/* ── Dot grid background ── */
-.dot-grid {
-  background-image: radial-gradient(circle, #1A2B42 1px, transparent 1px);
-  background-size: 28px 28px;
-}
-
-/* ── ADD THIS BLOCK to the bottom of your existing globals.css ── */
-
-/* Shine sweep (used by CTA button) */
-@keyframes shineSweep {
-  from { transform: translateX(-110%); }
-  to   { transform: translateX(110%); }
-}
-
-/* Ring decorative dot orbit helper is handled inline.
-   All other animations (fadeUp, ringRotate, ringPulse, blink)
-   already exist — no changes needed to those. */
 
 /* Respect the visitor's motion preferences. */
 @media (prefers-reduced-motion: reduce) {
@@ -126,15 +42,47 @@ body {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }
-
-  .cursor-blink {
-    animation: none;
-  }
 }
-
 
 /* Keep keyboard focus visible on interactive controls. */
 :where(a, button, input, textarea, select, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
-  outline: 2px solid #5EEAD4;
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
+}
+
+/* Keep text selection visually aligned with the theme. */
+::selection {
+  color: var(--foreground);
+  background: rgba(79, 70, 229, 0.16);
+}
+
+/* Show content immediately: entrance effects must not delay reading or LCP. */
+.anim-1,
+.anim-2,
+.anim-3,
+.anim-4,
+.anim-5,
+.anim-6,
+.anim-img {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Editorial portrait treatment used by the homepage hero. */
+.hero-portrait-frame {
+  border: 1px solid var(--border) !important;
+  border-radius: 24px !important;
+  background: var(--surface);
+  box-shadow: 0 18px 54px rgba(23, 25, 29, 0.12);
+}
+
+.hero-portrait-frame img {
+  border-radius: inherit;
+}
+
+@media (max-width: 640px) {
+  .hero-portrait-frame {
+    border-radius: 20px !important;
+  }
 }

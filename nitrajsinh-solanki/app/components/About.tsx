@@ -46,7 +46,7 @@ const INTERESTS = [
 
 function useReveal(threshold = 0.08) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const el = ref.current;
@@ -82,40 +82,22 @@ export default function About() {
       ref={ref}
       className="relative py-20 md:py-28 px-6 md:px-10 overflow-hidden"
     >
-      {/* ambient glows */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-[8%] right-[-5%] w-[420px] h-[420px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(94,234,212,0.055) 0%, transparent 70%)",
-          filter: "blur(55px)",
-        }}
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-[5%] left-[-6%] w-[340px] h-[340px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(94,234,212,0.04) 0%, transparent 70%)",
-          filter: "blur(48px)",
-        }}
-      />
-
       <div className="relative z-10 max-w-5xl mx-auto">
 
         {/* section label */}
         <div className="flex items-center gap-4 mb-4" style={fade(0.04)}>
-          <span className="font-mono text-[11px] text-teal-300 tracking-[0.18em] uppercase">
-            // about me
+          <span className="font-mono text-[11px] text-indigo-600 tracking-[0.18em] uppercase">
+            About me
           </span>
           <span
             className="flex-1 h-[1px]"
-            style={{ background: "linear-gradient(to right, #1A2B42, transparent)" }}
+            style={{ background: "linear-gradient(to right, #E3E0D8, transparent)" }}
           />
         </div>
 
         {/* heading */}
         <h2
-          className="leading-[1.05] tracking-tight text-[#E2DDD5] mb-3"
+          className="leading-[1.05] tracking-tight text-[#17191D] mb-3"
           style={{
             fontFamily: "var(--syne-var)",
             fontWeight: 800,
@@ -124,18 +106,18 @@ export default function About() {
           }}
         >
           The mind behind{" "}
-          <span className="text-teal-300">the code.</span>
+          <span className="text-indigo-600">the code.</span>
         </h2>
 
         {/* sub-tagline */}
         <p
-          className="font-mono text-[11.5px] text-[#94A3B8] tracking-wide mb-10"
+          className="font-mono text-[11.5px] text-[#686D76] tracking-wide mb-10"
           style={fade(0.2)}
         >
           Computer Engineering (GTU) · Full Stack Intern @ VeloxCore · Builder of things that actually work.
         </p>
 
-        <Link href="/about" className="inline-block font-mono text-[12px] text-teal-300 hover:underline mb-6">
+        <Link href="/about" className="inline-block font-mono text-[12px] text-indigo-600 hover:underline mb-6">
           Read the full bio →
         </Link>
 
@@ -146,39 +128,36 @@ export default function About() {
           <div style={fade(0.28)}>
 
             {/* current role badge */}
-            <div className="flex items-start gap-3 bg-[#0B1623] border border-teal-300/20 rounded-xl px-4 py-3.5 mb-7">
-              <span className="relative flex h-2.5 w-2.5 mt-[4px] shrink-0">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-300 opacity-50" />
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-teal-300" />
-              </span>
+            <div className="flex items-start gap-3 bg-[#FFFFFF] border border-indigo-600/20 rounded-xl px-4 py-3.5 mb-7">
+              <span className="mt-[4px] shrink-0 w-2.5 h-2.5 rounded-full bg-indigo-600" aria-hidden="true" />
               <div>
                 <p
-                  className="text-teal-300 text-[13px] font-semibold"
+                  className="text-indigo-600 text-[13px] font-semibold"
                   style={{ fontFamily: "var(--syne-var)" }}
                 >
                   Currently @ VeloxCore Private Limited
                 </p>
-                <p className="font-mono text-[10.5px] text-[#94A3B8] tracking-wide mt-0.5">
+                <p className="font-mono text-[10.5px] text-[#686D76] tracking-wide mt-0.5">
                   Full Stack Developer Intern · .NET + Angular
                 </p>
               </div>
             </div>
 
             {/* bio */}
-            <div className="space-y-4 text-[14.5px] text-[#A5B0C0] leading-[1.82] mb-8">
+            <div className="space-y-4 text-[16px] text-[#555963] leading-[1.75] mb-8">
               <p>
                 I&apos;m a full-stack developer who moves comfortably across the entire stack.
-                At <span className="text-[#9A9585]">VeloxCore</span>, I work with{" "}
-                <span className="text-teal-300/80">.NET</span> and{" "}
-                <span className="text-teal-300/80">Angular</span> — architecting REST APIs and
+                At <span className="text-[#686D76]">VeloxCore</span>, I work with{" "}
+                <span className="text-indigo-700">.NET</span> and{" "}
+                <span className="text-indigo-700">Angular</span> — architecting REST APIs and
                 building component-driven frontends that handle real enterprise workloads. I own
                 the full delivery: schema design, business logic, UI components, and everything
                 wired together cleanly in between.
               </p>
               <p>
                 My broader stack spans{" "}
-                <span className="text-[#9A9585]">React, Next.js, Node.js, TypeScript,</span> and{" "}
-                <span className="text-[#9A9585]">Flutter</span>. I pick the right tool for the
+                <span className="text-[#686D76]">React, Next.js, Node.js, TypeScript,</span> and{" "}
+                <span className="text-[#686D76]">Flutter</span>. I pick the right tool for the
                 job, not the trendy one. I care about code that&apos;s readable six months later,
                 systems that don&apos;t fall over under pressure, and software that genuinely
                 solves something worth solving.
@@ -187,14 +166,14 @@ export default function About() {
 
             {/* interests */}
             <div>
-              <p className="font-mono text-[10px] text-[#94A3B8] tracking-[0.15em] uppercase mb-3">
+              <p className="font-mono text-[10px] text-[#686D76] tracking-[0.15em] uppercase mb-3">
                 Outside the editor
               </p>
               <div className="flex flex-wrap gap-2">
                 {INTERESTS.map((tag) => (
                   <span
                     key={tag}
-                    className="font-mono text-[10.5px] text-[#A5B0C0] border border-[#131C2E] bg-[#0B1623] px-3 py-1.5 rounded-md hover:border-teal-300/30 hover:text-teal-300/70 transition-colors duration-200"
+                    className="font-mono text-[10.5px] text-[#555963] border border-[#E3E0D8] bg-[#FFFFFF] px-3 py-1.5 rounded-md hover:border-indigo-600/30 hover:text-indigo-700 transition-colors duration-200"
                   >
                     {tag}
                   </span>
@@ -205,7 +184,7 @@ export default function About() {
 
           {/* ── RIGHT: Education ── */}
           <div style={fade(0.38)}>
-            <p className="font-mono text-[10px] text-[#94A3B8] tracking-[0.15em] uppercase mb-5">
+            <p className="font-mono text-[10px] text-[#686D76] tracking-[0.15em] uppercase mb-5">
               Education
             </p>
 
@@ -213,7 +192,7 @@ export default function About() {
               {/* vertical line */}
               <div
                 className="absolute left-[9px] top-3 bottom-3 w-[1px]"
-                style={{ background: "linear-gradient(to bottom, #1A2B42 60%, transparent)" }}
+                style={{ background: "linear-gradient(to bottom, #E3E0D8 60%, transparent)" }}
               />
 
               {EDUCATION.map(({ degree, institute, board, period, score, current }) => (
@@ -223,39 +202,39 @@ export default function About() {
                     <span
                       className={`flex w-[18px] h-[18px] rounded-full border-2 items-center justify-center ${
                         current
-                          ? "border-teal-300 bg-[#070B14]"
-                          : "border-[#1A2B42] bg-[#0B1623]"
+                          ? "border-indigo-600 bg-[#F8F7F3]"
+                          : "border-[#E3E0D8] bg-[#FFFFFF]"
                       }`}
                     >
                       {current && (
-                        <span className="w-[6px] h-[6px] rounded-full bg-teal-300 animate-pulse" />
+                        <span className="w-[6px] h-[6px] rounded-full bg-indigo-600" />
                       )}
                     </span>
                   </div>
 
                   {/* card */}
                   <div
-                    className={`flex-1 bg-[#0B1623] border rounded-xl px-4 py-3.5 hover:border-teal-300/20 transition-colors duration-300 ${
-                      current ? "border-teal-300/25" : "border-[#131C2E]"
+                    className={`flex-1 bg-[#FFFFFF] border rounded-xl px-4 py-3.5 hover:border-indigo-600/20 transition-colors duration-300 ${
+                      current ? "border-indigo-600/25" : "border-[#E3E0D8]"
                     }`}
                   >
                     <div className="flex items-start justify-between gap-2 mb-0.5">
                       <p
-                        className="text-[#C8C3BA] text-[12.5px] font-semibold leading-snug"
+                        className="text-[#555963] text-[12.5px] font-semibold leading-snug"
                         style={{ fontFamily: "var(--syne-var)" }}
                       >
                         {degree}
                       </p>
 
                     </div>
-                    <p className="text-[#94A3B8] text-[11.5px] leading-snug mb-2">
+                    <p className="text-[#686D76] text-[11.5px] leading-snug mb-2">
                       {institute}
                     </p>
                     <div className="flex items-center justify-between gap-2">
-                      <span className="font-mono text-[9.5px] text-[#94A3B8] tracking-wide">
+                      <span className="font-mono text-[9.5px] text-[#686D76] tracking-wide">
                         {board} · {period}
                       </span>
-                      <span className="font-mono text-[10px] text-teal-300/65">
+                      <span className="font-mono text-[10px] text-indigo-700">
                         {score}
                       </span>
                     </div>

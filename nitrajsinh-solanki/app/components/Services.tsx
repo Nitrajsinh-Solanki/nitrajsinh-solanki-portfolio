@@ -3,7 +3,7 @@
 
 import { STATS } from "../projects/stats";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 const SERVICES = [
   {
@@ -121,66 +121,18 @@ const SERVICES = [
   },
 ] as const;
 
-function useInView(threshold = 0.15) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
-      { threshold }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [threshold]);
-
-  return { ref, visible };
-}
-
 export default function Services() {
-  const header = useInView(0.1);
-
   return (
     <section
       id="services"
-      className="relative py-28 px-6 md:px-10 overflow-hidden"
-      style={{
-        background:
-          "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(94,234,212,0.04) 0%, transparent 70%)",
-      }}
+      className="relative py-20 md:py-28 px-6 md:px-10 overflow-hidden"
     >
-      {/* Dot grid overlay */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 dot-grid opacity-40"
-      />
-
-      {/* Ambient glow */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-1/4 right-[-6%] w-[380px] h-[380px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(94,234,212,0.06) 0%, transparent 70%)",
-          filter: "blur(48px)",
-        }}
-      />
-
-      <div className="relative z-10 max-w-6xl mx-auto">
+<div className="relative z-10 max-w-6xl mx-auto">
 
         {/* ── Section header ── */}
-        <div
-          ref={header.ref}
-          className="mb-16"
-          style={{
-            opacity: header.visible ? 1 : 0,
-            transform: header.visible ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.55s ease, transform 0.55s ease",
-          }}
-        >
+        <div className="mb-16">
           <p
-            className="font-mono text-[11px] tracking-[0.18em] uppercase text-teal-300/80 mb-4"
+            className="font-mono text-[11px] tracking-[0.18em] uppercase text-indigo-700 mb-4"
           >
             What I Build
           </p>
@@ -192,20 +144,20 @@ export default function Services() {
                 fontSize: "clamp(34px, 5vw, 52px)",
                 lineHeight: 1.05,
                 letterSpacing: "-0.02em",
-                color: "#E2DDD5",
+                color: "#17191D",
               }}
             >
               Services &amp;
               <br />
-              <span style={{ color: "#6A9BAF" }}>Expertise</span>
+              <span style={{ color: "#4F46E5" }}>Expertise</span>
             </h2>
             <p
               className="text-[15px] leading-[1.8] max-w-[380px] mb-1"
-              style={{ color: "#A5B0C0" }}
+              style={{ color: "#555963" }}
             >
               Six specialisations backed by{" "}
-              <span style={{ color: "#9A9585" }}>{STATS.total} shipped projects</span> and
-              over <span style={{ color: "#9A9585" }}>$250 in prize money</span>{" "}
+              <span style={{ color: "#686D76" }}>{STATS.total} shipped projects</span> and
+              over <span style={{ color: "#686D76" }}>$250 in prize money</span>{" "}
               won on competitive hackathon platforms.
             </p>
           </div>
@@ -215,15 +167,15 @@ export default function Services() {
             className="mt-8 h-[1px] w-full"
             style={{
               background:
-                "linear-gradient(to right, #1A2B42, #5EEAD4 30%, #1A2B42 70%, transparent)",
+                "linear-gradient(to right, #E3E0D8, #4F46E5 30%, #E3E0D8 70%, transparent)",
             }}
           />
         </div>
 
         {/* ── Service cards grid ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-          {SERVICES.map((service, i) => (
-            <ServiceCard key={service.id} service={service} index={i} />
+          {SERVICES.map((service) => (
+            <ServiceCard key={service.id} service={service} />
           ))}
         </div>
 
@@ -236,32 +188,25 @@ export default function Services() {
 
 function ServiceCard({
   service,
-  index,
 }: {
   service: (typeof SERVICES)[number];
-  index: number;
 }) {
-  const { ref, visible } = useInView(0.1);
   const [hovered, setHovered] = useState(false);
 
   return (
     <div
-      ref={ref}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(28px)",
-        transition: `opacity 0.55s ${index * 0.08}s ease, transform 0.55s ${index * 0.08}s ease`,
-        background: hovered ? "#0D1A2A" : "#0B1623",
-        border: `1px solid ${hovered ? "rgba(94,234,212,0.22)" : "#1A2B42"}`,
+        transition: "background 0.25s, border-color 0.25s, box-shadow 0.25s",
+        background: hovered ? "#EEF2FF" : "#FFFFFF",
+        border: `1px solid ${hovered ? "rgba(79,70,229,0.22)" : "#E3E0D8"}`,
         borderRadius: "14px",
         padding: "28px",
         cursor: "default",
         boxShadow: hovered
-          ? "0 0 40px rgba(94,234,212,0.05), inset 0 0 0 1px rgba(94,234,212,0.08)"
+          ? "0 0 40px rgba(79,70,229,0.05), inset 0 0 0 1px rgba(79,70,229,0.08)"
           : "none",
-        transition2: "background 0.25s, border-color 0.25s, box-shadow 0.25s",
       } as React.CSSProperties}
     >
       {/* Header row */}
@@ -272,12 +217,12 @@ function ServiceCard({
             width: 42,
             height: 42,
             borderRadius: "10px",
-            background: hovered ? "rgba(94,234,212,0.12)" : "rgba(94,234,212,0.06)",
-            border: "1px solid rgba(94,234,212,0.15)",
+            background: hovered ? "rgba(79,70,229,0.12)" : "rgba(79,70,229,0.06)",
+            border: "1px solid rgba(79,70,229,0.15)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            color: "#5EEAD4",
+            color: "#4F46E5",
             flexShrink: 0,
             transition: "background 0.25s",
           }}
@@ -288,7 +233,7 @@ function ServiceCard({
         {/* Number badge */}
         <span
           className="font-mono text-[11px] tracking-[0.12em]"
-          style={{ color: "#94A3B8" }}
+          style={{ color: "#686D76" }}
         >
           {service.number}
         </span>
@@ -301,7 +246,7 @@ function ServiceCard({
           fontFamily: "var(--syne-var)",
           fontWeight: 700,
           fontSize: "17px",
-          color: "#E2DDD5",
+          color: "#17191D",
         }}
       >
         {service.title}
@@ -309,8 +254,8 @@ function ServiceCard({
 
       {/* Description */}
       <p
-        className="text-[13.5px] leading-[1.75] mb-5"
-        style={{ color: "#A5B0C0" }}
+        className="text-[15px] leading-[1.7] mb-5"
+        style={{ color: "#555963" }}
       >
         {service.description}
       </p>
@@ -322,9 +267,9 @@ function ServiceCard({
             key={tech}
             className="font-mono text-[10.5px] tracking-wide px-2.5 py-[4px] rounded-md"
             style={{
-              background: "rgba(26,43,66,0.8)",
-              border: "1px solid #1A2B42",
-              color: "#6A9BAF",
+              background: "rgba(79,70,229,0.06)",
+              border: "1px solid #E3E0D8",
+              color: "#4F46E5",
             }}
           >
             {tech}
@@ -335,30 +280,29 @@ function ServiceCard({
       {/* Divider */}
       <div
         className="mb-4"
-        style={{ height: "1px", background: "#111C2A" }}
+        style={{ height: "1px", background: "#E3E0D8" }}
       />
 
       {/* Projects */}
       <div>
         <p
           className="font-mono text-[10px] tracking-[0.14em] uppercase mb-3"
-          style={{ color: "#94A3B8" }}
+          style={{ color: "#686D76" }}
         >
           Delivered In
         </p>
         <div className="flex flex-col gap-2">
           {service.projects.map((project) => (
             <div key={project.name} className="flex items-center justify-between gap-2">
-              <span className="text-[12.5px] leading-none" style={{ color: "#A5B0C0" }}>
+              <span className="text-[12.5px] leading-none" style={{ color: "#555963" }}>
                 {project.name}
               </span>
               <span
                 className="font-mono text-[10px] px-2 py-[3px] rounded whitespace-nowrap"
                 style={{
-                  background: "rgba(94,234,212,0.06)",
-                  border: "1px solid rgba(94,234,212,0.12)",
-                  color: "#5EEAD4",
-                  opacity: 0.85,
+                  background: "rgba(79,70,229,0.06)",
+                  border: "1px solid rgba(79,70,229,0.12)",
+                  color: "#4F46E5",
                 }}
               >
                 {project.award}
@@ -372,24 +316,18 @@ function ServiceCard({
 }
 
 function CtaBanner() {
-  const { ref, visible } = useInView(0.1);
-
   return (
     <div
-      ref={ref}
       className="mt-14 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6"
       style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(20px)",
-        transition: "opacity 0.55s 0.2s ease, transform 0.55s 0.2s ease",
-        background: "linear-gradient(135deg, #0B1623 0%, #0D1E30 100%)",
-        border: "1px solid #1A2B42",
+        background: "linear-gradient(135deg, #FFFFFF 0%, #EEF2FF 100%)",
+        border: "1px solid #E3E0D8",
       }}
     >
       <div>
         <p
           className="font-mono text-[10.5px] tracking-[0.16em] uppercase mb-2"
-          style={{ color: "rgba(94,234,212,0.6)" }}
+          style={{ color: "#4338CA" }}
         >
           Open to Work
         </p>
@@ -398,13 +336,13 @@ function CtaBanner() {
             fontFamily: "var(--syne-var)",
             fontWeight: 700,
             fontSize: "clamp(20px, 3vw, 26px)",
-            color: "#E2DDD5",
+            color: "#17191D",
             lineHeight: 1.2,
           }}
         >
           Got a project in mind?
           <br />
-          <span style={{ color: "#6A9BAF" }}>Let&apos;s build it together.</span>
+          <span style={{ color: "#4F46E5" }}>Let&apos;s build it together.</span>
         </h3>
       </div>
 
@@ -412,7 +350,7 @@ function CtaBanner() {
         <a
           href="mailto:nrsolanki2005@gmail.com"
           style={{ fontFamily: "var(--syne-var)" }}
-          className="bg-teal-300 text-[#070B14] font-bold text-sm px-7 py-3.5 rounded-lg hover:opacity-85 hover:-translate-y-[2px] active:translate-y-0 transition-all duration-200 text-center"
+          className="bg-indigo-600 text-white font-bold text-sm px-7 py-3.5 rounded-lg hover:opacity-85 hover:-translate-y-[2px] active:translate-y-0 transition-all duration-200 text-center"
         >
           Email Me
         </a>
@@ -421,7 +359,7 @@ function CtaBanner() {
           target="_blank"
           rel="noopener noreferrer"
           style={{ fontFamily: "var(--syne-var)" }}
-          className="border border-[#1F2E42] text-[#9A9585] font-medium text-sm px-7 py-3.5 rounded-lg hover:border-teal-300/60 hover:text-teal-300 hover:-translate-y-[2px] active:translate-y-0 transition-all duration-200 text-center"
+          className="border border-[#E3E0D8] text-[#686D76] font-medium text-sm px-7 py-3.5 rounded-lg hover:border-indigo-600/60 hover:text-indigo-600 hover:-translate-y-[2px] active:translate-y-0 transition-all duration-200 text-center"
         >
           GitHub
         </a>

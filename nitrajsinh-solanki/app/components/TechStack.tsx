@@ -55,7 +55,7 @@ const SKILLS: Skill[] = [
 
   // ── Frontend ───────────────────────────────────────────────────
   { name: "React.js",          cat: "Frontend", projects: 6, core: true, icon: DI("react")               },
-  { name: "Next.js",           cat: "Frontend", projects: 5, core: true, icon: SI("nextdotjs","E2DDD5")   },
+  { name: "Next.js",           cat: "Frontend", projects: 5, core: true, icon: SI("nextdotjs","17191D")   },
   { name: "Angular",           cat: "Frontend", projects: 0, core: true, note: "Internship", icon: DI("angularjs") },
   { name: "Tailwind CSS",      cat: "Frontend", projects: 6, core: true, icon: SI("tailwindcss","38BDF8") },
   { name: "Vite",              cat: "Frontend", projects: 2,             icon: DI("vitejs")               },
@@ -67,8 +67,8 @@ const SKILLS: Skill[] = [
 
   // ── Backend ────────────────────────────────────────────────────
   { name: "Node.js",             cat: "Backend", projects: 5, core: true, icon: DI("nodejs")               },
-  { name: "Express.js",          cat: "Backend", projects: 3, core: true, icon: SI("express","ffffff")      },
-  { name: "Next.js API Routes",  cat: "Backend", projects: 5, core: true, icon: SI("nextdotjs","E2DDD5")   },
+  { name: "Express.js",          cat: "Backend", projects: 3, core: true, icon: SI("express","17191D")      },
+  { name: "Next.js API Routes",  cat: "Backend", projects: 5, core: true, icon: SI("nextdotjs","17191D")   },
   { name: ".NET / ASP.NET Core", cat: "Backend", projects: 0, core: true, note: "Internship", icon: DI("dotnetcore") },
   { name: "REST API Design",     cat: "Backend", projects: 7, core: true                                   },
   { name: "TcpListener (Rust)",  cat: "Backend", projects: 1,             icon: SI("rust","F74C00")         },
@@ -80,15 +80,15 @@ const SKILLS: Skill[] = [
   { name: "MySQL",        cat: "Database", projects: 0, note: "Academic", icon: DI("mysql")              },
 
   // ── Auth & Security ────────────────────────────────────────────
-  { name: "JWT",                cat: "Auth & Security", projects: 7, core: true, icon: SI("jsonwebtokens","ffffff") },
+  { name: "JWT",                cat: "Auth & Security", projects: 7, core: true, icon: SI("jsonwebtokens","17191D") },
   { name: "OTP Email Auth",     cat: "Auth & Security", projects: 5, core: true                                    },
-  { name: "NextAuth",           cat: "Auth & Security", projects: 1,             icon: SI("authjs","ffffff")        },
+  { name: "NextAuth",           cat: "Auth & Security", projects: 1,             icon: SI("authjs","17191D")        },
   { name: "Session Management", cat: "Auth & Security", projects: 3                                               },
   { name: "Cookies / RBAC",     cat: "Auth & Security", projects: 2                                               },
 
   // ── AI & APIs ──────────────────────────────────────────────────
   { name: "Google Gemini AI",        cat: "AI & APIs", projects: 3, core: true, icon: SI("googlegemini","8E75B2")   },
-  { name: "AssemblyAI",              cat: "AI & APIs", projects: 1,             icon: SI("assemblyai","ffffff")      },
+  { name: "AssemblyAI",              cat: "AI & APIs", projects: 1,             icon: SI("assemblyai","17191D")      },
   { name: "HuggingFace Bart CNN",    cat: "AI & APIs", projects: 1,             icon: SI("huggingface","FFD21E")     },
   { name: "Deepgram API",            cat: "AI & APIs", projects: 1,             icon: SI("deepgram","13EF93")        },
   { name: "GBIF API",                cat: "AI & APIs", projects: 1                                                  },
@@ -99,7 +99,7 @@ const SKILLS: Skill[] = [
   { name: "Pexels API",              cat: "AI & APIs", projects: 1,             icon: SI("pexels","05A081")          },
   { name: "FCM Push Notifications",  cat: "AI & APIs", projects: 2,             icon: DI("firebase")                },
   { name: "Jamendo / Deezer / Audius", cat: "AI & APIs", projects: 1                                               },
-  { name: "Wikipedia API",           cat: "AI & APIs", projects: 1,             icon: SI("wikipedia","aaaaaa")       },
+  { name: "Wikipedia API",           cat: "AI & APIs", projects: 1,             icon: SI("wikipedia","555963")       },
 
   // ── Mobile ─────────────────────────────────────────────────────
   { name: "Flutter",             cat: "Mobile", projects: 2, core: true, icon: DI("flutter")               },
@@ -117,7 +117,7 @@ const SKILLS: Skill[] = [
   { name: "@aptos-labs/wallet-adapter-react",    cat: "Blockchain", projects: 1 },
 
   // ── Infra & Cloud ──────────────────────────────────────────────
-  { name: "Vercel",             cat: "Infra & Cloud", projects: 2, core: true, icon: SI("vercel","E2DDD5")       },
+  { name: "Vercel",             cat: "Infra & Cloud", projects: 2, core: true, icon: SI("vercel","17191D")       },
   { name: "Firebase",           cat: "Infra & Cloud", projects: 2,             icon: DI("firebase")              },
   { name: "Cloudinary",         cat: "Infra & Cloud", projects: 2,             icon: SI("cloudinary","3448C5")   },
   { name: "Supabase Storage",   cat: "Infra & Cloud", projects: 1,             icon: DI("supabase")              },
@@ -127,7 +127,7 @@ const SKILLS: Skill[] = [
   { name: "Git & GitHub",  cat: "Tools", projects: 10, core: true, icon: DI("git")                          },
   { name: "VS Code",       cat: "Tools", projects: 10, core: true, icon: DI("vscode")                       },
   { name: "npm",           cat: "Tools", projects:  9, core: true, icon: DI("npm","original-wordmark"),
-    iconFilter: "brightness(0) invert(1)"                                                                    },
+    iconFilter: "none"                                                                    },
   { name: "Postman",       cat: "Tools", projects:  7, core: true, icon: DI("postman")                      },
   { name: "Playwright",    cat: "Tools", projects:  1,             icon: DI("playwright")                   },
   { name: "Cargo (Rust)",  cat: "Tools", projects:  1,             icon: SI("rust","F74C00")                 },
@@ -139,16 +139,16 @@ const CAT_META: Record<
   Exclude<Category, "All">,
   { color: string; border: string; bg: string; dot: string; accent: string }
 > = {
-  "Languages":       { color: "text-orange-300",  border: "border-orange-400/25",  bg: "bg-orange-400/5",  dot: "bg-orange-400",  accent: "#FB923C" },
-  "Frontend":        { color: "text-blue-300",    border: "border-blue-400/25",    bg: "bg-blue-400/5",    dot: "bg-blue-400",    accent: "#60A5FA" },
-  "Backend":         { color: "text-emerald-300", border: "border-emerald-400/25", bg: "bg-emerald-400/5", dot: "bg-emerald-400", accent: "#34D399" },
-  "Database":        { color: "text-amber-300",   border: "border-amber-400/25",   bg: "bg-amber-400/5",   dot: "bg-amber-400",   accent: "#FCD34D" },
-  "Auth & Security": { color: "text-pink-300",    border: "border-pink-400/25",    bg: "bg-pink-400/5",    dot: "bg-pink-400",    accent: "#F9A8D4" },
-  "AI & APIs":       { color: "text-violet-300",  border: "border-violet-400/25",  bg: "bg-violet-400/5",  dot: "bg-violet-400",  accent: "#C4B5FD" },
-  "Mobile":          { color: "text-cyan-300",    border: "border-cyan-400/25",    bg: "bg-cyan-400/5",    dot: "bg-cyan-400",    accent: "#67E8F9" },
-  "Blockchain":      { color: "text-indigo-300",  border: "border-indigo-400/25",  bg: "bg-indigo-400/5",  dot: "bg-indigo-400",  accent: "#A5B4FC" },
-  "Infra & Cloud":   { color: "text-slate-300",   border: "border-slate-400/25",   bg: "bg-slate-400/5",   dot: "bg-slate-400",   accent: "#CBD5E1" },
-  "Tools":           { color: "text-teal-300",    border: "border-teal-400/25",    bg: "bg-teal-400/5",    dot: "bg-teal-400",    accent: "#5EEAD4" },
+  "Languages":       { color: "text-indigo-700",  border: "border-indigo-600/25",  bg: "bg-indigo-600/5",  dot: "bg-indigo-600",  accent: "#4F46E5" },
+  "Frontend":        { color: "text-indigo-700",    border: "border-indigo-600/25",    bg: "bg-indigo-600/5",    dot: "bg-indigo-600",    accent: "#4F46E5" },
+  "Backend":         { color: "text-indigo-700", border: "border-indigo-600/25", bg: "bg-indigo-600/5", dot: "bg-indigo-600", accent: "#4F46E5" },
+  "Database":        { color: "text-indigo-700",   border: "border-indigo-600/25",   bg: "bg-indigo-600/5",   dot: "bg-indigo-600",   accent: "#4F46E5" },
+  "Auth & Security": { color: "text-indigo-700",    border: "border-indigo-600/25",    bg: "bg-indigo-600/5",    dot: "bg-indigo-600",    accent: "#4F46E5" },
+  "AI & APIs":       { color: "text-indigo-700",  border: "border-indigo-600/25",  bg: "bg-indigo-600/5",  dot: "bg-indigo-600",  accent: "#4F46E5" },
+  "Mobile":          { color: "text-indigo-700",    border: "border-indigo-600/25",    bg: "bg-indigo-600/5",    dot: "bg-indigo-600",    accent: "#4F46E5" },
+  "Blockchain":      { color: "text-indigo-700",  border: "border-indigo-600/25",  bg: "bg-indigo-600/5",  dot: "bg-indigo-600",  accent: "#4F46E5" },
+  "Infra & Cloud":   { color: "text-slate-700",   border: "border-indigo-600/25",   bg: "bg-indigo-600/5",   dot: "bg-indigo-600",   accent: "#4F46E5" },
+  "Tools":           { color: "text-indigo-600",    border: "border-indigo-600/25",    bg: "bg-indigo-600/5",    dot: "bg-indigo-600",    accent: "#4F46E5" },
 };
 
 const CAT_ICONS: Record<Exclude<Category, "All">, string> = {
@@ -173,7 +173,7 @@ const FILTERS: Category[] = [
 
 function useReveal(threshold = 0.06) {
   const ref = useRef<HTMLElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -251,40 +251,22 @@ export default function TechStack() {
       itemType="https://schema.org/ItemList"
       className="relative py-20 md:py-28 px-6 md:px-10 overflow-hidden"
     >
-      {/* ── ambient glows ── */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-[5%] left-[-5%] w-[460px] h-[460px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(94,234,212,0.05) 0%, transparent 70%)",
-          filter: "blur(60px)",
-        }}
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-[8%] right-[-4%] w-[380px] h-[380px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(139,92,246,0.04) 0%, transparent 70%)",
-          filter: "blur(55px)",
-        }}
-      />
-
       <div className="relative z-10 max-w-5xl mx-auto">
 
         {/* ── section label ── */}
         <div className="flex items-center gap-4 mb-4" style={fade(0.04)}>
-          <span className="font-mono text-[11px] text-teal-300 tracking-[0.18em] uppercase select-none">
-            // tech stack
+          <span className="font-sans text-[11px] font-semibold text-indigo-700 tracking-[0.14em] uppercase select-none">
+            Technology
           </span>
           <span
             className="flex-1 h-[1px]"
-            style={{ background: "linear-gradient(to right, #1A2B42, transparent)" }}
+            style={{ background: "linear-gradient(to right, #E3E0D8, transparent)" }}
           />
         </div>
 
         {/* ── h2 — crawlable by search engines ── */}
         <h2
-          className="leading-[1.05] tracking-tight text-[#E2DDD5] mb-3"
+          className="leading-[1.05] tracking-tight text-[#17191D] mb-3"
           style={{
             fontFamily: "var(--syne-var)",
             fontWeight: 800,
@@ -294,12 +276,12 @@ export default function TechStack() {
           itemProp="name"
         >
           Everything I{" "}
-          <span className="text-teal-300">build with.</span>
+          <span className="text-indigo-600">build with.</span>
         </h2>
 
         {/* ── sub-tagline ── */}
         <p
-          className="font-mono text-[11.5px] text-[#94A3B8] tracking-wide mb-3"
+          className="font-mono text-[11.5px] text-[#686D76] tracking-wide mb-3"
           style={fade(0.18)}
           itemProp="description"
         >
@@ -316,12 +298,12 @@ export default function TechStack() {
           ].map(({ val, label }) => (
             <div key={label} className="flex items-baseline gap-1.5">
               <span
-                className="text-teal-300 font-bold text-[15px]"
+                className="text-indigo-600 font-bold text-[15px]"
                 style={{ fontFamily: "var(--syne-var)" }}
               >
                 {val}
               </span>
-              <span className="font-mono text-[10px] text-[#94A3B8] tracking-wide">
+              <span className="font-mono text-[10px] text-[#686D76] tracking-wide">
                 {label}
               </span>
             </div>
@@ -350,8 +332,8 @@ export default function TechStack() {
                     "font-mono text-[10.5px] tracking-[0.08em] px-3.5 py-1.5 rounded-full border",
                     "transition-all duration-200 whitespace-nowrap",
                     active === f
-                      ? "bg-teal-300 text-[#070B14] border-teal-300 font-semibold"
-                      : "text-[#A5B0C0] border-[#1A2B42] hover:border-teal-300/40 hover:text-teal-300/80",
+                      ? "bg-indigo-600 text-white border-indigo-600 font-semibold"
+                      : "text-[#555963] border-[#E3E0D8] hover:border-indigo-600/40 hover:text-indigo-700",
                   ].join(" ")}
                 >
                   {f}
@@ -381,8 +363,8 @@ export default function TechStack() {
             return (
               <article
                 key={cat}
-                className="break-inside-avoid mb-5 bg-[#0B1623] border border-[#131C2E] rounded-2xl p-5
-                           hover:border-[#1A2B42] transition-colors duration-300"
+                className="break-inside-avoid mb-5 bg-[#FFFFFF] border border-[#E3E0D8] rounded-2xl p-5
+                           hover:border-[#E3E0D8] transition-colors duration-300"
                 aria-label={`${cat} — ${skills.length} technologies`}
                 itemScope
                 itemType="https://schema.org/ItemList"
@@ -402,7 +384,7 @@ export default function TechStack() {
                   >
                     {cat}
                   </h3>
-                  <span className="font-mono text-[9.5px] text-[#94A3B8] ml-auto">
+                  <span className="font-mono text-[9.5px] text-[#686D76] ml-auto">
                     {skills.length} tech{skills.length > 1 ? "s" : ""}
                   </span>
                 </header>
@@ -482,31 +464,31 @@ export default function TechStack() {
           <div className="flex items-center gap-2">
             {/* sample logo placeholder */}
             <span
-              className="w-3.5 h-3.5 rounded-sm border border-teal-400/30 bg-teal-400/10 flex items-center justify-center"
+              className="w-3.5 h-3.5 rounded-sm border border-indigo-600/30 bg-indigo-600/10 flex items-center justify-center"
               aria-hidden="true"
             >
-              <span className="w-2 h-2 rounded-sm bg-teal-400/60" />
+              <span className="w-2 h-2 rounded-sm bg-indigo-600/60" />
             </span>
-            <span className="font-mono text-[9.5px] text-[#94A3B8] tracking-wide">
+            <span className="font-mono text-[9.5px] text-[#686D76] tracking-wide">
               Badge icon = official tech logo
             </span>
           </div>
           <div className="flex items-center gap-2">
             <span
-              className="w-1.5 h-1.5 rounded-full bg-teal-300/60"
+              className="w-1.5 h-1.5 rounded-full bg-indigo-600/60"
               aria-hidden="true"
             />
-            <span className="font-mono text-[9.5px] text-[#94A3B8] tracking-wide">
+            <span className="font-mono text-[9.5px] text-[#686D76] tracking-wide">
               Dot = core / production skill
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="font-mono text-[9.5px] text-[#94A3B8] tracking-wide">
+            <span className="font-mono text-[9.5px] text-[#686D76] tracking-wide">
               ×N = used in N real projects
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="font-mono text-[9.5px] text-[#94A3B8] tracking-wide">
+            <span className="font-mono text-[9.5px] text-[#686D76] tracking-wide">
               Internship / Academic = non-hackathon context
             </span>
           </div>

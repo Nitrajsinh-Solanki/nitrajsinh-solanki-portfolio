@@ -8,12 +8,12 @@ export const contentType = "image/png";
 export default function Image() {
   return new ImageResponse(
     (
-      <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", padding: 80, background: "#070B14", color: "#E2DDD5" }}>
+      <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", padding: 80, background: "#F8F7F3", color: "#17191D" }}>
         <div style={{ display: "flex", fontSize: 88, fontWeight: 800 }}>{SITE_NAME}</div>
-        <div style={{ display: "flex", fontSize: 40, color: "#5EEAD4", marginTop: 16 }}>
+        <div style={{ display: "flex", fontSize: 40, color: "#4F46E5", marginTop: 16 }}>
           Full-Stack Developer · {LOCATION_LABEL}
         </div>
-        <div style={{ display: "flex", fontSize: 28, color: "#9A9585", marginTop: 28 }}>
+        <div style={{ display: "flex", fontSize: 28, color: "#686D76", marginTop: 28 }}>
           Next.js · React · .NET · Angular · Flutter
         </div>
       </div>

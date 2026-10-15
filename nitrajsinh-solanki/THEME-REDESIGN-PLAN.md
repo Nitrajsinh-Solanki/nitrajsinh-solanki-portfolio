@@ -1,7 +1,9 @@
 # Portfolio Theme Redesign Plan
 ## Warm Editorial Light
 
-**Status:** Planning only  
+**Status:** Visual implementation committed on `theme/warm-editorial-light`; build and browser verification remain pending.  
+**Last updated:** October 15, 2026.  
+**Verification note:** `nitrajsinh-solanki/vercel.json` intentionally disables deployments for non-`main` branches. Earlier Vercel checks reported `build-rate-limit`, so this plan does not claim that a production build, browser regression pass, or fresh PageSpeed run has succeeded.
 **Purpose:** Document the complete visual redesign before implementation.  
 **Scope:** Visual styling and layout only. This file is a plan; it does not authorize unrelated code changes.
 
@@ -368,14 +370,14 @@ Unless requested separately, do **not**:
 
 ## 15. Definition of done
 
-- [ ] Warm off-white, dark text, and indigo accents are used consistently across all routes.
-- [ ] The former navy/teal/neon look no longer dominates the interface.
-- [ ] Navbar, hero, all homepage sections, project catalogue, project details, secondary pages, and footer share a coherent design.
-- [ ] Project screenshots and case-study outcomes are easy to notice and understand.
-- [ ] Typography, card spacing, borders, radii, and button states are consistent.
+- [x] Warm off-white, dark text, and indigo accents are used consistently across all routes.
+- [x] The former navy/teal/neon look no longer dominates the interface.
+- [x] Navbar, hero, all homepage sections, project catalogue, project details, secondary pages, and footer share a coherent design.
+- [x] Project screenshots and case-study outcomes are easy to notice and understand.
+- [x] Typography, card spacing, borders, radii, and button states are consistent.
 - [ ] Desktop, tablet, and mobile layouts contain no horizontal overflow or broken wrapping.
 - [ ] Text and controls remain readable with accessible contrast and keyboard focus.
-- [ ] Reduced-motion preferences remain respected.
+- [x] Reduced-motion preferences remain respected.
 - [ ] All content, links, routes, forms, and SEO behavior still work.
 - [ ] Production build and regression checks pass.
 - [ ] Mobile PageSpeed is measured after implementation and does not regress without an identified reason.

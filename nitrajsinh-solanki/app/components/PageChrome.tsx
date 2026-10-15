@@ -2,20 +2,20 @@ import Link from "next/link";
 import { SOCIAL, SITE_NAME } from "@/lib/site";
 import { profile } from "@/lib/profile";
 
-const linkCls = "text-[#A5B0C0] hover:text-teal-300 transition-colors";
+const linkCls = "text-[#555963] hover:text-indigo-600 transition-colors";
 
 export function PageNav() {
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 bg-[#070B14]/92 backdrop-blur-xl border-b border-[#131C2E]">
+    <nav className="fixed top-0 inset-x-0 z-50 bg-[#F8F7F3] border-b border-[#E3E0D8]">
       <div className="max-w-6xl mx-auto h-16 flex items-center justify-between px-6 md:px-10">
-        <Link href="/" style={{ fontFamily: "var(--syne-var)" }} className="font-extrabold text-xl tracking-tight text-[#E2DDD5]">
-          NS<span className="text-teal-300">.</span>
+        <Link href="/" style={{ fontFamily: "var(--syne-var)" }} className="font-extrabold text-xl tracking-tight text-[#17191D]">
+          NS<span className="text-indigo-600">.</span>
         </Link>
-        <div className="flex items-center gap-5 font-mono text-[11px] uppercase tracking-[0.07em]">
+        <div className="flex items-center gap-5 font-sans text-[14px] font-medium">
           <Link href="/about" className={linkCls}>About</Link>
           <Link href="/projects" className={linkCls}>Projects</Link>
           <Link href="/resume" className={linkCls}>Resume</Link>
-          <a href={"mailto:" + profile.email} className="hidden sm:inline-block text-teal-300 border border-teal-300/60 px-4 py-2 rounded hover:bg-teal-300 hover:text-[#070B14] transition-colors">Hire Me</a>
+          <a href={"mailto:" + profile.email} className="hidden sm:inline-block font-sans text-[13px] font-medium text-indigo-600 border border-indigo-600/60 px-4 py-2 rounded hover:bg-indigo-600 hover:text-white transition-colors">Hire Me</a>
         </div>
       </div>
     </nav>
@@ -31,14 +31,14 @@ export function PageFooter() {
     { label: profile.email, href: "mailto:" + profile.email },
   ];
   return (
-    <footer className="border-t border-[#111A28] px-8 md:px-12 py-7 flex flex-col sm:flex-row items-center justify-between gap-4 flex-wrap">
-      <span className="font-mono text-[11px] text-[#94A3B8] tracking-widest">© {new Date().getFullYear()} {SITE_NAME}</span>
+    <footer className="border-t border-[#E3E0D8] px-8 md:px-12 py-7 flex flex-col sm:flex-row items-center justify-between gap-4 flex-wrap">
+      <span className="font-mono text-[11px] text-[#686D76] tracking-widest">© {new Date().getFullYear()} {SITE_NAME}</span>
       <div className="flex items-center gap-6 flex-wrap">
         {links.map(({ label, href }) => (
           <a key={label} href={href}
             rel={href.startsWith("http") ? "me noopener noreferrer" : undefined}
             target={href.startsWith("http") ? "_blank" : undefined}
-            className="font-mono text-[11.5px] text-[#A5B0C0] hover:text-teal-300 transition-colors tracking-wide">{label}</a>
+            className="font-sans text-[13px] text-[#555963] hover:text-indigo-600 transition-colors">{label}</a>
         ))}
       </div>
     </footer>
