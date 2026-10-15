@@ -4,7 +4,7 @@
 import { STATS } from "../projects/stats";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 /* ─────────────────────────── types ─────────────────────────── */
 
@@ -87,30 +87,9 @@ const BADGE: Record<BadgeColor, string> = {
   blue:   "text-indigo-700   border-indigo-700/25   bg-indigo-700/5",
 };
 
-/* ──────────────── intersection hook ───────────────────────── */
-
-function useReveal<T extends HTMLElement = HTMLDivElement>(threshold = 0.1) {
-  const ref = useRef<T>(null);
-  const [visible, setVisible] = useState(true);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } },
-      { threshold }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [threshold]);
-  return { ref, visible };
-}
-
 /* ─────────────────────── main component ───────────────────── */
 
 export default function ProjectsPreview() {
-  const header = useReveal(0.05);
-  const stats  = useReveal(0.1);
-
   return (
     <section
       id="projects"
@@ -119,14 +98,7 @@ export default function ProjectsPreview() {
       <div className="relative z-10 max-w-6xl mx-auto">
 
         {/* ── Section header ── */}
-        <div
-          ref={header.ref}
-          style={{
-            opacity: header.visible ? 1 : 0,
-            transform: header.visible ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.55s ease, transform 0.55s ease",
-          }}
-        >
+        <div>
           {/* Label row */}
           <div className="flex items-center gap-4 mb-4">
             <span className="font-sans text-[11px] font-semibold text-indigo-700 tracking-[0.14em] uppercase select-none">
@@ -172,15 +144,7 @@ export default function ProjectsPreview() {
           </div>
 
           {/* Stats strip */}
-          <div
-            ref={stats.ref}
-            className="grid grid-cols-3 gap-3 mb-12"
-            style={{
-              opacity: stats.visible ? 1 : 0,
-              transform: stats.visible ? "translateY(0)" : "translateY(12px)",
-              transition: "opacity 0.5s 0.15s ease, transform 0.5s 0.15s ease",
-            }}
-          >
+          <div className="grid grid-cols-3 gap-3 mb-12">
             {[
               { value: String(STATS.total), label: "Projects Built", color: "#4F46E5" },
               { value: "$250+", label: "Hackathon Prizes",  color: "#4F46E5" },
@@ -207,8 +171,8 @@ export default function ProjectsPreview() {
 
         {/* ── Featured cards — horizontal on desktop ── */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {FEATURED.map((project, i) => (
-            <FeaturedCard key={project.id} project={project} index={i} />
+          {FEATURED.map((project) => (
+            <FeaturedCard key={project.id} project={project} />
           ))}
         </div>
 
@@ -221,23 +185,18 @@ export default function ProjectsPreview() {
 
 /* ─────────────────────── featured card ─────────────────────── */
 
-function FeaturedCard({ project, index }: { project: PreviewProject; index: number }) {
-  const { ref, visible } = useReveal<HTMLAnchorElement>(0.08);
+function FeaturedCard({ project }: { project: PreviewProject }) {
   const [hovered, setHovered] = useState(false);
 
   return (
     <Link
-      ref={ref}
       href={`/projects/${project.slug}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="group relative flex flex-col rounded-2xl overflow-hidden border border-[#E3E0D8] bg-[#FFFFFF] transition-all duration-300"
       style={{
-        opacity: visible ? 1 : 0,
-        transform: visible
-          ? hovered ? "translateY(-4px)" : "translateY(0)"
-          : "translateY(28px)",
-        transition: `opacity 0.5s ${index * 0.1}s ease, transform 0.4s ease, border-color 0.25s ease, box-shadow 0.3s ease`,
+        transform: hovered ? "translateY(-4px)" : "translateY(0)",
+        transition: "transform 0.25s ease, border-color 0.25s ease, box-shadow 0.3s ease",
         borderColor: hovered ? `${project.accentColor}30` : undefined,
         boxShadow: hovered ? `0 16px 40px -12px ${project.accentColor}18` : undefined,
       }}
@@ -382,18 +341,8 @@ function FeaturedCard({ project, index }: { project: PreviewProject; index: numb
 /* ─────────────── "more projects" CTA strip ────────────────── */
 
 function MoreProjectsCTA() {
-  const { ref, visible } = useReveal(0.1);
-
   return (
-    <div
-      ref={ref}
-      className="mt-10 rounded-2xl border border-[#E3E0D8] bg-[#FFFFFF] overflow-hidden"
-      style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(16px)",
-        transition: "opacity 0.55s 0.2s ease, transform 0.55s 0.2s ease",
-      }}
-    >
+    <div className="mt-10 rounded-2xl border border-[#E3E0D8] bg-[#FFFFFF] overflow-hidden">
       {/* Top gradient bar */}
       <div
         className="h-[2px] w-full"
