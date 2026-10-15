@@ -1,7 +1,7 @@
 // nitrajsinh-solanki/app/components/ProjectsPreview.tsx
 "use client";
 
-import { STATS } from "../projects/data";
+import { STATS } from "../projects/stats";
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
