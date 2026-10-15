@@ -21,8 +21,8 @@ const dmSans = DM_Sans({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#070B14",
-  colorScheme: "dark",
+  themeColor: "#F8F7F3",
+  colorScheme: "light",
   width: "device-width",
   initialScale: 1,
 };
@@ -87,7 +87,7 @@ export default function RootLayout({
       lang={LOCALE_BCP47}
       className={`${syne.variable} ${dmMono.variable} ${dmSans.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col bg-[#070B14] text-[#E2DDD5] antialiased">
+      <body className="min-h-full flex flex-col bg-[#F8F7F3] text-[#17191D] antialiased">
         {children}
       </body>
     </html>

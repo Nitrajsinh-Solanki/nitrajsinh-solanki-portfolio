@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #070B14;
-  --foreground: #E2DDD5;
+  color-scheme: light;
+  --background: #F8F7F3;
+  --foreground: #17191D;
+  --surface: #FFFFFF;
+  --surface-alt: #F0EEE8;
+  --text-secondary: #555963;
+  --text-muted: #737780;
+  --border: #E3E0D8;
+  --accent: #4F46E5;
+  --accent-hover: #4338CA;
+  --accent-soft: #EEF2FF;
+  --dark-surface: #17191D;
+  --dark-surface-text: #F8F7F3;
 }
 
 @theme inline {
@@ -54,7 +65,7 @@ body {
   display: inline-block;
   width: 2px;
   height: 1.1em;
-  background: #5EEAD4;
+  background: #4F46E5;
   margin-left: 3px;
   vertical-align: middle;
   border-radius: 1px;
@@ -78,9 +89,9 @@ body {
   background: conic-gradient(
     from 0deg,
     transparent 0%,
-    #5EEAD4 25%,
+    #4F46E5 25%,
     transparent 50%,
-    #5EEAD4 75%,
+    #4F46E5 75%,
     transparent 100%
   );
   animation: ringRotate 4s linear infinite;
@@ -90,13 +101,13 @@ body {
   position: absolute;
   inset: 3px;
   border-radius: 9999px;
-  background: #070B14;
+  background: #F8F7F3;
   z-index: 1;
 }
 
 /* ── Dot grid background ── */
 .dot-grid {
-  background-image: radial-gradient(circle, #1A2B42 1px, transparent 1px);
+  background-image: radial-gradient(circle, #E3E0D8 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
@@ -135,6 +146,45 @@ body {
 
 /* Keep keyboard focus visible on interactive controls. */
 :where(a, button, input, textarea, select, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
-  outline: 2px solid #5EEAD4;
+  outline: 2px solid #4F46E5;
   outline-offset: 3px;
+}
+
+
+/* ── Warm Editorial Light theme foundations ── */
+html {
+  background: var(--background);
+  color-scheme: light;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+::selection {
+  color: var(--foreground);
+  background: rgba(79, 70, 229, 0.16);
+}
+
+/* The editorial theme favors immediate content over decorative entrance effects. */
+.anim-1,
+.anim-2,
+.anim-3,
+.anim-4,
+.anim-5,
+.anim-6,
+.anim-img {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.cursor-blink {
+  display: none !important;
+}
+
+/* Do not render the previous full-page dot pattern. */
+.dot-grid {
+  background-image: none !important;
 }
