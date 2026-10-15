@@ -87,7 +87,7 @@ export default function About() {
         {/* section label */}
         <div className="flex items-center gap-4 mb-4" style={fade(0.04)}>
           <span className="font-mono text-[11px] text-indigo-600 tracking-[0.18em] uppercase">
-            // about me
+            About me
           </span>
           <span
             className="flex-1 h-[1px]"
@@ -129,10 +129,7 @@ export default function About() {
 
             {/* current role badge */}
             <div className="flex items-start gap-3 bg-[#FFFFFF] border border-indigo-600/20 rounded-xl px-4 py-3.5 mb-7">
-              <span className="relative flex h-2.5 w-2.5 mt-[4px] shrink-0">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-600 opacity-50" />
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-indigo-600" />
-              </span>
+              <span className="mt-[4px] shrink-0 w-2.5 h-2.5 rounded-full bg-indigo-600" aria-hidden="true" />
               <div>
                 <p
                   className="text-indigo-600 text-[13px] font-semibold"

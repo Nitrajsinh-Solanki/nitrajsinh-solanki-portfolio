@@ -48,7 +48,7 @@ function ResumeActions() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="View resume (PDF)"
-        className="font-mono text-[11px] text-indigo-600 px-3 py-[7px] tracking-widest hover:bg-indigo-600 hover:text-white transition-all duration-200"
+        className="font-sans text-[13px] font-medium text-indigo-600 px-3 py-[7px] hover:bg-indigo-600 hover:text-white transition-colors duration-200"
       >
         Resume
       </a>
@@ -88,14 +88,14 @@ export default function Navbar() {
   };
 
   const linkClass = (href: string, isRoute: boolean) =>
-    `font-mono text-[11px] tracking-[0.07em] uppercase transition-colors duration-200 ${
+    `font-sans text-[14px] font-medium tracking-normal transition-colors duration-200 ${
       isActive(href, isRoute)
         ? "text-indigo-600"
         : "text-[#555963] hover:text-[#555963]"
     }`;
 
   const mobileLinkClass = (href: string, isRoute: boolean) =>
-    `font-mono text-[12px] tracking-widest uppercase py-2.5 border-b border-[#E3E0D8] transition-colors ${
+    `font-sans text-[14px] font-medium tracking-normal py-3 border-b border-[#E3E0D8] transition-colors ${
       isActive(href, isRoute) ? "text-indigo-600" : "text-[#555963] hover:text-indigo-600"
     }`;
 
@@ -103,7 +103,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#F8F7F3]/92 backdrop-blur-xl border-b border-[#E3E0D8]"
+          ? "bg-[#F8F7F3] border-b border-[#E3E0D8]"
           : "bg-transparent border-b border-transparent"
       }`}
     >
@@ -146,7 +146,7 @@ export default function Navbar() {
           {/* Hire Me */}
           <a
             href="mailto:nrsolanki2005@gmail.com"
-            className="hidden lg:inline-block font-mono text-[11px] text-[#555963] hover:text-[#555963] border border-[#E3E0D8] px-4 py-[7px] rounded-lg transition-all duration-200 tracking-widest"
+            className="hidden lg:inline-block font-sans text-[13px] font-medium text-[#17191D] hover:text-indigo-600 border border-[#E3E0D8] px-4 py-[7px] rounded-lg transition-colors duration-200"
           >
             Hire Me
           </a>
@@ -166,7 +166,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 bg-[#F8F7F3]/96 border-b border-[#E3E0D8] ${
+        className={`lg:hidden overflow-hidden transition-all duration-300 bg-[#F8F7F3] border-b border-[#E3E0D8] ${
           menuOpen ? "max-h-[28rem] py-4" : "max-h-0"
         }`}
       >
@@ -201,7 +201,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               aria-label="View resume (PDF)"
               onClick={() => setMenuOpen(false)}
-              className="flex-1 text-center font-mono text-[11px] text-indigo-600 border border-indigo-600/60 px-4 py-2.5 rounded-lg tracking-widest hover:bg-indigo-600 hover:text-white transition-all duration-200"
+              className="flex-1 text-center font-sans text-[13px] font-medium text-indigo-600 border border-indigo-600/60 px-4 py-2.5 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors duration-200"
             >
               View Resume
             </a>

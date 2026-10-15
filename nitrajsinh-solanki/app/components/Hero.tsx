@@ -97,13 +97,13 @@ export default function Hero() {
             {/* Separator line */}
             <div
               className="anim-3 mb-5 h-[1px] w-24"
-              style={{ background: "linear-gradient(to right, #4F46E5, transparent)" }}
+              style={{ background: "linear-gradient(to right, #E3E0D8, transparent)" }}
             />
 
             {/* Role label */}
             <div className="mb-5 h-7 flex items-center">
               <span
-                className="font-mono text-[13px] tracking-wide"
+                className="font-sans text-[15px] font-medium tracking-normal"
                 style={{ color: "#4F46E5" }}
               >
                 {displayed}
@@ -125,11 +125,6 @@ export default function Hero() {
                 style={{ fontFamily: "var(--syne-var)" }}
                 className="relative group inline-flex items-center gap-2 bg-indigo-600 text-white font-bold text-[13px] px-7 py-3.5 rounded-xl hover:opacity-90 hover:-translate-y-[2px] active:translate-y-0 transition-all duration-200 overflow-hidden"
               >
-                <span
-                  aria-hidden="true"
-                  className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-500"
-                  style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)" }}
-                />
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M4 6h16M4 10h16M4 14h10" />
                 </svg>

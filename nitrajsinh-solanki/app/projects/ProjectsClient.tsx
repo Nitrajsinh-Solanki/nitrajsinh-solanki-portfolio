@@ -296,24 +296,12 @@ export default function ProjectsClient() {
             className="relative px-6 md:px-10 pt-14 pb-10 overflow-hidden"
             aria-labelledby="projects-heading"
           >
-            {/* Ambient glow */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[280px] rounded-full"
-              style={{
-                background: "radial-gradient(ellipse, rgba(79,70,229,0.055) 0%, transparent 70%)",
-                filter: "blur(50px)",
-              }}
-            />
             <div className="relative z-10 max-w-6xl mx-auto">
 
               {/* ── Top label ── */}
               <div className="flex items-center gap-3 mb-5">
                 <div className="inline-flex items-center gap-2 bg-[#FFFFFF] border border-[#E3E0D8] px-3.5 py-[5px] rounded-full">
-                  <span className="relative flex h-1.5 w-1.5">
-                    <span className="absolute inline-flex h-full w-full rounded-full bg-indigo-600 opacity-60" />
-                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-indigo-600" />
-                  </span>
+                  <span className="inline-flex rounded-full h-1.5 w-1.5 bg-indigo-600" aria-hidden="true" />
                   <span className="font-mono text-[10px] text-indigo-700 tracking-[0.1em]">
                     {PROJECTS.length} Projects · $250+ in Prizes
                   </span>

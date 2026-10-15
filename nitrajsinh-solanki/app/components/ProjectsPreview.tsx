@@ -129,8 +129,8 @@ export default function ProjectsPreview() {
         >
           {/* Label row */}
           <div className="flex items-center gap-4 mb-4">
-            <span className="font-mono text-[11px] text-indigo-600 tracking-[0.18em] uppercase select-none">
-              // projects
+            <span className="font-sans text-[11px] font-semibold text-indigo-700 tracking-[0.14em] uppercase select-none">
+              Selected work
             </span>
             <span
               className="flex-1 h-[1px]"
@@ -354,7 +354,7 @@ function FeaturedCard({ project, index }: { project: PreviewProject; index: numb
               style={{ color: project.accentColor }}
             >
               <span
-                className="w-1.5 h-1.5 rounded-full animate-pulse"
+                className="w-1.5 h-1.5 rounded-full "
                 style={{ background: project.accentColor }}
               />
               Live

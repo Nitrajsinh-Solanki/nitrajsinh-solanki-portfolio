@@ -113,8 +113,8 @@ export default function Contact() {
 
         {/* ── section label ── */}
         <div className="flex items-center gap-4 mb-4" style={fade(0.04)}>
-          <span className="font-mono text-[11px] text-indigo-600 tracking-[0.18em] uppercase select-none">
-            // contact
+          <span className="font-sans text-[11px] font-semibold text-indigo-700 tracking-[0.14em] uppercase select-none">
+            Contact
           </span>
           <span
             className="flex-1 h-[1px]"

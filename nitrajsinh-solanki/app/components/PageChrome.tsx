@@ -6,16 +6,16 @@ const linkCls = "text-[#555963] hover:text-indigo-600 transition-colors";
 
 export function PageNav() {
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 bg-[#F8F7F3]/92 backdrop-blur-xl border-b border-[#E3E0D8]">
+    <nav className="fixed top-0 inset-x-0 z-50 bg-[#F8F7F3] border-b border-[#E3E0D8]">
       <div className="max-w-6xl mx-auto h-16 flex items-center justify-between px-6 md:px-10">
         <Link href="/" style={{ fontFamily: "var(--syne-var)" }} className="font-extrabold text-xl tracking-tight text-[#17191D]">
           NS<span className="text-indigo-600">.</span>
         </Link>
-        <div className="flex items-center gap-5 font-mono text-[11px] uppercase tracking-[0.07em]">
+        <div className="flex items-center gap-5 font-sans text-[14px] font-medium">
           <Link href="/about" className={linkCls}>About</Link>
           <Link href="/projects" className={linkCls}>Projects</Link>
           <Link href="/resume" className={linkCls}>Resume</Link>
-          <a href={"mailto:" + profile.email} className="hidden sm:inline-block text-indigo-600 border border-indigo-600/60 px-4 py-2 rounded hover:bg-indigo-600 hover:text-white transition-colors">Hire Me</a>
+          <a href={"mailto:" + profile.email} className="hidden sm:inline-block font-sans text-[13px] font-medium text-indigo-600 border border-indigo-600/60 px-4 py-2 rounded hover:bg-indigo-600 hover:text-white transition-colors">Hire Me</a>
         </div>
       </div>
     </nav>
@@ -38,7 +38,7 @@ export function PageFooter() {
           <a key={label} href={href}
             rel={href.startsWith("http") ? "me noopener noreferrer" : undefined}
             target={href.startsWith("http") ? "_blank" : undefined}
-            className="font-mono text-[11.5px] text-[#555963] hover:text-indigo-600 transition-colors tracking-wide">{label}</a>
+            className="font-sans text-[13px] text-[#555963] hover:text-indigo-600 transition-colors">{label}</a>
         ))}
       </div>
     </footer>
