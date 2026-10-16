@@ -59,14 +59,14 @@ export default function Hero() {
 
       <section
         id="hero"
-        className="relative min-h-screen flex items-center px-4 sm:px-6 md:px-10 pt-16 overflow-hidden"
+        className="relative flex min-h-[calc(100svh-4rem)] items-center overflow-hidden px-4 pt-20 sm:min-h-screen sm:px-6 sm:pt-20 md:px-10 lg:pt-16"
         style={{ background: "#F8F7F3" }}
       >
         {/* ─────────────── Main grid ─────────────── */}
-        <div className="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center py-24 lg:py-0">
+        <div className="relative z-10 mx-auto grid w-full max-w-6xl min-w-0 grid-cols-1 items-center gap-8 py-10 sm:gap-10 sm:py-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12 lg:py-12 xl:gap-16">
 
           {/* ══════ LEFT: Text ══════ */}
-          <div className="flex flex-col order-1">
+          <div className="order-2 flex min-w-0 flex-col lg:order-1">
 
             {/* Status badge */}
             <div className="anim-1 inline-flex items-center gap-2.5 self-start bg-[#FFFFFF] border border-[#E3E0D8] px-4 py-[7px] rounded-full mb-7">
@@ -174,18 +174,20 @@ export default function Hero() {
           </div>
 
           {/* ══════ RIGHT: Photo + floating code card ══════ */}
-          <div className="anim-img flex justify-center lg:justify-end order-2 relative">
+          <div className="anim-img relative order-1 flex w-full min-w-0 justify-center lg:order-2 lg:justify-end">
 
             {/* Portrait */}
-            <div className="relative flex items-center justify-center hero-portrait-wrap">
+            <div className="hero-portrait-wrap relative flex items-center justify-center">
+              <div className="hero-portrait-glow" aria-hidden="true" />
+              <div className="hero-portrait-orbit" aria-hidden="true" />
 
               {/* Photo */}
               <div
-                className="hero-portrait-frame relative overflow-hidden border border-[#E3E0D8]"
+                className="hero-portrait-frame relative z-[2] overflow-hidden border border-[#E3E0D8]"
                 style={{
-                  width: "clamp(240px, 28vw, 300px)",
-                  height: "clamp(240px, 28vw, 300px)",
-                  borderRadius: "24px",
+                  width: "clamp(240px, 31vw, 350px)",
+                  height: "clamp(240px, 31vw, 350px)",
+                  borderRadius: "28px",
                   zIndex: 2,
                 }}
               >
@@ -193,8 +195,8 @@ export default function Hero() {
                   src="/profile.jpg"
                   alt="Nitrajsinh Solanki, full-stack developer from Gujarat, India"
                   fill
-                  sizes="(max-width: 1024px) 240px, 300px"
-                  className="object-cover"
+                  sizes="(max-width: 639px) 74vw, (max-width: 1023px) 320px, 350px"
+                  className="hero-portrait-image object-cover"
                   style={{ objectPosition: "center 12%" }}
                   priority
                 />
