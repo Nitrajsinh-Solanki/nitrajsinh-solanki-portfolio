@@ -195,6 +195,8 @@ function ServiceCard({
 
   return (
     <div
+      className="motion-card"
+      data-reveal="true"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{

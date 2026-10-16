@@ -363,8 +363,9 @@ export default function TechStack() {
             return (
               <article
                 key={cat}
-                className="break-inside-avoid mb-5 bg-[#FFFFFF] border border-[#E3E0D8] rounded-2xl p-5
+                className="motion-card break-inside-avoid mb-5 bg-[#FFFFFF] border border-[#E3E0D8] rounded-2xl p-5
                            hover:border-[#E3E0D8] transition-colors duration-300"
+                data-reveal="true"
                 aria-label={`${cat} — ${skills.length} technologies`}
                 itemScope
                 itemType="https://schema.org/ItemList"

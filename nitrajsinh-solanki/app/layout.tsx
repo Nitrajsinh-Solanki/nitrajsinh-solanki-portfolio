@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Syne, DM_Mono, DM_Sans } from "next/font/google";
 import "./globals.css";
+import MotionEnhancer from "./components/MotionEnhancer";
 import { SITE_URL, SITE_NAME, LOCALE_BCP47, LOCALE_OG, SOCIAL, abs } from "@/lib/site";
 
 const syne = Syne({
@@ -97,6 +98,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-[#F8F7F3] text-[#17191D] antialiased">
         {children}
+        <MotionEnhancer />
       </body>
     </html>
   );

@@ -251,7 +251,8 @@ export default function WorkHistory() {
 
               {/* ── Card ── */}
               <div
-                className="flex-1 bg-[#FFFFFF] border rounded-2xl p-5 md:p-6 hover:border-indigo-600/20 transition-all duration-300 group"
+                className="motion-card flex-1 bg-[#FFFFFF] border rounded-2xl p-5 md:p-6 hover:border-indigo-600/20 transition-all duration-300 group"
+                data-reveal="true"
                 style={{
                   borderColor: entry.current ? `${entry.accentColor}25` : "#E3E0D8",
                   transitionDelay: `${idx * 60}ms`,

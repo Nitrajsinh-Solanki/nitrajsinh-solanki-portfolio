@@ -193,7 +193,8 @@ function FeaturedCard({ project }: { project: PreviewProject }) {
       href={`/projects/${project.slug}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group relative flex flex-col rounded-2xl overflow-hidden border border-[#E3E0D8] bg-[#FFFFFF] transition-all duration-300"
+      className="group motion-card relative flex flex-col rounded-2xl overflow-hidden border border-[#E3E0D8] bg-[#FFFFFF] transition-all duration-300"
+      data-reveal="true"
       style={{
         transform: hovered ? "translateY(-4px)" : "translateY(0)",
         transition: "transform 0.25s ease, border-color 0.25s ease, box-shadow 0.3s ease",
