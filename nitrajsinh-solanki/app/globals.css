@@ -122,6 +122,7 @@ dt {
   background: rgba(79, 70, 229, 0.16);
 }
 
+/* Motion effects are intentionally lightweight and honor reduced-motion preferences. */
 /* ── Motion system: restrained, quick, and performance-friendly ── */
 @keyframes fade-up {
   from {
