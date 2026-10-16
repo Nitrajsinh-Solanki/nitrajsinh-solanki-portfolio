@@ -276,6 +276,31 @@ export default async function ProjectDetailPage({
                     {project.longDescription}
                   </p>
 
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    {live && (
+                      <a
+                        href={live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-3 font-mono text-[11px] font-semibold tracking-wide text-white transition-colors hover:bg-indigo-700 sm:w-auto"
+                      >
+                        View Live Project
+                        <ExternalIcon />
+                      </a>
+                    )}
+                    {repoUrl && (
+                      <a
+                        href={repoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[#E3E0D8] bg-white px-4 py-3 font-mono text-[11px] font-semibold tracking-wide text-[#17191D] transition-colors hover:border-indigo-600 hover:text-indigo-600 sm:w-auto"
+                      >
+                        <GithubIcon />
+                        View Source Code
+                      </a>
+                    )}
+                  </div>
+
                   {/* Team note */}
                   {project.teamNote && (
                     <div className="mt-5 flex items-start gap-3 bg-[#FFFFFF] border border-[#E3E0D8] rounded-lg px-4 py-3">
