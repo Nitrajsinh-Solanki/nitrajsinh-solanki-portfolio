@@ -43,8 +43,12 @@ export const metadata: Metadata = {
   // Declare the brand favicon explicitly so browsers have a stable root icon
   // reference, including when a visitor opens the resume PDF directly.
   icons: {
-    icon: [{ url: "/favicon.ico", type: "image/x-icon", sizes: "any" }],
-    shortcut: [{ url: "/favicon.ico", type: "image/x-icon" }],
+    // Prefer the branded NS mark; version the URL to bypass stale browser favicon caches.
+    icon: [
+      { url: "/icon.svg?v=2", type: "image/svg+xml", sizes: "any" },
+      { url: "/favicon.ico?v=2", type: "image/x-icon", sizes: "any" },
+    ],
+    shortcut: [{ url: "/favicon.ico?v=2", type: "image/x-icon" }],
   },
   openGraph: {
     type: "profile",
