@@ -168,7 +168,7 @@ export default async function ProjectDetailPage({
           <section className="relative overflow-hidden">
             {/* Visual banner */}
             <div
-              className="relative h-56 sm:h-64 md:h-80 w-full flex items-center justify-center overflow-hidden"
+              className="relative flex h-56 w-full items-center justify-center overflow-hidden sm:h-64 md:h-80"
               style={{
                 background: `linear-gradient(135deg, ${project.gradientFrom} 0%, ${project.gradientTo} 100%)`,
               }}
@@ -182,7 +182,7 @@ export default async function ProjectDetailPage({
               />
               {/* Screenshot placeholder frame */}
               <div
-                className="relative z-10 w-[min(680px,92vw)] min-w-0 rounded-xl border overflow-hidden shadow-2xl"
+                className="relative z-10 w-[calc(100%-2rem)] min-w-0 max-w-[680px] overflow-hidden rounded-xl border shadow-2xl"
                 style={{ borderColor: `${project.accentColor}20` }}
               >
                 {/* Browser bar */}
@@ -235,13 +235,13 @@ export default async function ProjectDetailPage({
             </div>
 
             {/* Project number badge */}
-            <div className="absolute top-4 left-4 sm:left-6 font-mono text-[10px] text-[#686D76] tracking-widest">
+            <div className="absolute left-4 top-4 z-20 rounded-md border border-white/70 bg-[#F8F7F3]/90 px-2 py-1 font-mono text-[9px] tracking-widest text-[#555963] sm:left-6 sm:text-[10px]">
               {String(project.id).padStart(2, "0")} / {String(PROJECTS.length).padStart(2, "0")}
             </div>
           </section>
 
           {project.image && (
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-10 pt-8">
+            <div className="mx-auto max-w-5xl px-4 pt-6 sm:px-6 sm:pt-8 md:px-10">
               <Image src={project.image} alt={project.title + " screenshot"} width={1200} height={630}
                 sizes="(max-width: 1024px) 100vw, 66vw"
                 className="rounded-xl border border-[#E3E0D8] w-full h-auto" priority />
@@ -249,11 +249,11 @@ export default async function ProjectDetailPage({
           )}
 
           {/* ── CONTENT ── */}
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-10 py-10 sm:py-12">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="mx-auto min-w-0 max-w-5xl px-4 py-8 sm:px-6 sm:py-10 md:px-10 lg:py-12">
+            <div className="grid min-w-0 grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-10">
 
               {/* ── LEFT: Main content ── */}
-              <div className="lg:col-span-2 flex flex-col gap-10">
+              <div className="flex min-w-0 flex-col gap-8 sm:gap-10 lg:col-span-2">
 
                 {/* Title block */}
                 <div>
@@ -275,6 +275,31 @@ export default async function ProjectDetailPage({
                   <p className="text-[15px] text-[#555963] leading-[1.8]">
                     {project.longDescription}
                   </p>
+
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    {live && (
+                      <a
+                        href={live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-3 font-mono text-[11px] font-semibold tracking-wide text-white transition-colors hover:bg-indigo-700 sm:w-auto"
+                      >
+                        View Live Project
+                        <ExternalIcon />
+                      </a>
+                    )}
+                    {repoUrl && (
+                      <a
+                        href={repoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[#E3E0D8] bg-white px-4 py-3 font-mono text-[11px] font-semibold tracking-wide text-[#17191D] transition-colors hover:border-indigo-600 hover:text-indigo-600 sm:w-auto"
+                      >
+                        <GithubIcon />
+                        View Source Code
+                      </a>
+                    )}
+                  </div>
 
                   {/* Team note */}
                   {project.teamNote && (
@@ -367,7 +392,7 @@ export default async function ProjectDetailPage({
               </div>
 
               {/* ── RIGHT: Sidebar ── */}
-              <div className="flex flex-col gap-6">
+              <div className="flex min-w-0 flex-col gap-6 lg:sticky lg:top-24 lg:self-start">
 
                 {/* Links */}
                 <div className="bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl p-5">
@@ -384,7 +409,7 @@ export default async function ProjectDetailPage({
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-[13px] text-[#555963] hover:text-indigo-600 transition-colors group py-1"
+                        className="group flex min-h-10 min-w-0 items-center gap-3 rounded-lg px-2 py-2 text-[13px] text-[#555963] transition-colors hover:bg-[#F0EEE8] hover:text-indigo-600"
                       >
                         <span className="text-[#686D76] group-hover:text-indigo-600 transition-colors">
                           {link.icon === "github"   && <GithubIcon />}
@@ -461,18 +486,18 @@ export default async function ProjectDetailPage({
                   <span
                     className={`font-mono text-[11px] px-2.5 py-1 rounded-full ${BADGE_STYLES[project.badgeColor]}`}
                   >
-                    {project.category === "hackathon" ? "Hackathon / Bounty" : "Client Project"}
+                    {project.category === "hackathon" ? "Hackathon / Bounty" : project.category === "personal" ? "Personal Project" : "Client Project"}
                   </span>
                 </div>
               </div>
             </div>
 
             {/* ── Prev / Next navigation ── */}
-            <div className="mt-16 pt-8 border-t border-[#E3E0D8] grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="mt-10 grid grid-cols-1 gap-4 border-t border-[#E3E0D8] pt-6 sm:mt-16 sm:grid-cols-2 sm:pt-8">
               {prevProject ? (
                 <Link
                   href={`/projects/${prevProject.slug}`}
-                  className="group flex items-center gap-4 bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl p-5 hover:border-[#4F46E5] transition-all duration-200"
+                  className="group flex min-w-0 items-center gap-3 rounded-xl border border-[#E3E0D8] bg-[#FFFFFF] p-4 transition-all duration-200 hover:border-[#4F46E5] sm:gap-4 sm:p-5"
                 >
                   <svg className="w-4 h-4 text-[#686D76] group-hover:text-indigo-600 transition-colors shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -489,7 +514,7 @@ export default async function ProjectDetailPage({
               {nextProject ? (
                 <Link
                   href={`/projects/${nextProject.slug}`}
-                  className="group flex items-center justify-end gap-4 bg-[#FFFFFF] border border-[#E3E0D8] rounded-xl p-5 hover:border-[#4F46E5] transition-all duration-200 text-right"
+                  className="group flex min-w-0 items-center justify-end gap-3 rounded-xl border border-[#E3E0D8] bg-[#FFFFFF] p-4 text-right transition-all duration-200 hover:border-[#4F46E5] sm:gap-4 sm:p-5"
                 >
                   <div className="flex flex-col min-w-0">
                     <span className="font-mono text-[9px] text-[#686D76] uppercase tracking-widest mb-0.5">Next</span>
@@ -507,11 +532,11 @@ export default async function ProjectDetailPage({
         </main>
 
         {/* ── Footer ── */}
-        <footer className="border-t border-[#E3E0D8] px-4 sm:px-8 md:px-12 py-7 flex flex-col sm:flex-row items-center justify-between gap-4 flex-wrap">
+        <footer className="flex flex-col flex-wrap items-center justify-between gap-4 border-t border-[#E3E0D8] px-4 py-7 sm:flex-row sm:px-8 md:px-12">
           <span className="font-mono text-[11px] text-[#686D76] tracking-widest">
             © {new Date().getFullYear()} Nitrajsinh Solanki
           </span>
-          <div className="flex items-center gap-6 flex-wrap">
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 sm:justify-end sm:gap-6">
             {[
               { label: "GitHub", href: SOCIAL.github },
               { label: "LinkedIn", href: SOCIAL.linkedin },

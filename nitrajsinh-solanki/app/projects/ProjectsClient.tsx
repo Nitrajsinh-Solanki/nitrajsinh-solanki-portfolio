@@ -72,13 +72,13 @@ const BADGE_STYLES: Record<string, string> = {
 function ProjectCard({ project }: { project: Project }) {
   return (
     <article
-      className="group relative flex flex-col rounded-xl border border-[#E3E0D8] bg-[#FFFFFF] overflow-hidden transition-all duration-300 hover:border-[#4F46E5] hover:-translate-y-1 hover:shadow-[0_8px_40px_rgba(79,70,229,0.05)]"
+      className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-[#E3E0D8] bg-[#FFFFFF] transition-all duration-300 hover:-translate-y-1 hover:border-[#4F46E5] hover:shadow-[0_8px_40px_rgba(79,70,229,0.05)]"
       itemScope
       itemType="https://schema.org/SoftwareApplication"
     >
       {/* ── Visual Area ── */}
       <div
-        className="relative h-40 w-full overflow-hidden flex items-center justify-center"
+        className="relative flex h-36 w-full min-w-0 items-center justify-center overflow-hidden sm:h-40"
         style={{
           background: `linear-gradient(135deg, ${project.gradientFrom} 0%, ${project.gradientTo} 100%)`,
         }}
@@ -129,13 +129,13 @@ function ProjectCard({ project }: { project: Project }) {
             className="font-mono text-[9px] tracking-[0.12em] uppercase opacity-50"
             style={{ color: project.accentColor }}
           >
-            {project.category === "client" ? "Client Project" : "Hackathon"}
+            {project.category === "client" ? "Client Project" : project.category === "personal" ? "Personal Project" : "Hackathon / Bounty"}
           </span>
         </div>
       </div>
 
       {/* ── Card Body ── */}
-      <div className="flex flex-col flex-1 p-5">
+      <div className="flex min-w-0 flex-1 flex-col p-4 sm:p-5">
         {/* Badge */}
         <span
           className={`self-start font-mono text-[10px] tracking-wide px-2.5 py-[3px] rounded-full mb-3 ${BADGE_STYLES[project.badgeColor]}`}
@@ -146,7 +146,7 @@ function ProjectCard({ project }: { project: Project }) {
 
         {/* Title */}
         <h2
-          className="text-[14px] font-bold leading-snug text-[#17191D] group-hover:text-[#17191D] transition-colors mb-2"
+          className="mb-2 text-base font-bold leading-snug text-[#17191D] transition-colors group-hover:text-[#17191D] sm:text-[15px]"
           style={{ fontFamily: "var(--syne-var)" }}
           itemProp="name"
         >
@@ -155,7 +155,7 @@ function ProjectCard({ project }: { project: Project }) {
 
         {/* Description */}
         <p
-          className="text-[14px] text-[#555963] leading-[1.7] flex-1 mb-4"
+          className="mb-4 min-w-0 flex-1 text-sm leading-[1.75] text-[#555963]"
           itemProp="description"
         >
           {project.description}
@@ -179,10 +179,10 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
 
         {/* Actions */}
-        <div className="flex items-center gap-2 pt-3 border-t border-[#E3E0D8]">
+        <div className="flex min-w-0 items-center gap-2 border-t border-[#E3E0D8] pt-3">
           <Link
             href={`/projects/${project.slug}`}
-            className="flex-1 text-center font-mono text-[11px] tracking-wide bg-indigo-600/10 text-indigo-600 border border-indigo-600/20 px-3 py-2 rounded-lg hover:bg-indigo-600 hover:text-white transition-all duration-200"
+            className="inline-flex min-h-10 min-w-0 flex-1 items-center justify-center rounded-lg border border-indigo-600/20 bg-indigo-600/10 px-3 py-2.5 text-center font-mono text-[11px] tracking-wide text-indigo-600 transition-all duration-200 hover:bg-indigo-600 hover:text-white"
           >
             View Details
           </Link>
@@ -194,7 +194,7 @@ function ProjectCard({ project }: { project: Project }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`GitHub — ${project.title}`}
-              className="flex items-center justify-center w-8 h-8 border border-[#E3E0D8] rounded-lg hover:border-[#4F46E5] hover:bg-[#F0EEE8] transition-all duration-200 shrink-0"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#E3E0D8] transition-all duration-200 hover:border-[#4F46E5] hover:bg-[#F0EEE8]"
             >
               <svg className="w-3.5 h-3.5 text-[#555963]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
@@ -209,7 +209,7 @@ function ProjectCard({ project }: { project: Project }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Live — ${project.title}`}
-              className="flex items-center justify-center w-8 h-8 border border-[#E3E0D8] rounded-lg hover:border-indigo-600/30 hover:bg-[#F0EEE8] transition-all duration-200 shrink-0"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#E3E0D8] transition-all duration-200 hover:border-indigo-600/30 hover:bg-[#F0EEE8]"
             >
               <svg className="w-3.5 h-3.5 text-[#555963]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -293,23 +293,23 @@ export default function ProjectsClient() {
 
           {/* ── Page Header ── */}
           <section
-            className="relative px-4 sm:px-6 md:px-10 pt-12 sm:pt-14 pb-10 overflow-hidden"
+            className="relative overflow-hidden px-4 pb-8 pt-8 sm:px-6 sm:pb-10 sm:pt-12 md:px-10 lg:pt-14"
             aria-labelledby="projects-heading"
           >
             <div className="relative z-10 max-w-6xl mx-auto">
 
               {/* ── Top label ── */}
               <div className="flex items-center gap-3 mb-5">
-                <div className="inline-flex items-center gap-2 bg-[#FFFFFF] border border-[#E3E0D8] px-3.5 py-[5px] rounded-full">
+                <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-[#E3E0D8] bg-[#FFFFFF] px-2.5 py-1.5 sm:px-3.5 sm:py-[5px]">
                   <span className="inline-flex rounded-full h-1.5 w-1.5 bg-indigo-600" aria-hidden="true" />
-                  <span className="font-mono text-[10px] text-indigo-700 tracking-[0.1em]">
+                  <span className="font-mono text-[9px] tracking-[0.06em] text-indigo-700 sm:text-[10px] sm:tracking-[0.1em]">
                     {PROJECTS.length} Projects · $250+ in Prizes
                   </span>
                 </div>
               </div>
 
               {/* ── Heading + description side by side on desktop ── */}
-              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8">
+              <div className="mb-7 flex min-w-0 flex-col gap-6 lg:mb-8 lg:flex-row lg:items-end lg:justify-between">
                 <div>
                   <h1
                     id="projects-heading"
@@ -369,7 +369,7 @@ export default function ProjectsClient() {
               <div
                 role="tablist"
                 aria-label="Filter projects by category"
-                className="flex items-center gap-2 flex-wrap"
+                className="flex flex-wrap items-center gap-2"
               >
                 {(
                   [
@@ -383,8 +383,10 @@ export default function ProjectsClient() {
                     key={key}
                     role="tab"
                     aria-selected={filter === key}
+                    aria-controls="projects-panel"
+                    id={`filter-${key}`}
                     onClick={() => setFilter(key)}
-                    className={`inline-flex items-center gap-2 font-mono text-[11px] tracking-wide px-4 py-2 rounded-lg border transition-all duration-200 ${
+                    className={`inline-flex min-h-10 items-center gap-2 rounded-lg border px-3 py-2.5 font-mono text-[10px] tracking-wide transition-all duration-200 sm:px-4 sm:text-[11px] ${
                       filter === key
                         ? "bg-indigo-600 text-white border-indigo-600 font-bold"
                         : "border-[#E3E0D8] text-[#555963] hover:border-[#E3E0D8] hover:text-[#555963] bg-transparent"
@@ -413,12 +415,15 @@ export default function ProjectsClient() {
 
           {/* ── Projects Grid ── */}
           <section
-            className="px-4 sm:px-6 md:px-10 pt-8 pb-20 max-w-6xl mx-auto"
+            className="mx-auto max-w-6xl px-4 pb-14 pt-7 sm:px-6 sm:pb-20 sm:pt-8 md:px-10"
             aria-label="Projects list"
           >
             <div
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+              className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3"
+              id="projects-panel"
               role="tabpanel"
+              tabIndex={0}
+              aria-live="polite"
             >
               {filtered.map((project) => (
                 <ProjectCard key={project.id} project={project} />
@@ -431,7 +436,7 @@ export default function ProjectsClient() {
                 className="h-[2px]"
                 style={{ background: "linear-gradient(to right, transparent, #4F46E530, transparent)" }}
               />
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-6 px-8 py-6">
+              <div className="flex flex-col items-stretch justify-between gap-5 px-4 py-5 sm:flex-row sm:items-center sm:gap-6 sm:px-8 sm:py-6">
                 <div>
                   <p className="font-mono text-[10px] text-[#686D76] tracking-widest uppercase mb-1">
                     That&apos;s not everything
@@ -451,7 +456,7 @@ export default function ProjectsClient() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ fontFamily: "var(--syne-var)" }}
-                  className="inline-flex items-center gap-3 shrink-0 bg-[#F0EEE8] border border-[#E3E0D8] text-[#555963] font-bold text-[13px] px-6 py-3 rounded-xl hover:border-indigo-600/50 hover:text-indigo-600 hover:-translate-y-[1px] active:translate-y-0 transition-all duration-200 group"
+                  className="inline-flex w-full items-center justify-center gap-3 bg-[#F0EEE8] sm:w-auto sm:shrink-0 border border-[#E3E0D8] text-[#555963] font-bold text-[13px] px-6 py-3 rounded-xl hover:border-indigo-600/50 hover:text-indigo-600 hover:-translate-y-[1px] active:translate-y-0 transition-all duration-200 group"
                 >
                   <svg className="w-4 h-4 text-[#555963] group-hover:text-indigo-600 transition-colors" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
@@ -467,11 +472,11 @@ export default function ProjectsClient() {
         </main>
 
         {/* ── Footer ── */}
-        <footer className="border-t border-[#E3E0D8] px-6 md:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 flex-wrap">
+        <footer className="flex flex-col flex-wrap items-center justify-between gap-3 border-t border-[#E3E0D8] px-4 py-6 sm:flex-row sm:px-6 md:px-10">
           <span className="font-mono text-[11px] text-[#686D76] tracking-widest">
             © {new Date().getFullYear()} Nitrajsinh Solanki
           </span>
-          <div className="flex items-center gap-5 flex-wrap">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-3 sm:justify-end sm:gap-5">
             {[
               { label: "GitHub", href: SOCIAL.github },
               { label: "LinkedIn", href: SOCIAL.linkedin },
