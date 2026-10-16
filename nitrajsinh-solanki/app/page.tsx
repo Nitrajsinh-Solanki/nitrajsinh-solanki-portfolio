@@ -1,4 +1,5 @@
 // nitrajsinh-solanki/app/page.tsx
+// Trigger a fresh Vercel build from the main branch.
 import Navbar          from "./components/Navbar";
 import Hero            from "./components/Hero";
 import About           from "./components/About";
