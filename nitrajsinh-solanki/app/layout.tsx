@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Syne, DM_Mono, DM_Sans } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 import MotionEnhancer from "./components/MotionEnhancer";
 import { SITE_URL, SITE_NAME, LOCALE_BCP47, LOCALE_OG, SOCIAL, abs } from "@/lib/site";
 
@@ -21,9 +22,22 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
 });
 
+const themeBootstrap = `(() => {
+  const root = document.documentElement;
+  try {
+    const stored = window.localStorage.getItem("nitrajsinh-portfolio-theme");
+    const theme = stored === "dark" ? "dark" : "light";
+    root.dataset.theme = theme;
+    root.style.colorScheme = theme;
+  } catch {
+    root.dataset.theme = "light";
+    root.style.colorScheme = "light";
+  }
+})();`;
+
 export const viewport: Viewport = {
   themeColor: "#F8F7F3",
-  colorScheme: "light",
+  colorScheme: "light dark",
   width: "device-width",
   initialScale: 1,
 };
@@ -94,8 +108,13 @@ export default function RootLayout({
   return (
     <html
       lang={LOCALE_BCP47}
+      data-theme="light"
+      suppressHydrationWarning
       className={`${syne.variable} ${dmMono.variable} ${dmSans.variable} h-full`}
     >
+      <head>
+        <Script id="theme-bootstrap" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
+      </head>
       <body className="min-h-full flex flex-col bg-[#F8F7F3] text-[#17191D] antialiased">
         {children}
         <MotionEnhancer />

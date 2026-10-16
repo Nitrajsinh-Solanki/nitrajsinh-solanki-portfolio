@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SOCIAL, SITE_NAME } from "@/lib/site";
 import { profile } from "@/lib/profile";
+import ThemeToggle from "./ThemeToggle";
 
 const linkCls = "text-[#555963] hover:text-indigo-600 transition-colors";
 
@@ -21,6 +22,8 @@ export function PageNav() {
         >
           NS<span className="text-indigo-600">.</span>
         </Link>
+
+        <ThemeToggle />
 
         <div className="hidden sm:flex items-center justify-end gap-4 md:gap-5 font-sans text-[14px] font-medium min-w-0">
           {links.map(({ label, href }) => (

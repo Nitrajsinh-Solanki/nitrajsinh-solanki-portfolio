@@ -4,6 +4,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ThemeToggle from "./ThemeToggle";
 
 const RESUME_URL = "/Nitrajsinh_Solanki_Resume.pdf";
 
@@ -139,7 +140,9 @@ export default function Navbar() {
         </div>
 
         {/* Right side */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <ThemeToggle />
+
           {/* Resume — view + download split button */}
           <ResumeActions />
 
