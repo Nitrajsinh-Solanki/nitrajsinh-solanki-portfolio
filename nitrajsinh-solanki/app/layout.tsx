@@ -40,6 +40,12 @@ export const metadata: Metadata = {
   publisher: SITE_NAME,
   category: "technology",
   formatDetection: { email: false, address: false, telephone: false },
+  // Declare the brand favicon explicitly so browsers have a stable root icon
+  // reference, including when a visitor opens the resume PDF directly.
+  icons: {
+    icon: [{ url: "/favicon.ico", type: "image/x-icon", sizes: "any" }],
+    shortcut: [{ url: "/favicon.ico", type: "image/x-icon" }],
+  },
   openGraph: {
     type: "profile",
     firstName: "Nitrajsinh",
