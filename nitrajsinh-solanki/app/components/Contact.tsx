@@ -252,7 +252,7 @@ export default function Contact() {
           <div className="flex flex-col gap-5" style={fade(0.36)}>
 
             {/* Direct email card */}
-            <div className="bg-[#FFFFFF] border border-[#E3E0D8] rounded-2xl p-5 hover:border-indigo-600/20 transition-colors duration-300">
+            <div className="motion-card bg-[#FFFFFF] border border-[#E3E0D8] rounded-2xl p-5 hover:border-indigo-600/20 transition-colors duration-300" data-reveal="true">
               <p className="font-mono text-[9.5px] text-[#686D76] tracking-[0.18em] uppercase mb-4">
                 Direct Email
               </p>

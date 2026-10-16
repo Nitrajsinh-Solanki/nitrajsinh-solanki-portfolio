@@ -122,21 +122,85 @@ dt {
   background: rgba(79, 70, 229, 0.16);
 }
 
-/* Show content immediately: entrance effects must not delay reading or LCP. */
-.anim-1,
-.anim-2,
-.anim-3,
-.anim-4,
-.anim-5,
-.anim-6,
-.anim-img {
-  animation: none !important;
-  opacity: 1 !important;
-  transform: none !important;
+/* ── Motion system: restrained, quick, and performance-friendly ── */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes portrait-float {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -6px, 0); }
+}
+
+/* Staggered hero entrance. The text stays readable and animations run once. */
+.anim-1 { animation: fade-up 620ms cubic-bezier(.2,.7,.2,1) 40ms both; }
+.anim-2 { animation: fade-up 620ms cubic-bezier(.2,.7,.2,1) 100ms both; }
+.anim-3 { animation: fade-up 620ms cubic-bezier(.2,.7,.2,1) 150ms both; }
+.anim-4 { animation: fade-up 680ms cubic-bezier(.2,.7,.2,1) 210ms both; }
+.anim-5 { animation: fade-up 680ms cubic-bezier(.2,.7,.2,1) 270ms both; }
+.anim-6 { animation: fade-up 680ms cubic-bezier(.2,.7,.2,1) 330ms both; }
+.anim-img { animation: fade-up 850ms cubic-bezier(.2,.7,.2,1) 160ms both; }
+
+/* Progressive enhancement: unobserved content is hidden only after JS is ready. */
+.motion-ready [data-reveal]:not([data-revealed="true"]) {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+}
+
+.motion-ready [data-reveal] {
+  transition:
+    opacity 620ms cubic-bezier(.2,.7,.2,1),
+    transform 620ms cubic-bezier(.2,.7,.2,1);
+}
+
+/* Subtle lift and depth on meaningful cards, never on entire page sections. */
+.motion-card {
+  transition:
+    transform 260ms cubic-bezier(.2,.7,.2,1),
+    box-shadow 260ms ease,
+    border-color 260ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .motion-card:hover {
+    transform: translate3d(0, -4px, 0);
+    box-shadow: 0 16px 38px -22px rgba(23, 25, 29, 0.32);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-1,
+  .anim-2,
+  .anim-3,
+  .anim-4,
+  .anim-5,
+  .anim-6,
+  .anim-img,
+  .hero-portrait-frame {
+    animation: none !important;
+  }
+
+  .motion-ready [data-reveal]:not([data-revealed="true"]) {
+    opacity: 1;
+    transform: none;
+  }
+
+  .motion-card {
+    transition: none !important;
+  }
 }
 
 /* Editorial portrait treatment used by the homepage hero. */
 .hero-portrait-frame {
+  animation: portrait-float 8s ease-in-out 1.2s infinite;
+  will-change: transform;
   border: 1px solid var(--border) !important;
   border-radius: 24px !important;
   background: var(--surface);
