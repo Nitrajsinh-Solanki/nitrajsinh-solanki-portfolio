@@ -8,7 +8,7 @@ import ProjectsClient from "./ProjectsClient";
 export const metadata = pageMetadata({
   title: "Projects — Full-Stack, AI & Blockchain",
   description:
-    STATS.total + " projects by Nitrajsinh Solanki: StackUp hackathon prize winners, Aptos blockchain apps, AI tools and live client platforms built with Next.js, React, Flutter and Rust. $250+ in prizes.",
+    STATS.total + " projects by Nitrajsinh Solanki: StackUp hackathon winners, Aptos blockchain apps, AI tools and live client platforms. $250+ in prizes.",
   path: "/projects",
 });
 

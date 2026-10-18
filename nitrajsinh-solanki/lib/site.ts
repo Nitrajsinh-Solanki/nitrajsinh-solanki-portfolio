@@ -5,7 +5,7 @@ export const SITE_URL = (
 export const SITE_NAME = "Nitrajsinh Solanki";
 export const LOCALE_BCP47 = "en-IN";
 export const LOCALE_OG = "en_IN";
-export const LAST_UPDATED = "2026-10-15";
+export const LAST_UPDATED = "2026-10-19";
 
 export const LOCATION = {
   city: "",

@@ -147,7 +147,7 @@ export default function Services() {
                 color: "#17191D",
               }}
             >
-              Services &amp;
+              Services &amp;{" "}
               <br />
               <span style={{ color: "#4F46E5" }}>Expertise</span>
             </h2>
@@ -342,7 +342,7 @@ function CtaBanner() {
             lineHeight: 1.2,
           }}
         >
-          Got a project in mind?
+          Got a project in mind?{" "}
           <br />
           <span style={{ color: "#4F46E5" }}>Let&apos;s build it together.</span>
         </h3>

@@ -87,7 +87,7 @@ export default function Hero() {
             >
               <span style={{ color: "#17191D" }}>
                 Nitrajsinh
-              </span>
+              </span>{" "}
               <br />
               <span style={{ color: "#4F46E5" }}>
                 Solanki

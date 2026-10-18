@@ -6,8 +6,7 @@ import { profile } from "@/lib/profile";
 
 export const metadata = pageMetadata({
   title: "Resume — Full-Stack Developer",
-  description: "Resume of " + profile.name + ": " + profile.role.title + " at " +
-    profile.role.org + ", full-stack skills (Next.js, React, ASP.NET Core, Angular, Flutter), education and StackUp hackathon awards.",
+  description: "Resume of Nitrajsinh Solanki: Full Stack Engineer Intern at VeloxCore with Next.js, ASP.NET Core, Angular and Flutter skills, education and awards.",
   path: "/resume",
 });
 
