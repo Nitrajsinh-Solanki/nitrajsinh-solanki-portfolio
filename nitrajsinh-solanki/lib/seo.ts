@@ -24,6 +24,11 @@ export function pageMetadata({
   type = "website",
   image,
 }: Args): Metadata {
+  if (process.env.NODE_ENV !== "production" && description.length > 160) {
+    console.warn(
+      `SEO description exceeds 160 characters (${description.length}) for "${path}".`
+    );
+  }
   const desc = truncate(description);
   const socialImage = abs(image ?? "/opengraph-image");
   const socialTitle = title + " | " + SITE_NAME;

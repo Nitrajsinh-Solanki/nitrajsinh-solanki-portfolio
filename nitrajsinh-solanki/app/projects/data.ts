@@ -1,5 +1,7 @@
 // app/projects/data.ts
 
+import { STATS } from "./stats";
+
 export type BadgeColor = "teal" | "amber" | "violet" | "orange" | "blue";
 export type ProjectCategory = "hackathon" | "client" | "personal";
 
@@ -18,6 +20,10 @@ export interface Project {
   badge: string;
   badgeColor: BadgeColor;
   description: string;
+  /** Complete search/social snippet, separate from the longer on-page copy. */
+  seoDescription: string;
+  /** Date this project's content was last updated (YYYY-MM-DD). */
+  updated: string;
   longDescription: string;
   caseStudy: {
     challenge: string;
@@ -56,6 +62,8 @@ export const PROJECTS: Project[] = [
     badgeColor: "teal",
     description:
       "Full-featured library management system with three user roles — Admin, Librarian, User. Handles book lifecycle, borrowing, fines, AI-powered descriptions, and email notifications.",
+    seoDescription: "Role-based library system (Admin, Librarian, User) with borrowing, automatic fines, email OTP and Gemini AI. 3rd place, StackUp Hackathon.",
+    updated: "2026-10-19",
     longDescription:
       "Built for the StackUp Hackathon, this system covers the complete lifecycle of a library — from adding books and managing users to borrowing, tracking overdue returns, and calculating fines automatically. Admins can promote users to Librarian role, configure fare settings, and monitor all transactions from a central dashboard. Book cover images are stored on Supabase Storage, and Google Gemini AI auto-generates book descriptions on demand.",
     caseStudy: {
@@ -97,6 +105,8 @@ export const PROJECTS: Project[] = [
     badgeColor: "teal",
     description:
       "Scientific web app unifying biodiversity maps, chemistry data, NASA space media, environmental monitoring, and educational resources — powered by 6 major public APIs.",
+    seoDescription: "BioMap unifies biodiversity maps, chemistry data and NASA media from 6 public APIs in one Next.js app. 4th place, StackUp May 2025 Challenge.",
+    updated: "2026-10-19",
     longDescription:
       "BioMap brings together six distinct scientific domains into one cohesive platform. Users can explore global species distributions on an interactive Leaflet map, search chemical compounds via PubChem, browse NASA's image and video archive, monitor environmental data by location, look up species taxonomy via iNaturalist, and access curated Wikipedia articles. Authentication uses OTP-based email verification with JWT sessions protecting all dashboard routes.",
     caseStudy: {
@@ -137,6 +147,8 @@ export const PROJECTS: Project[] = [
     badgeColor: "violet",
     description:
       "Feature-rich NFT marketplace powered by Aptos Move smart contracts. Supports auctions, royalties, offers, batch transfers, APT token payments, and a creator tipping system.",
+    seoDescription: "NFT marketplace on Aptos built with Move smart contracts: auctions, royalties, offers, batch transfers and creator tips. $60 StackUp bounty.",
+    updated: "2026-10-19",
     longDescription:
       "Built on the Aptos blockchain using the Move programming language, this marketplace enables users to mint, list, bid on, and trade NFTs with full on-chain logic. The smart contract handles auctions with time-based expiry, royalty enforcement on every secondary sale (5% default, 15% max), batch NFT transfers, an offer/counter-offer system, and a creator tipping mechanism — all paid in APT tokens. The React frontend connects via Petra Wallet.",
     caseStudy: {
@@ -177,6 +189,8 @@ export const PROJECTS: Project[] = [
     badgeColor: "amber",
     description:
       "AI-powered music platform that recommends and streams music based on location, weather, and behaviour. Streams from Jamendo, Deezer, and Audius via Gemini AI recommendations.",
+    seoDescription: "Moodify is an AI music app that recommends tracks by location and weather with Gemini and streams from Jamendo, Deezer and Audius. StackUp merit prize.",
+    updated: "2026-10-19",
     longDescription:
       "Moodify is a context-aware music platform built with a two-person team. The Gemini AI engine ingests your current weather (OpenWeather API), location, time of day, and listening history to generate hyper-personalised track recommendations. Users can stream from three independent sources — Jamendo, Deezer, and Audius — through a single unified interface, upload their own tracks to Cloudinary, and chat with an AI music assistant in a conversational interface.",
     caseStudy: {
@@ -217,6 +231,8 @@ export const PROJECTS: Project[] = [
     badgeColor: "blue",
     description:
       "AI-powered math education platform with adaptive quizzes, handwriting recognition, conversational AI tutor, performance tracking, and PDF report generation.",
+    seoDescription: "Math Genius AI is a learning platform with adaptive quizzes, handwriting recognition, an AI tutor and PDF reports. StackUp Hackathon merit prize.",
+    updated: "2026-10-19",
     longDescription:
       "Math Genius AI targets students learning Algebra, Geometry, Trigonometry, Calculus, Statistics, and more. Gemini AI dynamically generates topic-specific questions at the right difficulty level, adapting as the student improves. A Canvas API drawing board captures handwritten equations and sends them to Gemini for recognition and step-by-step solving. The conversational AI tutor answers math questions in plain language with full working shown.",
     caseStudy: {
@@ -256,6 +272,8 @@ export const PROJECTS: Project[] = [
     badgeColor: "amber",
     description:
       "Multimodal AI app that transcribes meeting audio, summarizes with AI, retrieves visual highlights from Pexels, and converts summaries back to speech — full end-to-end pipeline.",
+    seoDescription: "Multimodal GenAI app that transcribes meeting audio, summarizes it, fetches Pexels visual highlights and reads summaries back as speech.",
+    updated: "2026-10-19",
     longDescription:
       "Built for the 'From Words to Worlds — Multimodal GenAI' hackathon, this app handles the complete meeting intelligence pipeline. Upload a recording and AssemblyAI transcribes it to full text. The Facebook Bart Large CNN model on Hugging Face then summarizes the transcript. Key points from the summary drive Pexels image searches for visual highlights. Finally Deepgram converts the summary to an audio file, and everything is stored persistently on Cloudinary.",
     caseStudy: {
@@ -294,6 +312,8 @@ export const PROJECTS: Project[] = [
     badgeColor: "orange",
     description:
       "A basic HTTP file server built entirely from scratch in Rust — no web framework. Custom HTTP request/response parser over raw TCP streams. First to complete all objectives.",
+    seoDescription: "HTTP file server written from scratch in Rust with a custom request parser over raw TCP and no web framework. First to finish the StackUp Rust bounty.",
+    updated: "2026-10-19",
     longDescription:
       "This project was built for the StackUp Rust Bounty Challenge — the first submission to complete all objectives. The server binds a TcpListener to port 7878 and handles each connection with a custom HTTP parser that reads raw bytes, extracts the method and path, locates the file on disk, detects its MIME type via mime_guess, and writes a full HTTP response back over the stream — all without any web framework dependency.",
     caseStudy: {
@@ -331,6 +351,8 @@ export const PROJECTS: Project[] = [
     badgeColor: "orange",
     description:
       "Production website for a premium dining & banquet venue in Patan. Dark fire-branded SPA with animated navbar, menu section, gallery, and booking CTA.",
+    seoDescription: "Production website for Floris Restaurant & Banquet in Patan: a React 19 and Vite single-page site with menu, gallery and booking call to action.",
+    updated: "2026-10-19",
     longDescription:
       "Floris Restaurant & Banquet is a premium dining and events venue in Patan, Gujarat. The website is a single-page React application built with a fully custom fire brand design system — deep black backgrounds with orange/amber fire gradients, glowing shadows, and smooth scroll navigation. Every section from hero to contact is designed to convert visitors into bookings, with a prominent 'Book a Table' CTA and IntersectionObserver-driven active nav highlighting.",
     caseStudy: {
@@ -369,6 +391,8 @@ export const PROJECTS: Project[] = [
     badgeColor: "blue",
     description:
       "End-to-end business management platform for a wholesale ice distributor. Manages customers, subscriptions, billing, deliveries, and serves as the complete backend for the companion Flutter app.",
+    seoDescription: "Next.js platform for Aman Sales, a wholesale ice distributor in Gandhidham: customers, subscriptions, billing, deliveries and the API for a Flutter app.",
+    updated: "2026-10-19",
     longDescription:
       "Ice Saathi is a full business operating system built for Aman Sales, a wholesale ice distributor in Gandhidham associated with Shreeji Ice Creams. The platform handles the entire business workflow — customer onboarding, subscription management, billing, add-on tracking, delivery assignments, and payment recording. It also exposes a complete REST API consumed by the Aman Sales Delivery Partner Flutter app, including live GPS location tracking and FCM push notifications to delivery partners.",
     caseStudy: {
@@ -408,6 +432,8 @@ export const PROJECTS: Project[] = [
     badgeColor: "blue",
     description:
       "Flutter mobile app for Aman Sales delivery partners. Features OTP login, live GPS tracking, order management, sticky notes, and FCM push notifications for new order assignments.",
+    seoDescription: "Flutter app for Aman Sales delivery partners with OTP login, live GPS tracking, order management and FCM push notifications for new assignments.",
+    updated: "2026-10-19",
     longDescription:
       "The companion mobile app for the Ice Saathi platform, built in Flutter for Android. Delivery partners log in via OTP, view their assigned ice delivery orders, mark deliveries complete, look up customer details via a Go-To search, and create sticky notes linked to customers. The app runs a background location service that continuously sends GPS coordinates to the Ice Saathi backend so the admin can track all delivery partners live on a map. Firebase Cloud Messaging handles real-time push notifications for new order assignments.",
     caseStudy: {
@@ -446,6 +472,8 @@ export const PROJECTS: Project[] = [
     badgeColor: "teal",
     description:
       "Free all-in-one productivity web app for employees — Work Hours Tracker with live leave prediction, Brain Quiz, Personal Diary, Typing Speed Test, and Expense Tracker. 5 tools in one secure app.",
+    seoDescription: "HourBit is a free Next.js productivity suite: work-hours tracker with leave prediction, brain quiz, diary, typing test and expense tracker.",
+    updated: "2026-10-19",
     longDescription:
       "HourBit is a comprehensive productivity suite designed for employees on flexible schedules. The Work Tracker lets users clock in/out, deduct breaks, and get real-time leave time predictions. Brain Quiz features categories, subcategories, XP rewards, and a leaderboard. The Personal Diary supports rich journaling with search, export, and reminder toasts. The Typing Test measures WPM and accuracy over time. The Expense Tracker manages wallet balance, categorized transactions, and spending analytics — all behind a secure OTP-based auth system with full admin panel.",
     caseStudy: {
@@ -475,4 +503,20 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-export { STATS } from "./stats";
+const countBy = (category: ProjectCategory) =>
+  PROJECTS.filter((project) => project.category === category).length;
+const liveCount = PROJECTS.filter((project) =>
+  project.links.some((link) => link.icon === "live")
+).length;
+
+if (
+  PROJECTS.length !== STATS.total ||
+  countBy("hackathon") !== STATS.hackathon ||
+  countBy("client") !== STATS.client ||
+  countBy("personal") !== STATS.personal ||
+  liveCount !== STATS.live
+) {
+  throw new Error("app/projects/stats.ts is out of sync with PROJECTS in data.ts");
+}
+
+export { STATS };

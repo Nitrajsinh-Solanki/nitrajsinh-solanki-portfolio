@@ -9,9 +9,7 @@ import { STATS } from "../projects/data";
 
 export const metadata = pageMetadata({
   title: "About — Full-Stack Developer in Gujarat",
-  description: profile.name + " is a full-stack developer from " + LOCATION_LABEL + ": " +
-    profile.role.title + " at " + profile.role.org +
-    ", StackUp hackathon prize winner, builder of live client platforms.",
+  description: "Nitrajsinh Solanki is a full-stack developer from Gujarat, India: Full Stack Engineer Intern at VeloxCore and StackUp hackathon prize winner.",
   path: "/about",
   type: "profile",
 });

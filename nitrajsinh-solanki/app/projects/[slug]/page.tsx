@@ -31,7 +31,7 @@ export async function generateMetadata({
   const path = "/projects/" + project.slug;
   return pageMetadata({
     title: project.title,
-    description: project.description,
+    description: project.seoDescription,
     path,
     image: path + "/opengraph-image",
   });
@@ -91,7 +91,10 @@ export default async function ProjectDetailPage({
   const nextProject  = projectIndex < PROJECTS.length - 1 ? PROJECTS[projectIndex + 1] : null;
   const path = "/projects/" + project.slug;
   const live = project.links.find((link) => link.icon === "live")?.href;
-  const repoUrl = project.links.find((link) => link.icon === "github")?.href;
+  const GITHUB_REPO = /^https:\/\/github\.com\/[^/]+\/[^/]+\/?$/;
+  const repoUrl = project.links.find(
+    (link) => link.icon === "github" && GITHUB_REPO.test(link.href)
+  )?.href;
   const author = { "@type": "Person", "@id": PERSON_ID, name: SITE_NAME, url: SITE_URL };
 
   return (
@@ -538,6 +541,9 @@ export default async function ProjectDetailPage({
           </span>
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 sm:justify-end sm:gap-6">
             {[
+              { label: "About", href: "/about" },
+              { label: "Resume", href: "/resume" },
+              { label: "All Projects", href: "/projects" },
               { label: "GitHub", href: SOCIAL.github },
               { label: "LinkedIn", href: SOCIAL.linkedin },
               { label: "X", href: SOCIAL.x },
