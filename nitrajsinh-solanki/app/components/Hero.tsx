@@ -180,6 +180,11 @@ export default function Hero() {
             <div className="hero-portrait-wrap relative flex items-center justify-center">
               <div className="hero-portrait-glow" aria-hidden="true" />
               <div className="hero-portrait-orbit" aria-hidden="true" />
+              <div className="hero-portrait-sparkles" aria-hidden="true">
+                <span />
+                <span />
+                <span />
+              </div>
 
               {/* Photo */}
               <div
@@ -200,12 +205,87 @@ export default function Hero() {
                   style={{ objectPosition: "center 12%" }}
                   priority
                 />
+                <span className="hero-portrait-shimmer" aria-hidden="true" />
+                <span className="hero-portrait-corner hero-portrait-corner-tl" aria-hidden="true" />
+                <span className="hero-portrait-corner hero-portrait-corner-br" aria-hidden="true" />
               </div>
             </div>
           </div>
         </div>
 
       </section>
+
+      <style jsx global>{`
+        .hero-portrait-wrap { perspective: 1000px; }
+        .hero-portrait-glow {
+          width: 94%;
+          background:
+            radial-gradient(ellipse at 28% 24%, rgba(129,140,248,.34), transparent 42%),
+            radial-gradient(ellipse at 76% 72%, rgba(217,70,239,.22), transparent 44%),
+            radial-gradient(circle, rgba(79,70,229,.22), transparent 68%);
+          filter: blur(24px);
+          animation: portrait-aurora 8s ease-in-out infinite;
+        }
+        .hero-portrait-orbit {
+          inset: 2.5%;
+          border: 1px solid rgba(99,102,241,.36);
+          box-shadow: 0 0 30px rgba(99,102,241,.1), inset 0 0 24px rgba(99,102,241,.05);
+          animation: portrait-orbit-drift 18s ease-in-out infinite;
+        }
+        .hero-portrait-orbit::before {
+          background: #818cf8;
+          box-shadow: 0 0 0 5px rgba(129,140,248,.14), 0 0 22px rgba(99,102,241,.75);
+          animation: portrait-satellite 4s ease-in-out infinite;
+        }
+        .hero-portrait-orbit::after {
+          background: #d8b4fe;
+          box-shadow: 0 0 0 5px rgba(216,180,254,.14), 0 0 18px rgba(192,132,252,.75);
+          animation: portrait-satellite 5s ease-in-out -1.5s infinite reverse;
+        }
+        .hero-portrait-frame {
+          isolation: isolate;
+          box-shadow: 0 26px 70px rgba(23,25,29,.16), 0 0 0 1px rgba(129,140,248,.16), 0 0 42px rgba(99,102,241,.14);
+          animation: portrait-float 7s ease-in-out 1.2s infinite, portrait-frame-glow 6s ease-in-out infinite;
+        }
+        .hero-portrait-frame img { position: relative; z-index: 0; transition: transform 900ms cubic-bezier(.2,.7,.2,1), filter 900ms ease; }
+        .hero-portrait-shimmer {
+          position: absolute; z-index: 1; inset: -35% -70%; pointer-events: none;
+          background: linear-gradient(112deg, transparent 38%, rgba(255,255,255,.05) 44%, rgba(255,255,255,.34) 49%, rgba(199,210,254,.1) 54%, transparent 61%);
+          transform: translateX(-65%) rotate(8deg);
+          animation: portrait-light-sweep 7.5s cubic-bezier(.2,.7,.2,1) 1.5s infinite;
+        }
+        .hero-portrait-corner {
+          position: absolute; z-index: 2; width: 28px; height: 28px;
+          border-color: rgba(165,180,252,.95); border-style: solid; pointer-events: none;
+          filter: drop-shadow(0 0 6px rgba(99,102,241,.45));
+        }
+        .hero-portrait-corner-tl { top: 10px; left: 10px; border-width: 2px 0 0 2px; border-top-left-radius: 12px; }
+        .hero-portrait-corner-br { right: 10px; bottom: 10px; border-width: 0 2px 2px 0; border-bottom-right-radius: 12px; }
+        .hero-portrait-sparkles { position: absolute; z-index: 3; inset: 0; pointer-events: none; }
+        .hero-portrait-sparkles span {
+          position: absolute; width: 5px; height: 5px; border-radius: 50%; background: #818cf8;
+          box-shadow: 0 0 12px 3px rgba(129,140,248,.34); animation: portrait-sparkle 3.8s ease-in-out infinite;
+        }
+        .hero-portrait-sparkles span:nth-child(1) { top: 15%; left: 13%; animation-delay: -.7s; }
+        .hero-portrait-sparkles span:nth-child(2) { top: 70%; right: 8%; width: 4px; height: 4px; animation-delay: -2s; }
+        .hero-portrait-sparkles span:nth-child(3) { bottom: 13%; left: 19%; width: 3px; height: 3px; animation-delay: -1.3s; }
+        @keyframes portrait-aurora { 0%,100% { opacity: .72; transform: scale(.92) rotate(-7deg); } 50% { opacity: 1; transform: scale(1.08) rotate(7deg); } }
+        @keyframes portrait-orbit-drift { 0%,100% { transform: rotate(-8deg) scale(1); } 50% { transform: rotate(0deg) scale(1.025); } }
+        @keyframes portrait-satellite { 0%,100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(-3px,5px,0) scale(1.2); } }
+        @keyframes portrait-frame-glow { 0%,100% { box-shadow: 0 26px 70px rgba(23,25,29,.16), 0 0 0 1px rgba(129,140,248,.12), 0 0 30px rgba(99,102,241,.09); } 50% { box-shadow: 0 30px 76px rgba(23,25,29,.18), 0 0 0 1px rgba(129,140,248,.3), 0 0 48px rgba(99,102,241,.2); } }
+        @keyframes portrait-light-sweep { 0%,12% { transform: translateX(-65%) rotate(8deg); opacity: 0; } 22% { opacity: 1; } 46%,100% { transform: translateX(65%) rotate(8deg); opacity: 0; } }
+        @keyframes portrait-sparkle { 0%,100% { opacity: .28; transform: translate3d(0,0,0) scale(.7); } 50% { opacity: 1; transform: translate3d(2px,-7px,0) scale(1.25); } }
+        @media (hover:hover) and (pointer:fine) {
+          .hero-portrait-wrap:hover .hero-portrait-frame img { transform: scale(1.055); filter: saturate(1.08); }
+          .hero-portrait-wrap:hover .hero-portrait-shimmer { animation-duration: 3s; }
+        }
+        @media (max-width:639px) { .hero-portrait-corner { width: 22px; height: 22px; } .hero-portrait-shimmer { animation-duration: 9s; } }
+        @media (prefers-reduced-motion:reduce) {
+          .hero-portrait-glow, .hero-portrait-orbit, .hero-portrait-orbit::before, .hero-portrait-orbit::after,
+          .hero-portrait-frame, .hero-portrait-shimmer, .hero-portrait-sparkles span { animation: none !important; }
+          .hero-portrait-shimmer { display: none; }
+        }
+      `}</style>
     </>
   );
 }
