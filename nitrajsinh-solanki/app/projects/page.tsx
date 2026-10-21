@@ -2,8 +2,8 @@
 // Place this file at: nitrajsinh-solanki/app/projects/page.tsx
 
 import { pageMetadata } from "@/lib/seo";
-import { STATS } from "./data";
-import ProjectsClient from "./ProjectsClient";
+import { PROJECTS, STATS } from "./data";
+import ProjectsClient, { type Project } from "./ProjectsClient";
 
 export const metadata = pageMetadata({
   title: "Projects — Full-Stack, AI & Blockchain",
@@ -13,5 +13,23 @@ export const metadata = pageMetadata({
 });
 
 export default function ProjectsPage() {
-  return <ProjectsClient />;
+  const projects: Project[] = PROJECTS.map((project) => ({
+    id: project.id,
+    slug: project.slug,
+    title: project.title,
+    shortTitle: project.shortTitle,
+    category: project.category,
+    badge: project.badge,
+    badgeColor: project.badgeColor,
+    description: project.description,
+    tech: project.tech,
+    github: project.links.find((link) => link.icon === "github")?.href,
+    live: project.links.find((link) => link.icon === "live")?.href,
+    demo: project.links.find((link) => link.icon === "demo")?.href,
+    gradientFrom: project.gradientFrom,
+    gradientTo: project.gradientTo,
+    accentColor: project.accentColor,
+    iconPath: project.iconPath,
+  }));
+  return <ProjectsClient projects={projects} />;
 }

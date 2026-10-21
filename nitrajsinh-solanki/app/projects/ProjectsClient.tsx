@@ -3,7 +3,6 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { PROJECTS as SOURCE } from "./data";
 import JsonLd from "../components/JsonLd";
 import { abs, SOCIAL } from "@/lib/site";
 import { breadcrumb } from "@/lib/schema";
@@ -36,25 +35,6 @@ export interface Project {
 // ──────────────────────────────────────────────
 //  PROJECT DATA
 // ──────────────────────────────────────────────
-const PROJECTS: Project[] = SOURCE.map((project) => ({
-  id: project.id,
-  slug: project.slug,
-  title: project.title,
-  shortTitle: project.shortTitle,
-  category: project.category,
-  badge: project.badge,
-  badgeColor: project.badgeColor,
-  description: project.description,
-  tech: project.tech,
-  github: project.links.find((link) => link.icon === "github")?.href,
-  live: project.links.find((link) => link.icon === "live")?.href,
-  demo: project.links.find((link) => link.icon === "demo")?.href,
-  gradientFrom: project.gradientFrom,
-  gradientTo: project.gradientTo,
-  accentColor: project.accentColor,
-  iconPath: project.iconPath,
-}));
-
 // ──────────────────────────────────────────────
 //  BADGE STYLES
 // ──────────────────────────────────────────────
@@ -73,8 +53,6 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <article
       className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-[#E3E0D8] bg-[#FFFFFF] transition-all duration-300 hover:-translate-y-1 hover:border-[#4F46E5] hover:shadow-[0_8px_40px_rgba(79,70,229,0.05)]"
-      itemScope
-      itemType="https://schema.org/SoftwareApplication"
     >
       {/* ── Visual Area ── */}
       <div
@@ -139,7 +117,6 @@ function ProjectCard({ project }: { project: Project }) {
         {/* Badge */}
         <span
           className={`self-start font-mono text-[10px] tracking-wide px-2.5 py-[3px] rounded-full mb-3 ${BADGE_STYLES[project.badgeColor]}`}
-          itemProp="applicationCategory"
         >
           {project.badge}
         </span>
@@ -148,7 +125,6 @@ function ProjectCard({ project }: { project: Project }) {
         <h2
           className="mb-2 text-base font-bold leading-snug text-[#17191D] transition-colors group-hover:text-[#17191D] sm:text-[15px]"
           style={{ fontFamily: "var(--syne-var)" }}
-          itemProp="name"
         >
           {project.title}
         </h2>
@@ -156,7 +132,6 @@ function ProjectCard({ project }: { project: Project }) {
         {/* Description */}
         <p
           className="mb-4 min-w-0 flex-1 text-sm leading-[1.75] text-[#555963]"
-          itemProp="description"
         >
           {project.description}
         </p>
@@ -225,7 +200,7 @@ function ProjectCard({ project }: { project: Project }) {
 // ──────────────────────────────────────────────
 //  MAIN CLIENT COMPONENT
 // ──────────────────────────────────────────────
-export default function ProjectsClient() {
+export default function ProjectsClient({ projects: PROJECTS }: { projects: Project[] }) {
   const [filter, setFilter] = useState<ProjectCategory>("all");
 
   const filtered = PROJECTS.filter((p) =>

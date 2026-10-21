@@ -17,6 +17,52 @@ export function generateStaticParams() {
   return PROJECTS.map((p) => ({ slug: p.slug }));
 }
 
+type ProjectRecord = (typeof PROJECTS)[number];
+type RelatedCandidate = { project: ProjectRecord; score: number };
+
+// Prefer underlinked projects among similarly relevant candidates so discovery
+// does not leave a project such as HourBit without contextual inbound links.
+const RELATED_PROJECTS_BY_SLUG = (() => {
+  const related = new Map<string, ProjectRecord[]>(
+    PROJECTS.map((project) => [project.slug, [] as ProjectRecord[]] as [string, ProjectRecord[]])
+  );
+  const inbound = new Map<string, number>(
+    PROJECTS.map((project) => [project.slug, 0] as [string, number])
+  );
+  const candidates = new Map<string, RelatedCandidate[]>(
+    PROJECTS.map((source) => [
+      source.slug,
+      PROJECTS
+        .filter((candidate) => candidate.slug !== source.slug)
+        .map((candidate) => ({
+          project: candidate,
+          score: (candidate.category === source.category ? 2 : 0)
+            + candidate.tech.filter((technology) => source.tech.includes(technology)).length,
+        })),
+    ] as [string, RelatedCandidate[]])
+  );
+
+  for (let slot = 0; slot < 3; slot += 1) {
+    for (const source of PROJECTS) {
+      const selected = related.get(source.slug)!;
+      const remaining = (candidates.get(source.slug) ?? [])
+        .filter(({ project: candidate }) => !selected.some((item) => item.slug === candidate.slug))
+        .sort((a, b) =>
+          (inbound.get(a.project.slug) ?? 0) - (inbound.get(b.project.slug) ?? 0)
+          || b.score - a.score
+          || Number(a.project.id) - Number(b.project.id)
+        );
+      const next = remaining[0]?.project;
+      if (next) {
+        selected.push(next);
+        inbound.set(next.slug, (inbound.get(next.slug) ?? 0) + 1);
+      }
+    }
+  }
+
+  return related;
+})();
+
 // ─────────────────────────────────────────────
 //  PER-PROJECT SEO METADATA
 // ─────────────────────────────────────────────
@@ -95,6 +141,8 @@ export default async function ProjectDetailPage({
   const repoUrl = project.links.find(
     (link) => link.icon === "github" && GITHUB_REPO.test(link.href)
   )?.href;
+  const displayUrl = (live ?? repoUrl ?? abs(path)).replace("https://", "").replace("http://", "");
+  const related = RELATED_PROJECTS_BY_SLUG.get(project.slug) ?? [];
   const author = { "@type": "Person", "@id": PERSON_ID, name: SITE_NAME, url: SITE_URL };
 
   return (
@@ -122,7 +170,7 @@ export default async function ProjectDetailPage({
             "@type": "SoftwareSourceCode",
             name: project.title + " (source code)",
             codeRepository: repoUrl,
-            programmingLanguage: project.tech.slice(0, 3),
+            programmingLanguage: project.languages,
             author,
           } : undefined,
         ].filter(Boolean),
@@ -203,8 +251,8 @@ export default async function ProjectDetailPage({
                     className="ml-1 sm:ml-3 min-w-0 flex-1 h-5 rounded-md flex items-center px-2"
                     style={{ background: `${project.accentColor}10` }}
                   >
-                    <span className="block min-w-0 max-w-full truncate font-mono text-[9px] opacity-70" style={{ color: project.accentColor }} title={project.links.find((l) => l.icon === "live")?.href ?? "localhost:3000"}>
-                      {project.links.find((l) => l.icon === "live")?.href ?? `localhost:3000`}
+                    <span className="block min-w-0 max-w-full truncate font-mono text-[9px] opacity-70" style={{ color: project.accentColor }} title={displayUrl}>
+                      {displayUrl}
                     </span>
                   </div>
                 </div>
@@ -494,6 +542,25 @@ export default async function ProjectDetailPage({
                 </div>
               </div>
             </div>
+
+            {/* ── Related projects ── */}
+            {related.length > 0 && (
+              <section aria-labelledby="related-projects" className="mt-10 border-t border-[#E3E0D8] pt-6 sm:mt-16 sm:pt-8">
+                <h2 id="related-projects" className="mb-4 font-mono text-[10px] uppercase tracking-[0.14em] text-[#686D76]">
+                  Related projects
+                </h2>
+                <ul className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+                  {related.map((relatedProject) => (
+                    <li key={relatedProject.slug}>
+                      <Link href={`/projects/${relatedProject.slug}`} className="block h-full rounded-lg border border-[#E3E0D8] bg-white p-4 transition-colors hover:border-[#4F46E5]">
+                        <span className="block text-sm font-semibold text-[#17191D]">{relatedProject.shortTitle}</span>
+                        <span className="mt-1 block text-[12.5px] leading-snug text-[#555963]">{relatedProject.badge}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
 
             {/* ── Prev / Next navigation ── */}
             <div className="mt-10 grid grid-cols-1 gap-4 border-t border-[#E3E0D8] pt-6 sm:mt-16 sm:grid-cols-2 sm:pt-8">
