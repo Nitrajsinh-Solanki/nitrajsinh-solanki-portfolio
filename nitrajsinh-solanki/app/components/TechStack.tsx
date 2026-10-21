@@ -32,14 +32,14 @@ interface Skill {
   iconFilter?: string;
 }
 
-/* ──────────────── icon CDN helpers ───────────────────────────── */
+/* ──────────────── self-hosted icon helpers ────────────────────── */
 
 const DI = (name: string, variant = "original") =>
-  `https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/${name}/${name}-${variant}.svg`;
+  `/tech-icons/${name}-${variant}.svg`;
 
-/** simple-icons with an explicit hex colour (no #) */
+/** simple-icons with the original explicit hex colour (no #). */
 const SI = (slug: string, hex = "ffffff") =>
-  `https://cdn.simpleicons.org/${slug}/${hex}`;
+  `/tech-icons/si-${slug}-${hex.toLowerCase()}.svg`;
 
 /* ──────────────────────────── data ───────────────────────────── */
 
@@ -82,20 +82,20 @@ const SKILLS: Skill[] = [
   // ── Auth & Security ────────────────────────────────────────────
   { name: "JWT",                cat: "Auth & Security", projects: 7, core: true, icon: SI("jsonwebtokens","17191D") },
   { name: "OTP Email Auth",     cat: "Auth & Security", projects: 5, core: true                                    },
-  { name: "NextAuth",           cat: "Auth & Security", projects: 1,             icon: SI("authjs","17191D")        },
+  { name: "NextAuth",           cat: "Auth & Security", projects: 1 },
   { name: "Session Management", cat: "Auth & Security", projects: 3                                               },
   { name: "Cookies / RBAC",     cat: "Auth & Security", projects: 2                                               },
 
   // ── AI & APIs ──────────────────────────────────────────────────
   { name: "Google Gemini AI",        cat: "AI & APIs", projects: 3, core: true, icon: SI("googlegemini","8E75B2")   },
-  { name: "AssemblyAI",              cat: "AI & APIs", projects: 1,             icon: SI("assemblyai","17191D")      },
+  { name: "AssemblyAI",              cat: "AI & APIs", projects: 1 },
   { name: "HuggingFace Bart CNN",    cat: "AI & APIs", projects: 1,             icon: SI("huggingface","FFD21E")     },
   { name: "Deepgram API",            cat: "AI & APIs", projects: 1,             icon: SI("deepgram","13EF93")        },
   { name: "GBIF API",                cat: "AI & APIs", projects: 1                                                  },
   { name: "PubChem API",             cat: "AI & APIs", projects: 1                                                  },
   { name: "NASA Images API",         cat: "AI & APIs", projects: 1,             icon: SI("nasa","E03C31")            },
   { name: "iNaturalist API",         cat: "AI & APIs", projects: 1                                                  },
-  { name: "OpenWeather API",         cat: "AI & APIs", projects: 1,             icon: SI("openweathermap","E96E50")  },
+  { name: "OpenWeather API",         cat: "AI & APIs", projects: 1 },
   { name: "Pexels API",              cat: "AI & APIs", projects: 1,             icon: SI("pexels","05A081")          },
   { name: "FCM Push Notifications",  cat: "AI & APIs", projects: 2,             icon: DI("firebase")                },
   { name: "Jamendo / Deezer / Audius", cat: "AI & APIs", projects: 1                                               },
@@ -191,11 +191,9 @@ function useReveal(threshold = 0.06) {
 
 function TechLogo({
   src,
-  alt,
   filter,
 }: {
   src: string;
-  alt: string;
   filter?: string;
 }) {
   const [failed, setFailed] = useState(false);
@@ -204,7 +202,8 @@ function TechLogo({
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src={src}
-      alt={`${alt} logo`}
+      alt=""
+      aria-hidden="true"
       loading="lazy"
       decoding="async"
       width={14}
@@ -424,7 +423,6 @@ export default function TechStack() {
                         {sk.icon ? (
                           <TechLogo
                             src={sk.icon}
-                            alt={sk.name}
                             filter={sk.iconFilter}
                           />
                         ) : (
