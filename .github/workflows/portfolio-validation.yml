@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - "theme/warm-editorial-light"
+      - "seo/complete-implementation"
     paths:
       - "nitrajsinh-solanki/**"
       - ".github/workflows/portfolio-validation.yml"
@@ -43,3 +44,6 @@ jobs:
 
       - name: Build production app
         run: npm run build
+
+      - name: SEO audit (post-build)
+        run: python3 scripts/seo-audit.py

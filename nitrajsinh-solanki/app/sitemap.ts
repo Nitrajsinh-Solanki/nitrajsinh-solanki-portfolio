@@ -2,12 +2,12 @@ import type { MetadataRoute } from "next";
 import { PROJECTS } from "./projects/data";
 import { abs } from "@/lib/site";
 
-// These metadata and semantic HTML updates touch every indexable route in this release.
-// Keep dates aligned with real content changes; never stagger dates just to make them differ.
+// Keep each date aligned with the real content or structured-data change for that route.
+// Never stagger dates just to make them differ.
 const PAGE_UPDATED: Record<string, string> = {
   "/": "2026-10-19",
   "/about": "2026-10-19",
-  "/projects": "2026-10-19",
+  "/projects": "2026-10-21",
   "/resume": "2026-10-19",
 };
 

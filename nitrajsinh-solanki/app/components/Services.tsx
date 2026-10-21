@@ -1,6 +1,7 @@
 // nitrajsinh-solanki/app/components/Services.tsx
 "use client";
 
+import Link from "next/link";
 import { STATS } from "../projects/stats";
 
 import { useState } from "react";
@@ -14,11 +15,11 @@ const SERVICES = [
       "End-to-end web applications from database schema to pixel-perfect UI. Clean REST APIs, server-side rendering, auth systems, and scalable architecture built with modern TypeScript stacks.",
     techs: ["Next.js", "React", "TypeScript", "MongoDB", "Tailwind CSS", "NextAuth"],
     projects: [
-      { name: "Library Inventory System", award: "$90 · 3rd Place" },
-      { name: "BioMap", award: "$70 · 4th Place" },
-      { name: "Moodify", award: "$20 Merit" },
-      { name: "Floris Restaurant Website", award: "Client" },
-      { name: "Ice Saathi Platform", award: "Client · Live" },
+      { name: "Library Inventory System", slug: "library-inventory-system", award: "$90 · 3rd Place" },
+      { name: "BioMap", slug: "biomap", award: "$70 · 4th Place" },
+      { name: "Moodify", slug: "moodify", award: "$20 Merit" },
+      { name: "Floris Restaurant Website", slug: "floris-restaurant", award: "Client" },
+      { name: "Ice Saathi Platform", slug: "ice-saathi", award: "Client · Live" },
     ],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -32,10 +33,10 @@ const SERVICES = [
     number: "02",
     title: "Flutter Mobile Development",
     description:
-      "Cross-platform mobile apps for Android and iOS. Real-time GPS tracking, Firebase push notifications, OTP auth flows, and smooth provider-pattern state management with a polished UX.",
+      "Flutter mobile apps shipped on Android. Real-time GPS tracking, Firebase push notifications, OTP auth flows, and smooth provider-pattern state management with a polished UX.",
     techs: ["Flutter", "Dart", "Firebase FCM", "Provider", "Dio", "SharedPreferences"],
     projects: [
-      { name: "Aman Sales Delivery App", award: "Client · Production" },
+      { name: "Aman Sales Delivery App", slug: "ice-saathi-delivery-app", award: "Client · Production" },
     ],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -52,7 +53,7 @@ const SERVICES = [
       "On-chain smart contracts and decentralised marketplace UIs on the Aptos blockchain. Move language contracts, wallet integration, NFT minting, and listing flows.",
     techs: ["Move Language", "Aptos Blockchain", "React", "Web3 Wallet"],
     projects: [
-      { name: "NFT Marketplace (Aptos)", award: "$60 Bounty" },
+      { name: "NFT Marketplace (Aptos)", slug: "nft-marketplace-aptos", award: "$60 Bounty" },
     ],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -69,10 +70,10 @@ const SERVICES = [
       "Integrating large language models and multimodal AI into real products. From AI-generated content and intelligent tutoring to meeting transcription analysis and mood-based recommendation engines.",
     techs: ["Google Gemini AI", "AssemblyAI", "HuggingFace", "Cloudinary", "Node.js"],
     projects: [
-      { name: "Math Genius AI", award: "$10 Merit" },
+      { name: "Math Genius AI", slug: "math-genius-ai", award: "$10 Merit" },
       { name: "Library Inventory System", award: "Gemini AI" },
       { name: "Moodify", award: "Multi-API" },
-      { name: "Meeting Insights Generator", award: "Multimodal GenAI" },
+      { name: "Meeting Insights Generator", slug: "meeting-insights-generator", award: "Multimodal GenAI" },
     ],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -109,7 +110,7 @@ const SERVICES = [
       "Low-level systems programming in Rust for performant, memory-safe infrastructure tools. File servers, CLI utilities, and system-level software where correctness and speed are non-negotiable.",
     techs: ["Rust", "Cargo", "Systems Programming"],
     projects: [
-      { name: "Rust Simple File Server", award: "Bounty Claimed" },
+      { name: "Rust Simple File Server", slug: "rust-file-server", award: "Bounty Claimed" },
     ],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -296,9 +297,9 @@ function ServiceCard({
         <div className="flex flex-col gap-2">
           {service.projects.map((project) => (
             <div key={project.name} className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 sm:gap-2 min-w-0">
-              <span className="min-w-0 break-words text-[12.5px] leading-snug" style={{ color: "#555963" }}>
+              <Link href={`/projects/${project.slug}`} className="min-w-0 break-words text-[12.5px] leading-snug underline-offset-2 hover:underline" style={{ color: "#555963" }}>
                 {project.name}
-              </span>
+              </Link>
               <span
                 className="self-start max-w-full break-words font-mono text-[10px] px-2 py-[3px] rounded sm:whitespace-nowrap"
                 style={{

@@ -246,7 +246,7 @@ export default function TechStack() {
     <section
       id="tech-stack"
       ref={ref as React.RefObject<HTMLElement>}
-      aria-label="Nitrajsinh Solanki tech stack — all technologies used across 10 real projects including hackathons, client work and internship"
+      aria-label={`Nitrajsinh Solanki tech stack — all technologies used across ${STATS.total} real projects including hackathons, client work and internship`}
       itemScope
       itemType="https://schema.org/ItemList"
       className="relative py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-10 overflow-hidden"
