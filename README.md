@@ -1,119 +1,181 @@
 <div align="center">
 
-# Nitrajsinh Solanki
-
-### Full-Stack Developer · Gujarat, India
-
-A personal portfolio showcasing software projects, engineering experience, technical skills, and selected case studies.
+<img src="assets/portfolio-cover.svg" alt="Nitrajsinh Solanki — I build the parts people feel, from the first API to the final interaction." width="100%" />
 
 <p>
-  <a href="https://nitrajsinh-solanki.vercel.app"><strong>Explore the live portfolio →</strong></a>
-  &nbsp;·&nbsp;
-  <a href="https://nitrajsinh-solanki.vercel.app/projects">Projects</a>
-  &nbsp;·&nbsp;
-  <a href="https://nitrajsinh-solanki.vercel.app/about">About</a>
-  &nbsp;·&nbsp;
-  <a href="https://nitrajsinh-solanki.vercel.app/resume">Resume</a>
+  <a href="https://nitrajsinh-solanki.vercel.app"><strong>OPEN THE PORTFOLIO ↗</strong></a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://nitrajsinh-solanki.vercel.app/projects">EXPLORE THE BUILDS</a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://nitrajsinh-solanki.vercel.app/resume">VIEW RESUME</a>
 </p>
 
-[![Next.js](https://img.shields.io/badge/Next.js-16.2.6-111111?logo=nextdotjs)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19.2.4-149ECA?logo=react&logoColor=white)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Deploy](https://img.shields.io/badge/Deployment-Vercel-black?logo=vercel)](https://vercel.com/)
+<sub>FULL-STACK ENGINEERING · PRODUCT THINKING · WEB & MOBILE</sub>
 
 </div>
 
 ---
 
-## ✦ About the project
+## 01 / The point of view
 
-This repository contains the source for [nitrajsinh-solanki.vercel.app](https://nitrajsinh-solanki.vercel.app), a responsive developer portfolio built with the Next.js App Router. It brings project demos and case studies together with experience, education, skills, services, and contact information in one place.
+> **Build the full path, not just the screen.**
 
-The interface uses a warm, editorial visual style with light and dark themes. The codebase also includes dedicated metadata and discovery routes so the site can be navigated by people, search engines, and compatible AI tools.
+I’m **Nitrajsinh Solanki**, a full-stack developer from Gujarat, India. I like the seam between what a user sees and what makes it dependable: the interface, the API, the data model, the permissions, the edge cases, and the small details that make a product feel finished.
 
-## Highlights
+This repository is the source for my [portfolio site](https://nitrajsinh-solanki.vercel.app) — a living index of projects, engineering experiments, client work, and case studies. It is designed to answer more than *“what did you build?”*: it also explains the problem, the implementation approach, and the outcome.
 
-| Area | What it includes |
-| --- | --- |
-| **Project showcase** | A browsable project collection, individual case-study pages, technology details, and available repository or demo links. |
-| **Developer profile** | About, education, experience, skills, and service sections. |
-| **Theme & interaction** | Responsive layouts, persistent light/dark theme preference, and motion enhancements. |
-| **Resume & contact** | A resume page, downloadable resume asset, and contact section. |
-| **Search & sharing** | Page metadata, canonical URLs, Open Graph and X/Twitter metadata, and generated social preview images. |
-| **Technical SEO** | XML sitemap, robots rules, JSON-LD structured data, and project-specific metadata. |
-| **Content discovery** | `/llms.txt` and `/llms-full.txt` endpoints, alongside human-friendly pages. |
-| **Local assets** | Self-hosted technology icons to avoid relying on third-party icon CDNs at runtime. |
+## 02 / The portfolio, in numbers
 
-## Built with
+<div align="center">
+<table>
+  <tr>
+    <td align="center" width="25%"><strong><code>11</code></strong><br/><sub>PROJECTS INDEXED</sub></td>
+    <td align="center" width="25%"><strong><code>07</code></strong><br/><sub>HACKATHON BUILDS</sub></td>
+    <td align="center" width="25%"><strong><code>03</code></strong><br/><sub>CLIENT PROJECTS</sub></td>
+    <td align="center" width="25%"><strong><code>04</code></strong><br/><sub>LIVE PROJECT LINKS</sub></td>
+  </tr>
+</table>
+</div>
 
-- **Framework:** Next.js App Router
-- **UI:** React, TypeScript, Tailwind CSS
-- **Typography:** Syne, DM Sans, and DM Mono through `next/font`
-- **Deployment:** Vercel
-- **Quality checks:** ESLint, a production build, and a post-build SEO audit
+These counts come from the project's own `app/projects/stats.ts` module. They describe the current portfolio catalogue, not vanity counters or GitHub activity.
 
-## Explore the site
+## 03 / A few builds with a story
 
-| Route | Purpose |
-| --- | --- |
-| [`/`](https://nitrajsinh-solanki.vercel.app/) | Home, profile overview, skills, featured projects, services, and experience |
-| [`/about`](https://nitrajsinh-solanki.vercel.app/about) | Developer profile and background |
-| [`/projects`](https://nitrajsinh-solanki.vercel.app/projects) | Project collection |
-| [`/projects/[slug]`](https://nitrajsinh-solanki.vercel.app/projects) | Individual project details and case studies |
-| [`/resume`](https://nitrajsinh-solanki.vercel.app/resume) | Resume page |
-| `/sitemap.xml` · `/robots.txt` | Search engine discovery |
-| `/llms.txt` · `/llms-full.txt` | AI-oriented site discovery |
+The work crosses product UI, data-heavy exploration, AI-assisted workflows, and lower-level systems code. Here are some of the more distinctive entries.
 
-## Run locally
+<table>
+  <thead>
+    <tr>
+      <th align="left">Build</th>
+      <th align="left">What it does</th>
+      <th align="left">Receipt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><a href="https://github.com/Nitrajsinh-Solanki/library-inventory-system">Library Inventory System</a></strong><br/><sub>Next.js · TypeScript · MongoDB</sub></td>
+      <td>Role-aware library workflows: book lifecycle, borrowing, fines, email verification, and optional AI descriptions.</td>
+      <td>🏆 <strong>3rd place · $90</strong><br/><sub>StackUp Hackathon</sub></td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://github.com/Nitrajsinh-Solanki/biomap">BioMap</a></strong><br/><sub>TypeScript · Mapping · Public APIs</sub></td>
+      <td>A scientific explorer connecting biodiversity maps, chemistry data, environmental monitoring, space media, and educational resources.</td>
+      <td>🏆 <strong>4th place · $70</strong><br/><sub>StackUp May 2025 Challenge</sub><br/><a href="https://biomap-nitrajsinh-solankis-projects.vercel.app">Live app ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://github.com/Nitrajsinh-Solanki/aptos4-bounty-nft">Aptos NFT Marketplace</a></strong><br/><sub>Move · Aptos · Smart contracts</sub></td>
+      <td>An on-chain marketplace with auctions, royalties, offers, batch transfers, APT payments, and creator tipping.</td>
+      <td>◇ <strong>$60 bounty</strong><br/><sub>StackUp Bounty Challenge</sub></td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://github.com/nitrajsinh-solanki/hackathon_may_stackup">Moodify</a></strong><br/><sub>React · AI recommendations · Music APIs</sub></td>
+      <td>A music experience that uses context such as location and weather to inform AI-assisted recommendations.</td>
+      <td>✳ <strong>$20 merit prize</strong><br/><sub>StackUp Hackathon</sub></td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://github.com/Nitrajsinh-Solanki/simple-file-server">Rust Simple File Server</a></strong><br/><sub>Rust · TCP · HTTP</sub></td>
+      <td>A small HTTP file server built directly on TCP streams, with a custom request/response parser rather than a web framework.</td>
+      <td>⚙ <strong>Bounty claimed</strong><br/><sub>First submission to complete all objectives</sub></td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://github.com/Nitrajsinh-Solanki/Meeting-Genius">Meeting Insights Generator</a></strong><br/><sub>React · Node.js · Multimodal AI</sub></td>
+      <td>An end-to-end workflow from meeting audio transcription to AI summaries, visual highlights, and speech output.</td>
+      <td>↗ <strong>Full-stack GenAI pipeline</strong></td>
+    </tr>
+  </tbody>
+</table>
 
-### Prerequisites
+**More in the catalogue:** [Math Genius AI](https://github.com/Nitrajsinh-Solanki/hackathon-feb), [Floris Restaurant & Banquet](https://floris-restaurant.vercel.app), [Ice Saathi](https://www.icesaathi.co.in), plus additional project case studies and links on the [portfolio projects page](https://nitrajsinh-solanki.vercel.app/projects).
 
-- **Node.js 22** (the version used by CI)
-- npm, included with Node.js
+## 04 / How the pieces connect
 
-### 1. Clone the repository
+The site keeps project content structured and lets the App Router compose the right experience for each route. Profile information, reusable UI, project case studies, and search metadata have separate homes instead of being tangled into a single page.
+
+```mermaid
+flowchart LR
+    A["Project catalogue<br/>app/projects/data.ts"] --> B["Next.js App Router"]
+    P["Profile & site data<br/>lib/profile.ts · lib/site.ts"] --> B
+    B --> C["Portfolio UI<br/>home · about · projects · resume"]
+    B --> D["Project case studies<br/>/projects/[slug]"]
+    B --> E["Discovery layer<br/>sitemap · robots · JSON-LD"]
+    D --> F["Repository / demo links"]
+    E --> G["Search & sharing previews"]
+    classDef source fill:#22242b,stroke:#9a90ff,color:#f8f7f3
+    classDef route fill:#202b26,stroke:#c9f77c,color:#f8f7f3
+    classDef output fill:#28252f,stroke:#c5b5ff,color:#f8f7f3
+    class A,P source
+    class B route
+    class C,D,E,F,G output
+```
+
+### The details I care about
+
+- **Case studies over link dumps.** Project pages have space for the challenge, approach, contribution, outcome, feature list, technologies, and available demos.
+- **Fast paths to real content.** Shared page data is structured; the project listing passes a smaller server-derived payload to its client interface.
+- **Discoverability as part of engineering.** Canonical metadata, Open Graph images, JSON-LD, sitemap and robots routes are part of the app.
+- **Fewer runtime dependencies for decoration.** Technology icons are stored in the repository and served locally.
+- **The small experience details.** Responsive layouts, persistent theme preference, typography, motion enhancement, and contact/resume paths make the site usable beyond the first screenshot.
+
+## 05 / Stack, chosen for the work
+
+<div align="center">
+
+[![Next.js](https://img.shields.io/badge/Next.js-16-111111?logo=nextdotjs)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?logo=vercel)](https://vercel.com/)
+
+</div>
+
+| Layer | Tools in this project |
+|---|---|
+| **Application** | Next.js App Router, React, TypeScript |
+| **Styling & type** | Tailwind CSS 4, Syne, DM Sans, DM Mono |
+| **Content & schema** | Structured TypeScript data, Metadata API, JSON-LD |
+| **Assets & sharing** | Local SVG tech icons, generated Open Graph images, resume PDF |
+| **Validation** | ESLint, production build, Python post-build SEO audit |
+| **Delivery** | Vercel, GitHub Actions validation workflow |
+
+## 06 / Run it on your machine
+
+The application lives one directory below the repository root.
+
+**Prerequisites:** Node.js 22 and npm.
 
 ```bash
+# 1. Get the code
 git clone https://github.com/Nitrajsinh-Solanki/nitrajsinh-solanki-portfolio.git
 cd nitrajsinh-solanki-portfolio/nitrajsinh-solanki
-```
 
-### 2. Install dependencies
-
-```bash
+# 2. Install exactly what's in the lockfile
 npm ci
-```
 
-### 3. Configure environment variables (optional)
-
-Copy the example environment file:
-
-```bash
-cp .env.example .env.local
-```
-
-Available values:
-
-| Variable | Purpose |
-| --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Canonical base URL used to generate absolute site URLs. Defaults to the production portfolio URL. |
-| `GOOGLE_SITE_VERIFICATION` | Optional Google Search Console verification token. |
-| `BING_SITE_VERIFICATION` | Optional Bing Webmaster verification token. |
-
-Only add verification tokens after verifying domain ownership in the relevant webmaster console. Keep private values out of commits.
-
-### 4. Start the development server
-
-```bash
+# 3. Start the development server
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Validate before deploying
+### Optional environment configuration
 
-Run these commands from the `nitrajsinh-solanki/` app directory:
+Copy the example file before adding any environment-specific values:
+
+```bash
+cp .env.example .env.local
+```
+
+| Variable | Used for |
+|---|---|
+| `NEXT_PUBLIC_SITE_URL` | Base URL for canonical and absolute URLs; defaults to the portfolio's production domain. |
+| `GOOGLE_SITE_VERIFICATION` | Google Search Console verification token, when configured. |
+| `BING_SITE_VERIFICATION` | Bing Webmaster verification token, when configured. |
+
+Verification tokens are optional. Add them only after verifying the domain with the relevant service; never commit private credentials.
+
+### Run the quality checks
+
+Run from `nitrajsinh-solanki/`:
 
 ```bash
 npm run lint
@@ -121,40 +183,54 @@ npm run build
 python3 scripts/seo-audit.py
 ```
 
-The SEO audit runs against the generated production output, so run it **after** `npm run build`. Use `python3 scripts/seo-audit.py --json` for machine-readable output or `--strict` to make warnings fail the audit. GitHub Actions also runs lint, the production build, and the post-build SEO audit for its configured validation events.
+The SEO audit reads the generated build output, so run it **after** `npm run build`. For automation-friendly output use `python3 scripts/seo-audit.py --json`; use `--strict` to promote warnings to failures. The configured GitHub Actions workflow runs lint, the production build, and the audit.
 
-## Repository layout
+## 07 / Find your way around
 
 ```text
-.
-├── .github/
-│   └── workflows/              # Portfolio validation workflow
-├── README.md                   # Project overview and setup guide
+repository/
+├── README.md                          # This guide
+├── assets/
+│   └── portfolio-cover.svg             # Custom README artwork
+├── .github/workflows/
+│   └── portfolio-validation.yml        # Automated checks
 └── nitrajsinh-solanki/
     ├── app/
-    │   ├── components/          # Portfolio sections and shared UI
-    │   ├── projects/            # Project data, listing, and detail pages
-    │   ├── about/               # About route
-    │   ├── resume/              # Resume route
-    │   ├── sitemap.ts            # Generated sitemap
-    │   └── robots.ts             # Robots rules
-    ├── lib/                     # Site identity, profile, schema, and SEO helpers
-    ├── public/                  # Images, icons, and resume PDF
-    ├── scripts/                 # SEO audit and icon maintenance tools
+    │   ├── components/                 # Home sections & shared UI
+    │   ├── about/                      # About route
+    │   ├── projects/
+    │   │   ├── data.ts                 # Source of project content
+    │   │   ├── page.tsx                # Project index
+    │   │   └── [slug]/page.tsx         # Case-study pages
+    │   ├── resume/                     # Resume route
+    │   ├── sitemap.ts                  # XML sitemap
+    │   ├── robots.ts                   # Robots rules
+    │   └── llms.txt/ + llms-full.txt/  # Content discovery routes
+    ├── lib/                            # Site, profile & schema utilities
+    ├── public/                         # Static assets, icons & resume
+    ├── scripts/                        # SEO audit & icon tooling
     ├── package.json
     └── .env.example
 ```
 
-## Connect
-
-- **Portfolio:** [nitrajsinh-solanki.vercel.app](https://nitrajsinh-solanki.vercel.app)
-- **GitHub:** [Nitrajsinh-Solanki](https://github.com/Nitrajsinh-Solanki)
-- **LinkedIn:** [Nitrajsinh Solanki](https://www.linkedin.com/in/nitrajsinh-solanki-647b11293)
-- **X:** [@Nitrajsinh_S](https://x.com/Nitrajsinh_S)
-- **Medium:** [@nrsolanki2005](https://medium.com/@nrsolanki2005)
-
----
+## 08 / Take the next step
 
 <div align="center">
-  <sub>Designed and built by Nitrajsinh Solanki · Next.js, React, and TypeScript</sub>
+
+**A good build makes the complicated feel obvious.**
+
+<a href="https://nitrajsinh-solanki.vercel.app"><strong>SEE THE PORTFOLIO ↗</strong></a>
+
+<br/><br/>
+
+<a href="https://github.com/Nitrajsinh-Solanki">GitHub</a>
+&nbsp; · &nbsp;
+<a href="https://www.linkedin.com/in/nitrajsinh-solanki-647b11293">LinkedIn</a>
+&nbsp; · &nbsp;
+<a href="https://x.com/Nitrajsinh_S">X / @Nitrajsinh_S</a>
+&nbsp; · &nbsp;
+<a href="https://medium.com/@nrsolanki2005">Medium</a>
+
+<sub>Made with intent by Nitrajsinh Solanki · Gujarat, India</sub>
+
 </div>
