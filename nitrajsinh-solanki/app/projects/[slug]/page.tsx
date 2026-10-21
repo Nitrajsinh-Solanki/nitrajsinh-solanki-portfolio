@@ -17,6 +17,52 @@ export function generateStaticParams() {
   return PROJECTS.map((p) => ({ slug: p.slug }));
 }
 
+type ProjectRecord = (typeof PROJECTS)[number];
+type RelatedCandidate = { project: ProjectRecord; score: number };
+
+// Prefer underlinked projects among similarly relevant candidates so discovery
+// does not leave a project such as HourBit without contextual inbound links.
+const RELATED_PROJECTS_BY_SLUG = (() => {
+  const related = new Map<string, ProjectRecord[]>(
+    PROJECTS.map((project) => [project.slug, [] as ProjectRecord[]] as [string, ProjectRecord[]])
+  );
+  const inbound = new Map<string, number>(
+    PROJECTS.map((project) => [project.slug, 0] as [string, number])
+  );
+  const candidates = new Map<string, RelatedCandidate[]>(
+    PROJECTS.map((source) => [
+      source.slug,
+      PROJECTS
+        .filter((candidate) => candidate.slug !== source.slug)
+        .map((candidate) => ({
+          project: candidate,
+          score: (candidate.category === source.category ? 2 : 0)
+            + candidate.tech.filter((technology) => source.tech.includes(technology)).length,
+        })),
+    ] as [string, RelatedCandidate[]])
+  );
+
+  for (let slot = 0; slot < 3; slot += 1) {
+    for (const source of PROJECTS) {
+      const selected = related.get(source.slug)!;
+      const remaining = (candidates.get(source.slug) ?? [])
+        .filter(({ project: candidate }) => !selected.some((item) => item.slug === candidate.slug))
+        .sort((a, b) =>
+          (inbound.get(a.project.slug) ?? 0) - (inbound.get(b.project.slug) ?? 0)
+          || b.score - a.score
+          || Number(a.project.id) - Number(b.project.id)
+        );
+      const next = remaining[0]?.project;
+      if (next) {
+        selected.push(next);
+        inbound.set(next.slug, (inbound.get(next.slug) ?? 0) + 1);
+      }
+    }
+  }
+
+  return related;
+})();
+
 // ─────────────────────────────────────────────
 //  PER-PROJECT SEO METADATA
 // ─────────────────────────────────────────────
@@ -96,16 +142,7 @@ export default async function ProjectDetailPage({
     (link) => link.icon === "github" && GITHUB_REPO.test(link.href)
   )?.href;
   const displayUrl = (live ?? repoUrl ?? abs(path)).replace("https://", "").replace("http://", "");
-  const related = PROJECTS
-    .filter((candidate) => candidate.slug !== project.slug)
-    .map((candidate) => ({
-      project: candidate,
-      score: (candidate.category === project.category ? 2 : 0)
-        + candidate.tech.filter((technology) => project.tech.includes(technology)).length,
-    }))
-    .sort((a, b) => b.score - a.score || Number(a.project.id) - Number(b.project.id))
-    .slice(0, 3)
-    .map(({ project: candidate }) => candidate);
+  const related = RELATED_PROJECTS_BY_SLUG.get(project.slug) ?? [];
   const author = { "@type": "Person", "@id": PERSON_ID, name: SITE_NAME, url: SITE_URL };
 
   return (

@@ -71,8 +71,8 @@ const SERVICES = [
     techs: ["Google Gemini AI", "AssemblyAI", "HuggingFace", "Cloudinary", "Node.js"],
     projects: [
       { name: "Math Genius AI", slug: "math-genius-ai", award: "$10 Merit" },
-      { name: "Library Inventory System", award: "Gemini AI" },
-      { name: "Moodify", award: "Multi-API" },
+      { name: "Library Inventory System", slug: "library-inventory-system", award: "Gemini AI" },
+      { name: "Moodify", slug: "moodify", award: "Multi-API" },
       { name: "Meeting Insights Generator", slug: "meeting-insights-generator", award: "Multimodal GenAI" },
     ],
     icon: (
@@ -90,9 +90,9 @@ const SERVICES = [
       "Robust REST APIs with JWT authentication, role-based access control, OTP email verification, real-time data endpoints, and third-party API integration at scale across 6+ external services.",
     techs: ["Next.js API Routes", "MongoDB", "Mongoose", "JWT", "Nodemailer", "Supabase"],
     projects: [
-      { name: "Ice Saathi Platform", award: "20+ endpoints" },
-      { name: "BioMap", award: "6 scientific APIs" },
-      { name: "Library Inventory System", award: "3-role RBAC" },
+      { name: "Ice Saathi Platform", slug: "ice-saathi", award: "20+ endpoints" },
+      { name: "BioMap", slug: "biomap", award: "6 scientific APIs" },
+      { name: "Library Inventory System", slug: "library-inventory-system", award: "3-role RBAC" },
     ],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
